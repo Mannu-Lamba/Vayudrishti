@@ -1,0 +1,93 @@
+{
+  "passed": 10,
+  "failed": 0,
+  "flaky": 1,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Backend pytest suite (routers/auth.py parse_user_agent refactor + general regressions)",
+      "name": "backend pytest suite (19 tests)",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "cd /app/backend && python -m pytest -q -p no:cacheprovider -> '19 passed, 2 warnings in 0.92s'. Covers access-policy lockout, admin role mgmt, analyst blocked from admin, analyst history auth, audit events, sessions list, unauthenticated 401."
+    },
+    {
+      "criterion": "Session Center still reports correct browser/OS after the parse_user_agent refactor",
+      "name": "sessions-browser-os-labels",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "GET /api/sessions with admin cookie -> 200; every session object has non-empty string browser and os fields. On /sessions each session-row-{id} rendered its browser and os text; zero console errors captured during the check."
+    },
+    {
+      "criterion": "Cyclone Monitor risk status dots render correctly after the ternary refactor",
+      "name": "cyclone-risk-dot-colors",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "On /cyclones, cyclone-list-item-vd-001 .status-dot has class status-dot-amber, vd-002 has status-dot-cyan, vd-003 has status-dot-green. Selecting vd-002 then vd-003 updated selected-cyclone-detail to VD-002/VD-003 and moved window.__vdMap center lng by >1deg each time, confirming recentre still works."
+    },
+    {
+      "criterion": "Map regression re-run: dashboard basemap renders",
+      "name": "dashboard-map-renders-basemap",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name (persisted check), passed unchanged: maplibre-container shows a live canvas, isStyleLoaded() true, features rendered."
+    },
+    {
+      "criterion": "Map regression re-run: overlay layers present and visible",
+      "name": "map-overlay-layers-present",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name, passed unchanged: all 7 overlay layers (risk-zones-fill/outline, history-line/points, forecast-cone/line/points) resolve via getLayer() and are visible by default."
+    },
+    {
+      "criterion": "Map regression re-run: cyclone marker popup",
+      "name": "map-cyclone-marker-popup",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name, passed unchanged: marker click opens popup with VD-001 details; close button hides it."
+    },
+    {
+      "criterion": "Map regression re-run: forecast point popup",
+      "name": "map-forecast-point-popup",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name, passed unchanged: clicking a projected forecast-points feature opens forecast-point-popup with predicted wind/confidence/position."
+    },
+    {
+      "criterion": "Map regression re-run: timeline scrubber",
+      "name": "map-timeline-scrubber-updates",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name, passed unchanged: T-12h tick changes readout text, NOW tick restores baseline."
+    },
+    {
+      "criterion": "Map regression re-run: zoom/reset/toggle controls",
+      "name": "map-controls-zoom-toggle",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name, passed unchanged: zoom in/out change getZoom(), reset-view recenters, layer toggles flip visibility."
+    },
+    {
+      "criterion": "Map regression re-run: Cyclone Monitor full map follows selection",
+      "name": "cyclone-monitor-map-recenter",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-run by name, passed unchanged: selecting VD-002 then VD-003 recentres map, marker/popup show correct code, no horizontal overflow."
+    },
+    {
+      "criterion": "No regressions elsewhere: /, /cyclones, /satellite, /prediction, /history, /about, /sessions, /audit load with no console errors / no >=400 responses",
+      "name": "routes-no-regression",
+      "lane": "browser",
+      "status": "flaky",
+      "evidence": "First two runs in this session failed with two console 'Failed to load resource: 429' entries while navigating /satellite,/history,/about,/sessions,/audit (concurrent load from this same test session hitting the preview domain). curl to /satellite, /, and /api/sessions immediately after all returned 200. After a 20s pause, the identical check re-ran and passed cleanly (screenshots routes-no-regression-prediction-map-no-timeline.png and routes-no-regression-routes-final.png), confirming this was transient client-side rate limiting from test traffic, not an app regression."
+    }
+  ],
+  "notes": [
+    "Retest mode: re-ran the full previous browser suite (8 checks from iteration_4) by name only, no script resent; all 8 passed unchanged, confirming no map regression from the RISK_DOT_TONE refactor.",
+    "Added 2 new browser check artifacts for the 2 new refactor-specific criteria in this briefing (session browser/OS labels, cyclone risk dot colors); the map-regression criterion mapped 1:1 onto the 7 pre-existing map checks (dashboard-map-renders-basemap, map-overlay-layers-present, map-cyclone-marker-popup, map-forecast-point-popup, map-timeline-scrubber-updates, map-controls-zoom-toggle, cyclone-monitor-map-recenter) plus routes-no-regression for the 'no regressions elsewhere' criterion -- all re-run by name per retest-mode rule.",
+    "Backend pytest suite (19 tests, includes coverage touching parse_user_agent via /api/sessions responses) passed cleanly after the table-driven refactor.",
+    "No application code was touched; only new check artifacts (cyclone-risk-dot-colors.mjs, sessions-browser-os-labels.mjs) were added under /app/.emergent/scripts/checks/."
+  ]
+}

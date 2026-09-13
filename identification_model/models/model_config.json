@@ -1,0 +1,82 @@
+{
+  "architecture": "efficientnet_b0",
+  "pretrained_weights": "torchvision IMAGENET1K_V1 (ImageNet)",
+  "classes": {
+    "0": "NO_CYCLONE",
+    "1": "CYCLONE"
+  },
+  "input_size": [
+    224,
+    224
+  ],
+  "input": {
+    "imagery": "GridSat-B1 IRWIN CDR (~11 \u00b5m) brightness temperature, 18\u00b0\u00d718\u00b0 crop centred on the position of interest, north up",
+    "rendering": "BT clipped to 180.0\u2013310.0 K, linear to 8-bit, cold = bright, 256\u00d7256 grayscale",
+    "model_transform": "grayscale \u2192 3 identical channels \u2192 resize 224\u00d7224 \u2192 ImageNet mean/std"
+  },
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "decision_threshold": 0.5,
+  "training_seed": 42,
+  "dataset_version": "v1.0",
+  "model_version": "v1",
+  "training_configuration": {
+    "optimizer": "adamw",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "batch_size": 32,
+    "max_epochs": 30,
+    "epochs_run": 16,
+    "early_stopping_patience": 6,
+    "selection_metric": "val_f1",
+    "loss": "cross-entropy",
+    "amp": true,
+    "class_balance": "none",
+    "class_weights": null,
+    "augmentation": {
+      "rotation_deg": 10,
+      "scale": [
+        0.85,
+        1.0
+      ],
+      "hflip": 0.5,
+      "vflip": 0.5,
+      "brightness": 0.1,
+      "contrast": 0.1
+    },
+    "deterministic": true
+  },
+  "best_epoch": 10,
+  "best_validation_metrics": {
+    "loss": 0.20211414192149887,
+    "accuracy": 0.9651741293532339,
+    "precision": 0.9733333333333334,
+    "recall": 0.9573770491803278,
+    "f1": 0.9652892561983472
+  },
+  "split_sizes": {
+    "train": 2796,
+    "val": 603,
+    "test": 601
+  },
+  "split_file_sha256": {
+    "train": "bd7c47ad4788b4977d5a8966a94db886b57db173aa8a802f693ec5665dceb494",
+    "val": "0db861ab5a613301d74857f897bad403bcb4f4c580ae578d2c3e4030a87a7a5c",
+    "test": "d4d907aaac837de731590c3506e4474b8f35a91f84e62625f2f2813f6aeba632"
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch_version": "2.11.0+cu128",
+  "training_minutes": 7.58,
+  "created_at": "2026-09-12T02:32:55+00:00"
+}

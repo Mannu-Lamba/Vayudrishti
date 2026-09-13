@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VayuDrishti · Model test bench</title>
+<link rel="stylesheet" href="/vendor/maplibre/maplibre-gl.css">
+<style>
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url(/fonts/sans/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url(/fonts/sans/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(/fonts/sans/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(/fonts/mono/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
+
+:root {
+  --bg: #0f1114; --surface: #15181c; --surface-2: #1b1f24; --border: #2a2f36; --text: #e6e8eb; --muted: #98a1ab;
+  --faint: #6b737d; --accent: #7ab4f0; --amber: #f59e0b; --ok: #5fbf8f; --warn: #d9a441; --bad: #e5695f; --forecast: #22d3ee;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 "IBM Plex Sans", system-ui, sans-serif; }
+.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.muted { color: var(--muted); } .faint { color: var(--faint); } .small { font-size: 12px; }
+
+header.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap;
+  padding: 10px 24px; background: rgba(15, 17, 20, 0.94); border-bottom: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.brand svg { flex: none; }
+.brand span { color: var(--muted); font-weight: 400; }
+.status { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; color: var(--muted); }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
+.pill.ok i { background: var(--ok); } .pill.bad i { background: var(--bad); }
+.btn { font: inherit; font-weight: 500; border-radius: 6px; padding: 6px 14px; cursor: pointer; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); }
+.btn.primary { background: var(--text); color: #111418; border-color: var(--text); }
+.btn:disabled { opacity: 0.55; cursor: progress; }
+
+main { max-width: 1320px; margin: 0 auto; padding: 24px; display: grid; gap: 24px; }
+.intro h1 { margin: 0; font-size: 22px; font-weight: 600; }
+.intro p { margin: 6px 0 0; color: var(--muted); max-width: 860px; }
+
+section.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; min-width: 0; }
+.panel-head { display: flex; gap: 12px 16px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; padding: 14px 18px; border-bottom: 1px solid var(--border); }
+.eyebrow { color: var(--muted); font-size: 12px; }
+.panel-head h2 { margin: 2px 0 0; font-size: 17px; font-weight: 600; }
+.model-meta { margin-top: 3px; color: var(--faint); font-size: 12px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-bottom: 1px solid var(--border); }
+.stat { padding: 12px 18px; border-right: 1px solid var(--border); min-width: 0; }
+.stat:last-child { border-right: 0; }
+.stat .k { color: var(--muted); font-size: 12px; }
+.stat .v { margin-top: 2px; font-size: 19px; font-weight: 600; }
+.stat .s { color: var(--faint); font-size: 12px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; padding: 16px 18px; }
+.card { margin: 0; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.card.is-bad { border-color: #5a2f2b; } .card.is-warn { border-color: #5a4a26; }
+.card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #000; }
+.card .body { display: grid; gap: 6px; padding: 10px 12px; font-size: 13px; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.row .k { color: var(--muted); }
+.result { display: grid; gap: 6px; min-height: 52px; }
+.bar { display: block; height: 6px; background: #252a31; border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); }
+.foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.chip { font-size: 12px; padding: 0 8px; border-radius: 4px; border: 1px solid; white-space: nowrap; }
+.chip.ok { color: var(--ok); border-color: #2f5d47; } .chip.warn { color: var(--warn); border-color: #5a4a26; } .chip.bad { color: var(--bad); border-color: #5a2f2b; }
+.meta { color: var(--faint); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.probs { display: grid; gap: 3px; }
+.prob { display: grid; grid-template-columns: 72px 1fr 38px; gap: 6px; align-items: center; font-size: 11px; color: var(--muted); }
+.prob .bar i { background: #4b5563; }
+.prob.pred .bar i { background: var(--accent); }
+.prob.true .code { color: var(--text); font-weight: 500; }
+.prob.true .code::after { content: " ✓"; color: var(--ok); }
+.note { margin: 0; padding: 0 18px 16px; color: var(--faint); font-size: 12px; }
+
+.pred-layout { display: grid; grid-template-columns: 290px minmax(0, 1fr); }
+.storm-list { display: grid; gap: 8px; align-content: start; padding: 14px; border-right: 1px solid var(--border); }
+.storm { display: grid; gap: 2px; text-align: left; font: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; cursor: pointer; }
+.storm.active { border-color: var(--accent); }
+.storm .name { font-weight: 500; }
+.map-wrap { position: relative; min-width: 0; display: grid; }
+#map { height: 100%; min-height: 480px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 10px 18px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { display: inline-block; width: 18px; height: 0; border-top: 2px solid; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.map-label { font: 11px "IBM Plex Mono", monospace; color: var(--forecast); background: rgba(15, 17, 20, 0.82); padding: 0 4px; border-radius: 3px; pointer-events: none; }
+.map-label.t0 { color: var(--amber); }
+.detail { padding: 14px 18px; border-top: 1px solid var(--border); display: grid; gap: 10px; }
+.detail-head { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 13px; color: var(--muted); }
+.detail-head strong { color: var(--text); font-size: 15px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+footer { max-width: 1320px; margin: 0 auto; padding: 0 24px 32px; color: var(--faint); font-size: 12px; }
+
+/* upload your own images */
+.upload { padding: 16px 18px; display: grid; gap: 14px; }
+.drop { display: block; border: 1px dashed #3a4048; border-radius: 8px; padding: 22px; text-align: center; color: var(--muted); cursor: pointer; background: var(--surface-2); }
+.drop.over { border-color: var(--accent); color: var(--text); }
+.drop input { display: none; }
+.upload-fields { display: flex; flex-wrap: wrap; gap: 12px; }
+.upload-fields label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.field { font: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; min-width: 240px; }
+.u-result { display: grid; grid-template-columns: 220px 170px minmax(0, 1fr); gap: 16px; border-top: 1px solid var(--border); padding-top: 14px; }
+.u-result figure { margin: 0; display: grid; gap: 4px; align-content: start; font-size: 11px; color: var(--faint); }
+.u-result img, .u-result canvas { width: 100%; border-radius: 6px; background: #000; display: block; }
+.u-name { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.u-name strong { font-size: 14px; }
+.u-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; align-content: start; }
+.u-block { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; display: grid; gap: 6px; font-size: 13px; align-content: start; }
+.u-block h4 { margin: 0; font-size: 12px; color: var(--muted); font-weight: 500; }
+.u-big { font-size: 18px; font-weight: 600; }
+.u-block ul { margin: 0; padding-left: 16px; display: grid; gap: 4px; color: var(--muted); font-size: 12px; }
+.u-block table { font-size: 12px; }
+.u-block th, .u-block td { padding: 4px 6px; }
+@media (max-width: 860px) { .u-result { grid-template-columns: 1fr 1fr; } .u-result .u-cols { grid-column: 1 / -1; } }
+
+@media (max-width: 860px) {
+  header.top, main { padding-left: 16px; padding-right: 16px; }
+  .pred-layout { grid-template-columns: 1fr; }
+  .storm-list { border-right: 0; border-bottom: 1px solid var(--border); grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  #map { min-height: 360px; }
+  .stat { border-right: 0; border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+<body data-state="loading">
+<header class="top">
+  <div class="brand">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M12 12a2 2 0 1 0 2 2 4 4 0 0 0-4-4 6 6 0 0 0-6 6M12 12a2 2 0 1 1-2-2 4 4 0 0 1 4 4 6 6 0 0 1-6 6M14 14a6 6 0 0 0 6-6 8 8 0 0 0-8-8"/>
+    </svg>
+    VayuDrishti <span>Model test bench</span>
+  </div>
+  <a class="btn" href="/evaluation" style="text-decoration:none">Model evaluation →</a>
+  <div class="status" id="status"><span class="pill"><i></i>Checking backend…</span></div>
+  <button class="btn primary" id="run-all" disabled>Run all three models</button>
+</header>
+
+<main>
+  <div class="intro">
+    <h1>Trained models on held-out data</h1>
+    <p>Each card below is a real request to the FastAPI backend, which runs the model that is loaded in memory. The images and storms
+      come from the test splits, so none of the models saw them in training. They are a random draw (seed <span class="mono" id="seed">—</span>),
+      and wrong answers are kept. The full-test-set numbers are read from each model's evaluation report.</p>
+  </div>
+
+  <section class="panel" id="upload">
+    <div class="panel-head">
+      <div><div class="eyebrow">Your own images · POST /api/ml/analyze</div><h2>Upload any cyclone image</h2>
+        <div class="model-meta">Any satellite, channel or source, including images saved from the web. Each file runs through identification, then
+          intensity classification, then a track forecast if you give the storm ID. Nothing is stored.</div></div>
+    </div>
+    <div class="upload">
+      <label class="drop" id="drop"><input type="file" id="u-files" accept="image/*" multiple>
+        <strong>Drop images here or click to choose</strong><br>
+        <span class="small">PNG, JPEG, TIFF, BMP or WebP up to 10 MB. Other formats your browser can open (GIF, AVIF, …) are converted to PNG first.</span></label>
+      <div class="upload-fields">
+        <label>Storm ID (optional, enables the track forecast)<input class="field" id="u-storm" placeholder="e.g. 2020136N10088"></label>
+        <label>Image time, UTC (optional)<input class="field" id="u-time" type="datetime-local"></label>
+      </div>
+      <div id="u-results"></div>
+    </div>
+    <p class="note">The models were trained only on GridSat-B1 infrared (~11 µm) scenes: single channel, cold cloud tops bright, about 18°×18°
+      centred on the system. Every result shows how your image differs from that. Colour-enhanced, visible or water-vapour images still get an
+      answer, but it is less reliable. The middle picture is exactly what the networks see: grey and stretched to 224×224.</p>
+  </section>
+
+  <section class="panel" id="identification">
+    <div class="panel-head">
+      <div><div class="eyebrow">Model 1 · Stage 1 · POST /api/ml/identify</div><h2>Cyclone identification</h2><div class="model-meta" id="ident-meta">—</div></div>
+      <button class="btn" data-run="ident">Run</button>
+    </div>
+    <div class="stats" id="ident-stats"></div>
+    <div class="grid" id="ident-grid"></div>
+    <p class="note">GridSat-B1 infrared scenes (18° × 18°). The bar shows the model's probability that the scene contains a tropical cyclone; the decision threshold is 0.5.</p>
+  </section>
+
+  <section class="panel" id="classification">
+    <div class="panel-head">
+      <div><div class="eyebrow">Model 2 · Stage 2 · POST /api/ml/classify</div><h2>IMD intensity classification</h2><div class="model-meta" id="cls-meta">—</div></div>
+      <button class="btn" data-run="cls">Run</button>
+    </div>
+    <div class="stats" id="cls-stats"></div>
+    <div class="grid" id="cls-grid"></div>
+    <p class="note">The four IMD groups are D/DD, CS/SCS, VSCS and ESCS/SuCS. Labels come from the IBTrACS 1-minute wind (USA_WIND). ✓ marks the true class, the blue bar is the model's pick, and "One class off" means it chose the neighbouring intensity group.</p>
+  </section>
+
+  <section class="panel" id="prediction">
+    <div class="panel-head">
+      <div><div class="eyebrow">Model 3 · Stage 3 · POST /api/ml/predict</div><h2>Track, wind and pressure forecast (T+6 … T+24 h)</h2><div class="model-meta" id="pred-meta">—</div></div>
+      <button class="btn" data-run="pred">Run</button>
+    </div>
+    <div class="stats" id="pred-stats"></div>
+    <div class="pred-layout">
+      <div class="storm-list" id="storm-list"></div>
+      <div class="map-wrap"><div id="map"></div></div>
+    </div>
+    <div class="legend">
+      <span><i class="sw" style="border-color:#c9ced4"></i>Observed track</span>
+      <span><i class="dot" style="background:#f59e0b"></i>Forecast time T0</span>
+      <span><i class="sw" style="border-color:#22d3ee;border-top-style:dashed"></i>Model forecast</span>
+      <span><i class="dot" style="border:1.5px solid #fff"></i>Where the storm actually was</span>
+      <span><i class="dot" style="background:rgba(122,180,240,.25);border:1px solid rgba(122,180,240,.6)"></i>Empirical uncertainty radius</span>
+    </div>
+    <div class="detail" id="pred-detail"></div>
+    <p class="note" id="pred-note">For each held-out test storm the model sees only the 24 h of observations before T0. The storm's later fixes are used only to check the forecast.
+      Confidence is not produced by the model; the radius is the distance that held 67 % of validation track errors. AI decision support, not an official IMD/RSMC forecast.</p>
+  </section>
+</main>
+<footer>Everything runs on this machine: the page is at localhost:3001, and the models are in the FastAPI process on 127.0.0.1:8001. The page never loads a model file.</footer>
+
+<script type="module">
+import * as maplibregl from "/vendor/maplibre/maplibre-gl.mjs";
+
+const AREAS = { bay_of_bengal: "Bay of Bengal", arabian_sea: "Arabian Sea", south_indian_ocean: "South Indian Ocean",
+  western_pacific: "Western Pacific", eastern_pacific: "Eastern Pacific", southern_pacific: "Southern Pacific" };
+const KT_PER_KMH = 1 / 1.852;
+const EMPTY = { type: "FeatureCollection", features: [] };
+const STYLE = {  // same dark OSM basemap as the console (frontend/src/lib/mapStyle.ts)
+  version: 8,
+  sources: { osm: { type: "raster", tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize: 256, maxzoom: 18, attribution: "© OpenStreetMap contributors" } },
+  layers: [
+    { id: "background", type: "background", paint: { "background-color": "#050b12" } },
+    { id: "osm", type: "raster", source: "osm", paint: { "raster-opacity": 0.34, "raster-saturation": -1, "raster-brightness-max": 0.42, "raster-contrast": 0.2 } },
+  ],
+};
+
+const state = { samples: null, reports: {}, models: {}, storms: [], results: [], selected: null, running: false,
+  live: { ident: null, cls: null } };
+window.__bench = state;
+
+// ── helpers ────────────────────────────────────────────────────────────────
+const $ = (selector) => document.querySelector(selector);
+function el(tag, props = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [key, value] of Object.entries(props)) {
+    if (value == null) continue;
+    if (key === "class") node.className = value;
+    else if (key === "style") node.style.cssText = value;
+    else if (key.startsWith("on")) node.addEventListener(key.slice(2), value);
+    else node.setAttribute(key, value);
+  }
+  node.append(...children.flat().filter((child) => child != null && child !== false));
+  return node;
+}
+const pct = (x, digits = 1) => `${(x * 100).toFixed(digits)} %`;
+const displayName = (name) => (!name || name === "NOT_NAMED" ? "Unnamed" : name.charAt(0) + name.slice(1).toLowerCase());
+const fmtTime = (iso) => `${new Date(iso).toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" })} UTC`;
+const fmtPos = (lat, lon) => `${Math.abs(lat).toFixed(2)}°${lat >= 0 ? "N" : "S"} ${Math.abs(lon).toFixed(2)}°${lon >= 0 ? "E" : "W"}`;
+const stat = (k, v, s) => el("div", { class: "stat" }, el("div", { class: "k" }, k), el("div", { class: "v" }, v), s ? el("div", { class: "s" }, s) : null);
+const chip = (kind, text) => el("span", { class: `chip ${kind}` }, text);
+const row = (k, ...v) => el("div", { class: "row" }, el("span", { class: "k" }, k), el("span", {}, ...v));
+const mean = (values) => (values.length ? values.reduce((sum, v) => sum + v, 0) / values.length : null);
+
+function haversineKm(a, b) {
+  const rad = Math.PI / 180, R = 6371.0088;
+  const dLat = (b.latitude - a.latitude) * rad, dLon = (b.longitude - a.longitude) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.latitude * rad) * Math.cos(b.latitude * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function circle([lon, lat], km, steps = 64) {
+  const rad = Math.PI / 180, d = km / 6371.0088, la = lat * rad, lo = lon * rad, ring = [];
+  for (let i = 0; i <= steps; i += 1) {
+    const brg = (2 * Math.PI * i) / steps;
+    const lat2 = Math.asin(Math.sin(la) * Math.cos(d) + Math.cos(la) * Math.sin(d) * Math.cos(brg));
+    const lon2 = lo + Math.atan2(Math.sin(brg) * Math.sin(d) * Math.cos(la), Math.cos(d) - Math.sin(la) * Math.sin(lat2));
+    ring.push([lon2 / rad, lat2 / rad]);
+  }
+  return ring;
+}
+
+async function api(path, init) {
+  let response;
+  try { response = await fetch(`/api${path}`, init); }
+  catch { throw Object.assign(new Error("The bench server is not reachable."), { code: "NETWORK" }); }
+  const body = await response.json().catch(() => null);
+  if (!response.ok) throw Object.assign(new Error(body?.error?.message ?? `HTTP ${response.status}`), { status: response.status, code: body?.error?.code });
+  return body;
+}
+
+// Python's json.dump writes NaN for undefined metrics (e.g. a region with no positives); JSON.parse rejects it.
+const json = (url) => fetch(url)
+  .then((r) => (r.ok ? r.text() : null))
+  .then((text) => (text == null ? null : JSON.parse(text.replace(/\bNaN\b|-?\bInfinity\b/g, "null"))))
+  .catch(() => null);
+
+// ── status + metadata ──────────────────────────────────────────────────────
+async function loadStatus() {
+  const pill = (label, ok) => el("span", { class: `pill ${ok ? "ok" : "bad"}` }, el("i"), label);
+  try {
+    const [health, status] = await Promise.all([api("/health"), api("/ml/status")]);
+    state.models = Object.fromEntries(status.models.map((m) => [m.task, m]));
+    const s = health.services;
+    $("#status").replaceChildren(pill("FastAPI connected", true), pill("Identification", s.identification_model),
+      pill("Classification", s.classification_model), pill("Prediction", s.prediction_model));
+    for (const [task, id] of [["detection", "#ident-meta"], ["classification", "#cls-meta"], ["track", "#pred-meta"]]) {
+      const m = state.models[task];
+      $(id).textContent = m ? `${m.name} · ${m.id} ${m.version}${m.lastUpdated ? ` · trained ${m.lastUpdated.slice(0, 10)}` : ""}` : "Model not loaded on the backend";
+    }
+    return true;
+  } catch {
+    $("#status").replaceChildren(pill("Backend not reachable. Start FastAPI on 127.0.0.1:8001", false));
+    return false;
+  }
+}
+
+// ── models 1 + 2: image cards ──────────────────────────────────────────────
+const identLabel = (label) => (label === "CYCLONE" ? "Cyclone" : "No cyclone");
+
+function imageCard(sample, caption, meta) {
+  return el("figure", { class: "card", "data-sample": sample.id },
+    el("img", { src: `/img/${sample.image}`, alt: `Held-out sample ${sample.id}`, loading: "lazy" }),
+    el("figcaption", { class: "body" }, caption, el("div", { class: "result" }, el("span", { class: "faint small" }, "Not run yet")), el("div", { class: "meta mono" }, meta)));
+}
+
+const identCard = (s) => imageCard(s, row("Truth", el("strong", {}, identLabel(s.truth))),
+  `${s.id} · ${s.basin ?? "—"} · ${(s.timestamp ?? "").slice(0, 10)}`);
+const clsCard = (s) => imageCard(s, row("Truth", el("strong", {}, s.truth), el("span", { class: "faint" }, s.windKt != null ? ` · ${s.windKt} kt` : "")),
+  `${s.id} · ${displayName(s.name)} · ${(s.timestamp ?? "").slice(0, 10)}`);
+
+function fillIdent(card, sample, response) {
+  const r = response.identification;
+  const verdict = r.class_name === sample.truth ? "ok" : "bad";
+  card.querySelector(".result").replaceChildren(
+    row("Model", el("strong", {}, identLabel(r.class_name))),
+    el("span", { class: "bar", title: "P(cyclone)" }, el("i", { style: `width:${(r.cyclone_probability * 100).toFixed(1)}%` })),
+    row("P(cyclone)", el("span", { class: "mono" }, r.cyclone_probability.toFixed(3))),
+    el("div", { class: "foot" }, chip(verdict, verdict === "ok" ? "Correct" : "Wrong"), el("span", { class: "mono faint small" }, `${Math.round(response.inference.processing_time_ms)} ms`)));
+  return verdict;
+}
+
+function fillCls(card, sample, response) {
+  const classes = state.samples.classes;
+  const order = classes.map((c) => c.code);
+  const predicted = response.prediction.class_code;
+  const gap = Math.abs(order.indexOf(predicted) - order.indexOf(sample.truth));
+  const verdict = gap === 0 ? "ok" : gap === 1 ? "warn" : "bad";
+  const probability = (c) => response.probabilities[c.name] ?? response.probabilities[c.code] ?? 0;
+  card.querySelector(".result").replaceChildren(
+    row("Model", el("strong", {}, predicted), el("span", { class: "faint" }, ` · ${pct(response.prediction.confidence, 0)}`)),
+    el("div", { class: "probs" }, classes.map((c) => el("div", { class: `prob${c.code === predicted ? " pred" : ""}${c.code === sample.truth ? " true" : ""}` },
+      el("span", { class: "code" }, c.code), el("span", { class: "bar" }, el("i", { style: `width:${(probability(c) * 100).toFixed(1)}%` })),
+      el("span", { class: "mono" }, pct(probability(c), 0))))),
+    el("div", { class: "foot" }, chip(verdict, { ok: "Correct", warn: "One class off", bad: "Wrong" }[verdict]),
+      el("span", { class: "mono faint small" }, `${Math.round(response.inference.processing_time_ms)} ms`)));
+  return verdict;
+}
+
+function renderIdentStats() {
+  const r = state.reports.identification?.overall, l = state.live.ident, n = state.samples.identification.length;
+  $("#ident-stats").replaceChildren(
+    stat("This live run", l ? `${l.ok} / ${l.done} correct` : "Not run yet", `${n} held-out images: ${n / 2} cyclone, ${n / 2} clear`),
+    stat("Full held-out test set", r ? `${pct(r.accuracy)} accuracy` : "—", r ? `${r.n} images · ${r.fp} false alarms · ${r.fn} misses` : "report not found"),
+    stat("F1 · ROC-AUC", r ? `${r.f1.toFixed(3)} · ${r.roc_auc.toFixed(3)}` : "—", "full held-out test set"),
+    stat("Server time per image", l?.done ? `${Math.round(l.ms / l.done)} ms` : "—", "decode, preprocess and model"));
+}
+
+function renderClsStats() {
+  const r = state.reports.classification?.overall, l = state.live.cls, n = state.samples.classification.length;
+  $("#cls-stats").replaceChildren(
+    stat("This live run", l ? `${l.ok} / ${l.done} exact` : "Not run yet", l ? `${l.ok + l.warn} / ${l.done} within one class` : `${n} held-out images, ${n / 4} per class`),
+    stat("Full held-out test set", r ? `${pct(r.accuracy)} exact` : "—", r ? `${r.n} images · macro-F1 ${r.macro_f1.toFixed(3)}` : "report not found"),
+    stat("Within one class", r ? pct(r.adjacent_accuracy) : "—", r ? `top-2 accuracy ${pct(r.top2_accuracy)}` : ""),
+    stat("Server time per image", l?.done ? `${Math.round(l.ms / l.done)} ms` : "—", "decode, preprocess and model"));
+}
+
+async function runImages(kind) {
+  const config = kind === "ident"
+    ? { list: state.samples.identification, grid: "#ident-grid", path: "/ml/identify", card: identCard, fill: fillIdent, render: renderIdentStats }
+    : { list: state.samples.classification, grid: "#cls-grid", path: "/ml/classify", card: clsCard, fill: fillCls, render: renderClsStats };
+  const live = { done: 0, ok: 0, warn: 0, bad: 0, errors: 0, ms: 0 };
+  state.live[kind] = live;
+  const cards = config.list.map((sample) => [sample, config.card(sample)]);
+  $(config.grid).replaceChildren(...cards.map(([, card]) => card));
+  config.render();
+  for (const [sample, card] of cards) {
+    card.querySelector(".result").replaceChildren(el("span", { class: "muted small" }, "Running…"));
+    try {
+      const blob = await (await fetch(`/img/${sample.image}`)).blob();
+      const form = new FormData();
+      form.append("file", blob, sample.image.split("/").pop());
+      if (sample.basin) form.append("basin", sample.basin);
+      if (sample.stormId) form.append("storm_id", sample.stormId);
+      const response = await api(config.path, { method: "POST", body: form });
+      const verdict = config.fill(card, sample, response);
+      card.classList.add(`is-${verdict}`);
+      live.done += 1; live[verdict] += 1; live.ms += response.inference.processing_time_ms;
+    } catch (error) {
+      live.errors += 1;
+      card.querySelector(".result").replaceChildren(chip("bad", error.message));
+    }
+    config.render();
+  }
+}
+
+// ── model 3: track forecast ────────────────────────────────────────────────
+let map;
+const labels = [];
+
+function initMap() {
+  map = new maplibregl.Map({ container: "map", style: STYLE, center: [80, 12], zoom: 2.4, attributionControl: { compact: true } });
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+  return new Promise((resolve) => map.on("load", () => {
+    for (const id of ["cones", "observed", "observed-pts", "verify", "forecast", "forecast-pts", "t0"]) map.addSource(id, { type: "geojson", data: EMPTY });
+    map.addLayer({ id: "cones-fill", type: "fill", source: "cones", paint: { "fill-color": "#7ab4f0", "fill-opacity": 0.07 } });
+    map.addLayer({ id: "cones-line", type: "line", source: "cones", paint: { "line-color": "#7ab4f0", "line-opacity": 0.45, "line-width": 1 } });
+    map.addLayer({ id: "observed", type: "line", source: "observed", paint: { "line-color": "#c9ced4", "line-width": 1.6, "line-opacity": 0.8 } });
+    map.addLayer({ id: "observed-pts", type: "circle", source: "observed-pts", paint: { "circle-radius": 2, "circle-color": "#c9ced4" } });
+    map.addLayer({ id: "verify", type: "circle", source: "verify", paint: { "circle-radius": 5.5, "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#ffffff", "circle-stroke-width": 1.6 } });
+    map.addLayer({ id: "forecast", type: "line", source: "forecast", paint: { "line-color": "#22d3ee", "line-width": 2.2, "line-dasharray": [2, 1.4] } });
+    map.addLayer({ id: "forecast-pts", type: "circle", source: "forecast-pts", paint: { "circle-radius": 4.5, "circle-color": "#22d3ee", "circle-stroke-color": "#0f1114", "circle-stroke-width": 1 } });
+    map.addLayer({ id: "t0", type: "circle", source: "t0", paint: { "circle-radius": 6.5, "circle-color": "#f59e0b", "circle-stroke-color": "#0f1114", "circle-stroke-width": 1.5 } });
+    resolve();
+  }));
+}
+
+const line = (coords) => ({ type: "Feature", geometry: { type: "LineString", coordinates: coords }, properties: {} });
+const points = (coords) => ({ type: "FeatureCollection", features: coords.map((c) => ({ type: "Feature", geometry: { type: "Point", coordinates: c }, properties: {} })) });
+
+function showOnMap(result) {
+  const { forecast, track, steps } = result;
+  const ref = forecast.current.longitude;
+  const near = (lon) => { let x = lon; while (x - ref > 180) x -= 360; while (x - ref < -180) x += 360; return x; };  // no dateline jumps
+  const observed = track.map((p) => [near(p.longitude), p.latitude]);
+  const t0 = [near(forecast.current.longitude), forecast.current.latitude];
+  const predicted = steps.map((s) => [near(s.longitude), s.latitude]);
+  const verify = steps.filter((s) => s.observed).map((s) => [near(s.observed.longitude), s.observed.latitude]);
+  const cones = steps.filter((s) => s.uncertaintyRadiusKm).map((s) => circle([near(s.longitude), s.latitude], s.uncertaintyRadiusKm));
+  map.getSource("observed").setData(line(observed));
+  map.getSource("observed-pts").setData(points(observed));
+  map.getSource("verify").setData(points(verify));
+  map.getSource("forecast").setData(line([t0, ...predicted]));
+  map.getSource("forecast-pts").setData(points(predicted));
+  map.getSource("t0").setData(points([t0]));
+  map.getSource("cones").setData({ type: "FeatureCollection", features: cones.map((ring) => ({ type: "Feature", geometry: { type: "Polygon", coordinates: [ring] }, properties: {} })) });
+
+  labels.splice(0).forEach((marker) => marker.remove());
+  const label = (coord, text, cls) => labels.push(new maplibregl.Marker({ element: el("div", { class: `map-label ${cls}` }, text), anchor: "bottom", offset: [0, -8] }).setLngLat(coord).addTo(map));
+  label(t0, "T0", "t0");
+  steps.forEach((s, i) => label(predicted[i], `T+${s.hours}h`, ""));
+
+  const t0ms = Date.parse(forecast.issuedAt);
+  const window = track.filter((p) => Math.abs(Date.parse(p.timestamp) - t0ms) <= 36 * 3_600_000).map((p) => [near(p.longitude), p.latitude]);
+  const bounds = new maplibregl.LngLatBounds(t0, t0);
+  [...window, ...predicted, ...cones.flat()].forEach((c) => bounds.extend(c));
+  map.fitBounds(bounds, { padding: 56, maxZoom: 6.5, duration: 500 });
+}
+
+function renderDetail(result) {
+  const { storm, forecast, steps } = result;
+  const cur = forecast.current;
+  $("#pred-detail").replaceChildren(
+    el("div", { class: "detail-head" },
+      el("strong", {}, `${displayName(storm.name)} ${storm.season}`),
+      el("span", {}, AREAS[storm.area] ?? storm.area),
+      el("span", {}, `Forecast time T0 `, el("span", { class: "mono" }, fmtTime(forecast.issuedAt))),
+      el("span", {}, `Observed at T0: ${cur.category ?? "—"} · ${Math.round(cur.windKt)} kt · ${cur.pressureHpa} hPa`),
+      el("span", {}, `Input: ${forecast.input.observationsUsed} fixes over ${forecast.input.historyWindowHours} h`),
+      el("span", {}, `Confidence: ${forecast.confidence == null ? "not produced by the model" : forecast.confidence}`)),
+    el("div", { class: "table-wrap" }, el("table", { "data-testid": "forecast-table" },
+      el("thead", {}, el("tr", {}, ["Lead", "Forecast position", "Actual position", "Track error", "Within radius", "Wind forecast / actual", "Pressure forecast / actual"].map((h) => el("th", {}, h)))),
+      el("tbody", {}, steps.map((s) => el("tr", {},
+        el("td", {}, `T+${s.hours}h`),
+        el("td", { class: "mono" }, fmtPos(s.latitude, s.longitude)),
+        el("td", { class: "mono" }, s.observed ? fmtPos(s.observed.latitude, s.observed.longitude) : "Not observed"),
+        el("td", {}, s.errorKm == null ? "—" : `${Math.round(s.errorKm)} km`),
+        el("td", {}, s.errorKm == null || !s.uncertaintyRadiusKm ? "—" : s.errorKm <= s.uncertaintyRadiusKm ? `Yes (±${Math.round(s.uncertaintyRadiusKm)} km)` : `No (±${Math.round(s.uncertaintyRadiusKm)} km)`),
+        el("td", {}, `${Math.round(s.windSpeedKt)} / ${s.observed?.windKmh != null ? Math.round(s.observed.windKmh * KT_PER_KMH) : "—"} kt`),
+        el("td", {}, `${Math.round(s.pressure)} / ${s.observed?.pressureHpa != null ? Math.round(s.observed.pressureHpa) : "—"} hPa`))))),
+  ));
+}
+
+function select(result) {
+  state.selected = result;
+  document.querySelectorAll(".storm").forEach((b) => b.classList.toggle("active", b.dataset.id === result.storm.cycloneId));
+  showOnMap(result);
+  renderDetail(result);
+}
+
+function renderPredStats() {
+  const report = state.reports.prediction, overall = report?.overall;
+  const at = (lead) => mean(state.results.flatMap((r) => r.steps.filter((s) => s.hours === lead && s.errorKm != null).map((s) => s.errorKm)));
+  const live24 = at(24), live6 = at(6);
+  const baselines = overall ? Object.keys(overall).filter((k) => k !== "model" && overall[k]?.["24"]) : [];
+  $("#pred-stats").replaceChildren(
+    stat("This live run", state.results.length ? `${Math.round(live24)} km at T+24 h` : "Not run yet",
+      state.results.length ? `mean track error over ${state.results.length} storms · T+6 h ${Math.round(live6)} km` : `one held-out storm per area`),
+    stat("Full held-out test set · T+24 h", overall ? `${overall.model["24"].track_km_mean.toFixed(1)} km` : "—",
+      overall ? baselines.map((k) => `${k} ${overall[k]["24"].track_km_mean.toFixed(1)} km`).join(" · ") : "report not found"),
+    stat("Wind error · T+24 h", overall ? `${overall.model["24"].wind_mae_kt.toFixed(1)} kt` : "—",
+      overall?.persistence ? `persistence ${overall.persistence["24"].wind_mae_kt.toFixed(1)} kt · mean absolute error` : ""),
+    stat("Test set size", report ? `${report.test_split.samples.toLocaleString("en")} forecasts` : "—", report ? `${report.test_split.storms} held-out storms` : ""));
+}
+
+async function loadStorms() {
+  const cases = await api("/cyclones/prediction-cases");
+  state.storms = Object.keys(AREAS)
+    .map((area) => cases.cases.filter((c) => c.area === area && c.forecastOrigins.length).sort((a, b) => (b.peakWindKt ?? 0) - (a.peakWindKt ?? 0))[0])
+    .filter(Boolean);
+  renderStormList();
+}
+
+function renderStormList() {
+  $("#storm-list").replaceChildren(...state.storms.map((storm) => {
+    const result = state.results.find((r) => r.storm.cycloneId === storm.cycloneId);
+    const t24 = result?.steps.find((s) => s.hours === 24)?.errorKm;
+    return el("button", { class: `storm${state.selected?.storm.cycloneId === storm.cycloneId ? " active" : ""}`, "data-id": storm.cycloneId, type: "button",
+      onclick: () => result && select(result) },
+      el("span", { class: "name" }, `${displayName(storm.name)} `, el("span", { class: "faint" }, String(storm.season))),
+      el("span", { class: "faint small" }, `${AREAS[storm.area]} · peak ${storm.peakWindKt ?? "—"} kt`),
+      el("span", { class: "small mono" }, result?.error ? result.error : result ? `T+24 h error ${t24 == null ? "—" : `${Math.round(t24)} km`}` : "Not run yet"));
+  }));
+}
+
+async function runPrediction() {
+  state.results = [];
+  state.selected = null;
+  renderStormList();
+  for (const storm of state.storms) {
+    const origin = storm.forecastOrigins[Math.floor(storm.forecastOrigins.length / 2)];
+    try {
+      const [forecast, track] = await Promise.all([
+        api("/ml/predict", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ cyclone_id: storm.cycloneId, timestamp: origin }) }),
+        api(`/cyclones/${encodeURIComponent(storm.cycloneId)}/track`),
+      ]);
+      const steps = forecast.forecast.map((step) => {
+        const observed = track.points.find((p) => p.timestamp === step.forecastTime) ?? null;
+        return { ...step, observed, errorKm: observed ? haversineKm(step, observed) : null };
+      });
+      const result = { storm, origin, forecast, track: track.points, steps };
+      state.results.push(result);
+      if (!state.selected) select(result);
+    } catch (error) {
+      state.results.push({ storm, error: error.message, steps: [] });
+    }
+    renderStormList();
+    renderPredStats();
+  }
+}
+
+// ── your own images ────────────────────────────────────────────────────────
+const ACCEPTED = ["image/png", "image/jpeg", "image/tiff", "image/bmp", "image/webp"];
+const kmh = (kt) => Math.round(kt * 1.852);
+
+async function toUploadable(file) {
+  if (ACCEPTED.includes(file.type)) return { blob: file, name: file.name, converted: false };
+  const bitmap = await createImageBitmap(file).catch(() => null);  // GIF, AVIF, SVG …: send the first frame as PNG
+  if (!bitmap) return { blob: file, name: file.name, converted: false };  // let the backend judge it and say why
+  const canvas = Object.assign(document.createElement("canvas"), { width: bitmap.width, height: bitmap.height });
+  canvas.getContext("2d").drawImage(bitmap, 0, 0);
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+  return { blob, name: `${file.name.replace(/\.[^.]+$/, "")}.png`, converted: true };
+}
+
+/** What the networks see: luminance only (PIL "L"), stretched to 224×224. */
+async function modelView(blob) {
+  const bitmap = await createImageBitmap(blob).catch(() => null);
+  if (!bitmap) return null;
+  const canvas = Object.assign(document.createElement("canvas"), { width: 224, height: 224 });
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(bitmap, 0, 0, 224, 224);
+  const image = ctx.getImageData(0, 0, 224, 224);
+  for (let i = 0; i < image.data.length; i += 4) {
+    const y = 0.299 * image.data[i] + 0.587 * image.data[i + 1] + 0.114 * image.data[i + 2];
+    image.data[i] = image.data[i + 1] = image.data[i + 2] = y;
+  }
+  ctx.putImageData(image, 0, 0);
+  return canvas;
+}
+
+function inputBlock(check, converted) {
+  return el("div", { class: "u-block", "data-testid": "u-input" },
+    el("h4", {}, "Your image vs the training data"),
+    el("div", {}, check.in_training_domain ? chip("ok", "Matches the training domain") : chip("warn", "Outside the training domain")),
+    row("Format", el("span", { class: "mono" }, `${check.format ?? "?"} · ${check.width}×${check.height} · ${check.mode}${converted ? " (converted to PNG)" : ""}`)),
+    row("Coloured pixels", el("span", { class: "mono" }, pct(check.colour_fraction, 0))),
+    row("Contrast", el("span", { class: "mono" }, check.contrast.toFixed(2))),
+    check.warnings.length ? el("ul", {}, check.warnings.map((w) => el("li", {}, w.message))) : null);
+}
+
+function identificationBlock(ident) {
+  return el("div", { class: "u-block", "data-testid": "u-identification" },
+    el("h4", {}, "1 · Identification"),
+    el("div", { class: "u-big" }, ident.detected ? "Cyclone" : "No cyclone"),
+    el("span", { class: "bar", title: "P(cyclone)" }, el("i", { style: `width:${(ident.cyclone_probability * 100).toFixed(1)}%` })),
+    row("P(cyclone)", el("span", { class: "mono" }, ident.cyclone_probability.toFixed(3))),
+    el("span", { class: "faint small" }, "Decision threshold 0.5. A softmax score, not a calibrated probability."));
+}
+
+function classificationBlock(result) {
+  const cls = result.classification;
+  if (!cls) return el("div", { class: "u-block", "data-testid": "u-classification" }, el("h4", {}, "2 · Intensity class (IMD)"),
+    el("span", { class: "muted" }, result.classification_skipped_reason ?? "Not run."));
+  const [low, high] = cls.wind_kt_range ?? [];
+  const range = low == null ? null : high == null ? `${low} kt and above (≥ ${kmh(low)} km/h)` : `${low}–${high} kt (${kmh(low)}–${kmh(high)} km/h)`;
+  return el("div", { class: "u-block", "data-testid": "u-classification" },
+    el("h4", {}, "2 · Intensity class (IMD)"),
+    el("div", { class: "u-big" }, cls.class_name), el("span", { class: "muted" }, `${cls.class_code} · confidence ${pct(cls.confidence, 0)}`),
+    cls.imd_categories?.length ? row("IMD categories", cls.imd_categories.join(", ")) : null,
+    range ? row("Class wind band", range) : null,
+    el("div", { class: "probs" }, state.samples.classes.map((c) => {
+      const p = cls.probabilities[c.name] ?? 0;
+      return el("div", { class: `prob${c.code === cls.class_code ? " pred" : ""}` }, el("span", { class: "code" }, c.code),
+        el("span", { class: "bar" }, el("i", { style: `width:${(p * 100).toFixed(1)}%` })), el("span", { class: "mono" }, pct(p, 0)));
+    })),
+    el("span", { class: "faint small" }, "The wind band defines the class; it is not a wind measured from the image."));
+}
+
+function forecastBlock(prediction) {
+  const f = prediction.available ? prediction.forecast : null;
+  if (!f) return el("div", { class: "u-block", "data-testid": "u-forecast", "data-reason": prediction.reason ?? "" },
+    el("h4", {}, "3 · Track forecast"), el("div", { class: "u-big" }, prediction.reason === "STORM_ID_REQUIRED" ? "Needs a storm ID" : "Not available"),
+    el("span", { class: "muted" }, prediction.message ?? prediction.reason ?? ""));
+  return el("div", { class: "u-block", "data-testid": "u-forecast", "data-reason": "" },
+    el("h4", {}, `3 · Track forecast · ${f.name || f.cycloneId} · T0 ${fmtTime(f.issuedAt)}`),
+    el("table", {}, el("thead", {}, el("tr", {}, ["Lead", "Position", "Wind", "Pressure", "Radius"].map((h) => el("th", {}, h)))),
+      el("tbody", {}, f.forecast.map((s) => el("tr", {}, el("td", {}, `T+${s.hours}h`), el("td", { class: "mono" }, fmtPos(s.latitude, s.longitude)),
+        el("td", {}, `${Math.round(s.windSpeedKt)} kt`), el("td", {}, `${Math.round(s.pressure)} hPa`), el("td", {}, s.uncertaintyRadiusKm ? `±${Math.round(s.uncertaintyRadiusKm)} km` : "—"))))),
+    el("span", { class: "faint small" }, "From the storm's observation history, not from the image. Confidence is not produced by the model."));
+}
+
+async function analyseUpload(file) {
+  const original = el("figure", {}, el("img", { src: URL.createObjectURL(file), alt: `Uploaded ${file.name}` }), "Your image");
+  const seen = el("figure", {}, el("span", { class: "faint" }, "…"), "What the models see (grey, 224×224)");
+  const cols = el("div", { class: "u-cols" }, el("span", { class: "muted" }, "Analysing…"));
+  const card = el("div", { class: "u-result", "data-testid": "u-result" }, el("div", { class: "u-name" }, el("strong", {}, file.name), el("span", { class: "faint small" }, `${(file.size / 1024).toFixed(0)} KB`)), original, seen, cols);
+  $("#u-results").prepend(card);
+  const { blob, name, converted } = await toUploadable(file);
+  const view = await modelView(blob);
+  seen.replaceChildren(view ?? el("span", { class: "faint" }, "Your browser cannot preview this format."), "What the models see (grey, 224×224)");
+  const form = new FormData();
+  form.append("file", blob, name);
+  const storm = $("#u-storm").value.trim(), time = $("#u-time").value;
+  if (storm) form.append("storm_id", storm);
+  if (time) form.append("timestamp", `${time}:00Z`);
+  try {
+    const result = await api("/ml/analyze", { method: "POST", body: form });
+    cols.replaceChildren(inputBlock(result.input_check, converted), identificationBlock(result.identification), classificationBlock(result), forecastBlock(result.prediction));
+    card.querySelector(".u-name").append(el("span", { class: "faint small mono" },
+      `${Object.values(result.models).map((m) => `${m.name} ${m.version}`).join(" · ")} · ${Math.round(result.inference.processing_time_ms)} ms`));
+    card.dataset.state = "done";
+  } catch (error) {
+    cols.replaceChildren(el("div", { class: "u-block", "data-testid": "u-error" }, el("h4", {}, "Not analysed"), chip("bad", error.code ?? "ERROR"), el("span", {}, error.message)));
+    card.dataset.state = "error";
+  }
+}
+
+async function analyseFiles(files) {
+  for (const file of files) await analyseUpload(file);
+}
+$("#u-files").addEventListener("change", (event) => { analyseFiles([...event.target.files]); event.target.value = ""; });
+const drop = $("#drop");
+drop.addEventListener("dragover", (event) => { event.preventDefault(); drop.classList.add("over"); });
+drop.addEventListener("dragleave", () => drop.classList.remove("over"));
+drop.addEventListener("drop", (event) => { event.preventDefault(); drop.classList.remove("over"); analyseFiles([...event.dataTransfer.files]); });
+
+// ── wiring ─────────────────────────────────────────────────────────────────
+async function run(kinds) {
+  if (state.running) return;
+  state.running = true;
+  document.body.dataset.state = "running";
+  document.querySelectorAll("button.btn").forEach((b) => { b.disabled = true; });
+  for (const kind of kinds) {
+    if (kind === "pred") await runPrediction(); else await runImages(kind);
+  }
+  document.querySelectorAll("button.btn").forEach((b) => { b.disabled = false; });
+  state.running = false;
+  document.body.dataset.state = "done";
+}
+
+document.querySelectorAll("[data-run]").forEach((button) => button.addEventListener("click", () => run([button.dataset.run])));
+$("#run-all").addEventListener("click", () => run(["ident", "cls", "pred"]));
+
+const [samples, identReport, clsReport, predReport, backendUp] = await Promise.all([
+  json("/samples.json"), json("/reports/identification.json"), json("/reports/classification.json"), json("/reports/prediction.json"), loadStatus(),
+]);
+state.samples = samples;
+state.reports = { identification: identReport, classification: clsReport, prediction: predReport };
+$("#seed").textContent = samples?.seed ?? "—";
+$("#ident-grid").replaceChildren(...samples.identification.map(identCard));
+$("#cls-grid").replaceChildren(...samples.classification.map(clsCard));
+renderIdentStats(); renderClsStats(); renderPredStats();
+await initMap();
+if (backendUp) {
+  await loadStorms().catch(() => {});
+  await run(["ident", "cls", "pred"]);  // opening the page runs every test once; "Run all three models" repeats it
+} else {
+  document.body.dataset.state = "backend-down";
+  document.querySelectorAll("button.btn").forEach((b) => { b.disabled = false; });
+}
+</script>
+</body>
+</html>

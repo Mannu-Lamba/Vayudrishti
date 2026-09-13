@@ -1,0 +1,433 @@
+{
+ "seed": 2026,
+ "classes": [
+  {
+   "code": "D-DD",
+   "name": "Depression / Deep Depression"
+  },
+  {
+   "code": "CS-SCS",
+   "name": "Cyclonic Storm / Severe Cyclonic Storm"
+  },
+  {
+   "code": "VSCS",
+   "name": "Very Severe Cyclonic Storm"
+  },
+  {
+   "code": "ESCS-SuCS",
+   "name": "Extremely Severe / Super Cyclonic Storm"
+  }
+ ],
+ "testSetSizes": {
+  "identification": 601,
+  "classification": 667
+ },
+ "identification": [
+  {
+   "id": "IMG1648",
+   "image": "cyclone/POS_1837.png",
+   "truth": "CYCLONE",
+   "stormId": "2019335N05058",
+   "basin": "NI",
+   "timestamp": "2019-12-07T00:00:00Z",
+   "windKt": 35.0,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.999996
+   }
+  },
+  {
+   "id": "IMG1403",
+   "image": "cyclone/PRS_0671.png",
+   "truth": "CYCLONE",
+   "stormId": "2016199N18131",
+   "basin": "WP",
+   "timestamp": "2016-07-17T09:00:00Z",
+   "windKt": 25.0,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.999982
+   }
+  },
+  {
+   "id": "IMG1892",
+   "image": "cyclone/POS_1946.png",
+   "truth": "CYCLONE",
+   "stormId": "2024258N22091",
+   "basin": "NI",
+   "timestamp": "2024-09-13T21:00:00Z",
+   "windKt": null,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.997007
+   }
+  },
+  {
+   "id": "IMG1371",
+   "image": "cyclone/POS_1619.png",
+   "truth": "CYCLONE",
+   "stormId": "2015355S16136",
+   "basin": "SI",
+   "timestamp": "2015-12-25T18:00:00Z",
+   "windKt": 25.0,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.999984
+   }
+  },
+  {
+   "id": "IMG0670",
+   "image": "cyclone/POS_0780.png",
+   "truth": "CYCLONE",
+   "stormId": "2007151N14072",
+   "basin": "NI",
+   "timestamp": "2007-06-04T03:00:00Z",
+   "windKt": 90.0,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.999993
+   }
+  },
+  {
+   "id": "IMG1949",
+   "image": "cyclone/PRS_0672.png",
+   "truth": "CYCLONE",
+   "stormId": "2025229N17111",
+   "basin": "WP",
+   "timestamp": "2025-08-19T09:00:00Z",
+   "windKt": null,
+   "difficulty": null,
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 0.359433
+   }
+  },
+  {
+   "id": "IMG1102",
+   "image": "cyclone/POS_1282.png",
+   "truth": "CYCLONE",
+   "stormId": "2013019S12174",
+   "basin": "SP",
+   "timestamp": "2013-01-18T12:00:00Z",
+   "windKt": 25.0,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.999958
+   }
+  },
+  {
+   "id": "IMG1834",
+   "image": "cyclone/PRS_0213.png",
+   "truth": "CYCLONE",
+   "stormId": "2023213N14257",
+   "basin": "EP",
+   "timestamp": "2023-08-09T00:00:00Z",
+   "windKt": 115.0,
+   "difficulty": null,
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 1.0
+   }
+  },
+  {
+   "id": "IMG2885",
+   "image": "no_cyclone/NONCYCLONE_02136.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2012-11-17T18:00:00Z",
+   "windKt": null,
+   "difficulty": "moderate",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 0.0
+   }
+  },
+  {
+   "id": "IMG2243",
+   "image": "no_cyclone/NONCYCLONE_04018.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2004-05-09T00:00:00Z",
+   "windKt": null,
+   "difficulty": "moderate",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 0.0
+   }
+  },
+  {
+   "id": "IMG3310",
+   "image": "no_cyclone/NONCYCLONE_02632.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2018-05-23T06:00:00Z",
+   "windKt": null,
+   "difficulty": "hard",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 3.7e-05
+   }
+  },
+  {
+   "id": "IMG2880",
+   "image": "no_cyclone/NONCYCLONE_02834.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2012-11-16T00:00:00Z",
+   "windKt": null,
+   "difficulty": "easy",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 7.9e-05
+   }
+  },
+  {
+   "id": "IMG3964",
+   "image": "no_cyclone/NONCYCLONE_04253.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2025-10-22T00:00:00Z",
+   "windKt": null,
+   "difficulty": "easy",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 6.2e-05
+   }
+  },
+  {
+   "id": "IMG3411",
+   "image": "no_cyclone/NONCYCLONE_04511.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2019-06-16T12:00:00Z",
+   "windKt": null,
+   "difficulty": "moderate",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 1e-06
+   }
+  },
+  {
+   "id": "IMG3092",
+   "image": "no_cyclone/NONCYCLONE_03507.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2015-07-26T18:00:00Z",
+   "windKt": null,
+   "difficulty": "hard",
+   "offline": {
+    "label": "CYCLONE",
+    "cycloneProbability": 0.999995
+   }
+  },
+  {
+   "id": "IMG3325",
+   "image": "no_cyclone/NONCYCLONE_03796.png",
+   "truth": "NO_CYCLONE",
+   "stormId": null,
+   "basin": "NI",
+   "timestamp": "2018-05-29T00:00:00Z",
+   "windKt": null,
+   "difficulty": "moderate",
+   "offline": {
+    "label": "NO_CYCLONE",
+    "cycloneProbability": 0.031942
+   }
+  }
+ ],
+ "classification": [
+  {
+   "id": "CLS-IMG00875",
+   "image": "classification/D-DD/CLS_00993.png",
+   "truth": "D-DD",
+   "truthName": "Depression / Deep Depression",
+   "name": "DAMREY",
+   "stormId": "2017304N11127",
+   "basin": "WP",
+   "timestamp": "2017-11-01T21:00:00Z",
+   "windKt": 33.0,
+   "offline": {
+    "class": "D-DD",
+    "confidence": 0.999626
+   }
+  },
+  {
+   "id": "CLS-IMG00985",
+   "image": "classification/D-DD/CLS_01109.png",
+   "truth": "D-DD",
+   "truthName": "Depression / Deep Depression",
+   "name": "PAWAN",
+   "stormId": "2019335N05058",
+   "basin": "NI",
+   "timestamp": "2019-12-04T00:00:00Z",
+   "windKt": 30.0,
+   "offline": {
+    "class": "VSCS",
+    "confidence": 0.61604
+   }
+  },
+  {
+   "id": "CLS-IMG00119",
+   "image": "classification/D-DD/CLS_00131.png",
+   "truth": "D-DD",
+   "truthName": "Depression / Deep Depression",
+   "name": "BAKO:BESSI",
+   "stormId": "2001329S06095",
+   "basin": "SI",
+   "timestamp": "2001-11-25T06:00:00Z",
+   "windKt": 20.0,
+   "offline": {
+    "class": "D-DD",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "CLS-IMG01896",
+   "image": "classification/CS-SCS/CLS_02121.png",
+   "truth": "CS-SCS",
+   "truthName": "Cyclonic Storm / Severe Cyclonic Storm",
+   "name": "DALILA",
+   "stormId": "2013180N11256",
+   "basin": "EP",
+   "timestamp": "2013-07-03T21:00:00Z",
+   "windKt": 55.0,
+   "offline": {
+    "class": "CS-SCS",
+    "confidence": 0.948878
+   }
+  },
+  {
+   "id": "CLS-IMG01764",
+   "image": "classification/CS-SCS/CLS_01970.png",
+   "truth": "CS-SCS",
+   "truthName": "Cyclonic Storm / Severe Cyclonic Storm",
+   "name": "FAMI",
+   "stormId": "2010032S20042",
+   "basin": "SI",
+   "timestamp": "2010-02-02T03:00:00Z",
+   "windKt": 45.0,
+   "offline": {
+    "class": "VSCS",
+    "confidence": 0.988462
+   }
+  },
+  {
+   "id": "CLS-IMG01345",
+   "image": "classification/CS-SCS/CLS_01504.png",
+   "truth": "CS-SCS",
+   "truthName": "Cyclonic Storm / Severe Cyclonic Storm",
+   "name": "ALEX:ANDRE",
+   "stormId": "2001298S07098",
+   "basin": "SI",
+   "timestamp": "2001-10-26T06:00:00Z",
+   "windKt": 35.0,
+   "offline": {
+    "class": "VSCS",
+    "confidence": 0.947207
+   }
+  },
+  {
+   "id": "CLS-IMG03181",
+   "image": "classification/VSCS/CLS_03575.png",
+   "truth": "VSCS",
+   "truthName": "Very Severe Cyclonic Storm",
+   "name": "VONGFONG",
+   "stormId": "2014275N06166",
+   "basin": "WP",
+   "timestamp": "2014-10-04T21:00:00Z",
+   "windKt": 70.0,
+   "offline": {
+    "class": "CS-SCS",
+    "confidence": 0.459278
+   }
+  },
+  {
+   "id": "CLS-IMG03077",
+   "image": "classification/VSCS/CLS_03458.png",
+   "truth": "VSCS",
+   "truthName": "Very Severe Cyclonic Storm",
+   "name": "SON-TINH",
+   "stormId": "2012296N06135",
+   "basin": "WP",
+   "timestamp": "2012-10-26T18:00:00Z",
+   "windKt": 65.0,
+   "offline": {
+    "class": "VSCS",
+    "confidence": 0.995758
+   }
+  },
+  {
+   "id": "CLS-IMG02674",
+   "image": "classification/VSCS/CLS_03001.png",
+   "truth": "VSCS",
+   "truthName": "Very Severe Cyclonic Storm",
+   "name": "MARTY",
+   "stormId": "2003262N17254",
+   "basin": "EP",
+   "timestamp": "2003-09-21T18:00:00Z",
+   "windKt": 65.0,
+   "offline": {
+    "class": "VSCS",
+    "confidence": 0.783551
+   }
+  },
+  {
+   "id": "CLS-IMG04437",
+   "image": "classification/ESCS-SuCS/CLS_04898.png",
+   "truth": "ESCS-SuCS",
+   "truthName": "Extremely Severe / Super Cyclonic Storm",
+   "name": "PAUL",
+   "stormId": "2012288N14248",
+   "basin": "EP",
+   "timestamp": "2012-10-16T09:00:00Z",
+   "windKt": 93.0,
+   "offline": {
+    "class": "ESCS-SuCS",
+    "confidence": 0.71294
+   }
+  },
+  {
+   "id": "CLS-IMG04169",
+   "image": "classification/ESCS-SuCS/CLS_04620.png",
+   "truth": "ESCS-SuCS",
+   "truthName": "Extremely Severe / Super Cyclonic Storm",
+   "name": "DORA",
+   "stormId": "2007027S07069",
+   "basin": "SI",
+   "timestamp": "2007-02-01T18:00:00Z",
+   "windKt": 90.0,
+   "offline": {
+    "class": "ESCS-SuCS",
+    "confidence": 0.998774
+   }
+  },
+  {
+   "id": "CLS-IMG03787",
+   "image": "classification/ESCS-SuCS/CLS_04237.png",
+   "truth": "ESCS-SuCS",
+   "truthName": "Extremely Severe / Super Cyclonic Storm",
+   "name": "DANIEL",
+   "stormId": "2000205N10260",
+   "basin": "EP",
+   "timestamp": "2000-07-26T06:00:00Z",
+   "windKt": 105.0,
+   "offline": {
+    "class": "VSCS",
+    "confidence": 0.726305
+   }
+  }
+ ]
+}

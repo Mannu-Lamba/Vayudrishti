@@ -1,0 +1,46 @@
+Device: NVIDIA GeForce RTX 4060 Laptop GPU
+train: 34,911 samples / 1422 storms   val: 7,248 samples / 301 storms   window 5 x 29 features
+Model: gru hidden 128 x 2 layers, 178,704 parameters
+H:\WayuDrishti\wayudrishti\prediction_model\src\train.py:70: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:837.)
+  return sum(weights[head] * value for head, value in parts.items()), {k: float(v) for k, v in parts.items()}
+epoch  1  train 0.4630 | val 0.3486  track  110.53 km  wind  7.64 kt  pres  5.62 hPa  lr 1.0e-03  *best  (2.2s)
+epoch  2  train 0.3454 | val 0.3288  track  103.49 km  wind  7.48 kt  pres  5.43 hPa  lr 1.0e-03  *best  (0.9s)
+epoch  3  train 0.3312 | val 0.3220  track  102.88 km  wind  7.34 kt  pres  5.33 hPa  lr 1.0e-03  *best  (0.9s)
+epoch  4  train 0.3227 | val 0.3187  track  101.38 km  wind  7.30 kt  pres  5.29 hPa  lr 1.0e-03  *best  (0.9s)
+epoch  5  train 0.3182 | val 0.3142  track  100.72 km  wind  7.25 kt  pres  5.23 hPa  lr 1.0e-03  *best  (0.9s)
+epoch  6  train 0.3140 | val 0.3195  track  102.67 km  wind  7.27 kt  pres  5.27 hPa  lr 1.0e-03  (1.0s)
+epoch  7  train 0.3106 | val 0.3111  track  100.73 km  wind  7.15 kt  pres  5.16 hPa  lr 1.0e-03  (0.9s)
+epoch  8  train 0.3083 | val 0.3113  track  100.02 km  wind  7.18 kt  pres  5.17 hPa  lr 1.0e-03  *best  (0.9s)
+epoch  9  train 0.3029 | val 0.3057  track   99.41 km  wind  7.09 kt  pres  5.12 hPa  lr 1.0e-03  *best  (0.9s)
+epoch 10  train 0.2999 | val 0.3033  track   99.55 km  wind  7.06 kt  pres  5.09 hPa  lr 1.0e-03  (0.8s)
+epoch 11  train 0.2963 | val 0.3038  track  100.68 km  wind  7.03 kt  pres  5.06 hPa  lr 1.0e-03  (1.0s)
+epoch 12  train 0.2962 | val 0.3027  track   99.52 km  wind  7.06 kt  pres  5.11 hPa  lr 1.0e-03  (0.9s)
+epoch 13  train 0.2932 | val 0.2970  track   99.52 km  wind  6.92 kt  pres  5.02 hPa  lr 1.0e-03  (1.0s)
+epoch 14  train 0.2908 | val 0.2999  track   99.17 km  wind  7.00 kt  pres  5.05 hPa  lr 1.0e-03  *best  (1.0s)
+epoch 15  train 0.2890 | val 0.2961  track   98.65 km  wind  6.93 kt  pres  4.99 hPa  lr 1.0e-03  *best  (0.9s)
+epoch 16  train 0.2870 | val 0.3003  track   99.02 km  wind  6.98 kt  pres  5.06 hPa  lr 1.0e-03  (0.9s)
+epoch 17  train 0.2862 | val 0.2975  track   99.38 km  wind  6.91 kt  pres  5.00 hPa  lr 1.0e-03  (1.0s)
+epoch 18  train 0.2835 | val 0.2940  track   99.06 km  wind  6.92 kt  pres  5.01 hPa  lr 1.0e-03  (0.7s)
+epoch 19  train 0.2809 | val 0.2964  track   99.38 km  wind  6.89 kt  pres  5.00 hPa  lr 1.0e-03  (0.7s)
+epoch 20  train 0.2791 | val 0.2955  track   99.66 km  wind  6.86 kt  pres  4.97 hPa  lr 5.0e-04  (0.9s)
+epoch 21  train 0.2736 | val 0.2925  track   98.97 km  wind  6.82 kt  pres  4.95 hPa  lr 5.0e-04  (0.8s)
+epoch 22  train 0.2723 | val 0.2958  track   98.51 km  wind  6.92 kt  pres  5.01 hPa  lr 5.0e-04  *best  (0.9s)
+epoch 23  train 0.2710 | val 0.2941  track   98.86 km  wind  6.88 kt  pres  5.00 hPa  lr 5.0e-04  (1.0s)
+epoch 24  train 0.2708 | val 0.2930  track   98.22 km  wind  6.89 kt  pres  4.99 hPa  lr 5.0e-04  *best  (0.9s)
+epoch 25  train 0.2691 | val 0.3002  track   99.66 km  wind  6.93 kt  pres  5.04 hPa  lr 5.0e-04  (1.0s)
+epoch 26  train 0.2694 | val 0.2955  track   99.05 km  wind  6.87 kt  pres  4.99 hPa  lr 5.0e-04  (1.0s)
+epoch 27  train 0.2681 | val 0.2970  track   99.10 km  wind  6.88 kt  pres  5.01 hPa  lr 5.0e-04  (0.9s)
+epoch 28  train 0.2660 | val 0.2989  track   98.89 km  wind  6.96 kt  pres  5.07 hPa  lr 5.0e-04  (1.0s)
+epoch 29  train 0.2652 | val 0.2974  track   99.00 km  wind  6.91 kt  pres  5.01 hPa  lr 2.5e-04  (0.9s)
+epoch 30  train 0.2630 | val 0.2949  track   98.53 km  wind  6.86 kt  pres  4.99 hPa  lr 2.5e-04  (0.9s)
+epoch 31  train 0.2616 | val 0.2953  track   98.81 km  wind  6.88 kt  pres  5.00 hPa  lr 2.5e-04  (0.9s)
+epoch 32  train 0.2606 | val 0.2982  track   98.84 km  wind  6.95 kt  pres  5.06 hPa  lr 2.5e-04  (0.9s)
+epoch 33  train 0.2603 | val 0.2967  track   98.78 km  wind  6.90 kt  pres  5.03 hPa  lr 2.5e-04  (0.9s)
+epoch 34  train 0.2592 | val 0.2987  track   98.58 km  wind  6.92 kt  pres  5.03 hPa  lr 1.3e-04  (0.9s)
+epoch 35  train 0.2586 | val 0.2970  track   98.79 km  wind  6.92 kt  pres  5.03 hPa  lr 1.3e-04  (0.9s)
+epoch 36  train 0.2582 | val 0.2975  track   98.71 km  wind  6.93 kt  pres  5.04 hPa  lr 1.3e-04  (0.9s)
+Early stopping: no validation track improvement for 12 epochs.
+Best epoch 24: val {'track_km_mean': 98.219, 'wind_mae_kt': 6.887, 'pressure_mae_hpa': 4.989}
+Uncertainty radii (km): {'6': 36.9, '12': 80.1, '18': 129.8, '24': 184.9}
+Saved best_model.pth, last_model.pth, model_config.json to H:\WayuDrishti\wayudrishti\prediction_model\..\backend\models\prediction

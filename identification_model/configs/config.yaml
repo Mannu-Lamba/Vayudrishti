@@ -1,0 +1,119 @@
+# VayuDrishti — cyclone identification (binary: CYCLONE / NO CYCLONE)
+# Every script reads this file; nothing else hardcodes paths or hyperparameters.
+# Relative paths resolve against identification_model/.
+
+project:
+  name: VayuDrishti Cyclone Identification Model
+  model_version: v1
+  dataset_version: v1.0
+  seed: 42
+
+# Original PS-70 sources. They are read-only: scripts/audit_datasets.py snapshots them into
+# data/raw/ with SHA-256 checksums and every later step reads the snapshot instead.
+sources:
+  # Dataset A — positives (IBTrACS v04r01 derived)
+  finalized_metadata: E:/PS70_Finalized_ML_Metadata_2000_Present.xlsx
+  positive_candidates: H:/WayuDrishti/g/PS70_Positive_Cyclone_Candidates_Satellite_Images.xlsx
+  positive_images_dir: H:/WayuDrishti/g/PS70_NOAA_Satellite_Images/images/positive
+  positive_images_workbook: H:/WayuDrishti/g/PS70_Positive_Cyclone_Candidates_WITH_IMAGES.xlsx
+  positive_downloader: C:/Users/steve/Downloads/PS70_NOAA_Satellite_Downloader_RETRY_FIXED.py
+  # Dataset B — negatives (NOAA GridSat-B1 references, North Indian Ocean)
+  negative_pool: C:/Users/steve/Downloads/SIH_NIO_2000_2025_6HOURLY_NONCYCLONE_SAMPLES.csv
+  negative_selected: C:/Users/steve/Downloads/PS70_Negative_Cyclones_2000_Sorted.xlsx
+  # Reference best-track archive used for cross-checks (checksummed, not copied: 144 MB)
+  ibtracs: H:/ibtracs.since1980.list.v04r01.csv
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  metadata: data/metadata
+  splits: data/splits
+  models: models
+  reports: reports
+  results: results
+
+# Satellite imagery for BOTH classes comes from one source and one code path (GridSat-B1 IRWIN
+# CDR, ~11 µm, 0.07° grid) so the classifier cannot separate classes by sensor/processing.
+gridsat:
+  opendap_base: https://www.ncei.noaa.gov/thredds/dodsC/cdr/gridsat
+  variable: irwin_cdr
+  scale_factor: 0.01          # from the GridSat-B1 DAS
+  add_offset: 200.0
+  fill_value: -31999
+  half_width_deg: 9.0         # 18° x 18° crop, same as the original PS-70 downloader's GridSat path
+  slot_hours: 3               # GridSat-B1 is 3-hourly
+  max_time_offset_h: 1.5
+  workers: 8
+  timeout_s: 90
+  retries: 4
+
+imagery:
+  bt_min_k: 180.0             # linear BT → 8-bit mapping of the original PS-70 downloader
+  bt_max_k: 310.0             # (cold cloud tops bright), kept for comparability
+  png_size: 256
+  max_missing_fraction: 0.02  # reject crops with more than 2 % missing/fill pixels
+  cold_cloud_bt_k: 235.0      # conventional IR threshold for deep convective (cold) cloud
+  central_box_fraction: 0.5   # central 9° x 9° box used for the cloud metrics
+  near_duplicate_hamming: 4   # 64-bit dHash distance that makes a pair a near-duplicate candidate
+  near_duplicate_corr: 0.97   # ...confirmed only if 32x32 thumbnails also correlate this strongly
+
+candidates:
+  # Positive rows must be IBTrACS NATURE == TS (tropical). DS (disturbance), ET, SS, MX and NR fixes
+  # are excluded from the positive class because they are not tropical-cyclone observations.
+  positive_natures: [TS]
+  # Extra TS fixes drawn from the finalized metadata so that 2,000 positives survive cleaning.
+  positive_reserve: 900
+  # Negative crops must not contain a tracked system centre (IBTrACS fix within ±1 h).
+  negative_time_window_h: 1
+
+selection:
+  positives: 2000
+  negatives: 2000
+  # Negative difficulty (documented sampling rule, see reports/dataset_v1_report.md):
+  #   easy     : whole-crop cold-cloud fraction  < easy_max_cold_fraction
+  #   hard     : central-box cold-cloud fraction >= P{hard_reference_percentile} of the positives
+  #   moderate : everything else
+  easy_max_cold_fraction: 0.05
+  hard_reference_percentile: 25
+  negative_difficulty_targets: {hard: 0.34, moderate: 0.33, easy: 0.33}
+
+splits:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  # Samples are grouped for splitting: same storm_id, or crops that overlap in space (boxes
+  # intersect) within this time window, or near-duplicate images.
+  group_overlap_hours: 12
+
+train:
+  model_name: efficientnet_b0     # also: resnet50, mobilenet_v3_large (see src/model.py)
+  pretrained: true
+  num_classes: 2
+  input_size: 224
+  batch_size: 32
+  epochs: 30
+  optimizer: adamw
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-4
+  scheduler: cosine
+  early_stopping_patience: 6
+  selection_metric: val_f1        # F1 of the CYCLONE class at the decision threshold
+  decision_threshold: 0.5
+  class_balance: auto             # none | class_weights | weighted_sampler | auto
+  class_balance_tolerance: 0.05   # auto → none when the train split is within 50 % ± 5 %
+  amp: true
+  num_workers: 0                  # measured fastest on Windows: worker IPC costs more than the transforms
+
+augmentation:                     # train split only; val/test are deterministic
+  rotation_deg: 10
+  scale: [0.85, 1.0]
+  hflip: 0.5
+  vflip: 0.5
+  brightness: 0.1
+  contrast: 0.1
+
+evaluation:
+  min_samples_per_class: 20       # regional precision/FPR only when both classes have this many
+  min_samples_recall: 20          # regional recall needs this many positives
+  calibration_bins: 10
+  max_error_examples: 60

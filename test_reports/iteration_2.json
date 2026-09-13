@@ -1,0 +1,17 @@
+{
+  "passed": 9,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {"criterion":"Unauthenticated console gate","name":"unauth-console-gate","lane":"browser","status":"passed","evidence":"No-cookie /api/auth/me returned 401; visiting /cyclones with no session rendered data-testid login-screen with google-sign-in-button and zero top-header elements."},
+    {"criterion":"Dynamic Google redirect","name":"dynamic-google-redirect","lane":"browser","status":"passed","evidence":"Run against APP_URL https://cyclone-command-2.preview.emergentagent.com: clicking Continue with Google issued a request to https://auth.emergentagent.com/?redirect=<origin>/ where redirect exactly equals window.location.origin + '/' captured at click time (no hardcoded fallback)."},
+    {"criterion":"Authenticated session verification","name":"authenticated-session-verification","lane":"browser","status":"passed","evidence":"With seeded session_token cookie set, /api/auth/me returned 200 {name: 'Test Operator', email: 'test.user.1788885621@example.com'} and dashboard top-header rendered instead of login-screen."},
+    {"criterion":"Protected application routes","name":"protected-routes-navigation","lane":"browser","status":"passed","evidence":"Authenticated navigation to /cyclones, /satellite, /prediction, /history, /about, /settings each rendered the expected page-title; after clearing cookies, /prediction fell back to login-screen."},
+    {"criterion":"User profile display","name":"user-profile-display","lane":"browser","status":"passed","evidence":"Profile popover opened via header-profile-button showed 'Test Operator' and 'test.user.1788885621@example.com' plus a visible sign-out-button."},
+    {"criterion":"Protected Claude analyst history","name":"test_tscheck_analyst_history_auth.py","lane":"backend","status":"passed","evidence":"GET /analyst/history/tscheck-analyst-history-noauth with no cookie -> 401. GET /analyst/history/tscheck-analyst-history-authed with seeded session cookie -> 200 []; /auth/me with same cookie confirmed user_id test-user-1788885621 bound to the request."},
+    {"criterion":"Secure sign-out","name":"secure-sign-out","lane":"browser","status":"passed","evidence":"Using dedicated fixture session tscheck_signout_token: pre-logout /api/auth/me=200, sign-out click returned UI to login-screen, post-logout /api/auth/me=401, and re-presenting the deleted cookie still returned 401."},
+    {"criterion":"Auth callback contract","name":"auth-callback-contract","lane":"browser","status":"passed","evidence":"Navigating to /#session_id=tscheck-invalid-session-id triggered the callback exchange which failed against the upstream and fell back to login-screen with zero top-header elements (console never exposed)."}
+  ]
+}

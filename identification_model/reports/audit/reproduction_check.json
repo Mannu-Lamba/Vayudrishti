@@ -1,0 +1,17 @@
+{
+  "<not recorded>": {
+    "n": 46,
+    "median_r": 0.214,
+    "median_r_if_original_flipped": 0.744
+  },
+  "NOAA GridSat-B1 v02r01": {
+    "n": 16,
+    "median_r": 0.208,
+    "median_r_if_original_flipped": 1.0
+  },
+  "NOAA HURSAT-B1 v07b": {
+    "n": 778,
+    "median_r": 0.195,
+    "median_r_if_original_flipped": 0.721
+  }
+}

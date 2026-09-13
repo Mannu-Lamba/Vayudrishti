@@ -1,0 +1,7 @@
+import { AlertTriangle, ArrowRight, Globe2, LockKeyhole, ShieldCheck } from "lucide-react";
+import BrandMark from "@/components/layout/BrandMark";
+import { beginGoogleLogin } from "@/services/auth";
+
+export default function LoginScreen() {
+  return <main className="auth-screen" data-testid="login-screen"><div className="auth-login-panel"><div className="auth-brand"><BrandMark /><div><strong>VayuDrishti</strong><small>Cyclone intelligence · SIH 2026</small></div></div><div className="auth-kicker"><span /> RESTRICTED OPERATIONS CONSOLE</div><h1>Sign in to the<br /><em>operations console</em></h1><p className="auth-description">Sign in to access North Indian Ocean cyclone intelligence, analyst tools, and your secure operator workspace.</p><button type="button" className="google-login-button" onClick={beginGoogleLogin} data-testid="google-sign-in-button"><Globe2 size={17} /><span>Continue with Google</span><ArrowRight size={15} /></button><div className="auth-assurance"><span><LockKeyhole size={13} /> Secure httpOnly session</span><span><ShieldCheck size={13} /> 7-day session</span></div><div className="auth-notice"><AlertTriangle size={14} /><span>Authorized research operators only. This console contains demonstration intelligence and is not an emergency warning service.</span></div></div><div className="auth-footer">VAYUDRISHTI / SIH 2026 <span>AUTH GATEWAY · OPERATIONAL</span></div></main>;
+}

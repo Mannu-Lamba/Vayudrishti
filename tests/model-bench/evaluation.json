@@ -1,0 +1,1553 @@
+{
+ "generatedAt": "2026-09-13T05:17:49Z",
+ "api": "http://127.0.0.1:8001/api",
+ "models": {
+  "identification": {
+   "status": "ready",
+   "modelLoaded": true,
+   "modelName": "cyclone-identification",
+   "displayName": "Cyclone identification model",
+   "modelVersion": "v1",
+   "architecture": "efficientnet_b0",
+   "trainedAt": "2026-09-12T02:32:55+00:00",
+   "loadedAt": "2026-09-13T04:57:25+00:00",
+   "device": "cpu",
+   "errorCode": null,
+   "message": null
+  },
+  "classification": {
+   "status": "ready",
+   "modelLoaded": true,
+   "modelName": "cyclone-classification",
+   "displayName": "IMD intensity classification model",
+   "modelVersion": "v1",
+   "architecture": "efficientnet_b0",
+   "trainedAt": "2026-09-12T05:30:48+00:00",
+   "loadedAt": "2026-09-13T04:57:25+00:00",
+   "device": "cpu",
+   "errorCode": null,
+   "message": null
+  },
+  "prediction": {
+   "status": "ready",
+   "modelLoaded": true,
+   "modelName": "cyclone-track-prediction",
+   "displayName": "VayuDrishti Track Prediction Model",
+   "modelVersion": "v1",
+   "architecture": "gru",
+   "trainedAt": "2026-09-12T15:02:10+00:00",
+   "loadedAt": "2026-09-13T04:57:25+00:00",
+   "device": "cpu",
+   "errorCode": null,
+   "message": null
+  }
+ },
+ "identification": {
+  "live": {
+   "n": 601,
+   "positives": 305,
+   "negatives": 296,
+   "confusion": {
+    "tp": 293,
+    "fp": 11,
+    "tn": 285,
+    "fn": 12
+   },
+   "accuracy": 0.96173,
+   "precision": 0.963816,
+   "recall": 0.960656,
+   "f1": 0.962233,
+   "specificity": 0.962838,
+   "roc_auc": 0.991942,
+   "pr_auc": 0.991374,
+   "roc_curve": [
+    {
+     "fpr": 0.0,
+     "tpr": 0.0
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.15082
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.203279
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.216393
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.239344
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.262295
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.27541
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.291803
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.308197
+    },
+    {
+     "fpr": 0.0,
+     "tpr": 0.318033
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.327869
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.344262
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.354098
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.370492
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.386885
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.396721
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.406557
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.419672
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.429508
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.439344
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.452459
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.462295
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.472131
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.485246
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.495082
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.504918
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.521311
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.531148
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.540984
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.55082
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.563934
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.57377
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.583607
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.596721
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.606557
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.616393
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.629508
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.639344
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.64918
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.662295
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.672131
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.681967
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.695082
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.704918
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.714754
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.727869
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.737705
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.747541
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.760656
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.770492
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.780328
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.793443
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.803279
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.813115
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.82623
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.836066
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.845902
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.859016
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.868852
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.878689
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.891803
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.901639
+    },
+    {
+     "fpr": 0.003378,
+     "tpr": 0.911475
+    },
+    {
+     "fpr": 0.010135,
+     "tpr": 0.918033
+    },
+    {
+     "fpr": 0.016892,
+     "tpr": 0.921311
+    },
+    {
+     "fpr": 0.02027,
+     "tpr": 0.927869
+    },
+    {
+     "fpr": 0.02027,
+     "tpr": 0.940984
+    },
+    {
+     "fpr": 0.027027,
+     "tpr": 0.944262
+    },
+    {
+     "fpr": 0.030405,
+     "tpr": 0.95082
+    },
+    {
+     "fpr": 0.037162,
+     "tpr": 0.957377
+    },
+    {
+     "fpr": 0.043919,
+     "tpr": 0.960656
+    },
+    {
+     "fpr": 0.047297,
+     "tpr": 0.967213
+    },
+    {
+     "fpr": 0.054054,
+     "tpr": 0.97377
+    },
+    {
+     "fpr": 0.064189,
+     "tpr": 0.97377
+    },
+    {
+     "fpr": 0.074324,
+     "tpr": 0.97377
+    },
+    {
+     "fpr": 0.087838,
+     "tpr": 0.97377
+    },
+    {
+     "fpr": 0.091216,
+     "tpr": 0.980328
+    },
+    {
+     "fpr": 0.101351,
+     "tpr": 0.980328
+    },
+    {
+     "fpr": 0.111486,
+     "tpr": 0.983607
+    },
+    {
+     "fpr": 0.121622,
+     "tpr": 0.983607
+    },
+    {
+     "fpr": 0.131757,
+     "tpr": 0.983607
+    },
+    {
+     "fpr": 0.141892,
+     "tpr": 0.983607
+    },
+    {
+     "fpr": 0.155405,
+     "tpr": 0.983607
+    },
+    {
+     "fpr": 0.162162,
+     "tpr": 0.986885
+    },
+    {
+     "fpr": 0.172297,
+     "tpr": 0.986885
+    },
+    {
+     "fpr": 0.182432,
+     "tpr": 0.990164
+    },
+    {
+     "fpr": 0.189189,
+     "tpr": 0.993443
+    },
+    {
+     "fpr": 0.195946,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.209459,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.219595,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.22973,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.243243,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.253378,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.263514,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.277027,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.287162,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.297297,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.310811,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.320946,
+     "tpr": 0.996721
+    },
+    {
+     "fpr": 0.327703,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.341216,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.351351,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.361486,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.375,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.385135,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.39527,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.408784,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.418919,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.429054,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.442568,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.452703,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.462838,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.476351,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.486486,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.496622,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.510135,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.52027,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.530405,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.543919,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.554054,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.564189,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.577703,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.587838,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.597973,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.611486,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.621622,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.631757,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.64527,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.655405,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.665541,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.679054,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.689189,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.699324,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.709459,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.722973,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.733108,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.743243,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.756757,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.766892,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.777027,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.790541,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.800676,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.810811,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.824324,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.834459,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.844595,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.858108,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.868243,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.878378,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.891892,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.902027,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.912162,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.925676,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.935811,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.945946,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.959459,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.969595,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.97973,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 0.993243,
+     "tpr": 1.0
+    },
+    {
+     "fpr": 1.0,
+     "tpr": 1.0
+    }
+   ],
+   "score_histogram": {
+    "edges": [
+     0.0,
+     0.05,
+     0.1,
+     0.15,
+     0.2,
+     0.25,
+     0.3,
+     0.35,
+     0.4,
+     0.45,
+     0.5,
+     0.55,
+     0.6,
+     0.65,
+     0.7,
+     0.75,
+     0.8,
+     0.85,
+     0.9,
+     0.95,
+     1.0
+    ],
+    "cyclone": [
+     5,
+     1,
+     2,
+     0,
+     0,
+     0,
+     0,
+     3,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     2,
+     5,
+     4,
+     280
+    ],
+    "no_cyclone": [
+     260,
+     5,
+     5,
+     3,
+     4,
+     3,
+     1,
+     1,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     2,
+     4,
+     2
+    ]
+   },
+   "failed_requests": {},
+   "median_server_ms": 125.27,
+   "agreement_with_training_evaluation": {
+    "agree": 601,
+    "of": 601
+   },
+   "by_region": [
+    {
+     "region": "north_indian_ocean",
+     "n": 396,
+     "accuracy": 0.95202,
+     "recall": 0.92,
+     "precision": 0.893204
+    },
+    {
+     "region": "pacific_ocean",
+     "n": 149,
+     "accuracy": 0.973154,
+     "recall": null,
+     "precision": null
+    },
+    {
+     "region": "south_indian_ocean",
+     "n": 56,
+     "accuracy": 1.0,
+     "recall": null,
+     "precision": null
+    }
+   ]
+  },
+  "reported": {
+   "overall": {
+    "n": 601,
+    "n_cyclone": 305,
+    "n_no_cyclone": 296,
+    "tp": 293,
+    "fp": 11,
+    "tn": 285,
+    "fn": 12,
+    "accuracy": 0.96173,
+    "precision": 0.963816,
+    "recall": 0.960656,
+    "f1": 0.962233,
+    "specificity": 0.962838,
+    "false_positive_rate": 0.037162,
+    "roc_auc": 0.991958,
+    "pr_auc": 0.991365
+   },
+   "test_split": {
+    "n": 601,
+    "cyclone": 305,
+    "no_cyclone": 296,
+    "storms": 169,
+    "groups": 282
+   },
+   "model": {
+    "name": "VayuDrishti Cyclone Identification Model",
+    "version": "v1",
+    "architecture": "efficientnet_b0",
+    "dataset_version": "v1.0"
+   }
+  },
+  "seconds": 11.4
+ },
+ "classification": {
+  "live": {
+   "n": 667,
+   "classes": [
+    "D-DD",
+    "CS-SCS",
+    "VSCS",
+    "ESCS-SuCS"
+   ],
+   "confusion_matrix": [
+    [
+     123,
+     43,
+     18,
+     0
+    ],
+    [
+     53,
+     78,
+     58,
+     1
+    ],
+    [
+     0,
+     19,
+     155,
+     16
+    ],
+    [
+     1,
+     4,
+     36,
+     62
+    ]
+   ],
+   "per_class": [
+    {
+     "class_id": 0,
+     "code": "D-DD",
+     "name": "Depression / Deep Depression",
+     "support": 184,
+     "predicted": 177,
+     "precision": 0.694915,
+     "recall": 0.668478,
+     "f1": 0.68144
+    },
+    {
+     "class_id": 1,
+     "code": "CS-SCS",
+     "name": "Cyclonic Storm / Severe Cyclonic Storm",
+     "support": 190,
+     "predicted": 144,
+     "precision": 0.541667,
+     "recall": 0.410526,
+     "f1": 0.467066
+    },
+    {
+     "class_id": 2,
+     "code": "VSCS",
+     "name": "Very Severe Cyclonic Storm",
+     "support": 190,
+     "predicted": 267,
+     "precision": 0.580524,
+     "recall": 0.815789,
+     "f1": 0.678337
+    },
+    {
+     "class_id": 3,
+     "code": "ESCS-SuCS",
+     "name": "Extremely Severe / Super Cyclonic Storm",
+     "support": 103,
+     "predicted": 79,
+     "precision": 0.78481,
+     "recall": 0.601942,
+     "f1": 0.681319
+    }
+   ],
+   "accuracy": 0.626687,
+   "balanced_accuracy": 0.624184,
+   "macro_precision": 0.650479,
+   "macro_recall": 0.624184,
+   "macro_f1": 0.62704,
+   "weighted_f1": 0.619471,
+   "adjacent_accuracy": 0.964018,
+   "top2_accuracy": 0.914543,
+   "failed_requests": {},
+   "median_server_ms": 122.39,
+   "agreement_with_training_evaluation": {
+    "agree": 666,
+    "of": 667
+   }
+  },
+  "reported": {
+   "overall": {
+    "n": 667,
+    "accuracy": 0.628186,
+    "balanced_accuracy": 0.625543,
+    "macro_f1": 0.628302,
+    "weighted_f1": 0.620876,
+    "adjacent_accuracy": 0.964018,
+    "mean_absolute_class_error": 0.409295,
+    "top2_accuracy": 0.914543,
+    "roc_auc_ovr_macro": 0.868484,
+    "pr_auc_macro": 0.695498
+   },
+   "per_class": [
+    {
+     "class_id": 0,
+     "class_code": "D-DD",
+     "class_name": "Depression / Deep Depression",
+     "precision": 0.696629,
+     "recall": 0.673913,
+     "f1": 0.685083,
+     "support": 184,
+     "roc_auc_ovr": 0.894804,
+     "pr_auc": 0.76401
+    },
+    {
+     "class_id": 1,
+     "class_code": "CS-SCS",
+     "class_name": "Cyclonic Storm / Severe Cyclonic Storm",
+     "precision": 0.545455,
+     "recall": 0.410526,
+     "f1": 0.468468,
+     "support": 190,
+     "roc_auc_ovr": 0.777215,
+     "pr_auc": 0.503967
+    },
+    {
+     "class_id": 2,
+     "class_code": "VSCS",
+     "class_name": "Very Severe Cyclonic Storm",
+     "precision": 0.580524,
+     "recall": 0.815789,
+     "f1": 0.678337,
+     "support": 190,
+     "roc_auc_ovr": 0.868708,
+     "pr_auc": 0.728819
+    },
+    {
+     "class_id": 3,
+     "class_code": "ESCS-SuCS",
+     "class_name": "Extremely Severe / Super Cyclonic Storm",
+     "precision": 0.78481,
+     "recall": 0.601942,
+     "f1": 0.681319,
+     "support": 103,
+     "roc_auc_ovr": 0.933209,
+     "pr_auc": 0.785194
+    }
+   ],
+   "test_split": {
+    "n": 667,
+    "storms": 253,
+    "groups": 239,
+    "class_counts": {
+     "D-DD": 184,
+     "CS-SCS": 190,
+     "VSCS": 190,
+     "ESCS-SuCS": 103
+    }
+   }
+  },
+  "seconds": 12.5
+ },
+ "prediction": {
+  "live": {
+   "storms": 324,
+   "forecasts_requested": 6878,
+   "forecasts_ok": 6878,
+   "failed_requests": {},
+   "steps_without_verifying_fix": 1686,
+   "leads": [
+    {
+     "lead": 6,
+     "n": 6730,
+     "track_km": {
+      "model": {
+       "mean": 32.404884,
+       "median": 26.440267,
+       "p90": 61.672769
+      },
+      "persistence": {
+       "mean": 105.188737
+      },
+      "extrapolation": {
+       "mean": 37.436617,
+       "n": 6730
+      }
+     },
+     "skill_vs_extrapolation_pct": 13.440672,
+     "skill_vs_persistence_pct": 69.19358,
+     "wind_mae_kt": {
+      "model": 3.517522,
+      "persistence": 4.16615,
+      "n": 6602
+     },
+     "pressure_mae_hpa": {
+      "model": 2.581018,
+      "persistence": 3.089683,
+      "n": 6601
+     },
+     "within_radius": 0.69153,
+     "radius_km": 36.9,
+     "category": {
+      "n": 6602,
+      "accuracy": 0.77113,
+      "within_one": 0.995304,
+      "macro_f1": 0.756715
+     }
+    },
+    {
+     "lead": 12,
+     "n": 6556,
+     "track_km": {
+      "model": {
+       "mean": 69.543667,
+       "median": 57.177219,
+       "p90": 131.748963
+      },
+      "persistence": {
+       "mean": 209.029487
+      },
+      "extrapolation": {
+       "mean": 82.209554,
+       "n": 6556
+      }
+     },
+     "skill_vs_extrapolation_pct": 15.406831,
+     "skill_vs_persistence_pct": 66.730212,
+     "wind_mae_kt": {
+      "model": 5.892511,
+      "persistence": 7.924897,
+      "n": 6327
+     },
+     "pressure_mae_hpa": {
+      "model": 4.290735,
+      "persistence": 5.693123,
+      "n": 6325
+     },
+     "within_radius": 0.687462,
+     "radius_km": 80.1,
+     "category": {
+      "n": 6327,
+      "accuracy": 0.642959,
+      "within_one": 0.975028,
+      "macro_f1": 0.586875
+     }
+    },
+    {
+     "lead": 18,
+     "n": 6368,
+     "track_km": {
+      "model": {
+       "mean": 112.799174,
+       "median": 94.672357,
+       "p90": 210.312831
+      },
+      "persistence": {
+       "mean": 311.359601
+      },
+      "extrapolation": {
+       "mean": 134.896927,
+       "n": 6368
+      }
+     },
+     "skill_vs_extrapolation_pct": 16.381213,
+     "skill_vs_persistence_pct": 63.772058,
+     "wind_mae_kt": {
+      "model": 8.152792,
+      "persistence": 11.368662,
+      "n": 6052
+     },
+     "pressure_mae_hpa": {
+      "model": 5.882014,
+      "persistence": 8.086626,
+      "n": 6049
+     },
+     "within_radius": 0.686087,
+     "radius_km": 129.8,
+     "category": {
+      "n": 6052,
+      "accuracy": 0.548579,
+      "within_one": 0.94349,
+      "macro_f1": 0.493549
+     }
+    },
+    {
+     "lead": 24,
+     "n": 6172,
+     "track_km": {
+      "model": {
+       "mean": 161.201655,
+       "median": 135.094503,
+       "p90": 299.819766
+      },
+      "persistence": {
+       "mean": 412.03963
+      },
+      "extrapolation": {
+       "mean": 194.582526,
+       "n": 6172
+      }
+     },
+     "skill_vs_extrapolation_pct": 17.155123,
+     "skill_vs_persistence_pct": 60.877148,
+     "wind_mae_kt": {
+      "model": 10.078371,
+      "persistence": 14.441113,
+      "n": 5780
+     },
+     "pressure_mae_hpa": {
+      "model": 7.283971,
+      "persistence": 10.27748,
+      "n": 5777
+     },
+     "within_radius": 0.683085,
+     "radius_km": 184.9,
+     "category": {
+      "n": 5780,
+      "accuracy": 0.481834,
+      "within_one": 0.899827,
+      "macro_f1": 0.418002
+     }
+    }
+   ],
+   "category_order": [
+    "Low Pressure Area",
+    "Depression",
+    "Deep Depression",
+    "Cyclonic Storm",
+    "Severe Cyclonic Storm",
+    "Very Severe Cyclonic Storm",
+    "Extremely Severe Cyclonic Storm",
+    "Super Cyclonic Storm"
+   ],
+   "category_confusion_last_lead": {
+    "lead": 24,
+    "labels": [
+     "Low Pressure Area",
+     "Depression",
+     "Deep Depression",
+     "Cyclonic Storm",
+     "Severe Cyclonic Storm",
+     "Very Severe Cyclonic Storm",
+     "Extremely Severe Cyclonic Storm",
+     "Super Cyclonic Storm"
+    ],
+    "matrix": [
+     [
+      3,
+      51,
+      11,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      18,
+      501,
+      305,
+      163,
+      18,
+      5,
+      1,
+      0
+     ],
+     [
+      0,
+      105,
+      235,
+      256,
+      35,
+      6,
+      2,
+      0
+     ],
+     [
+      0,
+      65,
+      245,
+      804,
+      254,
+      57,
+      2,
+      0
+     ],
+     [
+      0,
+      11,
+      31,
+      297,
+      363,
+      171,
+      18,
+      0
+     ],
+     [
+      0,
+      0,
+      8,
+      72,
+      212,
+      424,
+      134,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      3,
+      42,
+      195,
+      393,
+      38
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      25,
+      135,
+      62
+     ]
+    ]
+   },
+   "by_area_last_lead": [
+    {
+     "area": "arabian_sea",
+     "n": 157,
+     "storms": null,
+     "track_km": 121.703867,
+     "extrapolation_km": 131.183311
+    },
+    {
+     "area": "bay_of_bengal",
+     "n": 153,
+     "storms": null,
+     "track_km": 135.155903,
+     "extrapolation_km": 139.966826
+    },
+    {
+     "area": "eastern_pacific",
+     "n": 1568,
+     "storms": null,
+     "track_km": 122.641937,
+     "extrapolation_km": 148.205884
+    },
+    {
+     "area": "south_indian_ocean",
+     "n": 1532,
+     "storms": null,
+     "track_km": 172.87105,
+     "extrapolation_km": 200.962818
+    },
+    {
+     "area": "southern_pacific",
+     "n": 750,
+     "storms": null,
+     "track_km": 181.623889,
+     "extrapolation_km": 205.006305
+    },
+    {
+     "area": "western_pacific",
+     "n": 2012,
+     "storms": null,
+     "track_km": 179.816767,
+     "extrapolation_km": 231.081539
+    }
+   ]
+  },
+  "reported": {
+   "overall": {
+    "model": {
+     "6": {
+      "n": 7400,
+      "track_km_mean": 34.319,
+      "track_km_median": 27.353,
+      "track_km_p90": 65.726,
+      "mae_lat_deg": 0.19,
+      "mae_lon_deg": 0.225,
+      "n_wind": 6422,
+      "wind_mae_kt": 3.513,
+      "wind_rmse_kt": 4.915,
+      "wind_bias_kt": 0.01,
+      "n_pressure": 6094,
+      "pressure_mae_hpa": 2.617,
+      "pressure_rmse_hpa": 4.049
+     },
+     "12": {
+      "n": 7400,
+      "track_km_mean": 73.521,
+      "track_km_median": 59.728,
+      "track_km_p90": 141.381,
+      "mae_lat_deg": 0.407,
+      "mae_lon_deg": 0.484,
+      "n_wind": 6327,
+      "wind_mae_kt": 5.862,
+      "wind_rmse_kt": 8.247,
+      "wind_bias_kt": 0.113,
+      "n_pressure": 6006,
+      "pressure_mae_hpa": 4.327,
+      "pressure_rmse_hpa": 6.545
+     },
+     "18": {
+      "n": 7400,
+      "track_km_mean": 119.524,
+      "track_km_median": 98.63,
+      "track_km_p90": 229.867,
+      "mae_lat_deg": 0.655,
+      "mae_lon_deg": 0.8,
+      "n_wind": 6217,
+      "wind_mae_kt": 8.086,
+      "wind_rmse_kt": 11.249,
+      "wind_bias_kt": 0.245,
+      "n_pressure": 5904,
+      "pressure_mae_hpa": 5.901,
+      "pressure_rmse_hpa": 8.773
+     },
+     "24": {
+      "n": 7400,
+      "track_km_mean": 171.508,
+      "track_km_median": 141.483,
+      "track_km_p90": 328.278,
+      "mae_lat_deg": 0.935,
+      "mae_lon_deg": 1.162,
+      "n_wind": 6081,
+      "wind_mae_kt": 10.002,
+      "wind_rmse_kt": 13.83,
+      "wind_bias_kt": 0.341,
+      "n_pressure": 5777,
+      "pressure_mae_hpa": 7.284,
+      "pressure_rmse_hpa": 10.678
+     },
+     "mean_over_horizons": {
+      "track_km_mean": 99.718,
+      "wind_mae_kt": 6.866,
+      "pressure_mae_hpa": 5.032
+     }
+    },
+    "persistence": {
+     "6": {
+      "n": 7400,
+      "track_km_mean": 105.997,
+      "track_km_median": 96.83,
+      "track_km_p90": 178.337,
+      "mae_lat_deg": 0.52,
+      "mae_lon_deg": 0.757,
+      "n_wind": 6422,
+      "wind_mae_kt": 4.085,
+      "wind_rmse_kt": 6.445,
+      "wind_bias_kt": -0.3,
+      "n_pressure": 6094,
+      "pressure_mae_hpa": 3.108,
+      "pressure_rmse_hpa": 5.179
+     },
+     "12": {
+      "n": 7400,
+      "track_km_mean": 210.83,
+      "track_km_median": 191.62,
+      "track_km_p90": 351.952,
+      "mae_lat_deg": 1.036,
+      "mae_lon_deg": 1.513,
+      "n_wind": 6327,
+      "wind_mae_kt": 7.806,
+      "wind_rmse_kt": 11.372,
+      "wind_bias_kt": -0.438,
+      "n_pressure": 6006,
+      "pressure_mae_hpa": 5.715,
+      "pressure_rmse_hpa": 8.904
+     },
+     "18": {
+      "n": 7400,
+      "track_km_mean": 315.554,
+      "track_km_median": 285.127,
+      "track_km_p90": 528.324,
+      "mae_lat_deg": 1.553,
+      "mae_lon_deg": 2.274,
+      "n_wind": 6217,
+      "wind_mae_kt": 11.247,
+      "wind_rmse_kt": 15.808,
+      "wind_bias_kt": -0.433,
+      "n_pressure": 5904,
+      "pressure_mae_hpa": 8.107,
+      "pressure_rmse_hpa": 12.235
+     },
+     "24": {
+      "n": 7400,
+      "track_km_mean": 420.612,
+      "track_km_median": 379.408,
+      "track_km_p90": 708.795,
+      "mae_lat_deg": 2.072,
+      "mae_lon_deg": 3.045,
+      "n_wind": 6081,
+      "wind_mae_kt": 14.324,
+      "wind_rmse_kt": 19.75,
+      "wind_bias_kt": -0.346,
+      "n_pressure": 5777,
+      "pressure_mae_hpa": 10.277,
+      "pressure_rmse_hpa": 15.186
+     },
+     "mean_over_horizons": {
+      "track_km_mean": 263.248,
+      "wind_mae_kt": 9.365,
+      "pressure_mae_hpa": 6.802
+     }
+    },
+    "extrapolation": {
+     "6": {
+      "n": 7400,
+      "track_km_mean": 39.745,
+      "track_km_median": 31.69,
+      "track_km_p90": 78.098,
+      "mae_lat_deg": 0.216,
+      "mae_lon_deg": 0.263,
+      "n_wind": 6422,
+      "wind_mae_kt": 4.085,
+      "wind_rmse_kt": 6.445,
+      "wind_bias_kt": -0.3,
+      "n_pressure": 6094,
+      "pressure_mae_hpa": 3.108,
+      "pressure_rmse_hpa": 5.179
+     },
+     "12": {
+      "n": 7400,
+      "track_km_mean": 87.113,
+      "track_km_median": 69.978,
+      "track_km_p90": 169.976,
+      "mae_lat_deg": 0.471,
+      "mae_lon_deg": 0.588,
+      "n_wind": 6327,
+      "wind_mae_kt": 7.806,
+      "wind_rmse_kt": 11.372,
+      "wind_bias_kt": -0.438,
+      "n_pressure": 6006,
+      "pressure_mae_hpa": 5.715,
+      "pressure_rmse_hpa": 8.904
+     },
+     "18": {
+      "n": 7400,
+      "track_km_mean": 143.179,
+      "track_km_median": 115.964,
+      "track_km_p90": 281.768,
+      "mae_lat_deg": 0.766,
+      "mae_lon_deg": 0.985,
+      "n_wind": 6217,
+      "wind_mae_kt": 11.247,
+      "wind_rmse_kt": 15.808,
+      "wind_bias_kt": -0.433,
+      "n_pressure": 5904,
+      "pressure_mae_hpa": 8.107,
+      "pressure_rmse_hpa": 12.235
+     },
+     "24": {
+      "n": 7400,
+      "track_km_mean": 207.322,
+      "track_km_median": 167.412,
+      "track_km_p90": 400.429,
+      "mae_lat_deg": 1.102,
+      "mae_lon_deg": 1.442,
+      "n_wind": 6081,
+      "wind_mae_kt": 14.324,
+      "wind_rmse_kt": 19.75,
+      "wind_bias_kt": -0.346,
+      "n_pressure": 5777,
+      "pressure_mae_hpa": 10.277,
+      "pressure_rmse_hpa": 15.186
+     },
+     "mean_over_horizons": {
+      "track_km_mean": 119.34,
+      "wind_mae_kt": 9.365,
+      "pressure_mae_hpa": 6.802
+     }
+    }
+   },
+   "uncertainty_coverage": {
+    "6": {
+     "radius_km": 36.9,
+     "track_within_radius": 0.6649,
+     "wind_band_kt": 3.8,
+     "wind_within_band": 0.6744
+    },
+    "12": {
+     "radius_km": 80.1,
+     "track_within_radius": 0.6605,
+     "wind_band_kt": 6.5,
+     "wind_within_band": 0.6773
+    },
+    "18": {
+     "radius_km": 129.8,
+     "track_within_radius": 0.6568,
+     "wind_band_kt": 8.8,
+     "wind_within_band": 0.6632
+    },
+    "24": {
+     "radius_km": 184.9,
+     "track_within_radius": 0.6531,
+     "wind_band_kt": 11.0,
+     "wind_within_band": 0.6708
+    }
+   },
+   "test_split": {
+    "samples": 7400,
+    "storms": 301,
+    "samples_with_wind_target_last_horizon": 6081
+   }
+  },
+  "seconds": 57.6
+ },
+ "seconds": 81.7
+}

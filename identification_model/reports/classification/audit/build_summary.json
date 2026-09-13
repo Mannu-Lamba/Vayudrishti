@@ -1,0 +1,97 @@
+{
+  "candidates": 5600,
+  "accepted_clean_pool": 4817,
+  "rejected": 783,
+  "rejected_by_reason": {
+    "not_fetched": 661,
+    "missing_data_exceeds_limit": 82,
+    "failed": 40
+  },
+  "exact_duplicates": 0,
+  "near_duplicate_pairs": 0,
+  "near_duplicate_label_conflicts": 0,
+  "clean_pool_by_class": {
+    "D-DD": 1373,
+    "CS-SCS": 1376,
+    "VSCS": 1380,
+    "ESCS-SuCS": 688
+  },
+  "selected": 4438,
+  "selected_by_class": {
+    "D-DD": 1250,
+    "CS-SCS": 1250,
+    "VSCS": 1250,
+    "ESCS-SuCS": 688
+  },
+  "selected_by_class_area": {
+    "D-DD/arabian_sea": 162,
+    "D-DD/bay_of_bengal": 218,
+    "D-DD/eastern_pacific": 217,
+    "D-DD/south_indian_ocean": 218,
+    "D-DD/southern_pacific": 217,
+    "D-DD/western_pacific": 218,
+    "CS-SCS/arabian_sea": 46,
+    "CS-SCS/bay_of_bengal": 122,
+    "CS-SCS/eastern_pacific": 270,
+    "CS-SCS/south_indian_ocean": 271,
+    "CS-SCS/southern_pacific": 270,
+    "CS-SCS/western_pacific": 271,
+    "VSCS/arabian_sea": 64,
+    "VSCS/bay_of_bengal": 67,
+    "VSCS/eastern_pacific": 280,
+    "VSCS/south_indian_ocean": 280,
+    "VSCS/southern_pacific": 279,
+    "VSCS/western_pacific": 280,
+    "ESCS-SuCS/arabian_sea": 9,
+    "ESCS-SuCS/bay_of_bengal": 7,
+    "ESCS-SuCS/eastern_pacific": 154,
+    "ESCS-SuCS/south_indian_ocean": 220,
+    "ESCS-SuCS/southern_pacific": 68,
+    "ESCS-SuCS/western_pacific": 230
+  },
+  "area_quotas": {
+    "D-DD": {
+      "arabian_sea": 162,
+      "bay_of_bengal": 218,
+      "south_indian_ocean": 218,
+      "western_pacific": 218,
+      "eastern_pacific": 217,
+      "southern_pacific": 217
+    },
+    "CS-SCS": {
+      "arabian_sea": 46,
+      "bay_of_bengal": 122,
+      "south_indian_ocean": 271,
+      "western_pacific": 271,
+      "eastern_pacific": 270,
+      "southern_pacific": 270
+    },
+    "VSCS": {
+      "arabian_sea": 64,
+      "bay_of_bengal": 67,
+      "south_indian_ocean": 280,
+      "western_pacific": 280,
+      "eastern_pacific": 280,
+      "southern_pacific": 279
+    },
+    "ESCS-SuCS": {
+      "arabian_sea": 9,
+      "bay_of_bengal": 7,
+      "south_indian_ocean": 220,
+      "western_pacific": 230,
+      "eastern_pacific": 154,
+      "southern_pacific": 68
+    }
+  },
+  "selected_storms": 1704,
+  "images_per_storm": {
+    "count": 1704.0,
+    "mean": 2.6,
+    "std": 1.61,
+    "min": 1.0,
+    "25%": 1.0,
+    "50%": 2.0,
+    "75%": 3.0,
+    "max": 6.0
+  }
+}

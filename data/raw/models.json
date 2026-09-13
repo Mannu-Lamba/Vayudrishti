@@ -1,0 +1,11 @@
+[
+  {
+    "_id": {
+      "$oid": "70474f5cb60a4015b1829a2c"
+    },
+    "name": "Cyclone Classification Model (PS70)",
+    "version": "1.0",
+    "task": "Binary Classification",
+    "framework": "TensorFlow/Keras"
+  }
+]

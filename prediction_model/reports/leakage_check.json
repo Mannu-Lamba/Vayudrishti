@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "verdict": "PASS",
+  "checks": {
+    "storms_listed_twice": 0,
+    "storm_ids_shared_train_val": 0,
+    "storm_ids_shared_train_test": 0,
+    "storm_ids_shared_val_test": 0,
+    "observed_storms_without_split": 0,
+    "observations_in_more_than_one_split": 0,
+    "samples_without_split": 0,
+    "sample_origins_shared_train_val": 0,
+    "sample_origins_shared_train_test": 0,
+    "sample_origins_shared_val_test": 0
+  },
+  "storms_per_split": {
+    "test": 324,
+    "train": 1509,
+    "val": 323
+  },
+  "samples_per_split": {
+    "train": 34911,
+    "test": 7400,
+    "val": 7248
+  },
+  "split_file_sha256": "ef831d52fb6b12bf58d941bff13b5006ecb28b33946b03eef3b7d79522429896",
+  "observations_sha256": "90c6ea323a118adcbb9cb6012854a9085d4d254d5c72afdd8a1a65e27dea3cee"
+}

@@ -1,0 +1,262 @@
+{
+  "sources": {
+    "dataset_a": "E:/PS70_Finalized_ML_Metadata_2000_Present.xlsx",
+    "ibtracs": "H:/ibtracs.since1980.list.v04r01.csv"
+  },
+  "label_rule": "IMD category thresholds (kt) applied to IBTrACS USA_WIND; classes in configs/classification.yaml",
+  "class_mapping": {
+    "0": {
+      "code": "D-DD",
+      "name": "Depression / Deep Depression",
+      "imd_categories": [
+        "Depression",
+        "Deep Depression"
+      ],
+      "wind_kt": [
+        17,
+        33
+      ],
+      "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+    },
+    "1": {
+      "code": "CS-SCS",
+      "name": "Cyclonic Storm / Severe Cyclonic Storm",
+      "imd_categories": [
+        "Cyclonic Storm",
+        "Severe Cyclonic Storm"
+      ],
+      "wind_kt": [
+        34,
+        63
+      ],
+      "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+    },
+    "2": {
+      "code": "VSCS",
+      "name": "Very Severe Cyclonic Storm",
+      "imd_categories": [
+        "Very Severe Cyclonic Storm"
+      ],
+      "wind_kt": [
+        64,
+        89
+      ],
+      "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+    },
+    "3": {
+      "code": "ESCS-SuCS",
+      "name": "Extremely Severe / Super Cyclonic Storm",
+      "imd_categories": [
+        "Extremely Severe Cyclonic Storm",
+        "Super Cyclonic Storm"
+      ],
+      "wind_kt": [
+        90,
+        null
+      ],
+      "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+    }
+  },
+  "funnel": {
+    "fixes_in_basins_since_min_season": 139829,
+    "main_track": 132085,
+    "tropical_nature_TS": 97819,
+    "synoptic_3_hourly": 96813,
+    "inside_gridsat_coverage": 96813,
+    "usa_wind_missing": 10444,
+    "below_17kt": 306,
+    "labelled_fixes": 86063,
+    "labelled_storms": 1954
+  },
+  "fixes_in_dataset_a": 86063,
+  "dataset_a_wind_vs_usa_wind_same_class": 0.8959,
+  "ni_imd_wind_vs_usa_wind": {
+    "fixes_with_both": 3563,
+    "same_class": 0.6958,
+    "usa_class_higher": 0.2562,
+    "usa_class_lower": 0.048,
+    "confusion_imd_rows_usa_cols": {
+      "0": {
+        "-1": 2,
+        "0": 707,
+        "1": 81,
+        "2": 0,
+        "3": 0
+      },
+      "1": {
+        "-1": 3,
+        "0": 586,
+        "1": 1255,
+        "2": 65,
+        "3": 1
+      },
+      "2": {
+        "-1": 0,
+        "0": 0,
+        "1": 185,
+        "2": 263,
+        "3": 24
+      },
+      "3": {
+        "-1": 0,
+        "0": 0,
+        "1": 10,
+        "2": 127,
+        "3": 254
+      }
+    }
+  },
+  "available": {
+    "D-DD/arabian_sea": {
+      "fixes": 887,
+      "storms": 60
+    },
+    "D-DD/bay_of_bengal": {
+      "fixes": 1233,
+      "storms": 92
+    },
+    "D-DD/eastern_pacific": {
+      "fixes": 5087,
+      "storms": 504
+    },
+    "D-DD/south_indian_ocean": {
+      "fixes": 6807,
+      "storms": 404
+    },
+    "D-DD/southern_pacific": {
+      "fixes": 2964,
+      "storms": 222
+    },
+    "D-DD/western_pacific": {
+      "fixes": 8492,
+      "storms": 703
+    },
+    "CS-SCS/arabian_sea": {
+      "fixes": 907,
+      "storms": 55
+    },
+    "CS-SCS/bay_of_bengal": {
+      "fixes": 1403,
+      "storms": 89
+    },
+    "CS-SCS/eastern_pacific": {
+      "fixes": 9350,
+      "storms": 452
+    },
+    "CS-SCS/south_indian_ocean": {
+      "fixes": 8434,
+      "storms": 396
+    },
+    "CS-SCS/southern_pacific": {
+      "fixes": 3708,
+      "storms": 216
+    },
+    "CS-SCS/western_pacific": {
+      "fixes": 11846,
+      "storms": 609
+    },
+    "VSCS/arabian_sea": {
+      "fixes": 255,
+      "storms": 22
+    },
+    "VSCS/bay_of_bengal": {
+      "fixes": 226,
+      "storms": 30
+    },
+    "VSCS/eastern_pacific": {
+      "fixes": 2739,
+      "storms": 226
+    },
+    "VSCS/south_indian_ocean": {
+      "fixes": 2626,
+      "storms": 220
+    },
+    "VSCS/southern_pacific": {
+      "fixes": 1134,
+      "storms": 99
+    },
+    "VSCS/western_pacific": {
+      "fixes": 5088,
+      "storms": 375
+    },
+    "ESCS-SuCS/arabian_sea": {
+      "fixes": 224,
+      "storms": 16
+    },
+    "ESCS-SuCS/bay_of_bengal": {
+      "fixes": 168,
+      "storms": 13
+    },
+    "ESCS-SuCS/eastern_pacific": {
+      "fixes": 2374,
+      "storms": 141
+    },
+    "ESCS-SuCS/south_indian_ocean": {
+      "fixes": 2747,
+      "storms": 149
+    },
+    "ESCS-SuCS/southern_pacific": {
+      "fixes": 1122,
+      "storms": 68
+    },
+    "ESCS-SuCS/western_pacific": {
+      "fixes": 6242,
+      "storms": 272
+    }
+  },
+  "available_by_class": {
+    "D-DD": {
+      "fixes": 25470,
+      "storms": 1927
+    },
+    "CS-SCS": {
+      "fixes": 35648,
+      "storms": 1782
+    },
+    "VSCS": {
+      "fixes": 12068,
+      "storms": 962
+    },
+    "ESCS-SuCS": {
+      "fixes": 12877,
+      "storms": 652
+    }
+  },
+  "candidates_by_class_area": {
+    "D-DD/arabian_sea": 162,
+    "D-DD/bay_of_bengal": 248,
+    "D-DD/eastern_pacific": 247,
+    "D-DD/south_indian_ocean": 248,
+    "D-DD/southern_pacific": 247,
+    "D-DD/western_pacific": 248,
+    "CS-SCS/arabian_sea": 46,
+    "CS-SCS/bay_of_bengal": 122,
+    "CS-SCS/eastern_pacific": 308,
+    "CS-SCS/south_indian_ocean": 308,
+    "CS-SCS/southern_pacific": 308,
+    "CS-SCS/western_pacific": 308,
+    "VSCS/arabian_sea": 64,
+    "VSCS/bay_of_bengal": 67,
+    "VSCS/eastern_pacific": 324,
+    "VSCS/south_indian_ocean": 324,
+    "VSCS/southern_pacific": 297,
+    "VSCS/western_pacific": 324,
+    "ESCS-SuCS/arabian_sea": 28,
+    "ESCS-SuCS/bay_of_bengal": 24,
+    "ESCS-SuCS/eastern_pacific": 389,
+    "ESCS-SuCS/south_indian_ocean": 411,
+    "ESCS-SuCS/southern_pacific": 113,
+    "ESCS-SuCS/western_pacific": 435
+  },
+  "candidates_by_class": {
+    "D-DD": 1400,
+    "CS-SCS": 1400,
+    "VSCS": 1400,
+    "ESCS-SuCS": 1400
+  },
+  "candidate_storms": 1768,
+  "missing_values_in_candidates": {
+    "wmo_wind_kt": 2788,
+    "wmo_agency": 2712
+  }
+}

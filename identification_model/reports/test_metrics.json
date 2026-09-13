@@ -1,0 +1,456 @@
+{
+  "checkpoint": "models\\best_model.pth",
+  "model": {
+    "name": "VayuDrishti Cyclone Identification Model",
+    "version": "v1",
+    "architecture": "efficientnet_b0",
+    "dataset_version": "v1.0"
+  },
+  "decision_threshold": 0.5,
+  "test_split": {
+    "n": 601,
+    "cyclone": 305,
+    "no_cyclone": 296,
+    "storms": 169,
+    "groups": 282
+  },
+  "overall": {
+    "n": 601,
+    "n_cyclone": 305,
+    "n_no_cyclone": 296,
+    "tp": 293,
+    "fp": 11,
+    "tn": 285,
+    "fn": 12,
+    "accuracy": 0.961730449251248,
+    "precision": 0.9638157894736842,
+    "recall": 0.9606557377049181,
+    "f1": 0.9622331691297209,
+    "specificity": 0.9628378378378378,
+    "false_positive_rate": 0.037162162162162164,
+    "roc_auc": 0.9919583517944174,
+    "pr_auc": 0.9913648932380513
+  },
+  "bootstrap_95ci_by_group": {
+    "accuracy": [
+      0.9459,
+      0.9764
+    ],
+    "precision": [
+      0.9388,
+      0.9855
+    ],
+    "recall": [
+      0.9386,
+      0.9807
+    ],
+    "f1": [
+      0.9451,
+      0.9771
+    ],
+    "roc_auc": [
+      0.985,
+      0.9968
+    ],
+    "pr_auc": [
+      0.9805,
+      0.9973
+    ],
+    "false_positive_rate": [
+      0.0159,
+      0.0602
+    ]
+  },
+  "north_indian_ocean_only": {
+    "n": 396,
+    "n_cyclone": 100,
+    "n_no_cyclone": 296,
+    "tp": 92,
+    "fp": 11,
+    "tn": 285,
+    "fn": 8,
+    "accuracy": 0.952020202020202,
+    "precision": 0.8932038834951457,
+    "recall": 0.92,
+    "f1": 0.9064039408866995,
+    "specificity": 0.9628378378378378,
+    "false_positive_rate": 0.037162162162162164,
+    "roc_auc": 0.9849831081081081,
+    "pr_auc": 0.9610221562407274
+  },
+  "region": [
+    {
+      "area": "North Indian Ocean",
+      "level": "region",
+      "n": 396,
+      "n_cyclone": 100,
+      "n_no_cyclone": 296,
+      "recall": 0.92,
+      "precision": 0.8932038834951457,
+      "f1": 0.9064039408866995,
+      "accuracy": 0.952020202020202,
+      "false_positive_rate": 0.037162162162162164,
+      "roc_auc": 0.9849831081081081,
+      "note": "all metrics"
+    },
+    {
+      "area": "Arabian Sea",
+      "level": "subregion",
+      "n": 182,
+      "n_cyclone": 48,
+      "n_no_cyclone": 134,
+      "recall": 0.9791666666666666,
+      "precision": 0.8867924528301887,
+      "f1": 0.9306930693069307,
+      "accuracy": 0.9615384615384616,
+      "false_positive_rate": 0.04477611940298507,
+      "roc_auc": 0.9904384328358208,
+      "note": "all metrics"
+    },
+    {
+      "area": "Bay of Bengal",
+      "level": "subregion",
+      "n": 214,
+      "n_cyclone": 52,
+      "n_no_cyclone": 162,
+      "recall": 0.8653846153846154,
+      "precision": 0.9,
+      "f1": 0.8823529411764707,
+      "accuracy": 0.9439252336448598,
+      "false_positive_rate": 0.030864197530864196,
+      "roc_auc": 0.9816001899335233,
+      "note": "all metrics"
+    },
+    {
+      "area": "South Indian Ocean",
+      "level": "region",
+      "n": 56,
+      "n_cyclone": 56,
+      "n_no_cyclone": 0,
+      "recall": 1.0,
+      "precision": null,
+      "f1": null,
+      "accuracy": null,
+      "false_positive_rate": null,
+      "roc_auc": null,
+      "note": "recall only \u2014 no/too few negatives in this area"
+    },
+    {
+      "area": "Pacific Ocean",
+      "level": "region",
+      "n": 149,
+      "n_cyclone": 149,
+      "n_no_cyclone": 0,
+      "recall": 0.9731543624161074,
+      "precision": null,
+      "f1": null,
+      "accuracy": null,
+      "false_positive_rate": null,
+      "roc_auc": null,
+      "note": "recall only \u2014 no/too few negatives in this area"
+    },
+    {
+      "area": "Western Pacific",
+      "level": "subregion",
+      "n": 51,
+      "n_cyclone": 51,
+      "n_no_cyclone": 0,
+      "recall": 0.9411764705882353,
+      "precision": null,
+      "f1": null,
+      "accuracy": null,
+      "false_positive_rate": null,
+      "roc_auc": null,
+      "note": "recall only \u2014 no/too few negatives in this area"
+    },
+    {
+      "area": "Eastern Pacific",
+      "level": "subregion",
+      "n": 51,
+      "n_cyclone": 51,
+      "n_no_cyclone": 0,
+      "recall": 1.0,
+      "precision": null,
+      "f1": null,
+      "accuracy": null,
+      "false_positive_rate": null,
+      "roc_auc": null,
+      "note": "recall only \u2014 no/too few negatives in this area"
+    },
+    {
+      "area": "Southern Pacific",
+      "level": "subregion",
+      "n": 47,
+      "n_cyclone": 47,
+      "n_no_cyclone": 0,
+      "recall": 0.9787234042553191,
+      "precision": null,
+      "f1": null,
+      "accuracy": null,
+      "false_positive_rate": null,
+      "roc_auc": null,
+      "note": "recall only \u2014 no/too few negatives in this area"
+    }
+  ],
+  "by_intensity": {
+    "medium": {
+      "n": 111,
+      "n_cyclone": 111,
+      "n_no_cyclone": 0,
+      "tp": 106,
+      "fp": 0,
+      "tn": 0,
+      "fn": 5,
+      "accuracy": 0.954954954954955,
+      "precision": 1.0,
+      "recall": 0.954954954954955,
+      "f1": 0.9769585253456221,
+      "specificity": NaN,
+      "false_positive_rate": NaN,
+      "roc_auc": NaN,
+      "pr_auc": NaN
+    },
+    "strong": {
+      "n": 87,
+      "n_cyclone": 87,
+      "n_no_cyclone": 0,
+      "tp": 87,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "specificity": NaN,
+      "false_positive_rate": NaN,
+      "roc_auc": NaN,
+      "pr_auc": NaN
+    },
+    "weak": {
+      "n": 107,
+      "n_cyclone": 107,
+      "n_no_cyclone": 0,
+      "tp": 100,
+      "fp": 0,
+      "tn": 0,
+      "fn": 7,
+      "accuracy": 0.9345794392523364,
+      "precision": 1.0,
+      "recall": 0.9345794392523364,
+      "f1": 0.966183574879227,
+      "specificity": NaN,
+      "false_positive_rate": NaN,
+      "roc_auc": NaN,
+      "pr_auc": NaN
+    }
+  },
+  "by_negative_difficulty": {
+    "easy": {
+      "n": 115,
+      "n_cyclone": 0,
+      "n_no_cyclone": 115,
+      "tp": 0,
+      "fp": 1,
+      "tn": 114,
+      "fn": 0,
+      "accuracy": 0.991304347826087,
+      "precision": 0.0,
+      "recall": NaN,
+      "f1": NaN,
+      "specificity": 0.991304347826087,
+      "false_positive_rate": 0.008695652173913044,
+      "roc_auc": NaN,
+      "pr_auc": NaN
+    },
+    "hard": {
+      "n": 67,
+      "n_cyclone": 0,
+      "n_no_cyclone": 67,
+      "tp": 0,
+      "fp": 9,
+      "tn": 58,
+      "fn": 0,
+      "accuracy": 0.8656716417910447,
+      "precision": 0.0,
+      "recall": NaN,
+      "f1": NaN,
+      "specificity": 0.8656716417910447,
+      "false_positive_rate": 0.13432835820895522,
+      "roc_auc": NaN,
+      "pr_auc": NaN
+    },
+    "moderate": {
+      "n": 114,
+      "n_cyclone": 0,
+      "n_no_cyclone": 114,
+      "tp": 0,
+      "fp": 1,
+      "tn": 113,
+      "fn": 0,
+      "accuracy": 0.9912280701754386,
+      "precision": 0.0,
+      "recall": NaN,
+      "f1": NaN,
+      "specificity": 0.9912280701754386,
+      "false_positive_rate": 0.008771929824561403,
+      "roc_auc": NaN,
+      "pr_auc": NaN
+    }
+  },
+  "hard_negative": {
+    "n_hard_negatives": 67,
+    "hard_negative_accuracy": 0.8656716417910447,
+    "hard_negative_false_positive_rate": 0.13432835820895522,
+    "precision_all_positives_vs_hard_negatives": 0.9701986754966887,
+    "roc_auc_all_positives_vs_hard_negatives": 0.9753853682407634,
+    "precision_ni_positives_vs_hard_negatives": 0.9108910891089109,
+    "roc_auc_ni_positives_vs_hard_negatives": 0.9593283582089552,
+    "n_ni_positives": 100
+  },
+  "calibration": {
+    "expected_calibration_error": 0.0259,
+    "mean_confidence": 0.9812,
+    "accuracy": 0.9617,
+    "share_confidence_ge_0_99": 0.8419,
+    "errors": 23,
+    "errors_with_confidence_ge_0_9": 12,
+    "median_confidence_correct": 1.0,
+    "median_confidence_errors": 0.9134,
+    "confidence_bins": [
+      {
+        "bin": "0.50-0.55",
+        "n": 1,
+        "mean_confidence": 0.5006,
+        "accuracy": 1.0
+      },
+      {
+        "bin": "0.55-0.60",
+        "n": 3,
+        "mean_confidence": 0.5642,
+        "accuracy": 0.6667
+      },
+      {
+        "bin": "0.60-0.65",
+        "n": 4,
+        "mean_confidence": 0.6283,
+        "accuracy": 0.25
+      },
+      {
+        "bin": "0.65-0.70",
+        "n": 2,
+        "mean_confidence": 0.6604,
+        "accuracy": 1.0
+      },
+      {
+        "bin": "0.70-0.75",
+        "n": 4,
+        "mean_confidence": 0.7263,
+        "accuracy": 0.75
+      },
+      {
+        "bin": "0.75-0.80",
+        "n": 6,
+        "mean_confidence": 0.7746,
+        "accuracy": 0.8333
+      },
+      {
+        "bin": "0.80-0.85",
+        "n": 6,
+        "mean_confidence": 0.8315,
+        "accuracy": 0.8333
+      },
+      {
+        "bin": "0.85-0.90",
+        "n": 14,
+        "mean_confidence": 0.8754,
+        "accuracy": 0.7143
+      },
+      {
+        "bin": "0.90-0.95",
+        "n": 14,
+        "mean_confidence": 0.9287,
+        "accuracy": 0.6429
+      },
+      {
+        "bin": "0.95-1.00",
+        "n": 547,
+        "mean_confidence": 0.9979,
+        "accuracy": 0.9872
+      }
+    ],
+    "probability_bins": [
+      {
+        "bin": "0.0-0.1",
+        "n": 271,
+        "mean_p_cyclone": 0.0037,
+        "fraction_cyclone": 0.0221
+      },
+      {
+        "bin": "0.1-0.2",
+        "n": 10,
+        "mean_p_cyclone": 0.1423,
+        "fraction_cyclone": 0.2
+      },
+      {
+        "bin": "0.2-0.3",
+        "n": 7,
+        "mean_p_cyclone": 0.2477,
+        "fraction_cyclone": 0.0
+      },
+      {
+        "bin": "0.3-0.4",
+        "n": 5,
+        "mean_p_cyclone": 0.3665,
+        "fraction_cyclone": 0.6
+      },
+      {
+        "bin": "0.4-0.5",
+        "n": 4,
+        "mean_p_cyclone": 0.4517,
+        "fraction_cyclone": 0.25
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 1,
+        "mean_p_cyclone": 0.6664,
+        "fraction_cyclone": 1.0
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 3,
+        "mean_p_cyclone": 0.7624,
+        "fraction_cyclone": 0.3333
+      },
+      {
+        "bin": "0.8-0.9",
+        "n": 10,
+        "mean_p_cyclone": 0.8668,
+        "fraction_cyclone": 0.7
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 290,
+        "mean_p_cyclone": 0.9961,
+        "fraction_cyclone": 0.9793
+      }
+    ]
+  },
+  "cross_source_original_png": {
+    "<not recorded>": {
+      "n": 4,
+      "recall": 1.0,
+      "median_p_cyclone": 0.9997
+    },
+    "NOAA GridSat-B1 v02r01": {
+      "n": 6,
+      "recall": 1.0,
+      "median_p_cyclone": 0.9999
+    },
+    "NOAA HURSAT-B1 v07b": {
+      "n": 98,
+      "recall": 0.9898,
+      "median_p_cyclone": 1.0
+    }
+  }
+}

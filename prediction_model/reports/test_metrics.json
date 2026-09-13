@@ -1,0 +1,2447 @@
+{
+  "model": {
+    "name": "cyclone-track-prediction",
+    "display_name": "VayuDrishti Track Prediction Model",
+    "version": "v1",
+    "architecture": "gru",
+    "dataset_version": "pred-v1.0",
+    "trained_at": "2026-09-12T15:02:10+00:00",
+    "horizons_hours": [
+      6,
+      12,
+      18,
+      24
+    ],
+    "history_window_hours": 24
+  },
+  "test_split": {
+    "samples": 7400,
+    "storms": 301,
+    "samples_with_wind_target_last_horizon": 6081
+  },
+  "overall": {
+    "model": {
+      "6": {
+        "n": 7400,
+        "track_km_mean": 34.319,
+        "track_km_median": 27.353,
+        "track_km_p90": 65.726,
+        "mae_lat_deg": 0.19,
+        "mae_lon_deg": 0.225,
+        "n_wind": 6422,
+        "wind_mae_kt": 3.513,
+        "wind_rmse_kt": 4.915,
+        "wind_bias_kt": 0.01,
+        "n_pressure": 6094,
+        "pressure_mae_hpa": 2.617,
+        "pressure_rmse_hpa": 4.049
+      },
+      "12": {
+        "n": 7400,
+        "track_km_mean": 73.521,
+        "track_km_median": 59.728,
+        "track_km_p90": 141.381,
+        "mae_lat_deg": 0.407,
+        "mae_lon_deg": 0.484,
+        "n_wind": 6327,
+        "wind_mae_kt": 5.862,
+        "wind_rmse_kt": 8.247,
+        "wind_bias_kt": 0.113,
+        "n_pressure": 6006,
+        "pressure_mae_hpa": 4.327,
+        "pressure_rmse_hpa": 6.545
+      },
+      "18": {
+        "n": 7400,
+        "track_km_mean": 119.524,
+        "track_km_median": 98.63,
+        "track_km_p90": 229.867,
+        "mae_lat_deg": 0.655,
+        "mae_lon_deg": 0.8,
+        "n_wind": 6217,
+        "wind_mae_kt": 8.086,
+        "wind_rmse_kt": 11.249,
+        "wind_bias_kt": 0.245,
+        "n_pressure": 5904,
+        "pressure_mae_hpa": 5.901,
+        "pressure_rmse_hpa": 8.773
+      },
+      "24": {
+        "n": 7400,
+        "track_km_mean": 171.508,
+        "track_km_median": 141.483,
+        "track_km_p90": 328.278,
+        "mae_lat_deg": 0.935,
+        "mae_lon_deg": 1.162,
+        "n_wind": 6081,
+        "wind_mae_kt": 10.002,
+        "wind_rmse_kt": 13.83,
+        "wind_bias_kt": 0.341,
+        "n_pressure": 5777,
+        "pressure_mae_hpa": 7.284,
+        "pressure_rmse_hpa": 10.678
+      },
+      "mean_over_horizons": {
+        "track_km_mean": 99.718,
+        "wind_mae_kt": 6.866,
+        "pressure_mae_hpa": 5.032
+      }
+    },
+    "persistence": {
+      "6": {
+        "n": 7400,
+        "track_km_mean": 105.997,
+        "track_km_median": 96.83,
+        "track_km_p90": 178.337,
+        "mae_lat_deg": 0.52,
+        "mae_lon_deg": 0.757,
+        "n_wind": 6422,
+        "wind_mae_kt": 4.085,
+        "wind_rmse_kt": 6.445,
+        "wind_bias_kt": -0.3,
+        "n_pressure": 6094,
+        "pressure_mae_hpa": 3.108,
+        "pressure_rmse_hpa": 5.179
+      },
+      "12": {
+        "n": 7400,
+        "track_km_mean": 210.83,
+        "track_km_median": 191.62,
+        "track_km_p90": 351.952,
+        "mae_lat_deg": 1.036,
+        "mae_lon_deg": 1.513,
+        "n_wind": 6327,
+        "wind_mae_kt": 7.806,
+        "wind_rmse_kt": 11.372,
+        "wind_bias_kt": -0.438,
+        "n_pressure": 6006,
+        "pressure_mae_hpa": 5.715,
+        "pressure_rmse_hpa": 8.904
+      },
+      "18": {
+        "n": 7400,
+        "track_km_mean": 315.554,
+        "track_km_median": 285.127,
+        "track_km_p90": 528.324,
+        "mae_lat_deg": 1.553,
+        "mae_lon_deg": 2.274,
+        "n_wind": 6217,
+        "wind_mae_kt": 11.247,
+        "wind_rmse_kt": 15.808,
+        "wind_bias_kt": -0.433,
+        "n_pressure": 5904,
+        "pressure_mae_hpa": 8.107,
+        "pressure_rmse_hpa": 12.235
+      },
+      "24": {
+        "n": 7400,
+        "track_km_mean": 420.612,
+        "track_km_median": 379.408,
+        "track_km_p90": 708.795,
+        "mae_lat_deg": 2.072,
+        "mae_lon_deg": 3.045,
+        "n_wind": 6081,
+        "wind_mae_kt": 14.324,
+        "wind_rmse_kt": 19.75,
+        "wind_bias_kt": -0.346,
+        "n_pressure": 5777,
+        "pressure_mae_hpa": 10.277,
+        "pressure_rmse_hpa": 15.186
+      },
+      "mean_over_horizons": {
+        "track_km_mean": 263.248,
+        "wind_mae_kt": 9.365,
+        "pressure_mae_hpa": 6.802
+      }
+    },
+    "extrapolation": {
+      "6": {
+        "n": 7400,
+        "track_km_mean": 39.745,
+        "track_km_median": 31.69,
+        "track_km_p90": 78.098,
+        "mae_lat_deg": 0.216,
+        "mae_lon_deg": 0.263,
+        "n_wind": 6422,
+        "wind_mae_kt": 4.085,
+        "wind_rmse_kt": 6.445,
+        "wind_bias_kt": -0.3,
+        "n_pressure": 6094,
+        "pressure_mae_hpa": 3.108,
+        "pressure_rmse_hpa": 5.179
+      },
+      "12": {
+        "n": 7400,
+        "track_km_mean": 87.113,
+        "track_km_median": 69.978,
+        "track_km_p90": 169.976,
+        "mae_lat_deg": 0.471,
+        "mae_lon_deg": 0.588,
+        "n_wind": 6327,
+        "wind_mae_kt": 7.806,
+        "wind_rmse_kt": 11.372,
+        "wind_bias_kt": -0.438,
+        "n_pressure": 6006,
+        "pressure_mae_hpa": 5.715,
+        "pressure_rmse_hpa": 8.904
+      },
+      "18": {
+        "n": 7400,
+        "track_km_mean": 143.179,
+        "track_km_median": 115.964,
+        "track_km_p90": 281.768,
+        "mae_lat_deg": 0.766,
+        "mae_lon_deg": 0.985,
+        "n_wind": 6217,
+        "wind_mae_kt": 11.247,
+        "wind_rmse_kt": 15.808,
+        "wind_bias_kt": -0.433,
+        "n_pressure": 5904,
+        "pressure_mae_hpa": 8.107,
+        "pressure_rmse_hpa": 12.235
+      },
+      "24": {
+        "n": 7400,
+        "track_km_mean": 207.322,
+        "track_km_median": 167.412,
+        "track_km_p90": 400.429,
+        "mae_lat_deg": 1.102,
+        "mae_lon_deg": 1.442,
+        "n_wind": 6081,
+        "wind_mae_kt": 14.324,
+        "wind_rmse_kt": 19.75,
+        "wind_bias_kt": -0.346,
+        "n_pressure": 5777,
+        "pressure_mae_hpa": 10.277,
+        "pressure_rmse_hpa": 15.186
+      },
+      "mean_over_horizons": {
+        "track_km_mean": 119.34,
+        "wind_mae_kt": 9.365,
+        "pressure_mae_hpa": 6.802
+      }
+    }
+  },
+  "track_km_ci95": {
+    "model": {
+      "6": [
+        32.839,
+        35.767
+      ],
+      "12": [
+        70.437,
+        76.742
+      ],
+      "18": [
+        114.385,
+        124.892
+      ],
+      "24": [
+        164.044,
+        179.463
+      ]
+    },
+    "persistence": {
+      "6": [
+        101.062,
+        110.906
+      ],
+      "12": [
+        200.82,
+        220.811
+      ],
+      "18": [
+        300.117,
+        330.614
+      ],
+      "24": [
+        399.754,
+        440.859
+      ]
+    },
+    "extrapolation": {
+      "6": [
+        37.991,
+        41.6
+      ],
+      "12": [
+        83.095,
+        91.35
+      ],
+      "18": [
+        136.268,
+        150.202
+      ],
+      "24": [
+        197.169,
+        217.495
+      ]
+    }
+  },
+  "skill_percent": {
+    "persistence": {
+      "track": {
+        "6": 67.6,
+        "12": 65.1,
+        "18": 62.1,
+        "24": 59.2
+      },
+      "wind": {
+        "6": 14.0,
+        "12": 24.9,
+        "18": 28.1,
+        "24": 30.2
+      },
+      "pressure": {
+        "6": 15.8,
+        "12": 24.3,
+        "18": 27.2,
+        "24": 29.1
+      }
+    },
+    "extrapolation": {
+      "track": {
+        "6": 13.7,
+        "12": 15.6,
+        "18": 16.5,
+        "24": 17.3
+      },
+      "wind": {
+        "6": 14.0,
+        "12": 24.9,
+        "18": 28.1,
+        "24": 30.2
+      },
+      "pressure": {
+        "6": 15.8,
+        "12": 24.3,
+        "18": 27.2,
+        "24": 29.1
+      }
+    }
+  },
+  "paired_difference_vs_baseline": {
+    "persistence": {
+      "6": {
+        "track_km_diff_mean": -71.68,
+        "track_km_diff_ci95": [
+          -75.87,
+          -67.463
+        ],
+        "wind_abs_err_diff_mean": -0.572,
+        "wind_abs_err_diff_ci95": [
+          -0.742,
+          -0.417
+        ]
+      },
+      "12": {
+        "track_km_diff_mean": -137.31,
+        "track_km_diff_ci95": [
+          -145.845,
+          -128.586
+        ],
+        "wind_abs_err_diff_mean": -1.944,
+        "wind_abs_err_diff_ci95": [
+          -2.302,
+          -1.581
+        ]
+      },
+      "18": {
+        "track_km_diff_mean": -196.03,
+        "track_km_diff_ci95": [
+          -208.715,
+          -182.773
+        ],
+        "wind_abs_err_diff_mean": -3.161,
+        "wind_abs_err_diff_ci95": [
+          -3.699,
+          -2.604
+        ]
+      },
+      "24": {
+        "track_km_diff_mean": -249.1,
+        "track_km_diff_ci95": [
+          -266.538,
+          -230.869
+        ],
+        "wind_abs_err_diff_mean": -4.322,
+        "wind_abs_err_diff_ci95": [
+          -5.122,
+          -3.605
+        ]
+      }
+    },
+    "extrapolation": {
+      "6": {
+        "track_km_diff_mean": -5.43,
+        "track_km_diff_ci95": [
+          -6.031,
+          -4.788
+        ],
+        "wind_abs_err_diff_mean": -0.572,
+        "wind_abs_err_diff_ci95": [
+          -0.742,
+          -0.417
+        ]
+      },
+      "12": {
+        "track_km_diff_mean": -13.59,
+        "track_km_diff_ci95": [
+          -15.265,
+          -11.938
+        ],
+        "wind_abs_err_diff_mean": -1.944,
+        "wind_abs_err_diff_ci95": [
+          -2.302,
+          -1.581
+        ]
+      },
+      "18": {
+        "track_km_diff_mean": -23.65,
+        "track_km_diff_ci95": [
+          -26.489,
+          -20.771
+        ],
+        "wind_abs_err_diff_mean": -3.161,
+        "wind_abs_err_diff_ci95": [
+          -3.699,
+          -2.604
+        ]
+      },
+      "24": {
+        "track_km_diff_mean": -35.81,
+        "track_km_diff_ci95": [
+          -40.113,
+          -31.402
+        ],
+        "wind_abs_err_diff_mean": -4.322,
+        "wind_abs_err_diff_ci95": [
+          -5.122,
+          -3.605
+        ]
+      }
+    }
+  },
+  "tropical_stage_only": {
+    "model": {
+      "6": {
+        "n": 5815,
+        "track_km_mean": 31.282,
+        "track_km_median": 26.232,
+        "track_km_p90": 59.056,
+        "mae_lat_deg": 0.174,
+        "mae_lon_deg": 0.197,
+        "n_wind": 5465,
+        "wind_mae_kt": 3.769,
+        "wind_rmse_kt": 5.197,
+        "wind_bias_kt": 0.002,
+        "n_pressure": 5152,
+        "pressure_mae_hpa": 2.88,
+        "pressure_rmse_hpa": 4.333
+      },
+      "12": {
+        "n": 5815,
+        "track_km_mean": 67.224,
+        "track_km_median": 56.638,
+        "track_km_p90": 126.241,
+        "mae_lat_deg": 0.373,
+        "mae_lon_deg": 0.428,
+        "n_wind": 5422,
+        "wind_mae_kt": 6.338,
+        "wind_rmse_kt": 8.759,
+        "wind_bias_kt": 0.101,
+        "n_pressure": 5113,
+        "pressure_mae_hpa": 4.794,
+        "pressure_rmse_hpa": 7.022
+      },
+      "18": {
+        "n": 5815,
+        "track_km_mean": 109.826,
+        "track_km_median": 94.178,
+        "track_km_p90": 204.239,
+        "mae_lat_deg": 0.606,
+        "mae_lon_deg": 0.707,
+        "n_wind": 5349,
+        "wind_mae_kt": 8.754,
+        "wind_rmse_kt": 11.94,
+        "wind_bias_kt": 0.253,
+        "n_pressure": 5046,
+        "pressure_mae_hpa": 6.54,
+        "pressure_rmse_hpa": 9.406
+      },
+      "24": {
+        "n": 5815,
+        "track_km_mean": 158.907,
+        "track_km_median": 134.865,
+        "track_km_p90": 297.575,
+        "mae_lat_deg": 0.873,
+        "mae_lon_deg": 1.035,
+        "n_wind": 5248,
+        "wind_mae_kt": 10.827,
+        "wind_rmse_kt": 14.662,
+        "wind_bias_kt": 0.342,
+        "n_pressure": 4952,
+        "pressure_mae_hpa": 8.056,
+        "pressure_rmse_hpa": 11.432
+      },
+      "mean_over_horizons": {
+        "track_km_mean": 91.81,
+        "wind_mae_kt": 7.422,
+        "pressure_mae_hpa": 5.567
+      }
+    },
+    "persistence": {
+      "6": {
+        "n": 5815,
+        "track_km_mean": 100.257,
+        "track_km_median": 94.121,
+        "track_km_p90": 164.932,
+        "mae_lat_deg": 0.501,
+        "mae_lon_deg": 0.686,
+        "n_wind": 5465,
+        "wind_mae_kt": 4.519,
+        "wind_rmse_kt": 6.857,
+        "wind_bias_kt": -0.345,
+        "n_pressure": 5152,
+        "pressure_mae_hpa": 3.486,
+        "pressure_rmse_hpa": 5.563
+      },
+      "12": {
+        "n": 5815,
+        "track_km_mean": 200.586,
+        "track_km_median": 187.635,
+        "track_km_p90": 326.376,
+        "mae_lat_deg": 1.008,
+        "mae_lon_deg": 1.377,
+        "n_wind": 5422,
+        "wind_mae_kt": 8.63,
+        "wind_rmse_kt": 12.126,
+        "wind_bias_kt": -0.428,
+        "n_pressure": 5113,
+        "pressure_mae_hpa": 6.419,
+        "pressure_rmse_hpa": 9.574
+      },
+      "18": {
+        "n": 5815,
+        "track_km_mean": 301.77,
+        "track_km_median": 280.475,
+        "track_km_p90": 490.906,
+        "mae_lat_deg": 1.524,
+        "mae_lon_deg": 2.076,
+        "n_wind": 5349,
+        "wind_mae_kt": 12.389,
+        "wind_rmse_kt": 16.841,
+        "wind_bias_kt": -0.308,
+        "n_pressure": 5046,
+        "pressure_mae_hpa": 9.091,
+        "pressure_rmse_hpa": 13.145
+      },
+      "24": {
+        "n": 5815,
+        "track_km_mean": 404.105,
+        "track_km_median": 374.491,
+        "track_km_p90": 659.859,
+        "mae_lat_deg": 2.049,
+        "mae_lon_deg": 2.787,
+        "n_wind": 5248,
+        "wind_mae_kt": 15.728,
+        "wind_rmse_kt": 21.011,
+        "wind_bias_kt": -0.09,
+        "n_pressure": 4952,
+        "pressure_mae_hpa": 11.497,
+        "pressure_rmse_hpa": 16.297
+      },
+      "mean_over_horizons": {
+        "track_km_mean": 251.68,
+        "wind_mae_kt": 10.316,
+        "pressure_mae_hpa": 7.623
+      }
+    },
+    "extrapolation": {
+      "6": {
+        "n": 5815,
+        "track_km_mean": 36.124,
+        "track_km_median": 29.808,
+        "track_km_p90": 69.29,
+        "mae_lat_deg": 0.197,
+        "mae_lon_deg": 0.231,
+        "n_wind": 5465,
+        "wind_mae_kt": 4.519,
+        "wind_rmse_kt": 6.857,
+        "wind_bias_kt": -0.345,
+        "n_pressure": 5152,
+        "pressure_mae_hpa": 3.486,
+        "pressure_rmse_hpa": 5.563
+      },
+      "12": {
+        "n": 5815,
+        "track_km_mean": 79.604,
+        "track_km_median": 66.816,
+        "track_km_p90": 151.787,
+        "mae_lat_deg": 0.43,
+        "mae_lon_deg": 0.52,
+        "n_wind": 5422,
+        "wind_mae_kt": 8.63,
+        "wind_rmse_kt": 12.126,
+        "wind_bias_kt": -0.428,
+        "n_pressure": 5113,
+        "pressure_mae_hpa": 6.419,
+        "pressure_rmse_hpa": 9.574
+      },
+      "18": {
+        "n": 5815,
+        "track_km_mean": 131.781,
+        "track_km_median": 109.575,
+        "track_km_p90": 251.308,
+        "mae_lat_deg": 0.705,
+        "mae_lon_deg": 0.88,
+        "n_wind": 5349,
+        "wind_mae_kt": 12.389,
+        "wind_rmse_kt": 16.841,
+        "wind_bias_kt": -0.308,
+        "n_pressure": 5046,
+        "pressure_mae_hpa": 9.091,
+        "pressure_rmse_hpa": 13.145
+      },
+      "24": {
+        "n": 5815,
+        "track_km_mean": 192.192,
+        "track_km_median": 157.145,
+        "track_km_p90": 367.526,
+        "mae_lat_deg": 1.017,
+        "mae_lon_deg": 1.306,
+        "n_wind": 5248,
+        "wind_mae_kt": 15.728,
+        "wind_rmse_kt": 21.011,
+        "wind_bias_kt": -0.09,
+        "n_pressure": 4952,
+        "pressure_mae_hpa": 11.497,
+        "pressure_rmse_hpa": 16.297
+      },
+      "mean_over_horizons": {
+        "track_km_mean": 109.925,
+        "wind_mae_kt": 10.316,
+        "pressure_mae_hpa": 7.623
+      }
+    }
+  },
+  "region": {
+    "model": [
+      {
+        "area": "north_indian_ocean",
+        "label": "North Indian Ocean",
+        "level": "region",
+        "samples": 358,
+        "storms": 28,
+        "metrics": {
+          "6": {
+            "n": 358,
+            "track_km_mean": 32.314,
+            "track_km_median": 27.13,
+            "track_km_p90": 57.242,
+            "mae_lat_deg": 0.164,
+            "mae_lon_deg": 0.215,
+            "n_wind": 309,
+            "wind_mae_kt": 3.785,
+            "wind_rmse_kt": 5.299,
+            "wind_bias_kt": -0.993,
+            "n_pressure": 309,
+            "pressure_mae_hpa": 2.962,
+            "pressure_rmse_hpa": 4.527
+          },
+          "12": {
+            "n": 358,
+            "track_km_mean": 61.809,
+            "track_km_median": 54.115,
+            "track_km_p90": 104.181,
+            "mae_lat_deg": 0.31,
+            "mae_lon_deg": 0.417,
+            "n_wind": 308,
+            "wind_mae_kt": 6.431,
+            "wind_rmse_kt": 8.733,
+            "wind_bias_kt": -1.976,
+            "n_pressure": 308,
+            "pressure_mae_hpa": 4.914,
+            "pressure_rmse_hpa": 7.029
+          },
+          "18": {
+            "n": 358,
+            "track_km_mean": 92.683,
+            "track_km_median": 80.818,
+            "track_km_p90": 160.78,
+            "mae_lat_deg": 0.464,
+            "mae_lon_deg": 0.628,
+            "n_wind": 307,
+            "wind_mae_kt": 8.905,
+            "wind_rmse_kt": 11.999,
+            "wind_bias_kt": -2.807,
+            "n_pressure": 307,
+            "pressure_mae_hpa": 6.674,
+            "pressure_rmse_hpa": 9.489
+          },
+          "24": {
+            "n": 358,
+            "track_km_mean": 125.947,
+            "track_km_median": 111.322,
+            "track_km_p90": 217.383,
+            "mae_lat_deg": 0.643,
+            "mae_lon_deg": 0.848,
+            "n_wind": 303,
+            "wind_mae_kt": 11.247,
+            "wind_rmse_kt": 14.801,
+            "wind_bias_kt": -3.151,
+            "n_pressure": 303,
+            "pressure_mae_hpa": 8.274,
+            "pressure_rmse_hpa": 11.499
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 78.188,
+            "wind_mae_kt": 7.592,
+            "pressure_mae_hpa": 5.706
+          }
+        }
+      },
+      {
+        "area": "arabian_sea",
+        "label": "Arabian Sea",
+        "level": "subregion",
+        "samples": 199,
+        "storms": 11,
+        "metrics": {
+          "6": {
+            "n": 199,
+            "track_km_mean": 30.216,
+            "track_km_median": 25.99,
+            "track_km_p90": 52.412,
+            "mae_lat_deg": 0.157,
+            "mae_lon_deg": 0.198,
+            "n_wind": 181,
+            "wind_mae_kt": 4.126,
+            "wind_rmse_kt": 5.733,
+            "wind_bias_kt": -1.167,
+            "n_pressure": 181,
+            "pressure_mae_hpa": 3.389,
+            "pressure_rmse_hpa": 4.892
+          },
+          "12": {
+            "n": 199,
+            "track_km_mean": 59.387,
+            "track_km_median": 53.344,
+            "track_km_p90": 102.577,
+            "mae_lat_deg": 0.299,
+            "mae_lon_deg": 0.399,
+            "n_wind": 180,
+            "wind_mae_kt": 7.36,
+            "wind_rmse_kt": 9.8,
+            "wind_bias_kt": -2.505,
+            "n_pressure": 180,
+            "pressure_mae_hpa": 5.623,
+            "pressure_rmse_hpa": 7.623
+          },
+          "18": {
+            "n": 199,
+            "track_km_mean": 88.934,
+            "track_km_median": 77.716,
+            "track_km_p90": 156.486,
+            "mae_lat_deg": 0.438,
+            "mae_lon_deg": 0.619,
+            "n_wind": 179,
+            "wind_mae_kt": 10.408,
+            "wind_rmse_kt": 13.633,
+            "wind_bias_kt": -3.596,
+            "n_pressure": 179,
+            "pressure_mae_hpa": 7.816,
+            "pressure_rmse_hpa": 10.483
+          },
+          "24": {
+            "n": 199,
+            "track_km_mean": 119.647,
+            "track_km_median": 108.434,
+            "track_km_p90": 197.769,
+            "mae_lat_deg": 0.582,
+            "mae_lon_deg": 0.845,
+            "n_wind": 177,
+            "wind_mae_kt": 13.214,
+            "wind_rmse_kt": 16.877,
+            "wind_bias_kt": -4.315,
+            "n_pressure": 177,
+            "pressure_mae_hpa": 9.859,
+            "pressure_rmse_hpa": 12.761
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 74.546,
+            "wind_mae_kt": 8.777,
+            "pressure_mae_hpa": 6.672
+          }
+        }
+      },
+      {
+        "area": "bay_of_bengal",
+        "label": "Bay of Bengal",
+        "level": "subregion",
+        "samples": 159,
+        "storms": 19,
+        "metrics": {
+          "6": {
+            "n": 159,
+            "track_km_mean": 34.94,
+            "track_km_median": 28.92,
+            "track_km_p90": 60.389,
+            "mae_lat_deg": 0.173,
+            "mae_lon_deg": 0.238,
+            "n_wind": 128,
+            "wind_mae_kt": 3.302,
+            "wind_rmse_kt": 4.617,
+            "wind_bias_kt": -0.748,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 2.359,
+            "pressure_rmse_hpa": 3.952
+          },
+          "12": {
+            "n": 159,
+            "track_km_mean": 64.839,
+            "track_km_median": 56.005,
+            "track_km_p90": 105.112,
+            "mae_lat_deg": 0.323,
+            "mae_lon_deg": 0.44,
+            "n_wind": 128,
+            "wind_mae_kt": 5.123,
+            "wind_rmse_kt": 6.962,
+            "wind_bias_kt": -1.233,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 3.918,
+            "pressure_rmse_hpa": 6.097
+          },
+          "18": {
+            "n": 159,
+            "track_km_mean": 97.375,
+            "track_km_median": 84.833,
+            "track_km_p90": 166.567,
+            "mae_lat_deg": 0.497,
+            "mae_lon_deg": 0.64,
+            "n_wind": 128,
+            "wind_mae_kt": 6.804,
+            "wind_rmse_kt": 9.243,
+            "wind_bias_kt": -1.702,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 5.076,
+            "pressure_rmse_hpa": 7.893
+          },
+          "24": {
+            "n": 159,
+            "track_km_mean": 133.832,
+            "track_km_median": 117.313,
+            "track_km_p90": 239.49,
+            "mae_lat_deg": 0.72,
+            "mae_lon_deg": 0.851,
+            "n_wind": 126,
+            "wind_mae_kt": 8.483,
+            "wind_rmse_kt": 11.257,
+            "wind_bias_kt": -1.517,
+            "n_pressure": 126,
+            "pressure_mae_hpa": 6.047,
+            "pressure_rmse_hpa": 9.446
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 82.746,
+            "wind_mae_kt": 5.928,
+            "pressure_mae_hpa": 4.35
+          }
+        }
+      },
+      {
+        "area": "south_indian_ocean",
+        "label": "South Indian Ocean",
+        "level": "region",
+        "samples": 2006,
+        "storms": 67,
+        "metrics": {
+          "6": {
+            "n": 2006,
+            "track_km_mean": 33.969,
+            "track_km_median": 28.137,
+            "track_km_p90": 63.015,
+            "mae_lat_deg": 0.19,
+            "mae_lon_deg": 0.21,
+            "n_wind": 1712,
+            "wind_mae_kt": 3.669,
+            "wind_rmse_kt": 5.039,
+            "wind_bias_kt": -0.006,
+            "n_pressure": 1585,
+            "pressure_mae_hpa": 2.873,
+            "pressure_rmse_hpa": 4.216
+          },
+          "12": {
+            "n": 2006,
+            "track_km_mean": 73.652,
+            "track_km_median": 62.183,
+            "track_km_p90": 138.384,
+            "mae_lat_deg": 0.408,
+            "mae_lon_deg": 0.46,
+            "n_wind": 1680,
+            "wind_mae_kt": 6.225,
+            "wind_rmse_kt": 8.477,
+            "wind_bias_kt": 0.018,
+            "n_pressure": 1555,
+            "pressure_mae_hpa": 4.817,
+            "pressure_rmse_hpa": 6.984
+          },
+          "18": {
+            "n": 2006,
+            "track_km_mean": 120.791,
+            "track_km_median": 102.895,
+            "track_km_p90": 224.843,
+            "mae_lat_deg": 0.667,
+            "mae_lon_deg": 0.765,
+            "n_wind": 1642,
+            "wind_mae_kt": 8.608,
+            "wind_rmse_kt": 11.796,
+            "wind_bias_kt": -0.039,
+            "n_pressure": 1520,
+            "pressure_mae_hpa": 6.657,
+            "pressure_rmse_hpa": 9.633
+          },
+          "24": {
+            "n": 2006,
+            "track_km_mean": 174.223,
+            "track_km_median": 148.778,
+            "track_km_p90": 319.527,
+            "mae_lat_deg": 0.957,
+            "mae_lon_deg": 1.121,
+            "n_wind": 1600,
+            "wind_mae_kt": 10.725,
+            "wind_rmse_kt": 14.713,
+            "wind_bias_kt": -0.106,
+            "n_pressure": 1481,
+            "pressure_mae_hpa": 8.352,
+            "pressure_rmse_hpa": 11.933
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 100.659,
+            "wind_mae_kt": 7.307,
+            "pressure_mae_hpa": 5.675
+          }
+        }
+      },
+      {
+        "area": "pacific_ocean",
+        "label": "Pacific Ocean",
+        "level": "region",
+        "samples": 5036,
+        "storms": 212,
+        "metrics": {
+          "6": {
+            "n": 5036,
+            "track_km_mean": 34.601,
+            "track_km_median": 26.996,
+            "track_km_p90": 68.034,
+            "mae_lat_deg": 0.191,
+            "mae_lon_deg": 0.232,
+            "n_wind": 4401,
+            "wind_mae_kt": 3.433,
+            "wind_rmse_kt": 4.838,
+            "wind_bias_kt": 0.087,
+            "n_pressure": 4200,
+            "pressure_mae_hpa": 2.494,
+            "pressure_rmse_hpa": 3.947
+          },
+          "12": {
+            "n": 5036,
+            "track_km_mean": 74.301,
+            "track_km_median": 59.039,
+            "track_km_p90": 144.094,
+            "mae_lat_deg": 0.413,
+            "mae_lon_deg": 0.499,
+            "n_wind": 4339,
+            "wind_mae_kt": 5.681,
+            "wind_rmse_kt": 8.12,
+            "wind_bias_kt": 0.298,
+            "n_pressure": 4143,
+            "pressure_mae_hpa": 4.1,
+            "pressure_rmse_hpa": 6.334
+          },
+          "18": {
+            "n": 5036,
+            "track_km_mean": 120.928,
+            "track_km_median": 98.423,
+            "track_km_p90": 236.865,
+            "mae_lat_deg": 0.664,
+            "mae_lon_deg": 0.826,
+            "n_wind": 4268,
+            "wind_mae_kt": 7.826,
+            "wind_rmse_kt": 10.974,
+            "wind_bias_kt": 0.573,
+            "n_pressure": 4077,
+            "pressure_mae_hpa": 5.561,
+            "pressure_rmse_hpa": 8.372
+          },
+          "24": {
+            "n": 5036,
+            "track_km_mean": 173.666,
+            "track_km_median": 141.442,
+            "track_km_p90": 335.084,
+            "mae_lat_deg": 0.946,
+            "mae_lon_deg": 1.201,
+            "n_wind": 4178,
+            "wind_mae_kt": 9.634,
+            "wind_rmse_kt": 13.402,
+            "wind_bias_kt": 0.766,
+            "n_pressure": 3993,
+            "pressure_mae_hpa": 6.812,
+            "pressure_rmse_hpa": 10.105
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 100.874,
+            "wind_mae_kt": 6.644,
+            "pressure_mae_hpa": 4.742
+          }
+        }
+      },
+      {
+        "area": "western_pacific",
+        "label": "Western Pacific",
+        "level": "subregion",
+        "samples": 2695,
+        "storms": 107,
+        "metrics": {
+          "6": {
+            "n": 2695,
+            "track_km_mean": 39.639,
+            "track_km_median": 31.289,
+            "track_km_p90": 74.27,
+            "mae_lat_deg": 0.219,
+            "mae_lon_deg": 0.275,
+            "n_wind": 2243,
+            "wind_mae_kt": 3.828,
+            "wind_rmse_kt": 5.216,
+            "wind_bias_kt": 0.154,
+            "n_pressure": 2060,
+            "pressure_mae_hpa": 3.098,
+            "pressure_rmse_hpa": 4.583
+          },
+          "12": {
+            "n": 2695,
+            "track_km_mean": 84.284,
+            "track_km_median": 69.975,
+            "track_km_p90": 156.954,
+            "mae_lat_deg": 0.468,
+            "mae_lon_deg": 0.589,
+            "n_wind": 2190,
+            "wind_mae_kt": 6.062,
+            "wind_rmse_kt": 8.384,
+            "wind_bias_kt": 0.389,
+            "n_pressure": 2011,
+            "pressure_mae_hpa": 4.825,
+            "pressure_rmse_hpa": 6.992
+          },
+          "18": {
+            "n": 2695,
+            "track_km_mean": 135.932,
+            "track_km_median": 115.002,
+            "track_km_p90": 255.559,
+            "mae_lat_deg": 0.746,
+            "mae_lon_deg": 0.966,
+            "n_wind": 2129,
+            "wind_mae_kt": 8.23,
+            "wind_rmse_kt": 11.094,
+            "wind_bias_kt": 0.71,
+            "n_pressure": 1954,
+            "pressure_mae_hpa": 6.429,
+            "pressure_rmse_hpa": 9.034
+          },
+          "24": {
+            "n": 2695,
+            "track_km_mean": 193.522,
+            "track_km_median": 162.945,
+            "track_km_p90": 369.433,
+            "mae_lat_deg": 1.057,
+            "mae_lon_deg": 1.388,
+            "n_wind": 2052,
+            "wind_mae_kt": 10.002,
+            "wind_rmse_kt": 13.388,
+            "wind_bias_kt": 0.85,
+            "n_pressure": 1882,
+            "pressure_mae_hpa": 7.729,
+            "pressure_rmse_hpa": 10.784
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 113.344,
+            "wind_mae_kt": 7.03,
+            "pressure_mae_hpa": 5.52
+          }
+        }
+      },
+      {
+        "area": "eastern_pacific",
+        "label": "Eastern Pacific",
+        "level": "subregion",
+        "samples": 1484,
+        "storms": 72,
+        "metrics": {
+          "6": {
+            "n": 1484,
+            "track_km_mean": 21.744,
+            "track_km_median": 17.678,
+            "track_km_p90": 41.079,
+            "mae_lat_deg": 0.119,
+            "mae_lon_deg": 0.136,
+            "n_wind": 1482,
+            "wind_mae_kt": 2.837,
+            "wind_rmse_kt": 4.008,
+            "wind_bias_kt": -0.24,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 1.609,
+            "pressure_rmse_hpa": 2.743
+          },
+          "12": {
+            "n": 1484,
+            "track_km_mean": 49.473,
+            "track_km_median": 42.222,
+            "track_km_p90": 90.245,
+            "mae_lat_deg": 0.272,
+            "mae_lon_deg": 0.309,
+            "n_wind": 1482,
+            "wind_mae_kt": 4.992,
+            "wind_rmse_kt": 7.263,
+            "wind_bias_kt": -0.312,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 2.966,
+            "pressure_rmse_hpa": 5.035
+          },
+          "18": {
+            "n": 1484,
+            "track_km_mean": 83.509,
+            "track_km_median": 73.055,
+            "track_km_p90": 156.734,
+            "mae_lat_deg": 0.456,
+            "mae_lon_deg": 0.528,
+            "n_wind": 1482,
+            "wind_mae_kt": 7.006,
+            "wind_rmse_kt": 10.187,
+            "wind_bias_kt": -0.309,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 4.185,
+            "pressure_rmse_hpa": 6.973
+          },
+          "24": {
+            "n": 1484,
+            "track_km_mean": 122.92,
+            "track_km_median": 106.499,
+            "track_km_p90": 235.021,
+            "mae_lat_deg": 0.666,
+            "mae_lon_deg": 0.786,
+            "n_wind": 1482,
+            "wind_mae_kt": 8.708,
+            "wind_rmse_kt": 12.677,
+            "wind_bias_kt": -0.257,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 5.284,
+            "pressure_rmse_hpa": 8.636
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 69.412,
+            "wind_mae_kt": 5.886,
+            "pressure_mae_hpa": 3.511
+          }
+        }
+      },
+      {
+        "area": "southern_pacific",
+        "label": "Southern Pacific",
+        "level": "subregion",
+        "samples": 857,
+        "storms": 38,
+        "metrics": {
+          "6": {
+            "n": 857,
+            "track_km_mean": 41.021,
+            "track_km_median": 34.77,
+            "track_km_p90": 78.921,
+            "mae_lat_deg": 0.23,
+            "mae_lon_deg": 0.259,
+            "n_wind": 676,
+            "wind_mae_kt": 3.429,
+            "wind_rmse_kt": 5.186,
+            "wind_bias_kt": 0.579,
+            "n_pressure": 663,
+            "pressure_mae_hpa": 2.591,
+            "pressure_rmse_hpa": 4.084
+          },
+          "12": {
+            "n": 857,
+            "track_km_mean": 85.903,
+            "track_km_median": 70.166,
+            "track_km_p90": 170.583,
+            "mae_lat_deg": 0.483,
+            "mae_lon_deg": 0.544,
+            "n_wind": 667,
+            "wind_mae_kt": 5.96,
+            "wind_rmse_kt": 8.994,
+            "wind_bias_kt": 1.357,
+            "n_pressure": 655,
+            "pressure_mae_hpa": 4.431,
+            "pressure_rmse_hpa": 6.82
+          },
+          "18": {
+            "n": 857,
+            "track_km_mean": 138.541,
+            "track_km_median": 112.777,
+            "track_km_p90": 283.401,
+            "mae_lat_deg": 0.768,
+            "mae_lon_deg": 0.899,
+            "n_wind": 657,
+            "wind_mae_kt": 8.366,
+            "wind_rmse_kt": 12.221,
+            "wind_bias_kt": 2.121,
+            "n_pressure": 646,
+            "pressure_mae_hpa": 6.084,
+            "pressure_rmse_hpa": 9.181
+          },
+          "24": {
+            "n": 857,
+            "track_km_mean": 199.1,
+            "track_km_median": 165.656,
+            "track_km_p90": 398.056,
+            "mae_lat_deg": 1.083,
+            "mae_lon_deg": 1.331,
+            "n_wind": 644,
+            "wind_mae_kt": 10.596,
+            "wind_rmse_kt": 14.974,
+            "wind_bias_kt": 2.853,
+            "n_pressure": 634,
+            "pressure_mae_hpa": 7.652,
+            "pressure_rmse_hpa": 11.141
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 116.141,
+            "wind_mae_kt": 7.088,
+            "pressure_mae_hpa": 5.189
+          }
+        }
+      }
+    ],
+    "persistence": [
+      {
+        "area": "north_indian_ocean",
+        "label": "North Indian Ocean",
+        "level": "region",
+        "samples": 358,
+        "storms": 28,
+        "metrics": {
+          "6": {
+            "n": 358,
+            "track_km_mean": 70.035,
+            "track_km_median": 66.46,
+            "track_km_p90": 127.308,
+            "mae_lat_deg": 0.324,
+            "mae_lon_deg": 0.476,
+            "n_wind": 309,
+            "wind_mae_kt": 4.337,
+            "wind_rmse_kt": 6.585,
+            "wind_bias_kt": -0.712,
+            "n_pressure": 309,
+            "pressure_mae_hpa": 3.314,
+            "pressure_rmse_hpa": 5.49
+          },
+          "12": {
+            "n": 358,
+            "track_km_mean": 137.114,
+            "track_km_median": 129.324,
+            "track_km_p90": 232.584,
+            "mae_lat_deg": 0.643,
+            "mae_lon_deg": 0.936,
+            "n_wind": 308,
+            "wind_mae_kt": 7.987,
+            "wind_rmse_kt": 11.545,
+            "wind_bias_kt": -0.877,
+            "n_pressure": 308,
+            "pressure_mae_hpa": 5.912,
+            "pressure_rmse_hpa": 9.161
+          },
+          "18": {
+            "n": 358,
+            "track_km_mean": 204.025,
+            "track_km_median": 190.17,
+            "track_km_p90": 361.077,
+            "mae_lat_deg": 0.96,
+            "mae_lon_deg": 1.393,
+            "n_wind": 307,
+            "wind_mae_kt": 11.645,
+            "wind_rmse_kt": 16.43,
+            "wind_bias_kt": -0.537,
+            "n_pressure": 307,
+            "pressure_mae_hpa": 8.381,
+            "pressure_rmse_hpa": 12.716
+          },
+          "24": {
+            "n": 358,
+            "track_km_mean": 272.113,
+            "track_km_median": 249.378,
+            "track_km_p90": 475.09,
+            "mae_lat_deg": 1.281,
+            "mae_lon_deg": 1.861,
+            "n_wind": 303,
+            "wind_mae_kt": 14.653,
+            "wind_rmse_kt": 20.335,
+            "wind_bias_kt": 0.033,
+            "n_pressure": 303,
+            "pressure_mae_hpa": 10.416,
+            "pressure_rmse_hpa": 15.559
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 170.822,
+            "wind_mae_kt": 9.655,
+            "pressure_mae_hpa": 7.006
+          }
+        }
+      },
+      {
+        "area": "arabian_sea",
+        "label": "Arabian Sea",
+        "level": "subregion",
+        "samples": 199,
+        "storms": 11,
+        "metrics": {
+          "6": {
+            "n": 199,
+            "track_km_mean": 64.597,
+            "track_km_median": 59.421,
+            "track_km_p90": 103.101,
+            "mae_lat_deg": 0.282,
+            "mae_lon_deg": 0.459,
+            "n_wind": 181,
+            "wind_mae_kt": 4.669,
+            "wind_rmse_kt": 6.679,
+            "wind_bias_kt": -0.525,
+            "n_pressure": 181,
+            "pressure_mae_hpa": 3.646,
+            "pressure_rmse_hpa": 5.513
+          },
+          "12": {
+            "n": 199,
+            "track_km_mean": 124.84,
+            "track_km_median": 122.792,
+            "track_km_p90": 211.817,
+            "mae_lat_deg": 0.546,
+            "mae_lon_deg": 0.893,
+            "n_wind": 180,
+            "wind_mae_kt": 8.333,
+            "wind_rmse_kt": 11.571,
+            "wind_bias_kt": -0.722,
+            "n_pressure": 180,
+            "pressure_mae_hpa": 6.328,
+            "pressure_rmse_hpa": 8.869
+          },
+          "18": {
+            "n": 199,
+            "track_km_mean": 183.358,
+            "track_km_median": 182.856,
+            "track_km_p90": 302.57,
+            "mae_lat_deg": 0.79,
+            "mae_lon_deg": 1.32,
+            "n_wind": 179,
+            "wind_mae_kt": 12.039,
+            "wind_rmse_kt": 16.234,
+            "wind_bias_kt": -0.363,
+            "n_pressure": 179,
+            "pressure_mae_hpa": 8.765,
+            "pressure_rmse_hpa": 12.144
+          },
+          "24": {
+            "n": 199,
+            "track_km_mean": 240.736,
+            "track_km_median": 234.005,
+            "track_km_p90": 403.937,
+            "mae_lat_deg": 1.025,
+            "mae_lon_deg": 1.743,
+            "n_wind": 177,
+            "wind_mae_kt": 15.141,
+            "wind_rmse_kt": 20.343,
+            "wind_bias_kt": 0.169,
+            "n_pressure": 177,
+            "pressure_mae_hpa": 10.96,
+            "pressure_rmse_hpa": 15.019
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 153.383,
+            "wind_mae_kt": 10.045,
+            "pressure_mae_hpa": 7.425
+          }
+        }
+      },
+      {
+        "area": "bay_of_bengal",
+        "label": "Bay of Bengal",
+        "level": "subregion",
+        "samples": 159,
+        "storms": 19,
+        "metrics": {
+          "6": {
+            "n": 159,
+            "track_km_mean": 76.841,
+            "track_km_median": 75.238,
+            "track_km_p90": 138.956,
+            "mae_lat_deg": 0.376,
+            "mae_lon_deg": 0.497,
+            "n_wind": 128,
+            "wind_mae_kt": 3.867,
+            "wind_rmse_kt": 6.45,
+            "wind_bias_kt": -0.977,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 2.844,
+            "pressure_rmse_hpa": 5.457
+          },
+          "12": {
+            "n": 159,
+            "track_km_mean": 152.477,
+            "track_km_median": 135.312,
+            "track_km_p90": 276.612,
+            "mae_lat_deg": 0.765,
+            "mae_lon_deg": 0.989,
+            "n_wind": 128,
+            "wind_mae_kt": 7.5,
+            "wind_rmse_kt": 11.507,
+            "wind_bias_kt": -1.094,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 5.328,
+            "pressure_rmse_hpa": 9.557
+          },
+          "18": {
+            "n": 159,
+            "track_km_mean": 229.89,
+            "track_km_median": 199.796,
+            "track_km_p90": 397.594,
+            "mae_lat_deg": 1.172,
+            "mae_lon_deg": 1.484,
+            "n_wind": 128,
+            "wind_mae_kt": 11.094,
+            "wind_rmse_kt": 16.7,
+            "wind_bias_kt": -0.781,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 7.844,
+            "pressure_rmse_hpa": 13.476
+          },
+          "24": {
+            "n": 159,
+            "track_km_mean": 311.383,
+            "track_km_median": 267.741,
+            "track_km_p90": 528.177,
+            "mae_lat_deg": 1.602,
+            "mae_lon_deg": 2.009,
+            "n_wind": 126,
+            "wind_mae_kt": 13.968,
+            "wind_rmse_kt": 20.325,
+            "wind_bias_kt": -0.159,
+            "n_pressure": 126,
+            "pressure_mae_hpa": 9.651,
+            "pressure_rmse_hpa": 16.288
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 192.648,
+            "wind_mae_kt": 9.107,
+            "pressure_mae_hpa": 6.417
+          }
+        }
+      },
+      {
+        "area": "south_indian_ocean",
+        "label": "South Indian Ocean",
+        "level": "region",
+        "samples": 2006,
+        "storms": 67,
+        "metrics": {
+          "6": {
+            "n": 2006,
+            "track_km_mean": 93.196,
+            "track_km_median": 87.292,
+            "track_km_p90": 155.918,
+            "mae_lat_deg": 0.473,
+            "mae_lon_deg": 0.626,
+            "n_wind": 1712,
+            "wind_mae_kt": 3.984,
+            "wind_rmse_kt": 6.307,
+            "wind_bias_kt": -0.368,
+            "n_pressure": 1585,
+            "pressure_mae_hpa": 3.173,
+            "pressure_rmse_hpa": 5.182
+          },
+          "12": {
+            "n": 2006,
+            "track_km_mean": 185.079,
+            "track_km_median": 174.554,
+            "track_km_p90": 310.814,
+            "mae_lat_deg": 0.944,
+            "mae_lon_deg": 1.245,
+            "n_wind": 1680,
+            "wind_mae_kt": 7.622,
+            "wind_rmse_kt": 11.063,
+            "wind_bias_kt": -0.64,
+            "n_pressure": 1555,
+            "pressure_mae_hpa": 5.874,
+            "pressure_rmse_hpa": 8.97
+          },
+          "18": {
+            "n": 2006,
+            "track_km_mean": 277.104,
+            "track_km_median": 258.085,
+            "track_km_p90": 465.307,
+            "mae_lat_deg": 1.423,
+            "mae_lon_deg": 1.864,
+            "n_wind": 1642,
+            "wind_mae_kt": 11.035,
+            "wind_rmse_kt": 15.506,
+            "wind_bias_kt": -0.816,
+            "n_pressure": 1520,
+            "pressure_mae_hpa": 8.423,
+            "pressure_rmse_hpa": 12.512
+          },
+          "24": {
+            "n": 2006,
+            "track_km_mean": 369.96,
+            "track_km_median": 343.547,
+            "track_km_p90": 618.295,
+            "mae_lat_deg": 1.913,
+            "mae_lon_deg": 2.487,
+            "n_wind": 1600,
+            "wind_mae_kt": 14.131,
+            "wind_rmse_kt": 19.563,
+            "wind_bias_kt": -0.919,
+            "n_pressure": 1481,
+            "pressure_mae_hpa": 10.808,
+            "pressure_rmse_hpa": 15.731
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 231.335,
+            "wind_mae_kt": 9.193,
+            "pressure_mae_hpa": 7.069
+          }
+        }
+      },
+      {
+        "area": "pacific_ocean",
+        "label": "Pacific Ocean",
+        "level": "region",
+        "samples": 5036,
+        "storms": 212,
+        "metrics": {
+          "6": {
+            "n": 5036,
+            "track_km_mean": 113.652,
+            "track_km_median": 102.879,
+            "track_km_p90": 191.894,
+            "mae_lat_deg": 0.553,
+            "mae_lon_deg": 0.829,
+            "n_wind": 4401,
+            "wind_mae_kt": 4.107,
+            "wind_rmse_kt": 6.488,
+            "wind_bias_kt": -0.244,
+            "n_pressure": 4200,
+            "pressure_mae_hpa": 3.069,
+            "pressure_rmse_hpa": 5.155
+          },
+          "12": {
+            "n": 5036,
+            "track_km_mean": 226.328,
+            "track_km_median": 205.53,
+            "track_km_p90": 383.645,
+            "mae_lat_deg": 1.101,
+            "mae_lon_deg": 1.661,
+            "n_wind": 4339,
+            "wind_mae_kt": 7.865,
+            "wind_rmse_kt": 11.477,
+            "wind_bias_kt": -0.328,
+            "n_pressure": 4143,
+            "pressure_mae_hpa": 5.641,
+            "pressure_rmse_hpa": 8.859
+          },
+          "18": {
+            "n": 5036,
+            "track_km_mean": 338.799,
+            "track_km_median": 307.757,
+            "track_km_p90": 579.541,
+            "mae_lat_deg": 1.647,
+            "mae_lon_deg": 2.5,
+            "n_wind": 4268,
+            "wind_mae_kt": 11.299,
+            "wind_rmse_kt": 15.878,
+            "wind_bias_kt": -0.278,
+            "n_pressure": 4077,
+            "pressure_mae_hpa": 7.969,
+            "pressure_rmse_hpa": 12.092
+          },
+          "24": {
+            "n": 5036,
+            "track_km_mean": 451.345,
+            "track_km_median": 408.644,
+            "track_km_p90": 774.447,
+            "mae_lat_deg": 2.192,
+            "mae_lon_deg": 3.351,
+            "n_wind": 4178,
+            "wind_mae_kt": 14.374,
+            "wind_rmse_kt": 19.778,
+            "wind_bias_kt": -0.154,
+            "n_pressure": 3993,
+            "pressure_mae_hpa": 10.07,
+            "pressure_rmse_hpa": 14.95
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 282.531,
+            "wind_mae_kt": 9.411,
+            "pressure_mae_hpa": 6.687
+          }
+        }
+      },
+      {
+        "area": "western_pacific",
+        "label": "Western Pacific",
+        "level": "subregion",
+        "samples": 2695,
+        "storms": 107,
+        "metrics": {
+          "6": {
+            "n": 2695,
+            "track_km_mean": 129.242,
+            "track_km_median": 115.353,
+            "track_km_p90": 220.005,
+            "mae_lat_deg": 0.659,
+            "mae_lon_deg": 0.949,
+            "n_wind": 2243,
+            "wind_mae_kt": 4.666,
+            "wind_rmse_kt": 7.072,
+            "wind_bias_kt": -0.453,
+            "n_pressure": 2060,
+            "pressure_mae_hpa": 3.782,
+            "pressure_rmse_hpa": 5.959
+          },
+          "12": {
+            "n": 2695,
+            "track_km_mean": 257.787,
+            "track_km_median": 230.161,
+            "track_km_p90": 443.344,
+            "mae_lat_deg": 1.314,
+            "mae_lon_deg": 1.907,
+            "n_wind": 2190,
+            "wind_mae_kt": 8.918,
+            "wind_rmse_kt": 12.466,
+            "wind_bias_kt": -0.822,
+            "n_pressure": 2011,
+            "pressure_mae_hpa": 6.872,
+            "pressure_rmse_hpa": 10.148
+          },
+          "18": {
+            "n": 2695,
+            "track_km_mean": 386.298,
+            "track_km_median": 345.907,
+            "track_km_p90": 658.562,
+            "mae_lat_deg": 1.965,
+            "mae_lon_deg": 2.88,
+            "n_wind": 2129,
+            "wind_mae_kt": 12.896,
+            "wind_rmse_kt": 17.303,
+            "wind_bias_kt": -1.195,
+            "n_pressure": 1954,
+            "pressure_mae_hpa": 9.776,
+            "pressure_rmse_hpa": 13.887
+          },
+          "24": {
+            "n": 2695,
+            "track_km_mean": 514.886,
+            "track_km_median": 463.339,
+            "track_km_p90": 882.839,
+            "mae_lat_deg": 2.612,
+            "mae_lon_deg": 3.87,
+            "n_wind": 2052,
+            "wind_mae_kt": 16.523,
+            "wind_rmse_kt": 21.644,
+            "wind_bias_kt": -1.664,
+            "n_pressure": 1882,
+            "pressure_mae_hpa": 12.499,
+            "pressure_rmse_hpa": 17.273
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 322.053,
+            "wind_mae_kt": 10.751,
+            "pressure_mae_hpa": 8.232
+          }
+        }
+      },
+      {
+        "area": "eastern_pacific",
+        "label": "Eastern Pacific",
+        "level": "subregion",
+        "samples": 1484,
+        "storms": 72,
+        "metrics": {
+          "6": {
+            "n": 1484,
+            "track_km_mean": 96.193,
+            "track_km_median": 97.61,
+            "track_km_p90": 152.295,
+            "mae_lat_deg": 0.371,
+            "mae_lon_deg": 0.738,
+            "n_wind": 1482,
+            "wind_mae_kt": 3.455,
+            "wind_rmse_kt": 5.583,
+            "wind_bias_kt": 0.0,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 2.181,
+            "pressure_rmse_hpa": 3.909
+          },
+          "12": {
+            "n": 1484,
+            "track_km_mean": 191.559,
+            "track_km_median": 193.155,
+            "track_km_p90": 309.171,
+            "mae_lat_deg": 0.742,
+            "mae_lon_deg": 1.47,
+            "n_wind": 1482,
+            "wind_mae_kt": 6.67,
+            "wind_rmse_kt": 10.066,
+            "wind_bias_kt": 0.26,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 4.169,
+            "pressure_rmse_hpa": 6.993
+          },
+          "18": {
+            "n": 1484,
+            "track_km_mean": 286.233,
+            "track_km_median": 287.785,
+            "track_km_p90": 467.296,
+            "mae_lat_deg": 1.107,
+            "mae_lon_deg": 2.199,
+            "n_wind": 1482,
+            "wind_mae_kt": 9.565,
+            "wind_rmse_kt": 13.98,
+            "wind_bias_kt": 0.813,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 5.901,
+            "pressure_rmse_hpa": 9.573
+          },
+          "24": {
+            "n": 1484,
+            "track_km_mean": 380.515,
+            "track_km_median": 380.726,
+            "track_km_p90": 619.372,
+            "mae_lat_deg": 1.47,
+            "mae_lon_deg": 2.927,
+            "n_wind": 1482,
+            "wind_mae_kt": 12.149,
+            "wind_rmse_kt": 17.472,
+            "wind_bias_kt": 1.616,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 7.452,
+            "pressure_rmse_hpa": 11.842
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 238.625,
+            "wind_mae_kt": 7.96,
+            "pressure_mae_hpa": 4.926
+          }
+        }
+      },
+      {
+        "area": "southern_pacific",
+        "label": "Southern Pacific",
+        "level": "subregion",
+        "samples": 857,
+        "storms": 38,
+        "metrics": {
+          "6": {
+            "n": 857,
+            "track_km_mean": 94.86,
+            "track_km_median": 77.015,
+            "track_km_p90": 189.63,
+            "mae_lat_deg": 0.531,
+            "mae_lon_deg": 0.612,
+            "n_wind": 676,
+            "wind_mae_kt": 3.683,
+            "wind_rmse_kt": 6.308,
+            "wind_bias_kt": -0.089,
+            "n_pressure": 663,
+            "pressure_mae_hpa": 2.83,
+            "pressure_rmse_hpa": 4.894
+          },
+          "12": {
+            "n": 857,
+            "track_km_mean": 187.606,
+            "track_km_median": 152.813,
+            "track_km_p90": 363.873,
+            "mae_lat_deg": 1.054,
+            "mae_lon_deg": 1.217,
+            "n_wind": 667,
+            "wind_mae_kt": 7.061,
+            "wind_rmse_kt": 11.023,
+            "wind_bias_kt": -0.015,
+            "n_pressure": 655,
+            "pressure_mae_hpa": 5.182,
+            "pressure_rmse_hpa": 8.366
+          },
+          "18": {
+            "n": 857,
+            "track_km_mean": 280.454,
+            "track_km_median": 227.742,
+            "track_km_p90": 552.038,
+            "mae_lat_deg": 1.583,
+            "mae_lon_deg": 1.827,
+            "n_wind": 657,
+            "wind_mae_kt": 10.038,
+            "wind_rmse_kt": 15.056,
+            "wind_bias_kt": 0.236,
+            "n_pressure": 646,
+            "pressure_mae_hpa": 7.229,
+            "pressure_rmse_hpa": 11.399
+          },
+          "24": {
+            "n": 857,
+            "track_km_mean": 374.176,
+            "track_km_median": 298.237,
+            "track_km_p90": 758.354,
+            "mae_lat_deg": 2.119,
+            "mae_lon_deg": 2.456,
+            "n_wind": 644,
+            "wind_mae_kt": 12.648,
+            "wind_rmse_kt": 18.509,
+            "wind_bias_kt": 0.582,
+            "n_pressure": 634,
+            "pressure_mae_hpa": 8.962,
+            "pressure_rmse_hpa": 13.975
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 234.274,
+            "wind_mae_kt": 8.357,
+            "pressure_mae_hpa": 6.051
+          }
+        }
+      }
+    ],
+    "extrapolation": [
+      {
+        "area": "north_indian_ocean",
+        "label": "North Indian Ocean",
+        "level": "region",
+        "samples": 358,
+        "storms": 28,
+        "metrics": {
+          "6": {
+            "n": 358,
+            "track_km_mean": 33.664,
+            "track_km_median": 27.494,
+            "track_km_p90": 59.427,
+            "mae_lat_deg": 0.167,
+            "mae_lon_deg": 0.222,
+            "n_wind": 309,
+            "wind_mae_kt": 4.337,
+            "wind_rmse_kt": 6.585,
+            "wind_bias_kt": -0.712,
+            "n_pressure": 309,
+            "pressure_mae_hpa": 3.314,
+            "pressure_rmse_hpa": 5.49
+          },
+          "12": {
+            "n": 358,
+            "track_km_mean": 64.23,
+            "track_km_median": 54.515,
+            "track_km_p90": 118.879,
+            "mae_lat_deg": 0.312,
+            "mae_lon_deg": 0.438,
+            "n_wind": 308,
+            "wind_mae_kt": 7.987,
+            "wind_rmse_kt": 11.545,
+            "wind_bias_kt": -0.877,
+            "n_pressure": 308,
+            "pressure_mae_hpa": 5.912,
+            "pressure_rmse_hpa": 9.161
+          },
+          "18": {
+            "n": 358,
+            "track_km_mean": 97.26,
+            "track_km_median": 82.65,
+            "track_km_p90": 176.118,
+            "mae_lat_deg": 0.456,
+            "mae_lon_deg": 0.672,
+            "n_wind": 307,
+            "wind_mae_kt": 11.645,
+            "wind_rmse_kt": 16.43,
+            "wind_bias_kt": -0.537,
+            "n_pressure": 307,
+            "pressure_mae_hpa": 8.381,
+            "pressure_rmse_hpa": 12.716
+          },
+          "24": {
+            "n": 358,
+            "track_km_mean": 134.095,
+            "track_km_median": 112.53,
+            "track_km_p90": 250.411,
+            "mae_lat_deg": 0.63,
+            "mae_lon_deg": 0.921,
+            "n_wind": 303,
+            "wind_mae_kt": 14.653,
+            "wind_rmse_kt": 20.335,
+            "wind_bias_kt": 0.033,
+            "n_pressure": 303,
+            "pressure_mae_hpa": 10.416,
+            "pressure_rmse_hpa": 15.559
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 82.312,
+            "wind_mae_kt": 9.655,
+            "pressure_mae_hpa": 7.006
+          }
+        }
+      },
+      {
+        "area": "arabian_sea",
+        "label": "Arabian Sea",
+        "level": "subregion",
+        "samples": 199,
+        "storms": 11,
+        "metrics": {
+          "6": {
+            "n": 199,
+            "track_km_mean": 31.643,
+            "track_km_median": 27.142,
+            "track_km_p90": 55.598,
+            "mae_lat_deg": 0.168,
+            "mae_lon_deg": 0.205,
+            "n_wind": 181,
+            "wind_mae_kt": 4.669,
+            "wind_rmse_kt": 6.679,
+            "wind_bias_kt": -0.525,
+            "n_pressure": 181,
+            "pressure_mae_hpa": 3.646,
+            "pressure_rmse_hpa": 5.513
+          },
+          "12": {
+            "n": 199,
+            "track_km_mean": 61.799,
+            "track_km_median": 52.241,
+            "track_km_p90": 112.339,
+            "mae_lat_deg": 0.313,
+            "mae_lon_deg": 0.416,
+            "n_wind": 180,
+            "wind_mae_kt": 8.333,
+            "wind_rmse_kt": 11.571,
+            "wind_bias_kt": -0.722,
+            "n_pressure": 180,
+            "pressure_mae_hpa": 6.328,
+            "pressure_rmse_hpa": 8.869
+          },
+          "18": {
+            "n": 199,
+            "track_km_mean": 93.671,
+            "track_km_median": 78.067,
+            "track_km_p90": 169.959,
+            "mae_lat_deg": 0.442,
+            "mae_lon_deg": 0.652,
+            "n_wind": 179,
+            "wind_mae_kt": 12.039,
+            "wind_rmse_kt": 16.234,
+            "wind_bias_kt": -0.363,
+            "n_pressure": 179,
+            "pressure_mae_hpa": 8.765,
+            "pressure_rmse_hpa": 12.144
+          },
+          "24": {
+            "n": 199,
+            "track_km_mean": 130.578,
+            "track_km_median": 108.711,
+            "track_km_p90": 234.915,
+            "mae_lat_deg": 0.609,
+            "mae_lon_deg": 0.913,
+            "n_wind": 177,
+            "wind_mae_kt": 15.141,
+            "wind_rmse_kt": 20.343,
+            "wind_bias_kt": 0.169,
+            "n_pressure": 177,
+            "pressure_mae_hpa": 10.96,
+            "pressure_rmse_hpa": 15.019
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 79.423,
+            "wind_mae_kt": 10.045,
+            "pressure_mae_hpa": 7.425
+          }
+        }
+      },
+      {
+        "area": "bay_of_bengal",
+        "label": "Bay of Bengal",
+        "level": "subregion",
+        "samples": 159,
+        "storms": 19,
+        "metrics": {
+          "6": {
+            "n": 159,
+            "track_km_mean": 36.194,
+            "track_km_median": 27.892,
+            "track_km_p90": 64.272,
+            "mae_lat_deg": 0.166,
+            "mae_lon_deg": 0.244,
+            "n_wind": 128,
+            "wind_mae_kt": 3.867,
+            "wind_rmse_kt": 6.45,
+            "wind_bias_kt": -0.977,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 2.844,
+            "pressure_rmse_hpa": 5.457
+          },
+          "12": {
+            "n": 159,
+            "track_km_mean": 67.273,
+            "track_km_median": 55.742,
+            "track_km_p90": 122.658,
+            "mae_lat_deg": 0.311,
+            "mae_lon_deg": 0.465,
+            "n_wind": 128,
+            "wind_mae_kt": 7.5,
+            "wind_rmse_kt": 11.507,
+            "wind_bias_kt": -1.094,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 5.328,
+            "pressure_rmse_hpa": 9.557
+          },
+          "18": {
+            "n": 159,
+            "track_km_mean": 101.753,
+            "track_km_median": 89.121,
+            "track_km_p90": 189.501,
+            "mae_lat_deg": 0.472,
+            "mae_lon_deg": 0.697,
+            "n_wind": 128,
+            "wind_mae_kt": 11.094,
+            "wind_rmse_kt": 16.7,
+            "wind_bias_kt": -0.781,
+            "n_pressure": 128,
+            "pressure_mae_hpa": 7.844,
+            "pressure_rmse_hpa": 13.476
+          },
+          "24": {
+            "n": 159,
+            "track_km_mean": 138.496,
+            "track_km_median": 116.313,
+            "track_km_p90": 258.569,
+            "mae_lat_deg": 0.656,
+            "mae_lon_deg": 0.931,
+            "n_wind": 126,
+            "wind_mae_kt": 13.968,
+            "wind_rmse_kt": 20.325,
+            "wind_bias_kt": -0.159,
+            "n_pressure": 126,
+            "pressure_mae_hpa": 9.651,
+            "pressure_rmse_hpa": 16.288
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 85.929,
+            "wind_mae_kt": 9.107,
+            "pressure_mae_hpa": 6.417
+          }
+        }
+      },
+      {
+        "area": "south_indian_ocean",
+        "label": "South Indian Ocean",
+        "level": "region",
+        "samples": 2006,
+        "storms": 67,
+        "metrics": {
+          "6": {
+            "n": 2006,
+            "track_km_mean": 38.304,
+            "track_km_median": 32.094,
+            "track_km_p90": 73.182,
+            "mae_lat_deg": 0.209,
+            "mae_lon_deg": 0.242,
+            "n_wind": 1712,
+            "wind_mae_kt": 3.984,
+            "wind_rmse_kt": 6.307,
+            "wind_bias_kt": -0.368,
+            "n_pressure": 1585,
+            "pressure_mae_hpa": 3.173,
+            "pressure_rmse_hpa": 5.182
+          },
+          "12": {
+            "n": 2006,
+            "track_km_mean": 84.138,
+            "track_km_median": 69.908,
+            "track_km_p90": 156.522,
+            "mae_lat_deg": 0.455,
+            "mae_lon_deg": 0.539,
+            "n_wind": 1680,
+            "wind_mae_kt": 7.622,
+            "wind_rmse_kt": 11.063,
+            "wind_bias_kt": -0.64,
+            "n_pressure": 1555,
+            "pressure_mae_hpa": 5.874,
+            "pressure_rmse_hpa": 8.97
+          },
+          "18": {
+            "n": 2006,
+            "track_km_mean": 138.632,
+            "track_km_median": 117.584,
+            "track_km_p90": 262.53,
+            "mae_lat_deg": 0.746,
+            "mae_lon_deg": 0.905,
+            "n_wind": 1642,
+            "wind_mae_kt": 11.035,
+            "wind_rmse_kt": 15.506,
+            "wind_bias_kt": -0.816,
+            "n_pressure": 1520,
+            "pressure_mae_hpa": 8.423,
+            "pressure_rmse_hpa": 12.512
+          },
+          "24": {
+            "n": 2006,
+            "track_km_mean": 201.239,
+            "track_km_median": 168.14,
+            "track_km_p90": 377.301,
+            "mae_lat_deg": 1.073,
+            "mae_lon_deg": 1.331,
+            "n_wind": 1600,
+            "wind_mae_kt": 14.131,
+            "wind_rmse_kt": 19.563,
+            "wind_bias_kt": -0.919,
+            "n_pressure": 1481,
+            "pressure_mae_hpa": 10.808,
+            "pressure_rmse_hpa": 15.731
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 115.578,
+            "wind_mae_kt": 9.193,
+            "pressure_mae_hpa": 7.069
+          }
+        }
+      },
+      {
+        "area": "pacific_ocean",
+        "label": "Pacific Ocean",
+        "level": "region",
+        "samples": 5036,
+        "storms": 212,
+        "metrics": {
+          "6": {
+            "n": 5036,
+            "track_km_mean": 40.751,
+            "track_km_median": 31.94,
+            "track_km_p90": 81.152,
+            "mae_lat_deg": 0.223,
+            "mae_lon_deg": 0.275,
+            "n_wind": 4401,
+            "wind_mae_kt": 4.107,
+            "wind_rmse_kt": 6.488,
+            "wind_bias_kt": -0.244,
+            "n_pressure": 4200,
+            "pressure_mae_hpa": 3.069,
+            "pressure_rmse_hpa": 5.155
+          },
+          "12": {
+            "n": 5036,
+            "track_km_mean": 89.925,
+            "track_km_median": 70.896,
+            "track_km_p90": 176.287,
+            "mae_lat_deg": 0.488,
+            "mae_lon_deg": 0.618,
+            "n_wind": 4339,
+            "wind_mae_kt": 7.865,
+            "wind_rmse_kt": 11.477,
+            "wind_bias_kt": -0.328,
+            "n_pressure": 4143,
+            "pressure_mae_hpa": 5.641,
+            "pressure_rmse_hpa": 8.859
+          },
+          "18": {
+            "n": 5036,
+            "track_km_mean": 148.254,
+            "track_km_median": 117.889,
+            "track_km_p90": 295.319,
+            "mae_lat_deg": 0.797,
+            "mae_lon_deg": 1.039,
+            "n_wind": 4268,
+            "wind_mae_kt": 11.299,
+            "wind_rmse_kt": 15.878,
+            "wind_bias_kt": -0.278,
+            "n_pressure": 4077,
+            "pressure_mae_hpa": 7.969,
+            "pressure_rmse_hpa": 12.092
+          },
+          "24": {
+            "n": 5036,
+            "track_km_mean": 214.951,
+            "track_km_median": 172.661,
+            "track_km_p90": 422.495,
+            "mae_lat_deg": 1.147,
+            "mae_lon_deg": 1.524,
+            "n_wind": 4178,
+            "wind_mae_kt": 14.374,
+            "wind_rmse_kt": 19.778,
+            "wind_bias_kt": -0.154,
+            "n_pressure": 3993,
+            "pressure_mae_hpa": 10.07,
+            "pressure_rmse_hpa": 14.95
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 123.47,
+            "wind_mae_kt": 9.411,
+            "pressure_mae_hpa": 6.687
+          }
+        }
+      },
+      {
+        "area": "western_pacific",
+        "label": "Western Pacific",
+        "level": "subregion",
+        "samples": 2695,
+        "storms": 107,
+        "metrics": {
+          "6": {
+            "n": 2695,
+            "track_km_mean": 47.433,
+            "track_km_median": 37.997,
+            "track_km_p90": 92.801,
+            "mae_lat_deg": 0.259,
+            "mae_lon_deg": 0.333,
+            "n_wind": 2243,
+            "wind_mae_kt": 4.666,
+            "wind_rmse_kt": 7.072,
+            "wind_bias_kt": -0.453,
+            "n_pressure": 2060,
+            "pressure_mae_hpa": 3.782,
+            "pressure_rmse_hpa": 5.959
+          },
+          "12": {
+            "n": 2695,
+            "track_km_mean": 104.083,
+            "track_km_median": 84.062,
+            "track_km_p90": 201.882,
+            "mae_lat_deg": 0.561,
+            "mae_lon_deg": 0.747,
+            "n_wind": 2190,
+            "wind_mae_kt": 8.918,
+            "wind_rmse_kt": 12.466,
+            "wind_bias_kt": -0.822,
+            "n_pressure": 2011,
+            "pressure_mae_hpa": 6.872,
+            "pressure_rmse_hpa": 10.148
+          },
+          "18": {
+            "n": 2695,
+            "track_km_mean": 170.761,
+            "track_km_median": 137.598,
+            "track_km_p90": 332.312,
+            "mae_lat_deg": 0.909,
+            "mae_lon_deg": 1.252,
+            "n_wind": 2129,
+            "wind_mae_kt": 12.896,
+            "wind_rmse_kt": 17.303,
+            "wind_bias_kt": -1.195,
+            "n_pressure": 1954,
+            "pressure_mae_hpa": 9.776,
+            "pressure_rmse_hpa": 13.887
+          },
+          "24": {
+            "n": 2695,
+            "track_km_mean": 247.089,
+            "track_km_median": 196.723,
+            "track_km_p90": 486.047,
+            "mae_lat_deg": 1.307,
+            "mae_lon_deg": 1.83,
+            "n_wind": 2052,
+            "wind_mae_kt": 16.523,
+            "wind_rmse_kt": 21.644,
+            "wind_bias_kt": -1.664,
+            "n_pressure": 1882,
+            "pressure_mae_hpa": 12.499,
+            "pressure_rmse_hpa": 17.273
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 142.341,
+            "wind_mae_kt": 10.751,
+            "pressure_mae_hpa": 8.232
+          }
+        }
+      },
+      {
+        "area": "eastern_pacific",
+        "label": "Eastern Pacific",
+        "level": "subregion",
+        "samples": 1484,
+        "storms": 72,
+        "metrics": {
+          "6": {
+            "n": 1484,
+            "track_km_mean": 25.811,
+            "track_km_median": 21.716,
+            "track_km_p90": 50.302,
+            "mae_lat_deg": 0.141,
+            "mae_lon_deg": 0.16,
+            "n_wind": 1482,
+            "wind_mae_kt": 3.455,
+            "wind_rmse_kt": 5.583,
+            "wind_bias_kt": 0.0,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 2.181,
+            "pressure_rmse_hpa": 3.909
+          },
+          "12": {
+            "n": 1484,
+            "track_km_mean": 59.903,
+            "track_km_median": 49.316,
+            "track_km_p90": 115.84,
+            "mae_lat_deg": 0.331,
+            "mae_lon_deg": 0.371,
+            "n_wind": 1482,
+            "wind_mae_kt": 6.67,
+            "wind_rmse_kt": 10.066,
+            "wind_bias_kt": 0.26,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 4.169,
+            "pressure_rmse_hpa": 6.993
+          },
+          "18": {
+            "n": 1484,
+            "track_km_mean": 101.539,
+            "track_km_median": 86.628,
+            "track_km_p90": 192.221,
+            "mae_lat_deg": 0.564,
+            "mae_lon_deg": 0.636,
+            "n_wind": 1482,
+            "wind_mae_kt": 9.565,
+            "wind_rmse_kt": 13.98,
+            "wind_bias_kt": 0.813,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 5.901,
+            "pressure_rmse_hpa": 9.573
+          },
+          "24": {
+            "n": 1484,
+            "track_km_mean": 149.104,
+            "track_km_median": 130.505,
+            "track_km_p90": 279.603,
+            "mae_lat_deg": 0.826,
+            "mae_lon_deg": 0.937,
+            "n_wind": 1482,
+            "wind_mae_kt": 12.149,
+            "wind_rmse_kt": 17.472,
+            "wind_bias_kt": 1.616,
+            "n_pressure": 1477,
+            "pressure_mae_hpa": 7.452,
+            "pressure_rmse_hpa": 11.842
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 84.089,
+            "wind_mae_kt": 7.96,
+            "pressure_mae_hpa": 4.926
+          }
+        }
+      },
+      {
+        "area": "southern_pacific",
+        "label": "Southern Pacific",
+        "level": "subregion",
+        "samples": 857,
+        "storms": 38,
+        "metrics": {
+          "6": {
+            "n": 857,
+            "track_km_mean": 45.611,
+            "track_km_median": 37.013,
+            "track_km_p90": 86.542,
+            "mae_lat_deg": 0.251,
+            "mae_lon_deg": 0.292,
+            "n_wind": 676,
+            "wind_mae_kt": 3.683,
+            "wind_rmse_kt": 6.308,
+            "wind_bias_kt": -0.089,
+            "n_pressure": 663,
+            "pressure_mae_hpa": 2.83,
+            "pressure_rmse_hpa": 4.894
+          },
+          "12": {
+            "n": 857,
+            "track_km_mean": 97.392,
+            "track_km_median": 80.343,
+            "track_km_p90": 192.458,
+            "mae_lat_deg": 0.535,
+            "mae_lon_deg": 0.636,
+            "n_wind": 667,
+            "wind_mae_kt": 7.061,
+            "wind_rmse_kt": 11.023,
+            "wind_bias_kt": -0.015,
+            "n_pressure": 655,
+            "pressure_mae_hpa": 5.182,
+            "pressure_rmse_hpa": 8.366
+          },
+          "18": {
+            "n": 857,
+            "track_km_mean": 158.368,
+            "track_km_median": 134.479,
+            "track_km_p90": 310.507,
+            "mae_lat_deg": 0.846,
+            "mae_lon_deg": 1.067,
+            "n_wind": 657,
+            "wind_mae_kt": 10.038,
+            "wind_rmse_kt": 15.056,
+            "wind_bias_kt": 0.236,
+            "n_pressure": 646,
+            "pressure_mae_hpa": 7.229,
+            "pressure_rmse_hpa": 11.399
+          },
+          "24": {
+            "n": 857,
+            "track_km_mean": 227.908,
+            "track_km_median": 194.753,
+            "track_km_p90": 441.291,
+            "mae_lat_deg": 1.197,
+            "mae_lon_deg": 1.576,
+            "n_wind": 644,
+            "wind_mae_kt": 12.648,
+            "wind_rmse_kt": 18.509,
+            "wind_bias_kt": 0.582,
+            "n_pressure": 634,
+            "pressure_mae_hpa": 8.962,
+            "pressure_rmse_hpa": 13.975
+          },
+          "mean_over_horizons": {
+            "track_km_mean": 132.32,
+            "wind_mae_kt": 8.357,
+            "pressure_mae_hpa": 6.051
+          }
+        }
+      }
+    ]
+  },
+  "uncertainty_coverage": {
+    "6": {
+      "radius_km": 36.9,
+      "track_within_radius": 0.6649,
+      "wind_band_kt": 3.8,
+      "wind_within_band": 0.6744
+    },
+    "12": {
+      "radius_km": 80.1,
+      "track_within_radius": 0.6605,
+      "wind_band_kt": 6.5,
+      "wind_within_band": 0.6773
+    },
+    "18": {
+      "radius_km": 129.8,
+      "track_within_radius": 0.6568,
+      "wind_band_kt": 8.8,
+      "wind_within_band": 0.6632
+    },
+    "24": {
+      "radius_km": 184.9,
+      "track_within_radius": 0.6531,
+      "wind_band_kt": 11.0,
+      "wind_within_band": 0.6708
+    }
+  },
+  "postprocessing": {
+    "skipped_no_current_intensity": 1228,
+    "accepted": 6172
+  },
+  "val_metrics_at_selection": {
+    "track_km_mean": 98.219,
+    "wind_mae_kt": 6.887,
+    "pressure_mae_hpa": 4.989
+  }
+}

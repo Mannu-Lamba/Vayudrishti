@@ -1,0 +1,367 @@
+{
+  "model": {
+    "architecture": "efficientnet_b0",
+    "head": {
+      "hidden": 256,
+      "dropout": 0.3
+    },
+    "checkpoint": "H:\\WayuDrishti\\wayudrishti\\identification_model\\..\\backend\\models\\classification\\best_model.pth",
+    "epoch": 17,
+    "version": "v1"
+  },
+  "test_split": {
+    "n": 667,
+    "storms": 253,
+    "groups": 239,
+    "class_counts": {
+      "D-DD": 184,
+      "CS-SCS": 190,
+      "VSCS": 190,
+      "ESCS-SuCS": 103
+    }
+  },
+  "overall": {
+    "n": 667,
+    "accuracy": 0.6281859070464768,
+    "balanced_accuracy": 0.6255426451311901,
+    "macro_f1": 0.628301750755418,
+    "weighted_f1": 0.6208757242306198,
+    "adjacent_accuracy": 0.9640179910044977,
+    "mean_absolute_class_error": 0.40929535232383807,
+    "top2_accuracy": 0.9145427286356822,
+    "roc_auc_ovr_macro": 0.8684840345683355,
+    "pr_auc_macro": 0.6954975125020832
+  },
+  "bootstrap_95ci_by_group": {
+    "accuracy": [
+      0.59,
+      0.6624
+    ],
+    "macro_f1": [
+      0.5903,
+      0.6642
+    ],
+    "adjacent_accuracy": [
+      0.9503,
+      0.9772
+    ]
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "class_code": "D-DD",
+      "class_name": "Depression / Deep Depression",
+      "precision": 0.6966292134831461,
+      "recall": 0.6739130434782609,
+      "f1": 0.6850828729281768,
+      "support": 184,
+      "roc_auc_ovr": 0.8948037627149159,
+      "pr_auc": 0.7640097180006774
+    },
+    {
+      "class_id": 1,
+      "class_code": "CS-SCS",
+      "class_name": "Cyclonic Storm / Severe Cyclonic Storm",
+      "precision": 0.5454545454545454,
+      "recall": 0.4105263157894737,
+      "f1": 0.46846846846846846,
+      "support": 190,
+      "roc_auc_ovr": 0.7772150502041266,
+      "pr_auc": 0.503966802172376
+    },
+    {
+      "class_id": 2,
+      "class_code": "VSCS",
+      "class_name": "Very Severe Cyclonic Storm",
+      "precision": 0.5805243445692884,
+      "recall": 0.8157894736842105,
+      "f1": 0.6783369803063457,
+      "support": 190,
+      "roc_auc_ovr": 0.868707933355401,
+      "pr_auc": 0.7288191532241962
+    },
+    {
+      "class_id": 3,
+      "class_code": "ESCS-SuCS",
+      "class_name": "Extremely Severe / Super Cyclonic Storm",
+      "precision": 0.7848101265822784,
+      "recall": 0.6019417475728155,
+      "f1": 0.6813186813186813,
+      "support": 103,
+      "roc_auc_ovr": 0.9332093919988984,
+      "pr_auc": 0.7851943766110832
+    }
+  ],
+  "confusion_matrix": {
+    "labels": [
+      "D-DD",
+      "CS-SCS",
+      "VSCS",
+      "ESCS-SuCS"
+    ],
+    "rows_actual_cols_predicted": [
+      [
+        124,
+        42,
+        18,
+        0
+      ],
+      [
+        53,
+        78,
+        58,
+        1
+      ],
+      [
+        0,
+        19,
+        155,
+        16
+      ],
+      [
+        1,
+        4,
+        36,
+        62
+      ]
+    ]
+  },
+  "region": [
+    {
+      "area": "North Indian Ocean",
+      "level": "region",
+      "n": 106,
+      "n_D-DD": 53,
+      "n_CS-SCS": 28,
+      "n_VSCS": 21,
+      "n_ESCS-SuCS": 4,
+      "accuracy": 0.6698113207547169,
+      "adjacent_accuracy": 0.9528301886792453,
+      "macro_f1": 0.6769324251456043,
+      "note": "all metrics"
+    },
+    {
+      "area": "Arabian Sea",
+      "level": "subregion",
+      "n": 42,
+      "n_D-DD": 19,
+      "n_CS-SCS": 9,
+      "n_VSCS": 10,
+      "n_ESCS-SuCS": 4,
+      "accuracy": 0.6904761904761905,
+      "adjacent_accuracy": 0.9047619047619048,
+      "macro_f1": 0.6670147591200223,
+      "note": "all metrics"
+    },
+    {
+      "area": "Bay of Bengal",
+      "level": "subregion",
+      "n": 64,
+      "n_D-DD": 34,
+      "n_CS-SCS": 19,
+      "n_VSCS": 11,
+      "n_ESCS-SuCS": 0,
+      "accuracy": 0.65625,
+      "adjacent_accuracy": 0.984375,
+      "macro_f1": 0.46071428571428574,
+      "note": "macro F1 over classes present in this area is not comparable"
+    },
+    {
+      "area": "South Indian Ocean",
+      "level": "region",
+      "n": 147,
+      "n_D-DD": 33,
+      "n_CS-SCS": 40,
+      "n_VSCS": 42,
+      "n_ESCS-SuCS": 32,
+      "accuracy": 0.6054421768707483,
+      "adjacent_accuracy": 0.9387755102040817,
+      "macro_f1": 0.5944055944055944,
+      "note": "all metrics"
+    },
+    {
+      "area": "Pacific Ocean",
+      "level": "region",
+      "n": 414,
+      "n_D-DD": 98,
+      "n_CS-SCS": 122,
+      "n_VSCS": 127,
+      "n_ESCS-SuCS": 67,
+      "accuracy": 0.6256038647342995,
+      "adjacent_accuracy": 0.9758454106280193,
+      "macro_f1": 0.6297196240396004,
+      "note": "all metrics"
+    },
+    {
+      "area": "Western Pacific",
+      "level": "subregion",
+      "n": 148,
+      "n_D-DD": 32,
+      "n_CS-SCS": 40,
+      "n_VSCS": 42,
+      "n_ESCS-SuCS": 34,
+      "accuracy": 0.5945945945945946,
+      "adjacent_accuracy": 0.9797297297297297,
+      "macro_f1": 0.601318500422025,
+      "note": "all metrics"
+    },
+    {
+      "area": "Eastern Pacific",
+      "level": "subregion",
+      "n": 140,
+      "n_D-DD": 33,
+      "n_CS-SCS": 42,
+      "n_VSCS": 42,
+      "n_ESCS-SuCS": 23,
+      "accuracy": 0.6571428571428571,
+      "adjacent_accuracy": 0.9857142857142858,
+      "macro_f1": 0.6486085343228201,
+      "note": "all metrics"
+    },
+    {
+      "area": "Southern Pacific",
+      "level": "subregion",
+      "n": 126,
+      "n_D-DD": 33,
+      "n_CS-SCS": 40,
+      "n_VSCS": 43,
+      "n_ESCS-SuCS": 10,
+      "accuracy": 0.626984126984127,
+      "adjacent_accuracy": 0.9603174603174603,
+      "macro_f1": 0.6229871583870117,
+      "note": "all metrics"
+    },
+    {
+      "area": "basin EP",
+      "level": "basin",
+      "n": 140,
+      "n_D-DD": 33,
+      "n_CS-SCS": 42,
+      "n_VSCS": 42,
+      "n_ESCS-SuCS": 23,
+      "accuracy": 0.6571428571428571,
+      "adjacent_accuracy": 0.9857142857142858,
+      "note": ""
+    },
+    {
+      "area": "basin NI",
+      "level": "basin",
+      "n": 106,
+      "n_D-DD": 53,
+      "n_CS-SCS": 28,
+      "n_VSCS": 21,
+      "n_ESCS-SuCS": 4,
+      "accuracy": 0.6698113207547169,
+      "adjacent_accuracy": 0.9528301886792453,
+      "note": ""
+    },
+    {
+      "area": "basin SI",
+      "level": "basin",
+      "n": 147,
+      "n_D-DD": 33,
+      "n_CS-SCS": 40,
+      "n_VSCS": 42,
+      "n_ESCS-SuCS": 32,
+      "accuracy": 0.6054421768707483,
+      "adjacent_accuracy": 0.9387755102040817,
+      "note": ""
+    },
+    {
+      "area": "basin SP",
+      "level": "basin",
+      "n": 126,
+      "n_D-DD": 33,
+      "n_CS-SCS": 40,
+      "n_VSCS": 43,
+      "n_ESCS-SuCS": 10,
+      "accuracy": 0.626984126984127,
+      "adjacent_accuracy": 0.9603174603174603,
+      "note": ""
+    },
+    {
+      "area": "basin WP",
+      "level": "basin",
+      "n": 148,
+      "n_D-DD": 32,
+      "n_CS-SCS": 40,
+      "n_VSCS": 42,
+      "n_ESCS-SuCS": 34,
+      "accuracy": 0.5945945945945946,
+      "adjacent_accuracy": 0.9797297297297297,
+      "note": ""
+    }
+  ],
+  "calibration": {
+    "expected_calibration_error": 0.253,
+    "mean_confidence": 0.875,
+    "accuracy": 0.6282,
+    "share_confidence_ge_0_9": 0.6042,
+    "errors_with_confidence_ge_0_9": 117,
+    "bins": [
+      {
+        "bin": "0.325-0.400",
+        "n": 3,
+        "mean_confidence": 0.3823,
+        "accuracy": 0.6667
+      },
+      {
+        "bin": "0.400-0.475",
+        "n": 5,
+        "mean_confidence": 0.4398,
+        "accuracy": 0.6
+      },
+      {
+        "bin": "0.475-0.550",
+        "n": 24,
+        "mean_confidence": 0.5256,
+        "accuracy": 0.5417
+      },
+      {
+        "bin": "0.550-0.625",
+        "n": 37,
+        "mean_confidence": 0.5904,
+        "accuracy": 0.4324
+      },
+      {
+        "bin": "0.625-0.700",
+        "n": 48,
+        "mean_confidence": 0.6637,
+        "accuracy": 0.5833
+      },
+      {
+        "bin": "0.700-0.775",
+        "n": 42,
+        "mean_confidence": 0.7344,
+        "accuracy": 0.4048
+      },
+      {
+        "bin": "0.775-0.850",
+        "n": 52,
+        "mean_confidence": 0.8153,
+        "accuracy": 0.5
+      },
+      {
+        "bin": "0.850-0.925",
+        "n": 81,
+        "mean_confidence": 0.8895,
+        "accuracy": 0.5802
+      },
+      {
+        "bin": "0.925-1.000",
+        "n": 375,
+        "mean_confidence": 0.9832,
+        "accuracy": 0.712
+      }
+    ]
+  },
+  "boundary_analysis": {
+    "error_rate_within_5kt_of_a_boundary": 0.3883,
+    "error_rate_further_than_5kt": 0.3575,
+    "share_of_samples_within_5kt": 0.4633,
+    "median_kt_from_boundary_errors": 5.5,
+    "median_kt_from_boundary_correct": 6.5,
+    "errors_adjacent_class": 224,
+    "errors_non_adjacent": 24
+  }
+}

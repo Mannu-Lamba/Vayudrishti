@@ -1,0 +1,9 @@
+area,level,n,n_cyclone,n_no_cyclone,recall,precision,f1,accuracy,false_positive_rate,roc_auc,note
+North Indian Ocean,region,396,100,296,0.92,0.8932038834951457,0.9064039408866995,0.952020202020202,0.037162162162162164,0.9849831081081081,all metrics
+Arabian Sea,subregion,182,48,134,0.9791666666666666,0.8867924528301887,0.9306930693069307,0.9615384615384616,0.04477611940298507,0.9904384328358208,all metrics
+Bay of Bengal,subregion,214,52,162,0.8653846153846154,0.9,0.8823529411764707,0.9439252336448598,0.030864197530864196,0.9816001899335233,all metrics
+South Indian Ocean,region,56,56,0,1.0,,,,,,recall only — no/too few negatives in this area
+Pacific Ocean,region,149,149,0,0.9731543624161074,,,,,,recall only — no/too few negatives in this area
+Western Pacific,subregion,51,51,0,0.9411764705882353,,,,,,recall only — no/too few negatives in this area
+Eastern Pacific,subregion,51,51,0,1.0,,,,,,recall only — no/too few negatives in this area
+Southern Pacific,subregion,47,47,0,0.9787234042553191,,,,,,recall only — no/too few negatives in this area

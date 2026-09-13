@@ -1,0 +1,178 @@
+{
+  "seed": 42,
+  "method": "StratifiedGroupKFold(n_splits=20, shuffle=True) on label|area|intensity-or-difficulty; 3 folds test, 3 folds val, rest train",
+  "group_links": {
+    "storm": 882,
+    "crop_overlap": 1757,
+    "near_duplicate": 0,
+    "pixel_identical": 0
+  },
+  "groups": 1879,
+  "group_size": {
+    "max": 36,
+    "median": 1.0,
+    "mean": 2.13,
+    "singletons": 1169,
+    "largest_share": 0.009
+  },
+  "largest_groups": [
+    {
+      "group_id": "G1075",
+      "size": 36,
+      "labels": {
+        "1": 21,
+        "0": 15
+      },
+      "areas": {
+        "arabian_sea": 28,
+        "bay_of_bengal": 8
+      }
+    },
+    {
+      "group_id": "G0346",
+      "size": 33,
+      "labels": {
+        "0": 24,
+        "1": 9
+      },
+      "areas": {
+        "bay_of_bengal": 17,
+        "arabian_sea": 16
+      }
+    },
+    {
+      "group_id": "G0673",
+      "size": 28,
+      "labels": {
+        "0": 19,
+        "1": 9
+      },
+      "areas": {
+        "arabian_sea": 14,
+        "bay_of_bengal": 14
+      }
+    },
+    {
+      "group_id": "G0067",
+      "size": 27,
+      "labels": {
+        "0": 18,
+        "1": 9
+      },
+      "areas": {
+        "arabian_sea": 17,
+        "bay_of_bengal": 10
+      }
+    },
+    {
+      "group_id": "G0101",
+      "size": 24,
+      "labels": {
+        "1": 24
+      },
+      "areas": {
+        "south_indian_ocean": 15,
+        "southern_pacific": 9
+      }
+    }
+  ],
+  "rows": {
+    "train": 2796,
+    "val": 603,
+    "test": 601
+  },
+  "share": {
+    "train": 0.699,
+    "val": 0.1507,
+    "test": 0.1502
+  },
+  "label": {
+    "test": {
+      "0": 296,
+      "1": 305
+    },
+    "train": {
+      "0": 1406,
+      "1": 1390
+    },
+    "val": {
+      "0": 298,
+      "1": 305
+    }
+  },
+  "cyclone_share": {
+    "test": 0.5075,
+    "train": 0.4971,
+    "val": 0.5058
+  },
+  "area": {
+    "test": {
+      "arabian_sea": 182,
+      "bay_of_bengal": 214,
+      "eastern_pacific": 51,
+      "south_indian_ocean": 56,
+      "southern_pacific": 47,
+      "western_pacific": 51
+    },
+    "train": {
+      "arabian_sea": 881,
+      "bay_of_bengal": 1013,
+      "eastern_pacific": 244,
+      "south_indian_ocean": 221,
+      "southern_pacific": 193,
+      "western_pacific": 244
+    },
+    "val": {
+      "arabian_sea": 185,
+      "bay_of_bengal": 216,
+      "eastern_pacific": 51,
+      "south_indian_ocean": 55,
+      "southern_pacific": 45,
+      "western_pacific": 51
+    }
+  },
+  "intensity": {
+    "test": {
+      "medium": 111,
+      "strong": 87,
+      "weak": 107
+    },
+    "train": {
+      "medium": 506,
+      "strong": 444,
+      "weak": 440
+    },
+    "val": {
+      "medium": 110,
+      "strong": 93,
+      "weak": 102
+    }
+  },
+  "difficulty": {
+    "test": {
+      "easy": 115,
+      "hard": 67,
+      "moderate": 114
+    },
+    "train": {
+      "easy": 543,
+      "hard": 317,
+      "moderate": 546
+    },
+    "val": {
+      "easy": 116,
+      "hard": 68,
+      "moderate": 114
+    }
+  },
+  "storms": {
+    "test": 169,
+    "train": 777,
+    "val": 172
+  },
+  "groups_per_split": {
+    "test": 282,
+    "train": 1315,
+    "val": 282
+  }
+}

@@ -1,0 +1,17 @@
+import { useState } from "react";
+import { ArrowRight, Boxes, CheckCircle2, Cpu, Database, GitBranch, Satellite, ShieldCheck } from "lucide-react";
+import Panel from "@/components/common/Panel";
+import StateNotice from "@/components/common/StateNotice";
+
+const pipeline = [
+  { id: "01", title: "Observe", text: "Ingest multi-source satellite imagery from INSAT-3D and future SAR channels.", icon: Satellite },
+  { id: "02", title: "Detect", text: "Identify candidate convective systems through segmentation and temporal change signals.", icon: Cpu },
+  { id: "03", title: "Classify", text: "Estimate storm category with transparent intensity and structure features.", icon: Boxes },
+  { id: "04", title: "Predict", text: "Generate track and intensity ensembles with uncertainty surfaced to operators.", icon: GitBranch },
+];
+
+export default function About() {
+  const [active, setActive] = useState("01");
+  const activeStep = pipeline.find((step) => step.id === active) ?? pipeline[0];
+  return <div className="page-stack" data-testid="about-page"><div className="page-intro-row"><div><div className="section-kicker"><ShieldCheck size={13} /> SYSTEM DOCUMENTATION</div><h2 className="page-heading">Methodology & architecture</h2><p className="page-subheading">A transparent foundation for the Smart India Hackathon 2026 cyclone intelligence platform.</p></div><span className="mock-badge">PHASE 1 / FOUNDATION</span></div><div className="about-hero"><Panel className="about-principles" eyebrow="DESIGN PRINCIPLE" title="Evidence before certainty" data-testid="about-principles-panel"><p>VayuDrishti is designed to put the observation, the model signal and its confidence next to one another. Every future AI output should be inspectable by a meteorological operator rather than presented as an unexplained answer.</p><div className="principle-list"><span><CheckCircle2 size={15} />Uncertainty is visible</span><span><CheckCircle2 size={15} />Sources are attributable</span><span><CheckCircle2 size={15} />Human review stays in the loop</span></div></Panel><Panel className="about-stack" eyebrow="PLATFORM STACK" title="Phase 1 boundary" data-testid="about-stack-panel"><div className="stack-line"><Database size={16} /><span><strong>Typed mock service layer</strong><small>Replaceable boundary for future FastAPI responses</small></span></div><div className="stack-line"><Satellite size={16} /><span><strong>Local infrared renderer</strong><small>No external image or satellite network calls</small></span></div><div className="stack-line"><ShieldCheck size={16} /><span><strong>Operator-ready presentation</strong><small>Telemetry density without fabricated AI claims</small></span></div></Panel></div><Panel eyebrow="OBSERVATION → INTELLIGENCE PIPELINE" title="How the system will evolve" data-testid="methodology-pipeline-panel"><div className="pipeline-grid">{pipeline.map((step) => { const Icon = step.icon; return <button type="button" key={step.id} className={`pipeline-step ${active === step.id ? "pipeline-step-active" : ""}`} onClick={() => setActive(step.id)} data-testid={`pipeline-step-${step.id}-button`}><span className="pipeline-number">{step.id}</span><Icon size={18} /><strong>{step.title}</strong><ArrowRight size={14} /></button>; })}</div><div className="pipeline-detail"><div className="pipeline-detail-number">{activeStep.id}</div><div><span className="metric-label">CURRENT STAGE</span><h3>{activeStep.title}</h3><p>{activeStep.text}</p></div></div></Panel><StateNotice variant="unavailable" /></div>;
+}

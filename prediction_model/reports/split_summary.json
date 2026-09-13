@@ -1,0 +1,72 @@
+{
+  "method": "storm-level stratified split by first-fix area (seed 42); strata < 6 storms pooled",
+  "storms": {
+    "train": 1509,
+    "test": 324,
+    "val": 323
+  },
+  "fixes": {
+    "test": 9961,
+    "train": 46796,
+    "val": 9771
+  },
+  "samples": {
+    "train": 34911,
+    "test": 7400,
+    "val": 7248
+  },
+  "storms_by_area": {
+    "test/arabian_sea": 10,
+    "test/bay_of_bengal": 26,
+    "test/eastern_pacific": 78,
+    "test/south_indian_ocean": 63,
+    "test/southern_pacific": 37,
+    "test/western_pacific": 110,
+    "train/arabian_sea": 46,
+    "train/bay_of_bengal": 123,
+    "train/eastern_pacific": 364,
+    "train/south_indian_ocean": 293,
+    "train/southern_pacific": 172,
+    "train/western_pacific": 511,
+    "val/arabian_sea": 10,
+    "val/bay_of_bengal": 27,
+    "val/eastern_pacific": 78,
+    "val/south_indian_ocean": 62,
+    "val/southern_pacific": 37,
+    "val/western_pacific": 109
+  },
+  "samples_by_area": {
+    "test/arabian_sea": 199,
+    "test/bay_of_bengal": 159,
+    "test/eastern_pacific": 1484,
+    "test/south_indian_ocean": 2006,
+    "test/southern_pacific": 857,
+    "test/western_pacific": 2695,
+    "train/arabian_sea": 703,
+    "train/bay_of_bengal": 1137,
+    "train/eastern_pacific": 6963,
+    "train/south_indian_ocean": 9605,
+    "train/southern_pacific": 3627,
+    "train/western_pacific": 12876,
+    "val/arabian_sea": 177,
+    "val/bay_of_bengal": 192,
+    "val/eastern_pacific": 1391,
+    "val/south_indian_ocean": 1754,
+    "val/southern_pacific": 897,
+    "val/western_pacific": 2837
+  },
+  "seasons": {
+    "test": [
+      2000,
+      2025
+    ],
+    "train": [
+      2000,
+      2025
+    ],
+    "val": [
+      2000,
+      2025
+    ]
+  }
+}

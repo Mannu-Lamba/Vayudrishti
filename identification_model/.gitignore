@@ -1,0 +1,10 @@
+.venv/
+.tmp/
+.cache/
+__pycache__/
+# Large derived data: rebuild with the pipeline in README.md
+data/raw/
+data/processed/
+results/
+# Model weights (~16 MB each) are shared out of band, not committed
+models/*.pth

@@ -1,0 +1,13 @@
+# CUDA build of PyTorch (RTX 40xx):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# then: pip install -r requirements.txt
+torch>=2.5
+torchvision>=0.20
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.5
+Pillow>=10.0
+matplotlib>=3.8
+openpyxl>=3.1     # reads the PS-70 Excel workbooks
+PyYAML>=6.0       # configs/config.yaml
+requests>=2.31    # GridSat-B1 OPeNDAP subsets

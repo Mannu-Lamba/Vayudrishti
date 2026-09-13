@@ -1,0 +1,667 @@
+image_path,label,storm_id,basin,region,subregion,timestamp,image_id,class_name,class_code,group_id
+data/processed/classification/D-DD/CLS_00008.png,0,2000025S15056,SI,south_indian_ocean,,2000-01-25T15:00:00Z,CLS-IMG00008,Depression / Deep Depression,D-DD,G0006
+data/processed/classification/D-DD/CLS_00012.png,0,2000050S13078,SI,south_indian_ocean,,2000-02-19T00:00:00Z,CLS-IMG00011,Depression / Deep Depression,D-DD,G0008
+data/processed/classification/D-DD/CLS_00013.png,0,2000055S23227,SP,pacific_ocean,southern_pacific,2000-02-24T06:00:00Z,CLS-IMG00012,Depression / Deep Depression,D-DD,G0009
+data/processed/classification/D-DD/CLS_00016.png,0,2000058S14063,SI,south_indian_ocean,,2000-03-02T18:00:00Z,CLS-IMG00015,Depression / Deep Depression,D-DD,G0011
+data/processed/classification/D-DD/CLS_00018.png,0,2000064S19209,SP,pacific_ocean,southern_pacific,2000-03-06T09:00:00Z,CLS-IMG00017,Depression / Deep Depression,D-DD,G0013
+data/processed/classification/D-DD/CLS_00019.png,0,2000067S15189,SP,pacific_ocean,southern_pacific,2000-03-08T06:00:00Z,CLS-IMG00018,Depression / Deep Depression,D-DD,G0013
+data/processed/classification/D-DD/CLS_00033.png,0,2000206N11266,EP,pacific_ocean,eastern_pacific,2000-07-29T15:00:00Z,CLS-IMG00030,Depression / Deep Depression,D-DD,G0022
+data/processed/classification/D-DD/CLS_00047.png,0,2000277N15257,EP,pacific_ocean,eastern_pacific,2000-10-02T18:00:00Z,CLS-IMG00043,Depression / Deep Depression,D-DD,G0034
+data/processed/classification/D-DD/CLS_00070.png,0,2000364N07130,WP,pacific_ocean,western_pacific,2000-12-29T09:00:00Z,CLS-IMG00062,Depression / Deep Depression,D-DD,G0042
+data/processed/classification/D-DD/CLS_00074.png,0,2001047S17157,SP,pacific_ocean,southern_pacific,2001-02-16T00:00:00Z,CLS-IMG00066,Depression / Deep Depression,D-DD,G0045
+data/processed/classification/D-DD/CLS_00082.png,0,2001093S10062,SI,south_indian_ocean,,2001-04-03T06:00:00Z,CLS-IMG00072,Depression / Deep Depression,D-DD,G0050
+data/processed/classification/D-DD/CLS_00098.png,0,2001248N17251,EP,pacific_ocean,eastern_pacific,2001-09-08T09:00:00Z,CLS-IMG00087,Depression / Deep Depression,D-DD,G0062
+data/processed/classification/D-DD/CLS_00109.png,0,2001276N13146,WP,pacific_ocean,western_pacific,2001-10-03T21:00:00Z,CLS-IMG00097,Depression / Deep Depression,D-DD,G0067
+data/processed/classification/D-DD/CLS_00147.png,0,2002062S15154,SP,pacific_ocean,southern_pacific,2002-03-05T00:00:00Z,CLS-IMG00132,Depression / Deep Depression,D-DD,G0088
+data/processed/classification/D-DD/CLS_00148.png,0,2002073S16161,SP,pacific_ocean,southern_pacific,2002-03-13T21:00:00Z,CLS-IMG00133,Depression / Deep Depression,D-DD,G0089
+data/processed/classification/D-DD/CLS_00149.png,0,2002073S16161,SP,pacific_ocean,southern_pacific,2002-03-16T03:00:00Z,CLS-IMG00134,Depression / Deep Depression,D-DD,G0089
+data/processed/classification/D-DD/CLS_00157.png,0,2002129N08096,NI,north_indian_ocean,bay_of_bengal,2002-05-09T09:00:00Z,CLS-IMG00142,Depression / Deep Depression,D-DD,G0096
+data/processed/classification/D-DD/CLS_00158.png,0,2002128S05097,SI,south_indian_ocean,,2002-05-09T09:00:00Z,CLS-IMG00143,Depression / Deep Depression,D-DD,G0096
+data/processed/classification/D-DD/CLS_00159.png,0,2002129N08096,NI,north_indian_ocean,bay_of_bengal,2002-05-09T21:00:00Z,CLS-IMG00144,Depression / Deep Depression,D-DD,G0096
+data/processed/classification/D-DD/CLS_00161.png,0,2002129N08096,NI,north_indian_ocean,bay_of_bengal,2002-05-12T06:00:00Z,CLS-IMG00146,Depression / Deep Depression,D-DD,G0096
+data/processed/classification/D-DD/CLS_00170.png,0,2002218N13241,EP,pacific_ocean,eastern_pacific,2002-08-06T15:00:00Z,CLS-IMG00155,Depression / Deep Depression,D-DD,G0103
+data/processed/classification/D-DD/CLS_00181.png,0,2002327N10089,NI,north_indian_ocean,bay_of_bengal,2002-11-22T21:00:00Z,CLS-IMG00163,Depression / Deep Depression,D-DD,G0109
+data/processed/classification/D-DD/CLS_00182.png,0,2002327N10089,NI,north_indian_ocean,bay_of_bengal,2002-11-23T09:00:00Z,CLS-IMG00164,Depression / Deep Depression,D-DD,G0109
+data/processed/classification/D-DD/CLS_00198.png,0,2003025S16173,SP,pacific_ocean,southern_pacific,2003-01-25T21:00:00Z,CLS-IMG00178,Depression / Deep Depression,D-DD,G0118
+data/processed/classification/D-DD/CLS_00199.png,0,2003025S16173,SP,pacific_ocean,southern_pacific,2003-01-29T12:00:00Z,CLS-IMG00179,Depression / Deep Depression,D-DD,G0118
+data/processed/classification/D-DD/CLS_00219.png,0,2003158N08156,WP,pacific_ocean,western_pacific,2003-06-10T03:00:00Z,CLS-IMG00195,Depression / Deep Depression,D-DD,G0129
+data/processed/classification/D-DD/CLS_00220.png,0,2003168N16257,EP,pacific_ocean,eastern_pacific,2003-06-20T18:00:00Z,CLS-IMG00196,Depression / Deep Depression,D-DD,G0130
+data/processed/classification/D-DD/CLS_00224.png,0,2003212N12130,WP,pacific_ocean,western_pacific,2003-07-31T00:00:00Z,CLS-IMG00200,Depression / Deep Depression,D-DD,G0134
+data/processed/classification/D-DD/CLS_00225.png,0,2003212N09150,WP,pacific_ocean,western_pacific,2003-08-01T21:00:00Z,CLS-IMG00201,Depression / Deep Depression,D-DD,G0135
+data/processed/classification/D-DD/CLS_00230.png,0,2003247N19249,EP,pacific_ocean,eastern_pacific,2003-09-04T21:00:00Z,CLS-IMG00206,Depression / Deep Depression,D-DD,G0140
+data/processed/classification/D-DD/CLS_00235.png,0,2003276N12262,EP,pacific_ocean,eastern_pacific,2003-10-03T06:00:00Z,CLS-IMG00211,Depression / Deep Depression,D-DD,G0145
+data/processed/classification/D-DD/CLS_00262.png,0,2004058S13142,SP,pacific_ocean,southern_pacific,2004-03-01T03:00:00Z,CLS-IMG00237,Depression / Deep Depression,D-DD,G0161
+data/processed/classification/D-DD/CLS_00263.png,0,2004058S13142,SI,south_indian_ocean,,2004-03-02T00:00:00Z,CLS-IMG00238,Depression / Deep Depression,D-DD,G0161
+data/processed/classification/D-DD/CLS_00265.png,0,2004074N03143,WP,pacific_ocean,western_pacific,2004-03-23T09:00:00Z,CLS-IMG00240,Depression / Deep Depression,D-DD,G0163
+data/processed/classification/D-DD/CLS_00274.png,0,2004136N15090,NI,north_indian_ocean,bay_of_bengal,2004-05-15T09:00:00Z,CLS-IMG00249,Depression / Deep Depression,D-DD,G0169
+data/processed/classification/D-DD/CLS_00275.png,0,2004136N15090,NI,north_indian_ocean,bay_of_bengal,2004-05-16T00:00:00Z,CLS-IMG00250,Depression / Deep Depression,D-DD,G0169
+data/processed/classification/D-DD/CLS_00276.png,0,2004136N15090,NI,north_indian_ocean,bay_of_bengal,2004-05-16T18:00:00Z,CLS-IMG00251,Depression / Deep Depression,D-DD,G0169
+data/processed/classification/D-DD/CLS_00278.png,0,2004143N15252,EP,pacific_ocean,eastern_pacific,2004-05-22T03:00:00Z,CLS-IMG00252,Depression / Deep Depression,D-DD,G0170
+data/processed/classification/D-DD/CLS_00287.png,0,2004232N12228,EP,pacific_ocean,eastern_pacific,2004-08-23T15:00:00Z,CLS-IMG00260,Depression / Deep Depression,D-DD,G0178
+data/processed/classification/D-DD/CLS_00301.png,0,2004299S09063,SI,south_indian_ocean,,2004-10-28T18:00:00Z,CLS-IMG00274,Depression / Deep Depression,D-DD,G0187
+data/processed/classification/D-DD/CLS_00311.png,0,2004332N02072,NI,north_indian_ocean,arabian_sea,2004-11-27T03:00:00Z,CLS-IMG00284,Depression / Deep Depression,D-DD,G0191
+data/processed/classification/D-DD/CLS_00312.png,0,2004332N02072,NI,north_indian_ocean,arabian_sea,2004-11-27T18:00:00Z,CLS-IMG00285,Depression / Deep Depression,D-DD,G0191
+data/processed/classification/D-DD/CLS_00314.png,0,2004332N02072,NI,north_indian_ocean,arabian_sea,2004-12-04T00:00:00Z,CLS-IMG00287,Depression / Deep Depression,D-DD,G0191
+data/processed/classification/D-DD/CLS_00315.png,0,2004338S09113,SI,south_indian_ocean,,2004-12-05T09:00:00Z,CLS-IMG00288,Depression / Deep Depression,D-DD,G0193
+data/processed/classification/D-DD/CLS_00318.png,0,2004365S13120,SI,south_indian_ocean,,2004-12-31T15:00:00Z,CLS-IMG00291,Depression / Deep Depression,D-DD,G0196
+data/processed/classification/D-DD/CLS_00333.png,0,2005032S14195,SP,pacific_ocean,southern_pacific,2005-02-03T15:00:00Z,CLS-IMG00304,Depression / Deep Depression,D-DD,G0203
+data/processed/classification/D-DD/CLS_00340.png,0,2005107N07151,WP,pacific_ocean,western_pacific,2005-04-18T00:00:00Z,CLS-IMG00310,Depression / Deep Depression,D-DD,G0209
+data/processed/classification/D-DD/CLS_00341.png,0,2005138N10265,EP,pacific_ocean,eastern_pacific,2005-05-17T21:00:00Z,CLS-IMG00311,Depression / Deep Depression,D-DD,G0210
+data/processed/classification/D-DD/CLS_00347.png,0,2005237N14148,WP,pacific_ocean,western_pacific,2005-08-26T15:00:00Z,CLS-IMG00316,Depression / Deep Depression,D-DD,G0215
+data/processed/classification/D-DD/CLS_00350.png,0,2005268N19146,WP,pacific_ocean,western_pacific,2005-09-26T03:00:00Z,CLS-IMG00319,Depression / Deep Depression,D-DD,G0218
+data/processed/classification/D-DD/CLS_00352.png,0,2005287S09084,SI,south_indian_ocean,,2005-10-14T03:00:00Z,CLS-IMG00321,Depression / Deep Depression,D-DD,G0220
+data/processed/classification/D-DD/CLS_00362.png,0,2005338N09093,NI,north_indian_ocean,bay_of_bengal,2005-12-10T21:00:00Z,CLS-IMG00331,Depression / Deep Depression,D-DD,G0226
+data/processed/classification/D-DD/CLS_00363.png,0,2005338N09093,NI,north_indian_ocean,arabian_sea,2005-12-11T12:00:00Z,CLS-IMG00332,Depression / Deep Depression,D-DD,G0226
+data/processed/classification/D-DD/CLS_00364.png,0,2005338N09093,NI,north_indian_ocean,arabian_sea,2005-12-12T03:00:00Z,CLS-IMG00333,Depression / Deep Depression,D-DD,G0226
+data/processed/classification/D-DD/CLS_00365.png,0,2005338N09093,NI,north_indian_ocean,arabian_sea,2005-12-12T15:00:00Z,CLS-IMG00334,Depression / Deep Depression,D-DD,G0226
+data/processed/classification/D-DD/CLS_00380.png,0,2006049S16051,SI,south_indian_ocean,,2006-02-23T09:00:00Z,CLS-IMG00344,Depression / Deep Depression,D-DD,G0232
+data/processed/classification/D-DD/CLS_00382.png,0,2006060S13058,SI,south_indian_ocean,,2006-03-03T06:00:00Z,CLS-IMG00346,Depression / Deep Depression,D-DD,G0234
+data/processed/classification/D-DD/CLS_00413.png,0,2006276N18151,WP,pacific_ocean,western_pacific,2006-10-05T06:00:00Z,CLS-IMG00372,Depression / Deep Depression,D-DD,G0252
+data/processed/classification/D-DD/CLS_00414.png,0,2006283N13232,EP,pacific_ocean,eastern_pacific,2006-10-11T12:00:00Z,CLS-IMG00373,Depression / Deep Depression,D-DD,G0253
+data/processed/classification/D-DD/CLS_00421.png,0,2006335S10164,SP,pacific_ocean,southern_pacific,2006-12-02T15:00:00Z,CLS-IMG00379,Depression / Deep Depression,D-DD,G0259
+data/processed/classification/D-DD/CLS_00434.png,0,2007066S12066,SI,south_indian_ocean,,2007-03-16T09:00:00Z,CLS-IMG00390,Depression / Deep Depression,D-DD,G0267
+data/processed/classification/D-DD/CLS_00435.png,0,2007084S12157,SP,pacific_ocean,southern_pacific,2007-03-25T15:00:00Z,CLS-IMG00391,Depression / Deep Depression,D-DD,G0268
+data/processed/classification/D-DD/CLS_00439.png,0,2007147N13249,EP,pacific_ocean,eastern_pacific,2007-05-30T12:00:00Z,CLS-IMG00394,Depression / Deep Depression,D-DD,G0271
+data/processed/classification/D-DD/CLS_00447.png,0,2007178N18089,NI,north_indian_ocean,bay_of_bengal,2007-06-27T18:00:00Z,CLS-IMG00401,Depression / Deep Depression,D-DD,G0273
+data/processed/classification/D-DD/CLS_00448.png,0,2007178N18089,NI,north_indian_ocean,bay_of_bengal,2007-06-28T09:00:00Z,CLS-IMG00402,Depression / Deep Depression,D-DD,G0273
+data/processed/classification/D-DD/CLS_00449.png,0,2007178N18089,NI,north_indian_ocean,bay_of_bengal,2007-06-29T15:00:00Z,CLS-IMG00403,Depression / Deep Depression,D-DD,G0273
+data/processed/classification/D-DD/CLS_00453.png,0,2007223N19136,WP,pacific_ocean,western_pacific,2007-08-19T18:00:00Z,CLS-IMG00406,Depression / Deep Depression,D-DD,G0276
+data/processed/classification/D-DD/CLS_00454.png,0,2007240N17153,WP,pacific_ocean,western_pacific,2007-08-28T18:00:00Z,CLS-IMG00407,Depression / Deep Depression,D-DD,G0277
+data/processed/classification/D-DD/CLS_00482.png,0,2008042S16122,SI,south_indian_ocean,,2008-02-11T15:00:00Z,CLS-IMG00428,Depression / Deep Depression,D-DD,G0297
+data/processed/classification/D-DD/CLS_00486.png,0,2008065S12096,SI,south_indian_ocean,,2008-03-07T03:00:00Z,CLS-IMG00431,Depression / Deep Depression,D-DD,G0300
+data/processed/classification/D-DD/CLS_00491.png,0,2008108S13158,SP,pacific_ocean,southern_pacific,2008-04-18T12:00:00Z,CLS-IMG00436,Depression / Deep Depression,D-DD,G0304
+data/processed/classification/D-DD/CLS_00496.png,0,2008188N14260,EP,pacific_ocean,eastern_pacific,2008-07-06T00:00:00Z,CLS-IMG00440,Depression / Deep Depression,D-DD,G0308
+data/processed/classification/D-DD/CLS_00502.png,0,2008253N29150,WP,pacific_ocean,western_pacific,2008-09-09T21:00:00Z,CLS-IMG00445,Depression / Deep Depression,D-DD,G0313
+data/processed/classification/D-DD/CLS_00513.png,0,2008290S05071,SI,south_indian_ocean,,2008-10-22T09:00:00Z,CLS-IMG00455,Depression / Deep Depression,D-DD,G0318
+data/processed/classification/D-DD/CLS_00525.png,0,2008323S08089,SI,south_indian_ocean,,2008-11-18T18:00:00Z,CLS-IMG00466,Depression / Deep Depression,D-DD,G0323
+data/processed/classification/D-DD/CLS_00543.png,0,2009045S18174,SP,pacific_ocean,southern_pacific,2009-02-18T12:00:00Z,CLS-IMG00480,Depression / Deep Depression,D-DD,G0331
+data/processed/classification/D-DD/CLS_00563.png,0,2009194N11257,EP,pacific_ocean,eastern_pacific,2009-07-15T09:00:00Z,CLS-IMG00497,Depression / Deep Depression,D-DD,G0346
+data/processed/classification/D-DD/CLS_00566.png,0,2009215N20133,WP,pacific_ocean,western_pacific,2009-08-03T18:00:00Z,CLS-IMG00500,Depression / Deep Depression,D-DD,G0349
+data/processed/classification/D-DD/CLS_00579.png,0,2009282N16252,EP,pacific_ocean,eastern_pacific,2009-10-11T18:00:00Z,CLS-IMG00511,Depression / Deep Depression,D-DD,G0359
+data/processed/classification/D-DD/CLS_00584.png,0,2009325S12066,SI,south_indian_ocean,,2009-11-25T03:00:00Z,CLS-IMG00516,Depression / Deep Depression,D-DD,G0364
+data/processed/classification/D-DD/CLS_00611.png,0,2010217N15265,EP,pacific_ocean,eastern_pacific,2010-08-10T00:00:00Z,CLS-IMG00539,Depression / Deep Depression,D-DD,G0382
+data/processed/classification/D-DD/CLS_00615.png,0,2010246N19251,EP,pacific_ocean,eastern_pacific,2010-09-03T12:00:00Z,CLS-IMG00543,Depression / Deep Depression,D-DD,G0386
+data/processed/classification/D-DD/CLS_00620.png,0,2010293N17093,NI,north_indian_ocean,bay_of_bengal,2010-10-20T09:00:00Z,CLS-IMG00547,Depression / Deep Depression,D-DD,G0390
+data/processed/classification/D-DD/CLS_00621.png,0,2010293N17093,NI,north_indian_ocean,bay_of_bengal,2010-10-24T00:00:00Z,CLS-IMG00548,Depression / Deep Depression,D-DD,G0390
+data/processed/classification/D-DD/CLS_00657.png,0,2011167N08129,WP,pacific_ocean,western_pacific,2011-06-17T09:00:00Z,CLS-IMG00578,Depression / Deep Depression,D-DD,G0412
+data/processed/classification/D-DD/CLS_00664.png,0,2011229N14261,EP,pacific_ocean,eastern_pacific,2011-08-20T18:00:00Z,CLS-IMG00585,Depression / Deep Depression,D-DD,G0419
+data/processed/classification/D-DD/CLS_00667.png,0,2011257N19154,WP,pacific_ocean,western_pacific,2011-09-15T18:00:00Z,CLS-IMG00587,Depression / Deep Depression,D-DD,G0421
+data/processed/classification/D-DD/CLS_00673.png,0,2011302N13062,NI,north_indian_ocean,arabian_sea,2011-11-01T18:00:00Z,CLS-IMG00591,Depression / Deep Depression,D-DD,G0424
+data/processed/classification/D-DD/CLS_00674.png,0,2011302N13062,NI,north_indian_ocean,arabian_sea,2011-11-04T06:00:00Z,CLS-IMG00592,Depression / Deep Depression,D-DD,G0424
+data/processed/classification/D-DD/CLS_00675.png,0,2011302N13062,NI,north_indian_ocean,arabian_sea,2011-11-04T18:00:00Z,CLS-IMG00593,Depression / Deep Depression,D-DD,G0424
+data/processed/classification/D-DD/CLS_00676.png,0,2011302N13062,NI,north_indian_ocean,arabian_sea,2011-11-05T06:00:00Z,CLS-IMG00594,Depression / Deep Depression,D-DD,G0424
+data/processed/classification/D-DD/CLS_00681.png,0,2011323N09264,EP,pacific_ocean,eastern_pacific,2011-11-20T06:00:00Z,CLS-IMG00599,Depression / Deep Depression,D-DD,G0426
+data/processed/classification/D-DD/CLS_00698.png,0,2012056S13057,SI,south_indian_ocean,,2012-02-28T18:00:00Z,CLS-IMG00614,Depression / Deep Depression,D-DD,G0436
+data/processed/classification/D-DD/CLS_00701.png,0,2012086N10116,WP,pacific_ocean,western_pacific,2012-03-29T00:00:00Z,CLS-IMG00617,Depression / Deep Depression,D-DD,G0439
+data/processed/classification/D-DD/CLS_00708.png,0,2012219N12254,EP,pacific_ocean,eastern_pacific,2012-08-07T12:00:00Z,CLS-IMG00624,Depression / Deep Depression,D-DD,G0446
+data/processed/classification/D-DD/CLS_00737.png,0,2013019S12174,SP,pacific_ocean,southern_pacific,2013-01-19T18:00:00Z,CLS-IMG00646,Depression / Deep Depression,D-DD,G0462
+data/processed/classification/D-DD/CLS_00741.png,0,2013041S10087,SI,south_indian_ocean,,2013-02-09T21:00:00Z,CLS-IMG00650,Depression / Deep Depression,D-DD,G0466
+data/processed/classification/D-DD/CLS_00742.png,0,2013040S16199,SP,pacific_ocean,southern_pacific,2013-02-11T12:00:00Z,CLS-IMG00651,Depression / Deep Depression,D-DD,G0467
+data/processed/classification/D-DD/CLS_00744.png,0,2013049N05131,WP,pacific_ocean,western_pacific,2013-02-22T00:00:00Z,CLS-IMG00653,Depression / Deep Depression,D-DD,G0469
+data/processed/classification/D-DD/CLS_00748.png,0,2013097S06099,SI,south_indian_ocean,,2013-04-08T15:00:00Z,CLS-IMG00656,Depression / Deep Depression,D-DD,G0472
+data/processed/classification/D-DD/CLS_00767.png,0,2013272N10135,WP,pacific_ocean,western_pacific,2013-09-30T12:00:00Z,CLS-IMG00672,Depression / Deep Depression,D-DD,G0487
+data/processed/classification/D-DD/CLS_00774.png,0,2013310N06066,NI,north_indian_ocean,arabian_sea,2013-11-06T15:00:00Z,CLS-IMG00679,Depression / Deep Depression,D-DD,G0493
+data/processed/classification/D-DD/CLS_00775.png,0,2013310N06066,NI,north_indian_ocean,arabian_sea,2013-11-07T21:00:00Z,CLS-IMG00680,Depression / Deep Depression,D-DD,G0493
+data/processed/classification/D-DD/CLS_00776.png,0,2013310N06066,NI,north_indian_ocean,arabian_sea,2013-11-08T09:00:00Z,CLS-IMG00681,Depression / Deep Depression,D-DD,G0493
+data/processed/classification/D-DD/CLS_00777.png,0,2013305N07141,NI,north_indian_ocean,bay_of_bengal,2013-11-10T21:00:00Z,CLS-IMG00682,Depression / Deep Depression,D-DD,G0494
+data/processed/classification/D-DD/CLS_00778.png,0,2013310N06066,NI,north_indian_ocean,arabian_sea,2013-11-11T12:00:00Z,CLS-IMG00683,Depression / Deep Depression,D-DD,G0493
+data/processed/classification/D-DD/CLS_00779.png,0,2013310N06066,NI,north_indian_ocean,arabian_sea,2013-11-12T00:00:00Z,CLS-IMG00684,Depression / Deep Depression,D-DD,G0493
+data/processed/classification/D-DD/CLS_00780.png,0,2013305N07141,NI,north_indian_ocean,bay_of_bengal,2013-11-12T18:00:00Z,CLS-IMG00685,Depression / Deep Depression,D-DD,G0494
+data/processed/classification/D-DD/CLS_00783.png,0,2013305N07141,NI,north_indian_ocean,bay_of_bengal,2013-11-14T09:00:00Z,CLS-IMG00687,Depression / Deep Depression,D-DD,G0494
+data/processed/classification/D-DD/CLS_00785.png,0,2013322N13090,NI,north_indian_ocean,bay_of_bengal,2013-11-18T12:00:00Z,CLS-IMG00688,Depression / Deep Depression,D-DD,G0496
+data/processed/classification/D-DD/CLS_00786.png,0,2013305N07141,NI,north_indian_ocean,arabian_sea,2013-11-19T15:00:00Z,CLS-IMG00689,Depression / Deep Depression,D-DD,G0494
+data/processed/classification/D-DD/CLS_00787.png,0,2013322N13090,NI,north_indian_ocean,bay_of_bengal,2013-11-22T15:00:00Z,CLS-IMG00690,Depression / Deep Depression,D-DD,G0496
+data/processed/classification/D-DD/CLS_00788.png,0,2013324N07103,NI,north_indian_ocean,bay_of_bengal,2013-11-23T00:00:00Z,CLS-IMG00691,Depression / Deep Depression,D-DD,G0496
+data/processed/classification/D-DD/CLS_00790.png,0,2013324N07103,NI,north_indian_ocean,bay_of_bengal,2013-11-28T18:00:00Z,CLS-IMG00692,Depression / Deep Depression,D-DD,G0496
+data/processed/classification/D-DD/CLS_00819.png,0,2014159N12068,NI,north_indian_ocean,arabian_sea,2014-06-09T03:00:00Z,CLS-IMG00717,Depression / Deep Depression,D-DD,G0516
+data/processed/classification/D-DD/CLS_00820.png,0,2014159N12068,NI,north_indian_ocean,arabian_sea,2014-06-09T18:00:00Z,CLS-IMG00718,Depression / Deep Depression,D-DD,G0516
+data/processed/classification/D-DD/CLS_00821.png,0,2014159N12068,NI,north_indian_ocean,arabian_sea,2014-06-13T03:00:00Z,CLS-IMG00719,Depression / Deep Depression,D-DD,G0516
+data/processed/classification/D-DD/CLS_00824.png,0,2014195N11232,EP,pacific_ocean,eastern_pacific,2014-07-18T18:00:00Z,CLS-IMG00722,Depression / Deep Depression,D-DD,G0519
+data/processed/classification/D-DD/CLS_00826.png,0,2014209N12152,WP,pacific_ocean,western_pacific,2014-07-28T15:00:00Z,CLS-IMG00724,Depression / Deep Depression,D-DD,G0521
+data/processed/classification/D-DD/CLS_00827.png,0,2014204N10239,EP,pacific_ocean,eastern_pacific,2014-07-29T18:00:00Z,CLS-IMG00725,Depression / Deep Depression,D-DD,G0522
+data/processed/classification/D-DD/CLS_00831.png,0,2014259N11262,EP,pacific_ocean,eastern_pacific,2014-09-22T03:00:00Z,CLS-IMG00728,Depression / Deep Depression,D-DD,G0525
+data/processed/classification/D-DD/CLS_00851.png,0,2015030S16161,SP,pacific_ocean,southern_pacific,2015-01-30T06:00:00Z,CLS-IMG00745,Depression / Deep Depression,D-DD,G0539
+data/processed/classification/D-DD/CLS_00921.png,0,2016195S06076,SI,south_indian_ocean,,2016-07-15T21:00:00Z,CLS-IMG00808,Depression / Deep Depression,D-DD,G0586
+data/processed/classification/D-DD/CLS_00922.png,0,2016203N13259,EP,pacific_ocean,eastern_pacific,2016-07-21T09:00:00Z,CLS-IMG00809,Depression / Deep Depression,D-DD,G0587
+data/processed/classification/D-DD/CLS_00923.png,0,2016203N10249,EP,pacific_ocean,eastern_pacific,2016-07-21T21:00:00Z,CLS-IMG00810,Depression / Deep Depression,D-DD,G0587
+data/processed/classification/D-DD/CLS_00928.png,0,2016225N16138,WP,pacific_ocean,western_pacific,2016-08-13T15:00:00Z,CLS-IMG00814,Depression / Deep Depression,D-DD,G0591
+data/processed/classification/D-DD/CLS_00963.png,0,2017097S12171,SP,pacific_ocean,southern_pacific,2017-04-07T18:00:00Z,CLS-IMG00846,Depression / Deep Depression,D-DD,G0616
+data/processed/classification/D-DD/CLS_00998.png,0,2017340N09089,NI,north_indian_ocean,bay_of_bengal,2017-12-09T09:00:00Z,CLS-IMG00880,Depression / Deep Depression,D-DD,G0642
+data/processed/classification/D-DD/CLS_00999.png,0,2017340N09089,NI,north_indian_ocean,bay_of_bengal,2017-12-09T21:00:00Z,CLS-IMG00881,Depression / Deep Depression,D-DD,G0642
+data/processed/classification/D-DD/CLS_01002.png,0,2018007S13130,SI,south_indian_ocean,,2018-01-10T09:00:00Z,CLS-IMG00884,Depression / Deep Depression,D-DD,G0645
+data/processed/classification/D-DD/CLS_01005.png,0,2018060S13057,SI,south_indian_ocean,,2018-03-02T06:00:00Z,CLS-IMG00887,Depression / Deep Depression,D-DD,G0648
+data/processed/classification/D-DD/CLS_01015.png,0,2018089S18172,SP,pacific_ocean,southern_pacific,2018-03-30T21:00:00Z,CLS-IMG00896,Depression / Deep Depression,D-DD,G0655
+data/processed/classification/D-DD/CLS_01019.png,0,2018129N15153,WP,pacific_ocean,western_pacific,2018-05-12T06:00:00Z,CLS-IMG00900,Depression / Deep Depression,D-DD,G0659
+data/processed/classification/D-DD/CLS_01023.png,0,2018141N08059,NI,north_indian_ocean,arabian_sea,2018-05-27T03:00:00Z,CLS-IMG00904,Depression / Deep Depression,D-DD,G0661
+data/processed/classification/D-DD/CLS_01032.png,0,2018199N18128,WP,pacific_ocean,western_pacific,2018-07-23T03:00:00Z,CLS-IMG00913,Depression / Deep Depression,D-DD,G0669
+data/processed/classification/D-DD/CLS_01038.png,0,2018227N11145,WP,pacific_ocean,western_pacific,2018-08-15T15:00:00Z,CLS-IMG00919,Depression / Deep Depression,D-DD,G0673
+data/processed/classification/D-DD/CLS_01056.png,0,2018309S06068,SI,south_indian_ocean,,2018-11-12T12:00:00Z,CLS-IMG00937,Depression / Deep Depression,D-DD,G0684
+data/processed/classification/D-DD/CLS_01074.png,0,2019040S17183,SP,pacific_ocean,southern_pacific,2019-02-10T09:00:00Z,CLS-IMG00953,Depression / Deep Depression,D-DD,G0693
+data/processed/classification/D-DD/CLS_01076.png,0,2019057S13184,SP,pacific_ocean,southern_pacific,2019-02-25T12:00:00Z,CLS-IMG00955,Depression / Deep Depression,D-DD,G0695
+data/processed/classification/D-DD/CLS_01078.png,0,2019112S10053,SI,south_indian_ocean,,2019-04-22T15:00:00Z,CLS-IMG00957,Depression / Deep Depression,D-DD,G0697
+data/processed/classification/D-DD/CLS_01085.png,0,2019210N11253,EP,pacific_ocean,eastern_pacific,2019-07-28T21:00:00Z,CLS-IMG00963,Depression / Deep Depression,D-DD,G0703
+data/processed/classification/D-DD/CLS_01099.png,0,2019302N11118,NI,north_indian_ocean,bay_of_bengal,2019-11-04T15:00:00Z,CLS-IMG00975,Depression / Deep Depression,D-DD,G0714
+data/processed/classification/D-DD/CLS_01100.png,0,2019302N11118,NI,north_indian_ocean,bay_of_bengal,2019-11-05T03:00:00Z,CLS-IMG00976,Depression / Deep Depression,D-DD,G0714
+data/processed/classification/D-DD/CLS_01114.png,0,2019352S14070,SI,south_indian_ocean,,2019-12-19T15:00:00Z,CLS-IMG00990,Depression / Deep Depression,D-DD,G0720
+data/processed/classification/D-DD/CLS_01124.png,0,2020023S19056,SI,south_indian_ocean,,2020-01-23T15:00:00Z,CLS-IMG01000,Depression / Deep Depression,D-DD,G0726
+data/processed/classification/D-DD/CLS_01146.png,0,2020196N17250,EP,pacific_ocean,eastern_pacific,2020-07-13T21:00:00Z,CLS-IMG01018,Depression / Deep Depression,D-DD,G0736
+data/processed/classification/D-DD/CLS_01155.png,0,2020279N11256,EP,pacific_ocean,eastern_pacific,2020-10-09T06:00:00Z,CLS-IMG01026,Depression / Deep Depression,D-DD,G0743
+data/processed/classification/D-DD/CLS_01177.png,0,2020355S11065,SI,south_indian_ocean,,2020-12-23T03:00:00Z,CLS-IMG01045,Depression / Deep Depression,D-DD,G0755
+data/processed/classification/D-DD/CLS_01185.png,0,2021029S16171,SP,pacific_ocean,southern_pacific,2021-01-28T21:00:00Z,CLS-IMG01053,Depression / Deep Depression,D-DD,G0763
+data/processed/classification/D-DD/CLS_01186.png,0,2021029S16171,SP,pacific_ocean,southern_pacific,2021-01-29T09:00:00Z,CLS-IMG01054,Depression / Deep Depression,D-DD,G0763
+data/processed/classification/D-DD/CLS_01187.png,0,2021025S14138,SP,pacific_ocean,southern_pacific,2021-01-29T15:00:00Z,CLS-IMG01055,Depression / Deep Depression,D-DD,G0763
+data/processed/classification/D-DD/CLS_01189.png,0,2021025S14138,SP,pacific_ocean,southern_pacific,2021-01-30T09:00:00Z,CLS-IMG01057,Depression / Deep Depression,D-DD,G0763
+data/processed/classification/D-DD/CLS_01190.png,0,2021029S14162,SP,pacific_ocean,southern_pacific,2021-01-31T21:00:00Z,CLS-IMG01058,Depression / Deep Depression,D-DD,G0763
+data/processed/classification/D-DD/CLS_01200.png,0,2021132N06132,WP,pacific_ocean,western_pacific,2021-05-13T15:00:00Z,CLS-IMG01067,Depression / Deep Depression,D-DD,G0773
+data/processed/classification/D-DD/CLS_01212.png,0,2021236N12265,EP,pacific_ocean,eastern_pacific,2021-08-25T12:00:00Z,CLS-IMG01077,Depression / Deep Depression,D-DD,G0780
+data/processed/classification/D-DD/CLS_01216.png,0,2021267N18094,NI,north_indian_ocean,bay_of_bengal,2021-09-24T09:00:00Z,CLS-IMG01081,Depression / Deep Depression,D-DD,G0784
+data/processed/classification/D-DD/CLS_01217.png,0,2021267N18094,NI,north_indian_ocean,arabian_sea,2021-09-29T06:00:00Z,CLS-IMG01082,Depression / Deep Depression,D-DD,G0784
+data/processed/classification/D-DD/CLS_01218.png,0,2021267N18094,NI,north_indian_ocean,arabian_sea,2021-09-29T21:00:00Z,CLS-IMG01083,Depression / Deep Depression,D-DD,G0784
+data/processed/classification/D-DD/CLS_01219.png,0,2021267N18094,NI,north_indian_ocean,arabian_sea,2021-10-04T06:00:00Z,CLS-IMG01084,Depression / Deep Depression,D-DD,G0784
+data/processed/classification/D-DD/CLS_01232.png,0,2021334S07101,SI,south_indian_ocean,,2021-12-04T09:00:00Z,CLS-IMG01095,Depression / Deep Depression,D-DD,G0792
+data/processed/classification/D-DD/CLS_01239.png,0,2022008S17173,SP,pacific_ocean,southern_pacific,2022-01-07T12:00:00Z,CLS-IMG01101,Depression / Deep Depression,D-DD,G0796
+data/processed/classification/D-DD/CLS_01240.png,0,2022008S13148,SP,pacific_ocean,southern_pacific,2022-01-08T18:00:00Z,CLS-IMG01102,Depression / Deep Depression,D-DD,G0797
+data/processed/classification/D-DD/CLS_01241.png,0,2022008S17173,SP,pacific_ocean,southern_pacific,2022-01-09T00:00:00Z,CLS-IMG01103,Depression / Deep Depression,D-DD,G0796
+data/processed/classification/D-DD/CLS_01247.png,0,2022054S14085,SI,south_indian_ocean,,2022-02-26T21:00:00Z,CLS-IMG01109,Depression / Deep Depression,D-DD,G0802
+data/processed/classification/D-DD/CLS_01256.png,0,2022076S10126,SI,south_indian_ocean,,2022-03-24T09:00:00Z,CLS-IMG01116,Depression / Deep Depression,D-DD,G0807
+data/processed/classification/D-DD/CLS_01257.png,0,2022094S15163,SP,pacific_ocean,southern_pacific,2022-04-03T21:00:00Z,CLS-IMG01117,Depression / Deep Depression,D-DD,G0808
+data/processed/classification/D-DD/CLS_01269.png,0,2022230N18095,NI,north_indian_ocean,bay_of_bengal,2022-08-17T15:00:00Z,CLS-IMG01128,Depression / Deep Depression,D-DD,G0816
+data/processed/classification/D-DD/CLS_01270.png,0,2022230N18095,NI,north_indian_ocean,bay_of_bengal,2022-08-18T03:00:00Z,CLS-IMG01129,Depression / Deep Depression,D-DD,G0816
+data/processed/classification/D-DD/CLS_01271.png,0,2022230N18095,NI,north_indian_ocean,bay_of_bengal,2022-08-20T06:00:00Z,CLS-IMG01130,Depression / Deep Depression,D-DD,G0816
+data/processed/classification/D-DD/CLS_01303.png,0,2023055S14184,SP,pacific_ocean,southern_pacific,2023-02-25T21:00:00Z,CLS-IMG01161,Depression / Deep Depression,D-DD,G0836
+data/processed/classification/D-DD/CLS_01312.png,0,2023212N19090,NI,north_indian_ocean,bay_of_bengal,2023-07-30T12:00:00Z,CLS-IMG01170,Depression / Deep Depression,D-DD,G0844
+data/processed/classification/D-DD/CLS_01314.png,0,2023212N19090,NI,north_indian_ocean,bay_of_bengal,2023-08-01T09:00:00Z,CLS-IMG01171,Depression / Deep Depression,D-DD,G0844
+data/processed/classification/D-DD/CLS_01315.png,0,2023212N19090,NI,north_indian_ocean,bay_of_bengal,2023-08-01T21:00:00Z,CLS-IMG01172,Depression / Deep Depression,D-DD,G0844
+data/processed/classification/D-DD/CLS_01319.png,0,2023228N12259,EP,pacific_ocean,eastern_pacific,2023-08-16T06:00:00Z,CLS-IMG01176,Depression / Deep Depression,D-DD,G0848
+data/processed/classification/D-DD/CLS_01331.png,0,2023294N09264,EP,pacific_ocean,eastern_pacific,2023-10-22T15:00:00Z,CLS-IMG01186,Depression / Deep Depression,D-DD,G0858
+data/processed/classification/D-DD/CLS_01344.png,0,2024012S12059,SI,south_indian_ocean,,2024-01-12T06:00:00Z,CLS-IMG01198,Depression / Deep Depression,D-DD,G0862
+data/processed/classification/D-DD/CLS_01353.png,0,2024045S15192,SP,pacific_ocean,southern_pacific,2024-02-14T06:00:00Z,CLS-IMG01207,Depression / Deep Depression,D-DD,G0868
+data/processed/classification/D-DD/CLS_01362.png,0,2024141N03142,WP,pacific_ocean,western_pacific,2024-05-24T18:00:00Z,CLS-IMG01216,Depression / Deep Depression,D-DD,G0876
+data/processed/classification/D-DD/CLS_01367.png,0,2024225N24147,WP,pacific_ocean,western_pacific,2024-08-14T03:00:00Z,CLS-IMG01220,Depression / Deep Depression,D-DD,G0879
+data/processed/classification/D-DD/CLS_01378.png,0,2024259N12145,WP,pacific_ocean,western_pacific,2024-09-20T18:00:00Z,CLS-IMG01230,Depression / Deep Depression,D-DD,G0884
+data/processed/classification/D-DD/CLS_01379.png,0,2024264N20128,WP,pacific_ocean,western_pacific,2024-09-20T21:00:00Z,CLS-IMG01231,Depression / Deep Depression,D-DD,G0884
+data/processed/classification/D-DD/CLS_01385.png,0,2024293N13141,WP,pacific_ocean,western_pacific,2024-10-27T15:00:00Z,CLS-IMG01237,Depression / Deep Depression,D-DD,G0888
+data/processed/classification/D-DD/CLS_01386.png,0,2024307N11232,EP,pacific_ocean,eastern_pacific,2024-11-02T03:00:00Z,CLS-IMG01238,Depression / Deep Depression,D-DD,G0889
+data/processed/classification/D-DD/CLS_01388.png,0,2024313N10169,WP,pacific_ocean,western_pacific,2024-11-08T12:00:00Z,CLS-IMG01240,Depression / Deep Depression,D-DD,G0891
+data/processed/classification/D-DD/CLS_01389.png,0,2024312N14145,WP,pacific_ocean,western_pacific,2024-11-09T03:00:00Z,CLS-IMG01241,Depression / Deep Depression,D-DD,G0892
+data/processed/classification/D-DD/CLS_01394.png,0,2024357N10115,WP,pacific_ocean,western_pacific,2024-12-22T21:00:00Z,CLS-IMG01245,Depression / Deep Depression,D-DD,G0894
+data/processed/classification/D-DD/CLS_01400.png,0,2025273N09248,EP,pacific_ocean,eastern_pacific,2025-09-30T03:00:00Z,CLS-IMG01250,Depression / Deep Depression,D-DD,G0899
+data/processed/classification/CS-SCS/CLS_01411.png,1,2000050S13078,SI,south_indian_ocean,,2000-02-21T12:00:00Z,CLS-IMG01261,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0008
+data/processed/classification/CS-SCS/CLS_01412.png,1,2000055S23227,SP,pacific_ocean,southern_pacific,2000-02-25T00:00:00Z,CLS-IMG01262,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0009
+data/processed/classification/CS-SCS/CLS_01415.png,1,2000058S14063,SI,south_indian_ocean,,2000-02-29T21:00:00Z,CLS-IMG01265,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0011
+data/processed/classification/CS-SCS/CLS_01419.png,1,2000064S19209,SP,pacific_ocean,southern_pacific,2000-03-06T21:00:00Z,CLS-IMG01269,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0013
+data/processed/classification/CS-SCS/CLS_01420.png,1,2000064S19209,SP,pacific_ocean,southern_pacific,2000-03-07T18:00:00Z,CLS-IMG01270,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0013
+data/processed/classification/CS-SCS/CLS_01421.png,1,2000067S15189,SP,pacific_ocean,southern_pacific,2000-03-10T18:00:00Z,CLS-IMG01271,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0013
+data/processed/classification/CS-SCS/CLS_01433.png,1,2000125N06136,WP,pacific_ocean,western_pacific,2000-05-07T03:00:00Z,CLS-IMG01279,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0902
+data/processed/classification/CS-SCS/CLS_01435.png,1,2000142N12262,EP,pacific_ocean,eastern_pacific,2000-05-26T21:00:00Z,CLS-IMG01281,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0903
+data/processed/classification/CS-SCS/CLS_01439.png,1,2000206N11266,EP,pacific_ocean,eastern_pacific,2000-07-28T12:00:00Z,CLS-IMG01285,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0022
+data/processed/classification/CS-SCS/CLS_01456.png,1,2000277N15257,EP,pacific_ocean,eastern_pacific,2000-10-06T12:00:00Z,CLS-IMG01302,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0034
+data/processed/classification/CS-SCS/CLS_01459.png,1,2000295N20146,WP,pacific_ocean,western_pacific,2000-10-27T06:00:00Z,CLS-IMG01305,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0914
+data/processed/classification/CS-SCS/CLS_01470.png,1,2001039S13117,SI,south_indian_ocean,,2001-02-14T00:00:00Z,CLS-IMG01315,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0918
+data/processed/classification/CS-SCS/CLS_01471.png,1,2001047S17157,SP,pacific_ocean,southern_pacific,2001-02-17T15:00:00Z,CLS-IMG01316,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0045
+data/processed/classification/CS-SCS/CLS_01481.png,1,2001093S10062,SI,south_indian_ocean,,2001-04-04T21:00:00Z,CLS-IMG01324,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0050
+data/processed/classification/CS-SCS/CLS_01494.png,1,2001248N17251,EP,pacific_ocean,eastern_pacific,2001-09-05T21:00:00Z,CLS-IMG01337,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0062
+data/processed/classification/CS-SCS/CLS_01503.png,1,2001284N14261,EP,pacific_ocean,eastern_pacific,2001-10-16T09:00:00Z,CLS-IMG01344,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0928
+data/processed/classification/CS-SCS/CLS_01507.png,1,2001321N07148,WP,pacific_ocean,western_pacific,2001-11-21T00:00:00Z,CLS-IMG01348,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0929
+data/processed/classification/CS-SCS/CLS_01523.png,1,2002062S15154,SP,pacific_ocean,southern_pacific,2002-03-06T03:00:00Z,CLS-IMG01363,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0088
+data/processed/classification/CS-SCS/CLS_01524.png,1,2002073S16161,SP,pacific_ocean,southern_pacific,2002-03-15T03:00:00Z,CLS-IMG01364,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0089
+data/processed/classification/CS-SCS/CLS_01532.png,1,2002129N08096,NI,north_indian_ocean,bay_of_bengal,2002-05-10T18:00:00Z,CLS-IMG01372,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0096
+data/processed/classification/CS-SCS/CLS_01533.png,1,2002129N08096,NI,north_indian_ocean,bay_of_bengal,2002-05-11T12:00:00Z,CLS-IMG01373,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0096
+data/processed/classification/CS-SCS/CLS_01534.png,1,2002128S05097,SI,south_indian_ocean,,2002-05-12T15:00:00Z,CLS-IMG01374,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0096
+data/processed/classification/CS-SCS/CLS_01549.png,1,2002222N09163,WP,pacific_ocean,western_pacific,2002-08-12T18:00:00Z,CLS-IMG01387,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0938
+data/processed/classification/CS-SCS/CLS_01559.png,1,2002297N09206,EP,pacific_ocean,eastern_pacific,2002-10-26T21:00:00Z,CLS-IMG01396,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0944
+data/processed/classification/CS-SCS/CLS_01561.png,1,2002297N09206,WP,pacific_ocean,western_pacific,2002-11-06T18:00:00Z,CLS-IMG01398,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0944
+data/processed/classification/CS-SCS/CLS_01565.png,1,2002327N10089,NI,north_indian_ocean,bay_of_bengal,2002-11-24T00:00:00Z,CLS-IMG01400,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0109
+data/processed/classification/CS-SCS/CLS_01566.png,1,2002327N10089,NI,north_indian_ocean,bay_of_bengal,2002-11-24T12:00:00Z,CLS-IMG01401,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0109
+data/processed/classification/CS-SCS/CLS_01567.png,1,2002327N10089,NI,north_indian_ocean,bay_of_bengal,2002-11-25T00:00:00Z,CLS-IMG01402,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0109
+data/processed/classification/CS-SCS/CLS_01568.png,1,2002327N10089,NI,north_indian_ocean,bay_of_bengal,2002-11-25T12:00:00Z,CLS-IMG01403,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0109
+data/processed/classification/CS-SCS/CLS_01575.png,1,2003025S16173,SP,pacific_ocean,southern_pacific,2003-01-27T09:00:00Z,CLS-IMG01410,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0118
+data/processed/classification/CS-SCS/CLS_01578.png,1,2003025S16173,SP,pacific_ocean,southern_pacific,2003-01-28T21:00:00Z,CLS-IMG01412,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0118
+data/processed/classification/CS-SCS/CLS_01582.png,1,2003060S13103,SI,south_indian_ocean,,2003-03-06T09:00:00Z,CLS-IMG01416,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0948
+data/processed/classification/CS-SCS/CLS_01599.png,1,2003212N12130,WP,pacific_ocean,western_pacific,2003-08-02T00:00:00Z,CLS-IMG01430,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0134
+data/processed/classification/CS-SCS/CLS_01607.png,1,2003276N12262,EP,pacific_ocean,eastern_pacific,2003-10-06T03:00:00Z,CLS-IMG01437,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0145
+data/processed/classification/CS-SCS/CLS_01626.png,1,2004074N03143,WP,pacific_ocean,western_pacific,2004-03-19T12:00:00Z,CLS-IMG01454,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0163
+data/processed/classification/CS-SCS/CLS_01634.png,1,2004134N07132,WP,pacific_ocean,western_pacific,2004-05-14T09:00:00Z,CLS-IMG01462,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0169
+data/processed/classification/CS-SCS/CLS_01635.png,1,2004135N09114,WP,pacific_ocean,western_pacific,2004-05-16T06:00:00Z,CLS-IMG01463,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0169
+data/processed/classification/CS-SCS/CLS_01636.png,1,2004136N15090,NI,north_indian_ocean,bay_of_bengal,2004-05-18T18:00:00Z,CLS-IMG01464,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0169
+data/processed/classification/CS-SCS/CLS_01637.png,1,2004136N05148,WP,pacific_ocean,western_pacific,2004-05-19T15:00:00Z,CLS-IMG01465,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0958
+data/processed/classification/CS-SCS/CLS_01638.png,1,2004143N15252,EP,pacific_ocean,eastern_pacific,2004-05-22T18:00:00Z,CLS-IMG01466,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0170
+data/processed/classification/CS-SCS/CLS_01649.png,1,2004232N12228,EP,pacific_ocean,eastern_pacific,2004-08-21T06:00:00Z,CLS-IMG01477,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0178
+data/processed/classification/CS-SCS/CLS_01661.png,1,2004338S09113,SI,south_indian_ocean,,2004-12-04T18:00:00Z,CLS-IMG01487,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0193
+data/processed/classification/CS-SCS/CLS_01664.png,1,2004365S13120,SI,south_indian_ocean,,2005-01-01T15:00:00Z,CLS-IMG01490,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0196
+data/processed/classification/CS-SCS/CLS_01668.png,1,2005013S14124,SI,south_indian_ocean,,2005-01-15T12:00:00Z,CLS-IMG01494,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0968
+data/processed/classification/CS-SCS/CLS_01690.png,1,2005222N14246,EP,pacific_ocean,eastern_pacific,2005-08-10T00:00:00Z,CLS-IMG01515,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0978
+data/processed/classification/CS-SCS/CLS_01697.png,1,2005237N14148,WP,pacific_ocean,western_pacific,2005-08-28T03:00:00Z,CLS-IMG01520,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0215
+data/processed/classification/CS-SCS/CLS_01704.png,1,2005268N19146,WP,pacific_ocean,western_pacific,2005-10-02T18:00:00Z,CLS-IMG01527,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0218
+data/processed/classification/CS-SCS/CLS_01707.png,1,2005287S09084,SI,south_indian_ocean,,2005-10-15T12:00:00Z,CLS-IMG01530,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0220
+data/processed/classification/CS-SCS/CLS_01713.png,1,2005338N09093,NI,north_indian_ocean,bay_of_bengal,2005-12-06T06:00:00Z,CLS-IMG01536,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0226
+data/processed/classification/CS-SCS/CLS_01714.png,1,2005338N09093,NI,north_indian_ocean,bay_of_bengal,2005-12-06T18:00:00Z,CLS-IMG01537,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0226
+data/processed/classification/CS-SCS/CLS_01717.png,1,2006006S11129,SI,south_indian_ocean,,2006-01-09T00:00:00Z,CLS-IMG01540,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0988
+data/processed/classification/CS-SCS/CLS_01727.png,1,2006021S11053,SI,south_indian_ocean,,2006-01-31T18:00:00Z,CLS-IMG01549,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0990
+data/processed/classification/CS-SCS/CLS_01731.png,1,2006049S16051,SI,south_indian_ocean,,2006-02-19T12:00:00Z,CLS-IMG01553,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0232
+data/processed/classification/CS-SCS/CLS_01736.png,1,2006060S13058,SI,south_indian_ocean,,2006-03-06T15:00:00Z,CLS-IMG01557,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0234
+data/processed/classification/CS-SCS/CLS_01739.png,1,2006094S08087,SI,south_indian_ocean,,2006-04-13T15:00:00Z,CLS-IMG01560,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0995
+data/processed/classification/CS-SCS/CLS_01756.png,1,2006272N13144,WP,pacific_ocean,western_pacific,2006-10-05T03:00:00Z,CLS-IMG01574,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0252
+data/processed/classification/CS-SCS/CLS_01758.png,1,2006283N13232,EP,pacific_ocean,eastern_pacific,2006-10-11T00:00:00Z,CLS-IMG01576,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0253
+data/processed/classification/CS-SCS/CLS_01772.png,1,2006335S10164,SP,pacific_ocean,southern_pacific,2006-12-01T12:00:00Z,CLS-IMG01588,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0259
+data/processed/classification/CS-SCS/CLS_01789.png,1,2007084S12157,SP,pacific_ocean,southern_pacific,2007-03-29T03:00:00Z,CLS-IMG01601,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0268
+data/processed/classification/CS-SCS/CLS_01794.png,1,2007147N13249,EP,pacific_ocean,eastern_pacific,2007-05-29T15:00:00Z,CLS-IMG01606,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0271
+data/processed/classification/CS-SCS/CLS_01796.png,1,2007178N18089,NI,north_indian_ocean,bay_of_bengal,2007-06-28T21:00:00Z,CLS-IMG01608,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0273
+data/processed/classification/CS-SCS/CLS_01803.png,1,2007216N18138,WP,pacific_ocean,western_pacific,2007-08-08T21:00:00Z,CLS-IMG01614,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1016
+data/processed/classification/CS-SCS/CLS_01837.png,1,2008042S16122,SI,south_indian_ocean,,2008-02-13T12:00:00Z,CLS-IMG01645,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0297
+data/processed/classification/CS-SCS/CLS_01841.png,1,2008065S12096,SI,south_indian_ocean,,2008-03-11T21:00:00Z,CLS-IMG01648,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0300
+data/processed/classification/CS-SCS/CLS_01858.png,1,2008218N10224,EP,pacific_ocean,eastern_pacific,2008-08-08T12:00:00Z,CLS-IMG01662,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1033
+data/processed/classification/CS-SCS/CLS_01865.png,1,2008253N29150,WP,pacific_ocean,western_pacific,2008-09-10T18:00:00Z,CLS-IMG01669,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0313
+data/processed/classification/CS-SCS/CLS_01871.png,1,2008290S05071,SI,south_indian_ocean,,2008-10-20T18:00:00Z,CLS-IMG01673,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0318
+data/processed/classification/CS-SCS/CLS_01874.png,1,2008311N08128,WP,pacific_ocean,western_pacific,2008-11-08T18:00:00Z,CLS-IMG01676,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1039
+data/processed/classification/CS-SCS/CLS_01896.png,1,2009045S18174,SP,pacific_ocean,southern_pacific,2009-02-17T09:00:00Z,CLS-IMG01696,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0331
+data/processed/classification/CS-SCS/CLS_01897.png,1,2009045S18174,SP,pacific_ocean,southern_pacific,2009-02-18T00:00:00Z,CLS-IMG01697,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0331
+data/processed/classification/CS-SCS/CLS_01926.png,1,2009194N11257,EP,pacific_ocean,eastern_pacific,2009-07-16T00:00:00Z,CLS-IMG01723,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0346
+data/processed/classification/CS-SCS/CLS_01944.png,1,2009272N07164,WP,pacific_ocean,western_pacific,2009-10-08T00:00:00Z,CLS-IMG01740,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1058
+data/processed/classification/CS-SCS/CLS_01946.png,1,2009282N16252,EP,pacific_ocean,eastern_pacific,2009-10-13T00:00:00Z,CLS-IMG01741,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0359
+data/processed/classification/CS-SCS/CLS_01955.png,1,2009325S12066,SI,south_indian_ocean,,2009-11-24T09:00:00Z,CLS-IMG01750,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0364
+data/processed/classification/CS-SCS/CLS_01994.png,1,2010293N17093,NI,north_indian_ocean,bay_of_bengal,2010-10-21T03:00:00Z,CLS-IMG01782,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0390
+data/processed/classification/CS-SCS/CLS_01997.png,1,2010302S08098,SI,south_indian_ocean,,2010-11-03T09:00:00Z,CLS-IMG01785,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1071
+data/processed/classification/CS-SCS/CLS_02001.png,1,2010350N30175,EP,pacific_ocean,eastern_pacific,2010-12-20T06:00:00Z,CLS-IMG01789,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1073
+data/processed/classification/CS-SCS/CLS_02010.png,1,2011021S16129,SI,south_indian_ocean,,2011-01-25T12:00:00Z,CLS-IMG01796,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1075
+data/processed/classification/CS-SCS/CLS_02019.png,1,2011172N11133,WP,pacific_ocean,western_pacific,2011-06-23T12:00:00Z,CLS-IMG01805,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0412
+data/processed/classification/CS-SCS/CLS_02020.png,1,2011167N08129,WP,pacific_ocean,western_pacific,2011-06-23T15:00:00Z,CLS-IMG01806,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0412
+data/processed/classification/CS-SCS/CLS_02021.png,1,2011188N14261,EP,pacific_ocean,eastern_pacific,2011-07-08T09:00:00Z,CLS-IMG01807,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1077
+data/processed/classification/CS-SCS/CLS_02027.png,1,2011249N18133,WP,pacific_ocean,western_pacific,2011-09-07T12:00:00Z,CLS-IMG01813,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1080
+data/processed/classification/CS-SCS/CLS_02028.png,1,2011257N19154,WP,pacific_ocean,western_pacific,2011-09-17T00:00:00Z,CLS-IMG01814,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0421
+data/processed/classification/CS-SCS/CLS_02030.png,1,2011302N13062,NI,north_indian_ocean,arabian_sea,2011-11-02T06:00:00Z,CLS-IMG01816,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0424
+data/processed/classification/CS-SCS/CLS_02031.png,1,2011302N13062,NI,north_indian_ocean,arabian_sea,2011-11-03T09:00:00Z,CLS-IMG01817,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0424
+data/processed/classification/CS-SCS/CLS_02033.png,1,2011323N09264,EP,pacific_ocean,eastern_pacific,2011-11-24T12:00:00Z,CLS-IMG01819,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0426
+data/processed/classification/CS-SCS/CLS_02047.png,1,2012056S13057,SI,south_indian_ocean,,2012-03-03T18:00:00Z,CLS-IMG01831,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0436
+data/processed/classification/CS-SCS/CLS_02060.png,1,2012219N12254,EP,pacific_ocean,eastern_pacific,2012-08-11T09:00:00Z,CLS-IMG01844,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0446
+data/processed/classification/CS-SCS/CLS_02070.png,1,2012281N14242,EP,pacific_ocean,eastern_pacific,2012-10-08T00:00:00Z,CLS-IMG01852,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1097
+data/processed/classification/CS-SCS/CLS_02090.png,1,2013019S12174,SP,pacific_ocean,southern_pacific,2013-01-21T03:00:00Z,CLS-IMG01869,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0462
+data/processed/classification/CS-SCS/CLS_02094.png,1,2013019S12174,SP,pacific_ocean,southern_pacific,2013-01-26T12:00:00Z,CLS-IMG01873,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0462
+data/processed/classification/CS-SCS/CLS_02096.png,1,2013040S16199,SP,pacific_ocean,southern_pacific,2013-02-09T09:00:00Z,CLS-IMG01875,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0467
+data/processed/classification/CS-SCS/CLS_02098.png,1,2013040S16199,SP,pacific_ocean,southern_pacific,2013-02-10T18:00:00Z,CLS-IMG01876,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0467
+data/processed/classification/CS-SCS/CLS_02099.png,1,2013041S10087,SI,south_indian_ocean,,2013-02-11T06:00:00Z,CLS-IMG01877,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0466
+data/processed/classification/CS-SCS/CLS_02107.png,1,2013097S06099,SI,south_indian_ocean,,2013-04-09T03:00:00Z,CLS-IMG01883,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0472
+data/processed/classification/CS-SCS/CLS_02124.png,1,2013206N15238,EP,pacific_ocean,eastern_pacific,2013-07-27T12:00:00Z,CLS-IMG01899,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1108
+data/processed/classification/CS-SCS/CLS_02126.png,1,2013211N11248,EP,pacific_ocean,eastern_pacific,2013-08-06T12:00:00Z,CLS-IMG01901,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1110
+data/processed/classification/CS-SCS/CLS_02127.png,1,2013220N12137,WP,pacific_ocean,western_pacific,2013-08-09T12:00:00Z,CLS-IMG01902,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1111
+data/processed/classification/CS-SCS/CLS_02138.png,1,2013272N26152,WP,pacific_ocean,western_pacific,2013-09-30T09:00:00Z,CLS-IMG01910,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0487
+data/processed/classification/CS-SCS/CLS_02146.png,1,2013305N16252,EP,pacific_ocean,eastern_pacific,2013-11-03T06:00:00Z,CLS-IMG01917,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1120
+data/processed/classification/CS-SCS/CLS_02148.png,1,2013310N06066,NI,north_indian_ocean,arabian_sea,2013-11-09T06:00:00Z,CLS-IMG01919,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0493
+data/processed/classification/CS-SCS/CLS_02149.png,1,2013322N13090,NI,north_indian_ocean,bay_of_bengal,2013-11-19T06:00:00Z,CLS-IMG01920,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0496
+data/processed/classification/CS-SCS/CLS_02150.png,1,2013322N13090,NI,north_indian_ocean,bay_of_bengal,2013-11-20T18:00:00Z,CLS-IMG01921,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0496
+data/processed/classification/CS-SCS/CLS_02176.png,1,2014106S10099,SI,south_indian_ocean,,2014-04-18T15:00:00Z,CLS-IMG01943,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1125
+data/processed/classification/CS-SCS/CLS_02177.png,1,2014153N12267,EP,pacific_ocean,eastern_pacific,2014-06-03T15:00:00Z,CLS-IMG01944,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1126
+data/processed/classification/CS-SCS/CLS_02178.png,1,2014159N12068,NI,north_indian_ocean,arabian_sea,2014-06-10T18:00:00Z,CLS-IMG01945,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0516
+data/processed/classification/CS-SCS/CLS_02179.png,1,2014159N12068,NI,north_indian_ocean,arabian_sea,2014-06-11T15:00:00Z,CLS-IMG01946,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0516
+data/processed/classification/CS-SCS/CLS_02180.png,1,2014159N12068,NI,north_indian_ocean,arabian_sea,2014-06-12T15:00:00Z,CLS-IMG01947,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0516
+data/processed/classification/CS-SCS/CLS_02186.png,1,2014195N11232,EP,pacific_ocean,eastern_pacific,2014-07-18T03:00:00Z,CLS-IMG01951,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0519
+data/processed/classification/CS-SCS/CLS_02188.png,1,2014209N12152,WP,pacific_ocean,western_pacific,2014-07-31T21:00:00Z,CLS-IMG01953,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0521
+data/processed/classification/CS-SCS/CLS_02192.png,1,2014253N13260,EP,pacific_ocean,eastern_pacific,2014-09-16T18:00:00Z,CLS-IMG01957,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0525
+data/processed/classification/CS-SCS/CLS_02193.png,1,2014259N11262,EP,pacific_ocean,eastern_pacific,2014-09-17T06:00:00Z,CLS-IMG01958,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0525
+data/processed/classification/CS-SCS/CLS_02199.png,1,2014284N10231,EP,pacific_ocean,eastern_pacific,2014-10-22T06:00:00Z,CLS-IMG01964,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1132
+data/processed/classification/CS-SCS/CLS_02213.png,1,2015030S16161,SP,pacific_ocean,southern_pacific,2015-01-31T03:00:00Z,CLS-IMG01978,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0539
+data/processed/classification/CS-SCS/CLS_02214.png,1,2015030S16161,SP,pacific_ocean,southern_pacific,2015-02-03T09:00:00Z,CLS-IMG01979,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0539
+data/processed/classification/CS-SCS/CLS_02258.png,1,2015260N12187,EP,pacific_ocean,eastern_pacific,2015-09-21T15:00:00Z,CLS-IMG02016,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1146
+data/processed/classification/CS-SCS/CLS_02297.png,1,2016195S06076,SI,south_indian_ocean,,2016-07-19T12:00:00Z,CLS-IMG02052,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0586
+data/processed/classification/CS-SCS/CLS_02298.png,1,2016203N10249,EP,pacific_ocean,eastern_pacific,2016-07-23T06:00:00Z,CLS-IMG02053,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0587
+data/processed/classification/CS-SCS/CLS_02299.png,1,2016203N13259,EP,pacific_ocean,eastern_pacific,2016-07-24T21:00:00Z,CLS-IMG02054,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0587
+data/processed/classification/CS-SCS/CLS_02305.png,1,2016230N12254,EP,pacific_ocean,eastern_pacific,2016-08-20T12:00:00Z,CLS-IMG02060,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1159
+data/processed/classification/CS-SCS/CLS_02319.png,1,2016305N10147,WP,pacific_ocean,western_pacific,2016-11-04T09:00:00Z,CLS-IMG02073,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1168
+data/processed/classification/CS-SCS/CLS_02326.png,1,2016354S15116,SI,south_indian_ocean,,2016-12-19T03:00:00Z,CLS-IMG02079,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1170
+data/processed/classification/CS-SCS/CLS_02344.png,1,2017097S12171,SP,pacific_ocean,southern_pacific,2017-04-08T18:00:00Z,CLS-IMG02096,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0616
+data/processed/classification/CS-SCS/CLS_02373.png,1,2017277N14265,EP,pacific_ocean,eastern_pacific,2017-10-04T06:00:00Z,CLS-IMG02119,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1178
+data/processed/classification/CS-SCS/CLS_02379.png,1,2017340N09089,NI,north_indian_ocean,bay_of_bengal,2017-12-08T06:00:00Z,CLS-IMG02125,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0642
+data/processed/classification/CS-SCS/CLS_02380.png,1,2017340N09089,NI,north_indian_ocean,bay_of_bengal,2017-12-08T18:00:00Z,CLS-IMG02126,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0642
+data/processed/classification/CS-SCS/CLS_02386.png,1,2018007S13130,SI,south_indian_ocean,,2018-01-12T18:00:00Z,CLS-IMG02132,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0645
+data/processed/classification/CS-SCS/CLS_02394.png,1,2018060S13057,SI,south_indian_ocean,,2018-03-03T12:00:00Z,CLS-IMG02139,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0648
+data/processed/classification/CS-SCS/CLS_02400.png,1,2018089S18172,SP,pacific_ocean,southern_pacific,2018-03-31T18:00:00Z,CLS-IMG02144,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0655
+data/processed/classification/CS-SCS/CLS_02401.png,1,2018089S18172,SP,pacific_ocean,southern_pacific,2018-04-02T12:00:00Z,CLS-IMG02145,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0655
+data/processed/classification/CS-SCS/CLS_02427.png,1,2018239N11161,WP,pacific_ocean,western_pacific,2018-08-28T00:00:00Z,CLS-IMG02170,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1194
+data/processed/classification/CS-SCS/CLS_02434.png,1,2018271N06154,WP,pacific_ocean,western_pacific,2018-09-29T12:00:00Z,CLS-IMG02177,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1198
+data/processed/classification/CS-SCS/CLS_02437.png,1,2018309S06068,SI,south_indian_ocean,,2018-11-11T03:00:00Z,CLS-IMG02180,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0684
+data/processed/classification/CS-SCS/CLS_02451.png,1,2019040S17183,SP,pacific_ocean,southern_pacific,2019-02-09T00:00:00Z,CLS-IMG02191,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0693
+data/processed/classification/CS-SCS/CLS_02452.png,1,2019040S17183,SP,pacific_ocean,southern_pacific,2019-02-09T21:00:00Z,CLS-IMG02192,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0693
+data/processed/classification/CS-SCS/CLS_02453.png,1,2019057S13184,SP,pacific_ocean,southern_pacific,2019-02-26T09:00:00Z,CLS-IMG02193,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0695
+data/processed/classification/CS-SCS/CLS_02468.png,1,2019213N17155,WP,pacific_ocean,western_pacific,2019-08-02T21:00:00Z,CLS-IMG02204,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1206
+data/processed/classification/CS-SCS/CLS_02471.png,1,2019214N15134,WP,pacific_ocean,western_pacific,2019-08-05T18:00:00Z,CLS-IMG02206,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1206
+data/processed/classification/CS-SCS/CLS_02481.png,1,2019272N14261,EP,pacific_ocean,eastern_pacific,2019-09-30T21:00:00Z,CLS-IMG02214,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1212
+data/processed/classification/CS-SCS/CLS_02493.png,1,2019352S14070,SI,south_indian_ocean,,2019-12-29T15:00:00Z,CLS-IMG02225,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0720
+data/processed/classification/CS-SCS/CLS_02519.png,1,2020129N07134,WP,pacific_ocean,western_pacific,2020-05-12T12:00:00Z,CLS-IMG02248,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1221
+data/processed/classification/CS-SCS/CLS_02533.png,1,2020229N18123,WP,pacific_ocean,western_pacific,2020-08-18T18:00:00Z,CLS-IMG02260,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1228
+data/processed/classification/CS-SCS/CLS_02540.png,1,2020279N11256,EP,pacific_ocean,eastern_pacific,2020-10-06T15:00:00Z,CLS-IMG02266,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0743
+data/processed/classification/CS-SCS/CLS_02542.png,1,2020281N14126,WP,pacific_ocean,western_pacific,2020-10-11T00:00:00Z,CLS-IMG02268,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1235
+data/processed/classification/CS-SCS/CLS_02543.png,1,2020285N17120,WP,pacific_ocean,western_pacific,2020-10-13T18:00:00Z,CLS-IMG02269,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1236
+data/processed/classification/CS-SCS/CLS_02545.png,1,2020296N09137,WP,pacific_ocean,western_pacific,2020-10-28T12:00:00Z,CLS-IMG02271,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1238
+data/processed/classification/CS-SCS/CLS_02560.png,1,2020355S11065,SI,south_indian_ocean,,2020-12-25T15:00:00Z,CLS-IMG02284,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0755
+data/processed/classification/CS-SCS/CLS_02570.png,1,2021029S16171,SP,pacific_ocean,southern_pacific,2021-01-30T15:00:00Z,CLS-IMG02292,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0763
+data/processed/classification/CS-SCS/CLS_02571.png,1,2021029S14162,SP,pacific_ocean,southern_pacific,2021-01-30T18:00:00Z,CLS-IMG02293,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0763
+data/processed/classification/CS-SCS/CLS_02572.png,1,2021029S14162,SP,pacific_ocean,southern_pacific,2021-01-31T09:00:00Z,CLS-IMG02294,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0763
+data/processed/classification/CS-SCS/CLS_02573.png,1,2021025S14138,SP,pacific_ocean,southern_pacific,2021-01-31T15:00:00Z,CLS-IMG02295,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0763
+data/processed/classification/CS-SCS/CLS_02574.png,1,2021029S16171,SP,pacific_ocean,southern_pacific,2021-02-01T15:00:00Z,CLS-IMG02296,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0763
+data/processed/classification/CS-SCS/CLS_02575.png,1,2021025S14138,SP,pacific_ocean,southern_pacific,2021-02-02T03:00:00Z,CLS-IMG02297,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0763
+data/processed/classification/CS-SCS/CLS_02604.png,1,2021219N15258,EP,pacific_ocean,eastern_pacific,2021-08-08T00:00:00Z,CLS-IMG02322,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1247
+data/processed/classification/CS-SCS/CLS_02605.png,1,2021219N08193,WP,pacific_ocean,western_pacific,2021-08-12T18:00:00Z,CLS-IMG02323,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1248
+data/processed/classification/CS-SCS/CLS_02607.png,1,2021236N12265,EP,pacific_ocean,eastern_pacific,2021-08-26T18:00:00Z,CLS-IMG02325,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0780
+data/processed/classification/CS-SCS/CLS_02617.png,1,2021334S07101,SI,south_indian_ocean,,2021-11-30T18:00:00Z,CLS-IMG02334,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0792
+data/processed/classification/CS-SCS/CLS_02626.png,1,2022008S17173,SP,pacific_ocean,southern_pacific,2022-01-08T06:00:00Z,CLS-IMG02342,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0796
+data/processed/classification/CS-SCS/CLS_02627.png,1,2022008S17173,SP,pacific_ocean,southern_pacific,2022-01-09T15:00:00Z,CLS-IMG02343,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0796
+data/processed/classification/CS-SCS/CLS_02628.png,1,2022008S13148,SP,pacific_ocean,southern_pacific,2022-01-10T09:00:00Z,CLS-IMG02344,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0797
+data/processed/classification/CS-SCS/CLS_02629.png,1,2022008S13148,SP,pacific_ocean,southern_pacific,2022-01-10T21:00:00Z,CLS-IMG02345,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0797
+data/processed/classification/CS-SCS/CLS_02631.png,1,2022008S13148,SI,south_indian_ocean,,2022-01-12T06:00:00Z,CLS-IMG02346,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0797
+data/processed/classification/CS-SCS/CLS_02638.png,1,2022054S14085,SI,south_indian_ocean,,2022-02-25T18:00:00Z,CLS-IMG02353,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0802
+data/processed/classification/CS-SCS/CLS_02643.png,1,2022054S13100,SI,south_indian_ocean,,2022-03-03T06:00:00Z,CLS-IMG02358,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0802
+data/processed/classification/CS-SCS/CLS_02646.png,1,2022072S11107,SI,south_indian_ocean,,2022-03-15T06:00:00Z,CLS-IMG02361,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1257
+data/processed/classification/CS-SCS/CLS_02647.png,1,2022076S10126,SI,south_indian_ocean,,2022-03-21T06:00:00Z,CLS-IMG02362,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0807
+data/processed/classification/CS-SCS/CLS_02649.png,1,2022094S15163,SP,pacific_ocean,southern_pacific,2022-04-05T03:00:00Z,CLS-IMG02363,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0808
+data/processed/classification/CS-SCS/CLS_02650.png,1,2022094S15163,SP,pacific_ocean,southern_pacific,2022-04-06T09:00:00Z,CLS-IMG02364,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0808
+data/processed/classification/CS-SCS/CLS_02651.png,1,2022094S15163,SP,pacific_ocean,southern_pacific,2022-04-07T15:00:00Z,CLS-IMG02365,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0808
+data/processed/classification/CS-SCS/CLS_02668.png,1,2022230N18095,NI,north_indian_ocean,bay_of_bengal,2022-08-18T15:00:00Z,CLS-IMG02381,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0816
+data/processed/classification/CS-SCS/CLS_02669.png,1,2022230N18095,NI,north_indian_ocean,bay_of_bengal,2022-08-19T09:00:00Z,CLS-IMG02382,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0816
+data/processed/classification/CS-SCS/CLS_02673.png,1,2022244N15254,EP,pacific_ocean,eastern_pacific,2022-09-02T15:00:00Z,CLS-IMG02386,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1267
+data/processed/classification/CS-SCS/CLS_02680.png,1,2022264N17132,WP,pacific_ocean,western_pacific,2022-09-23T06:00:00Z,CLS-IMG02392,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1272
+data/processed/classification/CS-SCS/CLS_02683.png,1,2022270N14136,WP,pacific_ocean,western_pacific,2022-09-30T18:00:00Z,CLS-IMG02395,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1274
+data/processed/classification/CS-SCS/CLS_02685.png,1,2022276S05090,SI,south_indian_ocean,,2022-10-06T18:00:00Z,CLS-IMG02397,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1276
+data/processed/classification/CS-SCS/CLS_02714.png,1,2023212N19090,NI,north_indian_ocean,bay_of_bengal,2023-07-31T15:00:00Z,CLS-IMG02424,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0844
+data/processed/classification/CS-SCS/CLS_02722.png,1,2023247N20130,WP,pacific_ocean,western_pacific,2023-09-06T09:00:00Z,CLS-IMG02431,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1289
+data/processed/classification/CS-SCS/CLS_02727.png,1,2023302N10267,EP,pacific_ocean,eastern_pacific,2023-11-04T12:00:00Z,CLS-IMG02435,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1292
+data/processed/classification/CS-SCS/CLS_02730.png,1,2023326N10240,EP,pacific_ocean,eastern_pacific,2023-11-26T03:00:00Z,CLS-IMG02438,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1293
+data/processed/classification/CS-SCS/CLS_02733.png,1,2024012S12059,SI,south_indian_ocean,,2024-01-12T18:00:00Z,CLS-IMG02441,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0862
+data/processed/classification/CS-SCS/CLS_02746.png,1,2024045S15192,SP,pacific_ocean,southern_pacific,2024-02-15T18:00:00Z,CLS-IMG02451,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0868
+data/processed/classification/CS-SCS/CLS_02749.png,1,2024045S15192,SP,pacific_ocean,southern_pacific,2024-02-16T18:00:00Z,CLS-IMG02454,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0868
+data/processed/classification/CS-SCS/CLS_02760.png,1,2024134S07055,SI,south_indian_ocean,,2024-05-19T12:00:00Z,CLS-IMG02465,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G1297
+data/processed/classification/CS-SCS/CLS_02762.png,1,2024141N03142,WP,pacific_ocean,western_pacific,2024-05-25T09:00:00Z,CLS-IMG02466,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0876
+data/processed/classification/CS-SCS/CLS_02782.png,1,2024312N14145,WP,pacific_ocean,western_pacific,2024-11-12T09:00:00Z,CLS-IMG02483,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0892
+data/processed/classification/CS-SCS/CLS_02783.png,1,2024313N10169,WP,pacific_ocean,western_pacific,2024-11-13T18:00:00Z,CLS-IMG02484,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0891
+data/processed/classification/CS-SCS/CLS_02797.png,1,2025273N09248,EP,pacific_ocean,eastern_pacific,2025-10-03T15:00:00Z,CLS-IMG02498,Cyclonic Storm / Severe Cyclonic Storm,CS-SCS,G0899
+data/processed/classification/VSCS/CLS_02809.png,2,2000025S15056,SI,south_indian_ocean,,2000-01-29T15:00:00Z,CLS-IMG02509,Very Severe Cyclonic Storm,VSCS,G0006
+data/processed/classification/VSCS/CLS_02812.png,2,2000050S13078,SI,south_indian_ocean,,2000-02-22T21:00:00Z,CLS-IMG02511,Very Severe Cyclonic Storm,VSCS,G0008
+data/processed/classification/VSCS/CLS_02813.png,2,2000055S23227,SP,pacific_ocean,southern_pacific,2000-02-25T21:00:00Z,CLS-IMG02512,Very Severe Cyclonic Storm,VSCS,G0009
+data/processed/classification/VSCS/CLS_02814.png,2,2000055S23227,SP,pacific_ocean,southern_pacific,2000-02-26T18:00:00Z,CLS-IMG02513,Very Severe Cyclonic Storm,VSCS,G0009
+data/processed/classification/VSCS/CLS_02818.png,2,2000067S15189,SP,pacific_ocean,southern_pacific,2000-03-09T03:00:00Z,CLS-IMG02516,Very Severe Cyclonic Storm,VSCS,G0013
+data/processed/classification/VSCS/CLS_02819.png,2,2000067S15189,SP,pacific_ocean,southern_pacific,2000-03-09T15:00:00Z,CLS-IMG02517,Very Severe Cyclonic Storm,VSCS,G0013
+data/processed/classification/VSCS/CLS_02820.png,2,2000067S15189,SP,pacific_ocean,southern_pacific,2000-03-10T03:00:00Z,CLS-IMG02518,Very Severe Cyclonic Storm,VSCS,G0013
+data/processed/classification/VSCS/CLS_02823.png,2,2000102S13128,SI,south_indian_ocean,,2000-04-14T06:00:00Z,CLS-IMG02521,Very Severe Cyclonic Storm,VSCS,G1315
+data/processed/classification/VSCS/CLS_02825.png,2,2000102S13128,SI,south_indian_ocean,,2000-04-19T15:00:00Z,CLS-IMG02522,Very Severe Cyclonic Storm,VSCS,G1315
+data/processed/classification/VSCS/CLS_02827.png,2,2000125N06136,WP,pacific_ocean,western_pacific,2000-05-07T21:00:00Z,CLS-IMG02524,Very Severe Cyclonic Storm,VSCS,G0902
+data/processed/classification/VSCS/CLS_02828.png,2,2000142N12262,EP,pacific_ocean,eastern_pacific,2000-05-25T18:00:00Z,CLS-IMG02525,Very Severe Cyclonic Storm,VSCS,G0903
+data/processed/classification/VSCS/CLS_02829.png,2,2000142N12262,EP,pacific_ocean,eastern_pacific,2000-05-26T09:00:00Z,CLS-IMG02526,Very Severe Cyclonic Storm,VSCS,G0903
+data/processed/classification/VSCS/CLS_02830.png,2,2000170N10268,EP,pacific_ocean,eastern_pacific,2000-06-23T18:00:00Z,CLS-IMG02527,Very Severe Cyclonic Storm,VSCS,G1316
+data/processed/classification/VSCS/CLS_02834.png,2,2000217N12260,EP,pacific_ocean,eastern_pacific,2000-08-08T06:00:00Z,CLS-IMG02531,Very Severe Cyclonic Storm,VSCS,G1320
+data/processed/classification/VSCS/CLS_02847.png,2,2000295N20146,WP,pacific_ocean,western_pacific,2000-10-25T09:00:00Z,CLS-IMG02539,Very Severe Cyclonic Storm,VSCS,G0914
+data/processed/classification/VSCS/CLS_02868.png,2,2001093S10062,SI,south_indian_ocean,,2001-04-06T09:00:00Z,CLS-IMG02554,Very Severe Cyclonic Storm,VSCS,G0050
+data/processed/classification/VSCS/CLS_02877.png,2,2001146N14259,EP,pacific_ocean,eastern_pacific,2001-05-31T09:00:00Z,CLS-IMG02563,Very Severe Cyclonic Storm,VSCS,G1325
+data/processed/classification/VSCS/CLS_02887.png,2,2001238N19252,EP,pacific_ocean,eastern_pacific,2001-08-28T21:00:00Z,CLS-IMG02573,Very Severe Cyclonic Storm,VSCS,G1329
+data/processed/classification/VSCS/CLS_02888.png,2,2001238N19252,EP,pacific_ocean,eastern_pacific,2001-08-30T18:00:00Z,CLS-IMG02574,Very Severe Cyclonic Storm,VSCS,G1329
+data/processed/classification/VSCS/CLS_02896.png,2,2001260N14167,WP,pacific_ocean,western_pacific,2001-09-24T21:00:00Z,CLS-IMG02580,Very Severe Cyclonic Storm,VSCS,G1332
+data/processed/classification/VSCS/CLS_02915.png,2,2002030S13093,SI,south_indian_ocean,,2002-02-04T00:00:00Z,CLS-IMG02596,Very Severe Cyclonic Storm,VSCS,G1335
+data/processed/classification/VSCS/CLS_02937.png,2,2002222N09163,WP,pacific_ocean,western_pacific,2002-08-19T03:00:00Z,CLS-IMG02617,Very Severe Cyclonic Storm,VSCS,G0938
+data/processed/classification/VSCS/CLS_02947.png,2,2002297N09206,EP,pacific_ocean,eastern_pacific,2002-10-31T09:00:00Z,CLS-IMG02627,Very Severe Cyclonic Storm,VSCS,G0944
+data/processed/classification/VSCS/CLS_02948.png,2,2002297N09206,EP,pacific_ocean,eastern_pacific,2002-11-01T15:00:00Z,CLS-IMG02628,Very Severe Cyclonic Storm,VSCS,G0944
+data/processed/classification/VSCS/CLS_02949.png,2,2002297N09206,WP,pacific_ocean,western_pacific,2002-11-05T03:00:00Z,CLS-IMG02629,Very Severe Cyclonic Storm,VSCS,G0944
+data/processed/classification/VSCS/CLS_02980.png,2,2003062S10080,SI,south_indian_ocean,,2003-03-14T00:00:00Z,CLS-IMG02655,Very Severe Cyclonic Storm,VSCS,G1348
+data/processed/classification/VSCS/CLS_02990.png,2,2003158N08156,WP,pacific_ocean,western_pacific,2003-06-17T03:00:00Z,CLS-IMG02665,Very Severe Cyclonic Storm,VSCS,G0129
+data/processed/classification/VSCS/CLS_02992.png,2,2003212N12130,WP,pacific_ocean,western_pacific,2003-08-03T06:00:00Z,CLS-IMG02667,Very Severe Cyclonic Storm,VSCS,G0134
+data/processed/classification/VSCS/CLS_02993.png,2,2003212N09150,WP,pacific_ocean,western_pacific,2003-08-05T09:00:00Z,CLS-IMG02668,Very Severe Cyclonic Storm,VSCS,G0135
+data/processed/classification/VSCS/CLS_03004.png,2,2003276N12262,EP,pacific_ocean,eastern_pacific,2003-10-05T12:00:00Z,CLS-IMG02677,Very Severe Cyclonic Storm,VSCS,G0145
+data/processed/classification/VSCS/CLS_03005.png,2,2003275N16252,EP,pacific_ocean,eastern_pacific,2003-10-06T00:00:00Z,CLS-IMG02678,Very Severe Cyclonic Storm,VSCS,G0145
+data/processed/classification/VSCS/CLS_03017.png,2,2003359S15177,SP,pacific_ocean,southern_pacific,2004-01-03T06:00:00Z,CLS-IMG02690,Very Severe Cyclonic Storm,VSCS,G1354
+data/processed/classification/VSCS/CLS_03018.png,2,2003359S15177,SP,pacific_ocean,southern_pacific,2004-01-04T00:00:00Z,CLS-IMG02691,Very Severe Cyclonic Storm,VSCS,G1354
+data/processed/classification/VSCS/CLS_03019.png,2,2003359S15177,SP,pacific_ocean,southern_pacific,2004-01-07T06:00:00Z,CLS-IMG02692,Very Severe Cyclonic Storm,VSCS,G1354
+data/processed/classification/VSCS/CLS_03034.png,2,2004093N07154,WP,pacific_ocean,western_pacific,2004-04-06T18:00:00Z,CLS-IMG02704,Very Severe Cyclonic Storm,VSCS,G1359
+data/processed/classification/VSCS/CLS_03036.png,2,2004136N15090,NI,north_indian_ocean,bay_of_bengal,2004-05-19T06:00:00Z,CLS-IMG02706,Very Severe Cyclonic Storm,VSCS,G0169
+data/processed/classification/VSCS/CLS_03045.png,2,2004206N20151,WP,pacific_ocean,western_pacific,2004-07-28T18:00:00Z,CLS-IMG02713,Very Severe Cyclonic Storm,VSCS,G1360
+data/processed/classification/VSCS/CLS_03054.png,2,2004255N11267,EP,pacific_ocean,eastern_pacific,2004-09-18T00:00:00Z,CLS-IMG02722,Very Severe Cyclonic Storm,VSCS,G1364
+data/processed/classification/VSCS/CLS_03062.png,2,2004332N02072,NI,north_indian_ocean,arabian_sea,2004-11-29T12:00:00Z,CLS-IMG02729,Very Severe Cyclonic Storm,VSCS,G0191
+data/processed/classification/VSCS/CLS_03063.png,2,2004332N02072,NI,north_indian_ocean,arabian_sea,2004-11-30T06:00:00Z,CLS-IMG02730,Very Severe Cyclonic Storm,VSCS,G0191
+data/processed/classification/VSCS/CLS_03064.png,2,2004332N02072,NI,north_indian_ocean,arabian_sea,2004-11-30T18:00:00Z,CLS-IMG02731,Very Severe Cyclonic Storm,VSCS,G0191
+data/processed/classification/VSCS/CLS_03075.png,2,2005032S14195,SP,pacific_ocean,southern_pacific,2005-02-04T18:00:00Z,CLS-IMG02742,Very Severe Cyclonic Storm,VSCS,G0203
+data/processed/classification/VSCS/CLS_03076.png,2,2005032S14195,SP,pacific_ocean,southern_pacific,2005-02-05T09:00:00Z,CLS-IMG02743,Very Severe Cyclonic Storm,VSCS,G0203
+data/processed/classification/VSCS/CLS_03077.png,2,2005032S14195,SP,pacific_ocean,southern_pacific,2005-02-07T12:00:00Z,CLS-IMG02744,Very Severe Cyclonic Storm,VSCS,G0203
+data/processed/classification/VSCS/CLS_03096.png,2,2005107N07151,WP,pacific_ocean,western_pacific,2005-04-26T15:00:00Z,CLS-IMG02762,Very Severe Cyclonic Storm,VSCS,G0209
+data/processed/classification/VSCS/CLS_03097.png,2,2005138N10265,EP,pacific_ocean,eastern_pacific,2005-05-19T21:00:00Z,CLS-IMG02763,Very Severe Cyclonic Storm,VSCS,G0210
+data/processed/classification/VSCS/CLS_03101.png,2,2005222N14246,EP,pacific_ocean,eastern_pacific,2005-08-12T03:00:00Z,CLS-IMG02767,Very Severe Cyclonic Storm,VSCS,G0978
+data/processed/classification/VSCS/CLS_03109.png,2,2005237N14148,WP,pacific_ocean,western_pacific,2005-09-01T03:00:00Z,CLS-IMG02773,Very Severe Cyclonic Storm,VSCS,G0215
+data/processed/classification/VSCS/CLS_03127.png,2,2006021S11053,SI,south_indian_ocean,,2006-02-02T18:00:00Z,CLS-IMG02790,Very Severe Cyclonic Storm,VSCS,G0990
+data/processed/classification/VSCS/CLS_03143.png,2,2006106S10153,SP,pacific_ocean,southern_pacific,2006-04-18T15:00:00Z,CLS-IMG02803,Very Severe Cyclonic Storm,VSCS,G1379
+data/processed/classification/VSCS/CLS_03144.png,2,2006106S10153,SP,pacific_ocean,southern_pacific,2006-04-19T12:00:00Z,CLS-IMG02804,Very Severe Cyclonic Storm,VSCS,G1379
+data/processed/classification/VSCS/CLS_03145.png,2,2006106S10153,SP,pacific_ocean,southern_pacific,2006-04-20T12:00:00Z,CLS-IMG02805,Very Severe Cyclonic Storm,VSCS,G1379
+data/processed/classification/VSCS/CLS_03147.png,2,2006106S10153,SI,south_indian_ocean,,2006-04-24T15:00:00Z,CLS-IMG02806,Very Severe Cyclonic Storm,VSCS,G1379
+data/processed/classification/VSCS/CLS_03186.png,2,2006350S07071,SI,south_indian_ocean,,2006-12-19T03:00:00Z,CLS-IMG02837,Very Severe Cyclonic Storm,VSCS,G1385
+data/processed/classification/VSCS/CLS_03187.png,2,2006350S07071,SI,south_indian_ocean,,2006-12-25T03:00:00Z,CLS-IMG02838,Very Severe Cyclonic Storm,VSCS,G1385
+data/processed/classification/VSCS/CLS_03200.png,2,2007066S12066,SI,south_indian_ocean,,2007-03-13T06:00:00Z,CLS-IMG02848,Very Severe Cyclonic Storm,VSCS,G0267
+data/processed/classification/VSCS/CLS_03202.png,2,2007084S12157,SP,pacific_ocean,southern_pacific,2007-03-27T12:00:00Z,CLS-IMG02850,Very Severe Cyclonic Storm,VSCS,G0268
+data/processed/classification/VSCS/CLS_03203.png,2,2007084S12157,SP,pacific_ocean,southern_pacific,2007-03-28T06:00:00Z,CLS-IMG02851,Very Severe Cyclonic Storm,VSCS,G0268
+data/processed/classification/VSCS/CLS_03213.png,2,2007216N18138,WP,pacific_ocean,western_pacific,2007-08-07T03:00:00Z,CLS-IMG02860,Very Severe Cyclonic Storm,VSCS,G1016
+data/processed/classification/VSCS/CLS_03215.png,2,2007240N17153,WP,pacific_ocean,western_pacific,2007-09-01T15:00:00Z,CLS-IMG02862,Very Severe Cyclonic Storm,VSCS,G0277
+data/processed/classification/VSCS/CLS_03219.png,2,2007257N16134,WP,pacific_ocean,western_pacific,2007-09-16T18:00:00Z,CLS-IMG02866,Very Severe Cyclonic Storm,VSCS,G1396
+data/processed/classification/VSCS/CLS_03224.png,2,2007291N19148,WP,pacific_ocean,western_pacific,2007-10-19T18:00:00Z,CLS-IMG02871,Very Severe Cyclonic Storm,VSCS,G1397
+data/processed/classification/VSCS/CLS_03248.png,2,2008042S16122,SI,south_indian_ocean,,2008-02-16T18:00:00Z,CLS-IMG02892,Very Severe Cyclonic Storm,VSCS,G0297
+data/processed/classification/VSCS/CLS_03252.png,2,2008065S12096,SI,south_indian_ocean,,2008-03-10T00:00:00Z,CLS-IMG02895,Very Severe Cyclonic Storm,VSCS,G0300
+data/processed/classification/VSCS/CLS_03272.png,2,2008206N22133,WP,pacific_ocean,western_pacific,2008-07-26T15:00:00Z,CLS-IMG02914,Very Severe Cyclonic Storm,VSCS,G1407
+data/processed/classification/VSCS/CLS_03300.png,2,2009190N09254,EP,pacific_ocean,eastern_pacific,2009-07-14T15:00:00Z,CLS-IMG02940,Very Severe Cyclonic Storm,VSCS,G0346
+data/processed/classification/VSCS/CLS_03302.png,2,2009215N20133,WP,pacific_ocean,western_pacific,2009-08-05T15:00:00Z,CLS-IMG02942,Very Severe Cyclonic Storm,VSCS,G0349
+data/processed/classification/VSCS/CLS_03362.png,2,2010293N17093,NI,north_indian_ocean,bay_of_bengal,2010-10-21T15:00:00Z,CLS-IMG02995,Very Severe Cyclonic Storm,VSCS,G0390
+data/processed/classification/VSCS/CLS_03363.png,2,2010293N17093,NI,north_indian_ocean,bay_of_bengal,2010-10-22T18:00:00Z,CLS-IMG02996,Very Severe Cyclonic Storm,VSCS,G0390
+data/processed/classification/VSCS/CLS_03372.png,2,2011021S16129,SI,south_indian_ocean,,2011-01-28T21:00:00Z,CLS-IMG03004,Very Severe Cyclonic Storm,VSCS,G1075
+data/processed/classification/VSCS/CLS_03377.png,2,2011048S14171,SP,pacific_ocean,southern_pacific,2011-02-20T03:00:00Z,CLS-IMG03008,Very Severe Cyclonic Storm,VSCS,G1429
+data/processed/classification/VSCS/CLS_03378.png,2,2011048S14171,SP,pacific_ocean,southern_pacific,2011-02-22T21:00:00Z,CLS-IMG03009,Very Severe Cyclonic Storm,VSCS,G1429
+data/processed/classification/VSCS/CLS_03379.png,2,2011048S14171,SP,pacific_ocean,southern_pacific,2011-02-23T09:00:00Z,CLS-IMG03010,Very Severe Cyclonic Storm,VSCS,G1429
+data/processed/classification/VSCS/CLS_03389.png,2,2011188N14261,EP,pacific_ocean,eastern_pacific,2011-07-08T21:00:00Z,CLS-IMG03019,Very Severe Cyclonic Storm,VSCS,G1077
+data/processed/classification/VSCS/CLS_03399.png,2,2011229N14261,EP,pacific_ocean,eastern_pacific,2011-08-19T03:00:00Z,CLS-IMG03026,Very Severe Cyclonic Storm,VSCS,G0419
+data/processed/classification/VSCS/CLS_03401.png,2,2011257N19154,WP,pacific_ocean,western_pacific,2011-09-19T06:00:00Z,CLS-IMG03028,Very Severe Cyclonic Storm,VSCS,G0421
+data/processed/classification/VSCS/CLS_03409.png,2,2011323N09264,EP,pacific_ocean,eastern_pacific,2011-11-23T09:00:00Z,CLS-IMG03034,Very Severe Cyclonic Storm,VSCS,G0426
+data/processed/classification/VSCS/CLS_03424.png,2,2012039S14075,SI,south_indian_ocean,,2012-02-18T06:00:00Z,CLS-IMG03049,Very Severe Cyclonic Storm,VSCS,G1438
+data/processed/classification/VSCS/CLS_03425.png,2,2012039S14075,SI,south_indian_ocean,,2012-02-19T21:00:00Z,CLS-IMG03050,Very Severe Cyclonic Storm,VSCS,G1438
+data/processed/classification/VSCS/CLS_03442.png,2,2012209N11131,WP,pacific_ocean,western_pacific,2012-07-31T06:00:00Z,CLS-IMG03063,Very Severe Cyclonic Storm,VSCS,G1441
+data/processed/classification/VSCS/CLS_03445.png,2,2012219N12254,EP,pacific_ocean,eastern_pacific,2012-08-09T03:00:00Z,CLS-IMG03066,Very Severe Cyclonic Storm,VSCS,G0446
+data/processed/classification/VSCS/CLS_03451.png,2,2012254N09135,WP,pacific_ocean,western_pacific,2012-09-12T09:00:00Z,CLS-IMG03070,Very Severe Cyclonic Storm,VSCS,G1444
+data/processed/classification/VSCS/CLS_03453.png,2,2012266N14254,EP,pacific_ocean,eastern_pacific,2012-09-25T15:00:00Z,CLS-IMG03072,Very Severe Cyclonic Storm,VSCS,G1445
+data/processed/classification/VSCS/CLS_03473.png,2,2013019S12174,SP,pacific_ocean,southern_pacific,2013-01-24T06:00:00Z,CLS-IMG03092,Very Severe Cyclonic Storm,VSCS,G0462
+data/processed/classification/VSCS/CLS_03474.png,2,2013019S12174,SP,pacific_ocean,southern_pacific,2013-01-24T21:00:00Z,CLS-IMG03093,Very Severe Cyclonic Storm,VSCS,G0462
+data/processed/classification/VSCS/CLS_03475.png,2,2013019S12174,SP,pacific_ocean,southern_pacific,2013-01-25T15:00:00Z,CLS-IMG03094,Very Severe Cyclonic Storm,VSCS,G0462
+data/processed/classification/VSCS/CLS_03477.png,2,2013041S10087,SI,south_indian_ocean,,2013-02-13T09:00:00Z,CLS-IMG03096,Very Severe Cyclonic Storm,VSCS,G0466
+data/processed/classification/VSCS/CLS_03486.png,2,2013097S06099,SI,south_indian_ocean,,2013-04-10T09:00:00Z,CLS-IMG03104,Very Severe Cyclonic Storm,VSCS,G0472
+data/processed/classification/VSCS/CLS_03487.png,2,2013097S06099,SI,south_indian_ocean,,2013-04-11T00:00:00Z,CLS-IMG03105,Very Severe Cyclonic Storm,VSCS,G0472
+data/processed/classification/VSCS/CLS_03497.png,2,2013187N20156,WP,pacific_ocean,western_pacific,2013-07-13T00:00:00Z,CLS-IMG03114,Very Severe Cyclonic Storm,VSCS,G1454
+data/processed/classification/VSCS/CLS_03498.png,2,2013211N11248,EP,pacific_ocean,eastern_pacific,2013-08-01T00:00:00Z,CLS-IMG03115,Very Severe Cyclonic Storm,VSCS,G1110
+data/processed/classification/VSCS/CLS_03500.png,2,2013220N12137,WP,pacific_ocean,western_pacific,2013-08-14T09:00:00Z,CLS-IMG03117,Very Severe Cyclonic Storm,VSCS,G1111
+data/processed/classification/VSCS/CLS_03505.png,2,2013272N10135,WP,pacific_ocean,western_pacific,2013-10-03T15:00:00Z,CLS-IMG03122,Very Severe Cyclonic Storm,VSCS,G0487
+data/processed/classification/VSCS/CLS_03508.png,2,2013282N14149,WP,pacific_ocean,western_pacific,2013-10-12T21:00:00Z,CLS-IMG03125,Very Severe Cyclonic Storm,VSCS,G1456
+data/processed/classification/VSCS/CLS_03517.png,2,2013322N13090,NI,north_indian_ocean,bay_of_bengal,2013-11-21T06:00:00Z,CLS-IMG03133,Very Severe Cyclonic Storm,VSCS,G0496
+data/processed/classification/VSCS/CLS_03518.png,2,2013322N13090,NI,north_indian_ocean,bay_of_bengal,2013-11-21T18:00:00Z,CLS-IMG03134,Very Severe Cyclonic Storm,VSCS,G0496
+data/processed/classification/VSCS/CLS_03519.png,2,2013324N07103,NI,north_indian_ocean,bay_of_bengal,2013-11-25T12:00:00Z,CLS-IMG03135,Very Severe Cyclonic Storm,VSCS,G0496
+data/processed/classification/VSCS/CLS_03520.png,2,2013324N07103,NI,north_indian_ocean,bay_of_bengal,2013-11-26T09:00:00Z,CLS-IMG03136,Very Severe Cyclonic Storm,VSCS,G0496
+data/processed/classification/VSCS/CLS_03521.png,2,2013324N07103,NI,north_indian_ocean,bay_of_bengal,2013-11-27T00:00:00Z,CLS-IMG03137,Very Severe Cyclonic Storm,VSCS,G0496
+data/processed/classification/VSCS/CLS_03522.png,2,2013324N07103,NI,north_indian_ocean,bay_of_bengal,2013-11-27T12:00:00Z,CLS-IMG03138,Very Severe Cyclonic Storm,VSCS,G0496
+data/processed/classification/VSCS/CLS_03529.png,2,2013350S08099,SI,south_indian_ocean,,2013-12-19T00:00:00Z,CLS-IMG03145,Very Severe Cyclonic Storm,VSCS,G1459
+data/processed/classification/VSCS/CLS_03531.png,2,2013350S08099,SI,south_indian_ocean,,2013-12-23T18:00:00Z,CLS-IMG03146,Very Severe Cyclonic Storm,VSCS,G1459
+data/processed/classification/VSCS/CLS_03549.png,2,2014106S10099,SI,south_indian_ocean,,2014-04-19T18:00:00Z,CLS-IMG03162,Very Severe Cyclonic Storm,VSCS,G1125
+data/processed/classification/VSCS/CLS_03557.png,2,2014204N10239,EP,pacific_ocean,eastern_pacific,2014-08-06T12:00:00Z,CLS-IMG03169,Very Severe Cyclonic Storm,VSCS,G0522
+data/processed/classification/VSCS/CLS_03566.png,2,2014234N12261,EP,pacific_ocean,eastern_pacific,2014-08-26T09:00:00Z,CLS-IMG03174,Very Severe Cyclonic Storm,VSCS,G1468
+data/processed/classification/VSCS/CLS_03567.png,2,2014234N12261,EP,pacific_ocean,eastern_pacific,2014-08-26T21:00:00Z,CLS-IMG03175,Very Severe Cyclonic Storm,VSCS,G1468
+data/processed/classification/VSCS/CLS_03570.png,2,2014253N13260,EP,pacific_ocean,eastern_pacific,2014-09-13T18:00:00Z,CLS-IMG03177,Very Severe Cyclonic Storm,VSCS,G0525
+data/processed/classification/VSCS/CLS_03571.png,2,2014259N11262,EP,pacific_ocean,eastern_pacific,2014-09-18T06:00:00Z,CLS-IMG03178,Very Severe Cyclonic Storm,VSCS,G0525
+data/processed/classification/VSCS/CLS_03580.png,2,2014284N10231,EP,pacific_ocean,eastern_pacific,2014-10-25T12:00:00Z,CLS-IMG03185,Very Severe Cyclonic Storm,VSCS,G1132
+data/processed/classification/VSCS/CLS_03595.png,2,2015030S16161,SP,pacific_ocean,southern_pacific,2015-01-31T18:00:00Z,CLS-IMG03200,Very Severe Cyclonic Storm,VSCS,G0539
+data/processed/classification/VSCS/CLS_03596.png,2,2015030S16161,SP,pacific_ocean,southern_pacific,2015-02-01T06:00:00Z,CLS-IMG03201,Very Severe Cyclonic Storm,VSCS,G0539
+data/processed/classification/VSCS/CLS_03598.png,2,2015030S16161,SP,pacific_ocean,southern_pacific,2015-02-01T21:00:00Z,CLS-IMG03203,Very Severe Cyclonic Storm,VSCS,G0539
+data/processed/classification/VSCS/CLS_03653.png,2,2015301N11065,NI,north_indian_ocean,arabian_sea,2015-10-29T12:00:00Z,CLS-IMG03253,Very Severe Cyclonic Storm,VSCS,G1492
+data/processed/classification/VSCS/CLS_03654.png,2,2015301N11065,NI,north_indian_ocean,arabian_sea,2015-11-02T21:00:00Z,CLS-IMG03254,Very Severe Cyclonic Storm,VSCS,G1492
+data/processed/classification/VSCS/CLS_03696.png,2,2016203N10249,EP,pacific_ocean,eastern_pacific,2016-07-26T12:00:00Z,CLS-IMG03289,Very Severe Cyclonic Storm,VSCS,G0587
+data/processed/classification/VSCS/CLS_03697.png,2,2016203N13259,EP,pacific_ocean,eastern_pacific,2016-07-26T18:00:00Z,CLS-IMG03290,Very Severe Cyclonic Storm,VSCS,G0587
+data/processed/classification/VSCS/CLS_03730.png,2,2017061S11063,SI,south_indian_ocean,,2017-03-05T03:00:00Z,CLS-IMG03320,Very Severe Cyclonic Storm,VSCS,G1506
+data/processed/classification/VSCS/CLS_03731.png,2,2017061S11063,SI,south_indian_ocean,,2017-03-05T15:00:00Z,CLS-IMG03321,Very Severe Cyclonic Storm,VSCS,G1506
+data/processed/classification/VSCS/CLS_03738.png,2,2017097S12171,SP,pacific_ocean,southern_pacific,2017-04-09T15:00:00Z,CLS-IMG03328,Very Severe Cyclonic Storm,VSCS,G0616
+data/processed/classification/VSCS/CLS_03739.png,2,2017097S12171,SP,pacific_ocean,southern_pacific,2017-04-10T06:00:00Z,CLS-IMG03329,Very Severe Cyclonic Storm,VSCS,G0616
+data/processed/classification/VSCS/CLS_03740.png,2,2017097S12171,SP,pacific_ocean,southern_pacific,2017-04-10T18:00:00Z,CLS-IMG03330,Very Severe Cyclonic Storm,VSCS,G0616
+data/processed/classification/VSCS/CLS_03741.png,2,2017111S09146,SI,south_indian_ocean,,2017-04-28T06:00:00Z,CLS-IMG03331,Very Severe Cyclonic Storm,VSCS,G1507
+data/processed/classification/VSCS/CLS_03794.png,2,2018060S13057,SI,south_indian_ocean,,2018-03-04T00:00:00Z,CLS-IMG03378,Very Severe Cyclonic Storm,VSCS,G0648
+data/processed/classification/VSCS/CLS_03809.png,2,2018141N08059,NI,north_indian_ocean,arabian_sea,2018-05-23T15:00:00Z,CLS-IMG03392,Very Severe Cyclonic Storm,VSCS,G0661
+data/processed/classification/VSCS/CLS_03810.png,2,2018141N08059,NI,north_indian_ocean,arabian_sea,2018-05-24T12:00:00Z,CLS-IMG03393,Very Severe Cyclonic Storm,VSCS,G0661
+data/processed/classification/VSCS/CLS_03811.png,2,2018141N08059,NI,north_indian_ocean,arabian_sea,2018-05-25T00:00:00Z,CLS-IMG03394,Very Severe Cyclonic Storm,VSCS,G0661
+data/processed/classification/VSCS/CLS_03812.png,2,2018141N08059,NI,north_indian_ocean,arabian_sea,2018-05-26T00:00:00Z,CLS-IMG03395,Very Severe Cyclonic Storm,VSCS,G0661
+data/processed/classification/VSCS/CLS_03816.png,2,2018179N19134,WP,pacific_ocean,western_pacific,2018-07-02T15:00:00Z,CLS-IMG03398,Very Severe Cyclonic Storm,VSCS,G1521
+data/processed/classification/VSCS/CLS_03822.png,2,2018214N19153,WP,pacific_ocean,western_pacific,2018-08-08T00:00:00Z,CLS-IMG03403,Very Severe Cyclonic Storm,VSCS,G1523
+data/processed/classification/VSCS/CLS_03828.png,2,2018226N11245,EP,pacific_ocean,eastern_pacific,2018-08-17T15:00:00Z,CLS-IMG03407,Very Severe Cyclonic Storm,VSCS,G1525
+data/processed/classification/VSCS/CLS_03830.png,2,2018226N11245,EP,pacific_ocean,eastern_pacific,2018-08-25T00:00:00Z,CLS-IMG03409,Very Severe Cyclonic Storm,VSCS,G1525
+data/processed/classification/VSCS/CLS_03837.png,2,2018271N06154,WP,pacific_ocean,western_pacific,2018-09-30T09:00:00Z,CLS-IMG03415,Very Severe Cyclonic Storm,VSCS,G1198
+data/processed/classification/VSCS/CLS_03850.png,2,2018309S06068,SI,south_indian_ocean,,2018-11-07T09:00:00Z,CLS-IMG03427,Very Severe Cyclonic Storm,VSCS,G0684
+data/processed/classification/VSCS/CLS_03851.png,2,2018309S06068,SI,south_indian_ocean,,2018-11-08T21:00:00Z,CLS-IMG03428,Very Severe Cyclonic Storm,VSCS,G0684
+data/processed/classification/VSCS/CLS_03863.png,2,2018348S08093,SI,south_indian_ocean,,2018-12-21T09:00:00Z,CLS-IMG03438,Very Severe Cyclonic Storm,VSCS,G1534
+data/processed/classification/VSCS/CLS_03875.png,2,2019057S13184,SP,pacific_ocean,southern_pacific,2019-02-27T06:00:00Z,CLS-IMG03447,Very Severe Cyclonic Storm,VSCS,G0695
+data/processed/classification/VSCS/CLS_03876.png,2,2019057S13184,SP,pacific_ocean,southern_pacific,2019-02-27T18:00:00Z,CLS-IMG03448,Very Severe Cyclonic Storm,VSCS,G0695
+data/processed/classification/VSCS/CLS_03877.png,2,2019057S13184,SP,pacific_ocean,southern_pacific,2019-03-01T03:00:00Z,CLS-IMG03449,Very Severe Cyclonic Storm,VSCS,G0695
+data/processed/classification/VSCS/CLS_03891.png,2,2019112S10053,SI,south_indian_ocean,,2019-04-24T00:00:00Z,CLS-IMG03461,Very Severe Cyclonic Storm,VSCS,G0697
+data/processed/classification/VSCS/CLS_03892.png,2,2019112S10053,SI,south_indian_ocean,,2019-04-25T21:00:00Z,CLS-IMG03462,Very Severe Cyclonic Storm,VSCS,G0697
+data/processed/classification/VSCS/CLS_03904.png,2,2019210N11253,EP,pacific_ocean,eastern_pacific,2019-07-30T21:00:00Z,CLS-IMG03474,Very Severe Cyclonic Storm,VSCS,G0703
+data/processed/classification/VSCS/CLS_03906.png,2,2019213N17155,WP,pacific_ocean,western_pacific,2019-08-05T06:00:00Z,CLS-IMG03476,Very Severe Cyclonic Storm,VSCS,G1206
+data/processed/classification/VSCS/CLS_03910.png,2,2019242N14180,WP,pacific_ocean,western_pacific,2019-09-09T06:00:00Z,CLS-IMG03480,Very Severe Cyclonic Storm,VSCS,G1548
+data/processed/classification/VSCS/CLS_03928.png,2,2019302N11118,NI,north_indian_ocean,bay_of_bengal,2019-11-07T18:00:00Z,CLS-IMG03498,Very Severe Cyclonic Storm,VSCS,G0714
+data/processed/classification/VSCS/CLS_03930.png,2,2019302N11118,NI,north_indian_ocean,bay_of_bengal,2019-11-08T09:00:00Z,CLS-IMG03500,Very Severe Cyclonic Storm,VSCS,G0714
+data/processed/classification/VSCS/CLS_03931.png,2,2019302N11118,NI,north_indian_ocean,bay_of_bengal,2019-11-09T00:00:00Z,CLS-IMG03501,Very Severe Cyclonic Storm,VSCS,G0714
+data/processed/classification/VSCS/CLS_03932.png,2,2019302N11118,NI,north_indian_ocean,bay_of_bengal,2019-11-09T21:00:00Z,CLS-IMG03502,Very Severe Cyclonic Storm,VSCS,G0714
+data/processed/classification/VSCS/CLS_03933.png,2,2019314N12172,WP,pacific_ocean,western_pacific,2019-11-17T03:00:00Z,CLS-IMG03503,Very Severe Cyclonic Storm,VSCS,G1556
+data/processed/classification/VSCS/CLS_03935.png,2,2019322N11144,WP,pacific_ocean,western_pacific,2019-11-21T03:00:00Z,CLS-IMG03505,Very Severe Cyclonic Storm,VSCS,G1557
+data/processed/classification/VSCS/CLS_03946.png,2,2019352S14070,SI,south_indian_ocean,,2020-01-01T00:00:00Z,CLS-IMG03516,Very Severe Cyclonic Storm,VSCS,G0720
+data/processed/classification/VSCS/CLS_03968.png,2,2020129N07134,WP,pacific_ocean,western_pacific,2020-05-15T00:00:00Z,CLS-IMG03538,Very Severe Cyclonic Storm,VSCS,G1221
+data/processed/classification/VSCS/CLS_03980.png,2,2020239N13134,WP,pacific_ocean,western_pacific,2020-08-30T00:00:00Z,CLS-IMG03549,Very Severe Cyclonic Storm,VSCS,G1561
+data/processed/classification/VSCS/CLS_03983.png,2,2020272N12257,EP,pacific_ocean,eastern_pacific,2020-10-04T15:00:00Z,CLS-IMG03552,Very Severe Cyclonic Storm,VSCS,G1564
+data/processed/classification/VSCS/CLS_03986.png,2,2020296N09137,WP,pacific_ocean,western_pacific,2020-10-26T06:00:00Z,CLS-IMG03555,Very Severe Cyclonic Storm,VSCS,G1238
+data/processed/classification/VSCS/CLS_03995.png,2,2020355S11065,SI,south_indian_ocean,,2020-12-30T00:00:00Z,CLS-IMG03564,Very Severe Cyclonic Storm,VSCS,G0755
+data/processed/classification/VSCS/CLS_03998.png,2,2021029S16171,SP,pacific_ocean,southern_pacific,2021-01-31T03:00:00Z,CLS-IMG03567,Very Severe Cyclonic Storm,VSCS,G0763
+data/processed/classification/VSCS/CLS_03999.png,2,2021029S16171,SP,pacific_ocean,southern_pacific,2021-01-31T21:00:00Z,CLS-IMG03568,Very Severe Cyclonic Storm,VSCS,G0763
+data/processed/classification/VSCS/CLS_04000.png,2,2021025S14138,SP,pacific_ocean,southern_pacific,2021-02-01T12:00:00Z,CLS-IMG03569,Very Severe Cyclonic Storm,VSCS,G0763
+data/processed/classification/VSCS/CLS_04024.png,2,2021222N12262,EP,pacific_ocean,eastern_pacific,2021-08-18T21:00:00Z,CLS-IMG03593,Very Severe Cyclonic Storm,VSCS,G1571
+data/processed/classification/VSCS/CLS_04025.png,2,2021236N12265,EP,pacific_ocean,eastern_pacific,2021-08-28T12:00:00Z,CLS-IMG03594,Very Severe Cyclonic Storm,VSCS,G0780
+data/processed/classification/VSCS/CLS_04029.png,2,2021267N18094,NI,north_indian_ocean,arabian_sea,2021-10-02T12:00:00Z,CLS-IMG03598,Very Severe Cyclonic Storm,VSCS,G0784
+data/processed/classification/VSCS/CLS_04030.png,2,2021267N18094,NI,north_indian_ocean,arabian_sea,2021-10-03T09:00:00Z,CLS-IMG03599,Very Severe Cyclonic Storm,VSCS,G0784
+data/processed/classification/VSCS/CLS_04031.png,2,2021283N14258,EP,pacific_ocean,eastern_pacific,2021-10-13T06:00:00Z,CLS-IMG03600,Very Severe Cyclonic Storm,VSCS,G1572
+data/processed/classification/VSCS/CLS_04043.png,2,2022054S13100,SI,south_indian_ocean,,2022-02-25T12:00:00Z,CLS-IMG03610,Very Severe Cyclonic Storm,VSCS,G0802
+data/processed/classification/VSCS/CLS_04046.png,2,2022072S11107,SI,south_indian_ocean,,2022-03-14T12:00:00Z,CLS-IMG03613,Very Severe Cyclonic Storm,VSCS,G1257
+data/processed/classification/VSCS/CLS_04047.png,2,2022076S10126,SI,south_indian_ocean,,2022-03-21T18:00:00Z,CLS-IMG03614,Very Severe Cyclonic Storm,VSCS,G0807
+data/processed/classification/VSCS/CLS_04048.png,2,2022076S10126,SI,south_indian_ocean,,2022-03-22T15:00:00Z,CLS-IMG03615,Very Severe Cyclonic Storm,VSCS,G0807
+data/processed/classification/VSCS/CLS_04065.png,2,2022207N11262,EP,pacific_ocean,eastern_pacific,2022-07-30T15:00:00Z,CLS-IMG03630,Very Severe Cyclonic Storm,VSCS,G1579
+data/processed/classification/VSCS/CLS_04074.png,2,2022264N17132,WP,pacific_ocean,western_pacific,2022-09-26T00:00:00Z,CLS-IMG03638,Very Severe Cyclonic Storm,VSCS,G1272
+data/processed/classification/VSCS/CLS_04075.png,2,2022270N14136,WP,pacific_ocean,western_pacific,2022-09-30T06:00:00Z,CLS-IMG03639,Very Severe Cyclonic Storm,VSCS,G1274
+data/processed/classification/VSCS/CLS_04089.png,2,2023036S12117,SI,south_indian_ocean,,2023-02-24T06:00:00Z,CLS-IMG03651,Very Severe Cyclonic Storm,VSCS,G1584
+data/processed/classification/VSCS/CLS_04091.png,2,2023055S14184,SP,pacific_ocean,southern_pacific,2023-02-28T12:00:00Z,CLS-IMG03653,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04092.png,2,2023055S14184,SP,pacific_ocean,southern_pacific,2023-03-01T21:00:00Z,CLS-IMG03654,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04093.png,2,2023055S14184,SP,pacific_ocean,southern_pacific,2023-03-02T12:00:00Z,CLS-IMG03655,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04094.png,2,2023059S15149,SP,pacific_ocean,southern_pacific,2023-03-02T12:00:00Z,CLS-IMG03656,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04095.png,2,2023059S15149,SP,pacific_ocean,southern_pacific,2023-03-03T00:00:00Z,CLS-IMG03657,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04096.png,2,2023055S14184,SP,pacific_ocean,southern_pacific,2023-03-03T00:00:00Z,CLS-IMG03658,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04097.png,2,2023059S15149,SP,pacific_ocean,southern_pacific,2023-03-05T09:00:00Z,CLS-IMG03659,Very Severe Cyclonic Storm,VSCS,G0836
+data/processed/classification/VSCS/CLS_04098.png,2,2023036S12117,SI,south_indian_ocean,,2023-03-12T00:00:00Z,CLS-IMG03660,Very Severe Cyclonic Storm,VSCS,G1584
+data/processed/classification/VSCS/CLS_04117.png,2,2023191N10262,EP,pacific_ocean,eastern_pacific,2023-07-16T09:00:00Z,CLS-IMG03677,Very Severe Cyclonic Storm,VSCS,G1586
+data/processed/classification/VSCS/CLS_04118.png,2,2023194N16123,WP,pacific_ocean,western_pacific,2023-07-16T18:00:00Z,CLS-IMG03678,Very Severe Cyclonic Storm,VSCS,G1587
+data/processed/classification/VSCS/CLS_04124.png,2,2023228N12259,EP,pacific_ocean,eastern_pacific,2023-08-17T15:00:00Z,CLS-IMG03683,Very Severe Cyclonic Storm,VSCS,G0848
+data/processed/classification/VSCS/CLS_04125.png,2,2023228N12259,EP,pacific_ocean,eastern_pacific,2023-08-20T06:00:00Z,CLS-IMG03684,Very Severe Cyclonic Storm,VSCS,G0848
+data/processed/classification/VSCS/CLS_04141.png,2,2023294N09264,EP,pacific_ocean,eastern_pacific,2023-10-25T12:00:00Z,CLS-IMG03697,Very Severe Cyclonic Storm,VSCS,G0858
+data/processed/classification/VSCS/CLS_04151.png,2,2024012S12059,SI,south_indian_ocean,,2024-01-14T12:00:00Z,CLS-IMG03707,Very Severe Cyclonic Storm,VSCS,G0862
+data/processed/classification/VSCS/CLS_04165.png,2,2024134S07055,SI,south_indian_ocean,,2024-05-21T06:00:00Z,CLS-IMG03719,Very Severe Cyclonic Storm,VSCS,G1297
+data/processed/classification/VSCS/CLS_04168.png,2,2024218N23143,WP,pacific_ocean,western_pacific,2024-08-08T12:00:00Z,CLS-IMG03722,Very Severe Cyclonic Storm,VSCS,G1592
+data/processed/classification/VSCS/CLS_04178.png,2,2024293N13141,WP,pacific_ocean,western_pacific,2024-10-26T00:00:00Z,CLS-IMG03730,Very Severe Cyclonic Storm,VSCS,G0888
+data/processed/classification/VSCS/CLS_04182.png,2,2024312N14145,WP,pacific_ocean,western_pacific,2024-11-10T00:00:00Z,CLS-IMG03733,Very Severe Cyclonic Storm,VSCS,G0892
+data/processed/classification/VSCS/CLS_04184.png,2,2024313N10169,WP,pacific_ocean,western_pacific,2024-11-15T03:00:00Z,CLS-IMG03734,Very Severe Cyclonic Storm,VSCS,G0891
+data/processed/classification/VSCS/CLS_04198.png,2,2025273N09248,EP,pacific_ocean,eastern_pacific,2025-10-06T00:00:00Z,CLS-IMG03748,Very Severe Cyclonic Storm,VSCS,G0899
+data/processed/classification/ESCS-SuCS/CLS_04207.png,3,2000025S15056,SI,south_indian_ocean,,2000-01-27T15:00:00Z,CLS-IMG03757,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0006
+data/processed/classification/ESCS-SuCS/CLS_04208.png,3,2000025S15056,SI,south_indian_ocean,,2000-01-28T03:00:00Z,CLS-IMG03758,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0006
+data/processed/classification/ESCS-SuCS/CLS_04209.png,3,2000025S15056,SI,south_indian_ocean,,2000-01-28T15:00:00Z,CLS-IMG03759,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0006
+data/processed/classification/ESCS-SuCS/CLS_04210.png,3,2000025S15056,SI,south_indian_ocean,,2000-01-29T03:00:00Z,CLS-IMG03760,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0006
+data/processed/classification/ESCS-SuCS/CLS_04220.png,3,2000102S13128,SI,south_indian_ocean,,2000-04-15T12:00:00Z,CLS-IMG03770,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1315
+data/processed/classification/ESCS-SuCS/CLS_04221.png,3,2000102S13128,SI,south_indian_ocean,,2000-04-16T00:00:00Z,CLS-IMG03771,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1315
+data/processed/classification/ESCS-SuCS/CLS_04222.png,3,2000102S13128,SI,south_indian_ocean,,2000-04-17T06:00:00Z,CLS-IMG03772,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1315
+data/processed/classification/ESCS-SuCS/CLS_04223.png,3,2000102S13128,SI,south_indian_ocean,,2000-04-18T09:00:00Z,CLS-IMG03773,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1315
+data/processed/classification/ESCS-SuCS/CLS_04225.png,3,2000125N06136,WP,pacific_ocean,western_pacific,2000-05-08T15:00:00Z,CLS-IMG03775,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0902
+data/processed/classification/ESCS-SuCS/CLS_04226.png,3,2000125N06136,WP,pacific_ocean,western_pacific,2000-05-09T09:00:00Z,CLS-IMG03776,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0902
+data/processed/classification/ESCS-SuCS/CLS_04227.png,3,2000142N12262,EP,pacific_ocean,eastern_pacific,2000-05-24T21:00:00Z,CLS-IMG03777,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0903
+data/processed/classification/ESCS-SuCS/CLS_04228.png,3,2000170N10268,EP,pacific_ocean,eastern_pacific,2000-06-20T21:00:00Z,CLS-IMG03778,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1316
+data/processed/classification/ESCS-SuCS/CLS_04229.png,3,2000170N10268,EP,pacific_ocean,eastern_pacific,2000-06-21T09:00:00Z,CLS-IMG03779,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1316
+data/processed/classification/ESCS-SuCS/CLS_04230.png,3,2000170N10268,EP,pacific_ocean,eastern_pacific,2000-06-21T21:00:00Z,CLS-IMG03780,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1316
+data/processed/classification/ESCS-SuCS/CLS_04231.png,3,2000170N10268,EP,pacific_ocean,eastern_pacific,2000-06-22T09:00:00Z,CLS-IMG03781,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1316
+data/processed/classification/ESCS-SuCS/CLS_04232.png,3,2000170N10268,EP,pacific_ocean,eastern_pacific,2000-06-23T00:00:00Z,CLS-IMG03782,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1316
+data/processed/classification/ESCS-SuCS/CLS_04250.png,3,2000295N20146,WP,pacific_ocean,western_pacific,2000-10-24T21:00:00Z,CLS-IMG03800,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0914
+data/processed/classification/ESCS-SuCS/CLS_04272.png,3,2001146N14259,EP,pacific_ocean,eastern_pacific,2001-05-28T00:00:00Z,CLS-IMG03822,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1325
+data/processed/classification/ESCS-SuCS/CLS_04273.png,3,2001146N14259,EP,pacific_ocean,eastern_pacific,2001-05-28T12:00:00Z,CLS-IMG03823,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1325
+data/processed/classification/ESCS-SuCS/CLS_04274.png,3,2001146N14259,EP,pacific_ocean,eastern_pacific,2001-05-29T06:00:00Z,CLS-IMG03824,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1325
+data/processed/classification/ESCS-SuCS/CLS_04275.png,3,2001146N14259,EP,pacific_ocean,eastern_pacific,2001-05-30T00:00:00Z,CLS-IMG03825,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1325
+data/processed/classification/ESCS-SuCS/CLS_04276.png,3,2001146N14259,EP,pacific_ocean,eastern_pacific,2001-05-30T12:00:00Z,CLS-IMG03826,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1325
+data/processed/classification/ESCS-SuCS/CLS_04284.png,3,2001238N19252,EP,pacific_ocean,eastern_pacific,2001-08-29T18:00:00Z,CLS-IMG03834,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1329
+data/processed/classification/ESCS-SuCS/CLS_04288.png,3,2001260N14167,WP,pacific_ocean,western_pacific,2001-09-23T09:00:00Z,CLS-IMG03838,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1332
+data/processed/classification/ESCS-SuCS/CLS_04289.png,3,2001260N14167,WP,pacific_ocean,western_pacific,2001-09-23T21:00:00Z,CLS-IMG03839,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1332
+data/processed/classification/ESCS-SuCS/CLS_04296.png,3,2001276N13146,WP,pacific_ocean,western_pacific,2001-10-07T09:00:00Z,CLS-IMG03846,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0067
+data/processed/classification/ESCS-SuCS/CLS_04309.png,3,2002030S13093,SI,south_indian_ocean,,2002-02-04T12:00:00Z,CLS-IMG03859,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1335
+data/processed/classification/ESCS-SuCS/CLS_04311.png,3,2002030S13093,SI,south_indian_ocean,,2002-02-05T06:00:00Z,CLS-IMG03861,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1335
+data/processed/classification/ESCS-SuCS/CLS_04314.png,3,2002030S13093,SI,south_indian_ocean,,2002-02-08T00:00:00Z,CLS-IMG03864,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1335
+data/processed/classification/ESCS-SuCS/CLS_04315.png,3,2002030S13093,SI,south_indian_ocean,,2002-02-08T21:00:00Z,CLS-IMG03865,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1335
+data/processed/classification/ESCS-SuCS/CLS_04347.png,3,2002222N09163,WP,pacific_ocean,western_pacific,2002-08-14T18:00:00Z,CLS-IMG03897,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0938
+data/processed/classification/ESCS-SuCS/CLS_04348.png,3,2002222N09163,WP,pacific_ocean,western_pacific,2002-08-16T15:00:00Z,CLS-IMG03898,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0938
+data/processed/classification/ESCS-SuCS/CLS_04392.png,3,2003062S10080,SI,south_indian_ocean,,2003-03-08T03:00:00Z,CLS-IMG03942,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1348
+data/processed/classification/ESCS-SuCS/CLS_04393.png,3,2003062S10080,SI,south_indian_ocean,,2003-03-10T18:00:00Z,CLS-IMG03943,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1348
+data/processed/classification/ESCS-SuCS/CLS_04394.png,3,2003062S10080,SI,south_indian_ocean,,2003-03-11T09:00:00Z,CLS-IMG03944,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1348
+data/processed/classification/ESCS-SuCS/CLS_04396.png,3,2003062S10080,SI,south_indian_ocean,,2003-03-13T03:00:00Z,CLS-IMG03946,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1348
+data/processed/classification/ESCS-SuCS/CLS_04408.png,3,2003158N08156,WP,pacific_ocean,western_pacific,2003-06-18T12:00:00Z,CLS-IMG03958,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0129
+data/processed/classification/ESCS-SuCS/CLS_04411.png,3,2003212N09150,WP,pacific_ocean,western_pacific,2003-08-06T00:00:00Z,CLS-IMG03961,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0135
+data/processed/classification/ESCS-SuCS/CLS_04412.png,3,2003212N09150,WP,pacific_ocean,western_pacific,2003-08-07T09:00:00Z,CLS-IMG03962,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0135
+data/processed/classification/ESCS-SuCS/CLS_04413.png,3,2003212N09150,WP,pacific_ocean,western_pacific,2003-08-08T12:00:00Z,CLS-IMG03963,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0135
+data/processed/classification/ESCS-SuCS/CLS_04421.png,3,2003275N16252,EP,pacific_ocean,eastern_pacific,2003-10-04T18:00:00Z,CLS-IMG03971,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0145
+data/processed/classification/ESCS-SuCS/CLS_04422.png,3,2003275N16252,EP,pacific_ocean,eastern_pacific,2003-10-05T06:00:00Z,CLS-IMG03972,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0145
+data/processed/classification/ESCS-SuCS/CLS_04431.png,3,2003359S15177,SP,pacific_ocean,southern_pacific,2004-01-05T09:00:00Z,CLS-IMG03981,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1354
+data/processed/classification/ESCS-SuCS/CLS_04432.png,3,2003359S15177,SP,pacific_ocean,southern_pacific,2004-01-05T21:00:00Z,CLS-IMG03982,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1354
+data/processed/classification/ESCS-SuCS/CLS_04433.png,3,2003359S15177,SP,pacific_ocean,southern_pacific,2004-01-06T15:00:00Z,CLS-IMG03983,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1354
+data/processed/classification/ESCS-SuCS/CLS_04455.png,3,2004093N07154,WP,pacific_ocean,western_pacific,2004-04-08T12:00:00Z,CLS-IMG04005,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1359
+data/processed/classification/ESCS-SuCS/CLS_04456.png,3,2004093N07154,WP,pacific_ocean,western_pacific,2004-04-13T21:00:00Z,CLS-IMG04006,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1359
+data/processed/classification/ESCS-SuCS/CLS_04457.png,3,2004134N07132,WP,pacific_ocean,western_pacific,2004-05-16T18:00:00Z,CLS-IMG04007,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0169
+data/processed/classification/ESCS-SuCS/CLS_04458.png,3,2004134N07132,WP,pacific_ocean,western_pacific,2004-05-18T15:00:00Z,CLS-IMG04008,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0169
+data/processed/classification/ESCS-SuCS/CLS_04465.png,3,2004206N20151,WP,pacific_ocean,western_pacific,2004-07-27T21:00:00Z,CLS-IMG04015,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1360
+data/processed/classification/ESCS-SuCS/CLS_04478.png,3,2004255N11267,EP,pacific_ocean,eastern_pacific,2004-09-13T06:00:00Z,CLS-IMG04028,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1364
+data/processed/classification/ESCS-SuCS/CLS_04479.png,3,2004255N11267,EP,pacific_ocean,eastern_pacific,2004-09-14T15:00:00Z,CLS-IMG04029,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1364
+data/processed/classification/ESCS-SuCS/CLS_04480.png,3,2004255N11267,EP,pacific_ocean,eastern_pacific,2004-09-16T03:00:00Z,CLS-IMG04030,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1364
+data/processed/classification/ESCS-SuCS/CLS_04481.png,3,2004255N11267,EP,pacific_ocean,eastern_pacific,2004-09-16T18:00:00Z,CLS-IMG04031,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1364
+data/processed/classification/ESCS-SuCS/CLS_04482.png,3,2004255N11267,EP,pacific_ocean,eastern_pacific,2004-09-17T06:00:00Z,CLS-IMG04032,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1364
+data/processed/classification/ESCS-SuCS/CLS_04504.png,3,2005032S14195,SP,pacific_ocean,southern_pacific,2005-02-06T00:00:00Z,CLS-IMG04054,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0203
+data/processed/classification/ESCS-SuCS/CLS_04505.png,3,2005032S14195,SP,pacific_ocean,southern_pacific,2005-02-06T18:00:00Z,CLS-IMG04055,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0203
+data/processed/classification/ESCS-SuCS/CLS_04521.png,3,2005107N07151,WP,pacific_ocean,western_pacific,2005-04-24T03:00:00Z,CLS-IMG04071,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0209
+data/processed/classification/ESCS-SuCS/CLS_04522.png,3,2005107N07151,WP,pacific_ocean,western_pacific,2005-04-25T18:00:00Z,CLS-IMG04072,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0209
+data/processed/classification/ESCS-SuCS/CLS_04531.png,3,2005237N14148,WP,pacific_ocean,western_pacific,2005-08-29T21:00:00Z,CLS-IMG04081,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0215
+data/processed/classification/ESCS-SuCS/CLS_04532.png,3,2005237N14148,WP,pacific_ocean,western_pacific,2005-08-31T12:00:00Z,CLS-IMG04082,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0215
+data/processed/classification/ESCS-SuCS/CLS_04549.png,3,2005268N19146,WP,pacific_ocean,western_pacific,2005-09-29T18:00:00Z,CLS-IMG04099,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0218
+data/processed/classification/ESCS-SuCS/CLS_04557.png,3,2006021S11053,SI,south_indian_ocean,,2006-02-03T06:00:00Z,CLS-IMG04107,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0990
+data/processed/classification/ESCS-SuCS/CLS_04558.png,3,2006021S11053,SI,south_indian_ocean,,2006-02-03T18:00:00Z,CLS-IMG04108,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0990
+data/processed/classification/ESCS-SuCS/CLS_04559.png,3,2006021S11053,SI,south_indian_ocean,,2006-02-04T06:00:00Z,CLS-IMG04109,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0990
+data/processed/classification/ESCS-SuCS/CLS_04616.png,3,2006350S07071,SI,south_indian_ocean,,2006-12-19T18:00:00Z,CLS-IMG04165,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1385
+data/processed/classification/ESCS-SuCS/CLS_04617.png,3,2006350S07071,SI,south_indian_ocean,,2006-12-20T21:00:00Z,CLS-IMG04166,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1385
+data/processed/classification/ESCS-SuCS/CLS_04618.png,3,2006350S07071,SI,south_indian_ocean,,2006-12-24T00:00:00Z,CLS-IMG04167,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1385
+data/processed/classification/ESCS-SuCS/CLS_04619.png,3,2006350S07071,SI,south_indian_ocean,,2006-12-24T15:00:00Z,CLS-IMG04168,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1385
+data/processed/classification/ESCS-SuCS/CLS_04633.png,3,2007066S12066,SI,south_indian_ocean,,2007-03-14T00:00:00Z,CLS-IMG04182,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0267
+data/processed/classification/ESCS-SuCS/CLS_04634.png,3,2007066S12066,SI,south_indian_ocean,,2007-03-14T21:00:00Z,CLS-IMG04183,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0267
+data/processed/classification/ESCS-SuCS/CLS_04635.png,3,2007066S12066,SI,south_indian_ocean,,2007-03-15T09:00:00Z,CLS-IMG04184,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0267
+data/processed/classification/ESCS-SuCS/CLS_04658.png,3,2007223N19136,WP,pacific_ocean,western_pacific,2007-08-17T12:00:00Z,CLS-IMG04205,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0276
+data/processed/classification/ESCS-SuCS/CLS_04661.png,3,2007257N16134,WP,pacific_ocean,western_pacific,2007-09-17T15:00:00Z,CLS-IMG04207,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1396
+data/processed/classification/ESCS-SuCS/CLS_04662.png,3,2007257N16134,WP,pacific_ocean,western_pacific,2007-09-18T09:00:00Z,CLS-IMG04208,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1396
+data/processed/classification/ESCS-SuCS/CLS_04665.png,3,2007291N19148,WP,pacific_ocean,western_pacific,2007-10-20T18:00:00Z,CLS-IMG04211,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1397
+data/processed/classification/ESCS-SuCS/CLS_04688.png,3,2008065S12096,SI,south_indian_ocean,,2008-03-10T15:00:00Z,CLS-IMG04233,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0300
+data/processed/classification/ESCS-SuCS/CLS_04690.png,3,2008065S12096,SI,south_indian_ocean,,2008-03-11T06:00:00Z,CLS-IMG04235,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0300
+data/processed/classification/ESCS-SuCS/CLS_04699.png,3,2008206N22133,WP,pacific_ocean,western_pacific,2008-07-27T15:00:00Z,CLS-IMG04244,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1407
+data/processed/classification/ESCS-SuCS/CLS_04731.png,3,2009190N09254,EP,pacific_ocean,eastern_pacific,2009-07-15T03:00:00Z,CLS-IMG04274,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0346
+data/processed/classification/ESCS-SuCS/CLS_04753.png,3,2009272N07164,WP,pacific_ocean,western_pacific,2009-10-05T06:00:00Z,CLS-IMG04293,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1058
+data/processed/classification/ESCS-SuCS/CLS_04806.png,3,2010293N17093,NI,north_indian_ocean,bay_of_bengal,2010-10-22T03:00:00Z,CLS-IMG04345,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0390
+data/processed/classification/ESCS-SuCS/CLS_04811.png,3,2011021S16129,SI,south_indian_ocean,,2011-01-28T03:00:00Z,CLS-IMG04350,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1075
+data/processed/classification/ESCS-SuCS/CLS_04817.png,3,2011048S14171,SP,pacific_ocean,southern_pacific,2011-02-20T15:00:00Z,CLS-IMG04356,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1429
+data/processed/classification/ESCS-SuCS/CLS_04818.png,3,2011048S14171,SP,pacific_ocean,southern_pacific,2011-02-21T09:00:00Z,CLS-IMG04357,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1429
+data/processed/classification/ESCS-SuCS/CLS_04819.png,3,2011048S14171,SP,pacific_ocean,southern_pacific,2011-02-22T06:00:00Z,CLS-IMG04358,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1429
+data/processed/classification/ESCS-SuCS/CLS_04839.png,3,2011257N19154,WP,pacific_ocean,western_pacific,2011-09-18T12:00:00Z,CLS-IMG04378,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0421
+data/processed/classification/ESCS-SuCS/CLS_04840.png,3,2011253N20145,WP,pacific_ocean,western_pacific,2011-09-19T12:00:00Z,CLS-IMG04379,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0421
+data/processed/classification/ESCS-SuCS/CLS_04841.png,3,2011253N20145,WP,pacific_ocean,western_pacific,2011-09-20T09:00:00Z,CLS-IMG04380,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0421
+data/processed/classification/ESCS-SuCS/CLS_04852.png,3,2011323N09264,EP,pacific_ocean,eastern_pacific,2011-11-22T09:00:00Z,CLS-IMG04391,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0426
+data/processed/classification/ESCS-SuCS/CLS_04853.png,3,2011323N09264,EP,pacific_ocean,eastern_pacific,2011-11-22T21:00:00Z,CLS-IMG04392,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G0426
+data/processed/classification/ESCS-SuCS/CLS_04864.png,3,2012039S14075,SI,south_indian_ocean,,2012-02-11T09:00:00Z,CLS-IMG04403,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1438
+data/processed/classification/ESCS-SuCS/CLS_04865.png,3,2012039S14075,SI,south_indian_ocean,,2012-02-12T09:00:00Z,CLS-IMG04404,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1438
+data/processed/classification/ESCS-SuCS/CLS_04866.png,3,2012039S14075,SI,south_indian_ocean,,2012-02-13T09:00:00Z,CLS-IMG04405,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1438
+data/processed/classification/ESCS-SuCS/CLS_04867.png,3,2012039S14075,SI,south_indian_ocean,,2012-02-19T06:00:00Z,CLS-IMG04406,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1438
+data/processed/classification/ESCS-SuCS/CLS_04881.png,3,2012209N11131,WP,pacific_ocean,western_pacific,2012-08-01T06:00:00Z,CLS-IMG04420,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1441
+data/processed/classification/ESCS-SuCS/CLS_04882.png,3,2012209N11131,WP,pacific_ocean,western_pacific,2012-08-01T18:00:00Z,CLS-IMG04421,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1441
+data/processed/classification/ESCS-SuCS/CLS_04887.png,3,2012254N09135,WP,pacific_ocean,western_pacific,2012-09-13T18:00:00Z,CLS-IMG04426,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1444
+data/processed/classification/ESCS-SuCS/CLS_04888.png,3,2012254N09135,WP,pacific_ocean,western_pacific,2012-09-14T12:00:00Z,CLS-IMG04427,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1444
+data/processed/classification/ESCS-SuCS/CLS_04890.png,3,2012266N14254,EP,pacific_ocean,eastern_pacific,2012-09-24T09:00:00Z,CLS-IMG04429,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1445
+data/processed/classification/ESCS-SuCS/CLS_04891.png,3,2012266N14254,EP,pacific_ocean,eastern_pacific,2012-09-25T00:00:00Z,CLS-IMG04430,Extremely Severe / Super Cyclonic Storm,ESCS-SuCS,G1445

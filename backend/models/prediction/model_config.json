@@ -1,0 +1,293 @@
+{
+  "name": "cyclone-track-prediction",
+  "display_name": "VayuDrishti Track Prediction Model",
+  "model_version": "v1",
+  "dataset_version": "pred-v1.0",
+  "created_at": "2026-09-12T15:02:10+00:00",
+  "task": "track + intensity + pressure forecast",
+  "architecture": "gru",
+  "model_spec": {
+    "n_features": 29,
+    "n_steps": 5,
+    "n_horizons": 4,
+    "architecture": "gru",
+    "hidden": 128,
+    "layers": 2,
+    "dropout": 0.2,
+    "head_hidden": 128,
+    "n_heads": 4
+  },
+  "parameters": 178704,
+  "sequence": {
+    "history_window_hours": 24,
+    "observation_interval_hours": 6,
+    "horizons_hours": [
+      6,
+      12,
+      18,
+      24
+    ],
+    "time_tolerance_minutes": 0,
+    "origin_tolerance_hours": 3,
+    "motion_window_hours": 12
+  },
+  "features": [
+    "lat",
+    "rel_lat",
+    "rel_lon",
+    "sin_lon",
+    "cos_lon",
+    "dlat_prev",
+    "dlon_prev",
+    "speed_kmh",
+    "dir_sin",
+    "dir_cos",
+    "motion_missing",
+    "wind_kt",
+    "wind_missing",
+    "dwind_prev",
+    "pressure_hpa",
+    "pressure_missing",
+    "dpres_prev",
+    "dist2land_km",
+    "age_h",
+    "doy_sin",
+    "doy_cos",
+    "nature_tropical",
+    "nature_extratropical",
+    "area_arabian_sea",
+    "area_bay_of_bengal",
+    "area_south_indian_ocean",
+    "area_western_pacific",
+    "area_eastern_pacific",
+    "area_southern_pacific"
+  ],
+  "feature_kinds": {
+    "lat": "cont",
+    "rel_lat": "cont",
+    "rel_lon": "cont",
+    "sin_lon": "cont",
+    "cos_lon": "cont",
+    "dlat_prev": "cont",
+    "dlon_prev": "cont",
+    "speed_kmh": "cont",
+    "dir_sin": "cont",
+    "dir_cos": "cont",
+    "motion_missing": "flag",
+    "wind_kt": "cont",
+    "wind_missing": "flag",
+    "dwind_prev": "cont",
+    "pressure_hpa": "cont",
+    "pressure_missing": "flag",
+    "dpres_prev": "cont",
+    "dist2land_km": "cont",
+    "age_h": "cont",
+    "doy_sin": "cont",
+    "doy_cos": "cont",
+    "nature_tropical": "flag",
+    "nature_extratropical": "flag",
+    "area_arabian_sea": "flag",
+    "area_bay_of_bengal": "flag",
+    "area_south_indian_ocean": "flag",
+    "area_western_pacific": "flag",
+    "area_eastern_pacific": "flag",
+    "area_southern_pacific": "flag"
+  },
+  "targets": [
+    "dlat",
+    "dlon",
+    "dwind",
+    "dpres"
+  ],
+  "target_units": {
+    "dlat": "deg",
+    "dlon": "deg",
+    "dwind": "kt (IBTrACS USA_WIND, 1-min)",
+    "dpres": "hPa (USA_PRES)"
+  },
+  "normalization": {
+    "feature_mean": [
+      5.165940761566162,
+      -0.2636635899543762,
+      0.6093077659606934,
+      0.4049631953239441,
+      -0.4021483063697815,
+      0.13072051107883453,
+      -0.32347074151039124,
+      16.844079971313477,
+      -0.38986748456954956,
+      0.10504141449928284,
+      0.0,
+      51.70103073120117,
+      0.0,
+      0.6878567337989807,
+      986.4697265625,
+      0.0,
+      -0.44305509328842163,
+      811.0595092773438,
+      115.72965240478516,
+      -0.1354585886001587,
+      0.022188080474734306,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "feature_std": [
+      18.915849685668945,
+      1.4885276556015015,
+      2.1799323558807373,
+      0.6623947620391846,
+      0.4852944612503052,
+      0.6179207563400269,
+      0.8823572397232056,
+      10.267152786254883,
+      0.6814462542533875,
+      0.6082245111465454,
+      1.0,
+      29.854366302490234,
+      1.0,
+      6.3772759437561035,
+      22.519346237182617,
+      1.0,
+      5.042812347412109,
+      691.1212768554688,
+      91.51580810546875,
+      0.7052366137504578,
+      0.6956275701522827,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "target_mean": [
+      [
+        0.1306069791316986,
+        -0.25684845447540283,
+        0.16042867302894592,
+        -0.13408662378787994
+      ],
+      [
+        0.25868239998817444,
+        -0.48494744300842285,
+        0.17775721848011017,
+        -0.1900777667760849
+      ],
+      [
+        0.383486807346344,
+        -0.681927502155304,
+        0.09412714093923569,
+        -0.20076265931129456
+      ],
+      [
+        0.5038701295852661,
+        -0.8451343774795532,
+        -0.035726554691791534,
+        -0.201233372092247
+      ]
+    ],
+    "target_std": [
+      [
+        0.6628815531730652,
+        0.9680032134056091,
+        6.612273693084717,
+        5.208020210266113
+      ],
+      [
+        1.3143547773361206,
+        1.9426147937774658,
+        11.687273025512695,
+        8.979738235473633
+      ],
+      [
+        1.9636849164962769,
+        2.938094139099121,
+        16.23395347595215,
+        12.343924522399902
+      ],
+      [
+        2.6124675273895264,
+        3.958354949951172,
+        20.266929626464844,
+        15.315871238708496
+      ]
+    ]
+  },
+  "uncertainty": {
+    "method": "empirical",
+    "quantile": 0.67,
+    "source": "validation storms (301), best epoch",
+    "note": "Radius containing 67% of validation track errors at each lead time (NHC-cone style). It describes this model's typical error, not a per-forecast calibrated probability.",
+    "track_radius_km": {
+      "6": 36.9,
+      "12": 80.1,
+      "18": 129.8,
+      "24": 184.9
+    },
+    "wind_abs_error_kt": {
+      "6": 3.8,
+      "12": 6.5,
+      "18": 8.8,
+      "24": 11.0
+    }
+  },
+  "loss": {
+    "type": "masked Huber",
+    "delta": 1.0,
+    "weights": {
+      "track": 1.0,
+      "intensity": 0.5,
+      "pressure": 0.5
+    }
+  },
+  "train": {
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "plateau",
+    "early_stopping_patience": 12,
+    "grad_clip": 1.0,
+    "epochs_run": 36
+  },
+  "data": {
+    "source": "H:/ibtracs.since1980.list.v04r01.csv",
+    "min_season": 2000,
+    "basins": [
+      "NI",
+      "SI",
+      "WP",
+      "EP",
+      "SP"
+    ],
+    "wind_column": "USA_WIND",
+    "pressure_column": "USA_PRES"
+  },
+  "splits": {
+    "test": 324,
+    "train": 1509,
+    "val": 323
+  },
+  "samples": {
+    "train": 34911,
+    "val": 7248
+  },
+  "best_epoch": 24,
+  "val_metrics": {
+    "track_km_mean": 98.219,
+    "wind_mae_kt": 6.887,
+    "pressure_mae_hpa": 4.989
+  },
+  "framework": {
+    "python": "3.11.9",
+    "torch": "2.11.0+cu128",
+    "device": "cuda"
+  }
+}

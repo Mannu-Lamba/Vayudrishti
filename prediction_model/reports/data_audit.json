@@ -1,0 +1,142 @@
+{
+  "source": "H:/ibtracs.since1980.list.v04r01.csv",
+  "funnel": {
+    "ibtracs_rows": 309258,
+    "basins_and_seasons": 139829,
+    "main_track": 132085,
+    "synoptic_6_hourly": 66528,
+    "after_validation": 66528
+  },
+  "validation": {
+    "rows_in": 66528,
+    "dropped_invalid_time": 0,
+    "dropped_invalid_position": 0,
+    "wind_set_missing_out_of_range": 0,
+    "pressure_set_missing_out_of_range": 0,
+    "dropped_duplicate_times": 0,
+    "rows_out": 66528
+  },
+  "storms": 2156,
+  "fixes": 66528,
+  "period": [
+    "1999-12-09T00:00:00+00:00",
+    "2025-10-31T18:00:00+00:00"
+  ],
+  "fixes_per_storm": {
+    "count": 2156.0,
+    "mean": 30.9,
+    "std": 17.0,
+    "min": 2.0,
+    "25%": 18.0,
+    "50%": 29.0,
+    "75%": 40.0,
+    "max": 153.0
+  },
+  "missing_fraction": {
+    "wind_kt": 0.1693,
+    "pressure_hpa": 0.2069,
+    "dist2land_km": 0.0,
+    "storm_speed_kt": 0.0
+  },
+  "by_basin": {
+    "EP": {
+      "storms": 612,
+      "fixes": 13971,
+      "wind_missing": 0.0097,
+      "pressure_missing": 0.0171
+    },
+    "NI": {
+      "storms": 257,
+      "fixes": 4389,
+      "wind_missing": 0.2597,
+      "pressure_missing": 0.2821
+    },
+    "SI": {
+      "storms": 449,
+      "fixes": 16796,
+      "wind_missing": 0.2293,
+      "pressure_missing": 0.2927
+    },
+    "SP": {
+      "storms": 260,
+      "fixes": 7247,
+      "wind_missing": 0.2514,
+      "pressure_missing": 0.2945
+    },
+    "WP": {
+      "storms": 752,
+      "fixes": 24125,
+      "wind_missing": 0.1787,
+      "pressure_missing": 0.2172
+    }
+  },
+  "by_area": {
+    "arabian_sea": {
+      "storms": 103,
+      "fixes": 1692
+    },
+    "bay_of_bengal": {
+      "storms": 191,
+      "fixes": 2697
+    },
+    "eastern_pacific": {
+      "storms": 612,
+      "fixes": 13971
+    },
+    "south_indian_ocean": {
+      "storms": 449,
+      "fixes": 16796
+    },
+    "southern_pacific": {
+      "storms": 260,
+      "fixes": 7247
+    },
+    "western_pacific": {
+      "storms": 752,
+      "fixes": 24125
+    }
+  },
+  "nature": {
+    "TS": 48613,
+    "DS": 7657,
+    "MX": 5084,
+    "ET": 3385,
+    "NR": 1372,
+    "SS": 417
+  },
+  "fields_used": {
+    "position": "LAT/LON (IBTrACS combined best track)",
+    "wind": "USA_WIND (kt, 1-min)",
+    "pressure": "USA_PRES (hPa)",
+    "time": "ISO_TIME (UTC)",
+    "nature": "NATURE",
+    "distance_to_land": "DIST2LAND (km)",
+    "area": "BASIN + SUBBASIN (NI: longitude when SUBBASIN absent)"
+  },
+  "environmental_fields": {
+    "sea_surface_temperature": "NOT AVAILABLE \u2014 IBTrACS has no SST and no SST product is in the project",
+    "vertical_wind_shear": "NOT AVAILABLE \u2014 needs reanalysis winds (e.g. ERA5 200/850 hPa), not in the project",
+    "relative_humidity": "NOT AVAILABLE \u2014 needs reanalysis, not in the project",
+    "environmental_pressure": "NOT AVAILABLE \u2014 only the storm's central pressure (USA_PRES) exists",
+    "distance_to_land": "AVAILABLE \u2014 IBTrACS DIST2LAND (km), used as a feature"
+  },
+  "satellite_features": "NOT USED \u2014 GridSat crops exist only for the fixes sampled for the identification and classification datasets (the NOAA server outage stopped further downloads). A temporal window needs an image for every 6-hourly step, so there are no per-fix satellite features yet; the feature list has no satellite group until per-fix embeddings exist.",
+  "sequence": {
+    "history_window_hours": 24,
+    "observation_interval_hours": 6,
+    "horizons_hours": [
+      6,
+      12,
+      18,
+      24
+    ],
+    "time_tolerance_minutes": 0,
+    "origin_tolerance_hours": 3,
+    "motion_window_hours": 12
+  },
+  "samples_all_storms": 49559,
+  "samples_skipped": {
+    "future_position_missing": 8345,
+    "storm_too_short": 220
+  }
+}

@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VayuDrishti · Model evaluation</title>
+<style>
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url(/fonts/sans/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url(/fonts/sans/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(/fonts/sans/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(/fonts/mono/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
+
+:root {
+  color-scheme: dark;
+  --bg: #0f1114; --surface: #15181c; --surface-2: #1b1f24; --border: #2a2f36;
+  --text: #e6e8eb; --muted: #98a1ab; --faint: #6b737d;
+  --grid: #262a30; --axis: #3a3f46;
+  /* categorical slots 1-3 (dataviz reference palette, dark steps; validated on this surface) */
+  --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70;
+  --good: #0ca30c; --critical: #d03b3b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 "IBM Plex Sans", system-ui, sans-serif; }
+.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+a { color: #7ab4f0; }
+
+header.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 10px 22px; flex-wrap: wrap;
+  padding: 10px 24px; background: rgba(15, 17, 20, 0.95); border-bottom: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+nav.tabs { display: flex; gap: 4px; }
+nav.tabs a { color: var(--muted); text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 13px; }
+nav.tabs a[aria-current="page"] { color: var(--text); background: var(--surface-2); }
+.run-info { margin-left: auto; color: var(--faint); font-size: 12px; }
+
+main { max-width: 1320px; margin: 0 auto; padding: 24px; display: grid; gap: 24px; }
+.intro h1 { margin: 0; font-size: 22px; font-weight: 600; }
+.intro p { margin: 6px 0 0; color: var(--muted); max-width: 900px; }
+
+section.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; min-width: 0; }
+.panel-head { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+.eyebrow { color: var(--muted); font-size: 12px; }
+.panel-head h2 { margin: 2px 0 0; font-size: 17px; font-weight: 600; }
+.meta { color: var(--faint); font-size: 12px; margin-top: 3px; }
+.verdict { align-self: center; font-size: 12px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.verdict i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); border-bottom: 1px solid var(--border); }
+.tile { padding: 14px 18px; border-right: 1px solid var(--border); min-width: 0; }
+.tile:last-child { border-right: 0; }
+.tile .k { color: var(--muted); font-size: 12px; }
+.tile .v { font-size: 26px; font-weight: 600; margin-top: 2px; line-height: 1.2; }
+.tile .s { color: var(--faint); font-size: 12px; margin-top: 2px; }
+
+.strip { display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 10px 18px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+.strip b { color: var(--text); font-weight: 500; }
+
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 0; }
+.charts.wide { grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); }
+.chart { padding: 14px 18px 16px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-width: 0; }
+.chart h3 { margin: 0; font-size: 13px; font-weight: 600; }
+.chart .sub { color: var(--faint); font-size: 12px; margin: 2px 0 8px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.key { display: inline-block; width: 14px; height: 3px; border-radius: 2px; }
+.key.sq { width: 10px; height: 10px; }
+
+.table-wrap { overflow-x: auto; padding: 4px 18px 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+caption { text-align: left; color: var(--muted); font-size: 12px; padding: 10px 0 6px; }
+.note { margin: 0; padding: 12px 18px 16px; color: var(--faint); font-size: 12px; }
+.empty { padding: 40px; text-align: center; color: var(--muted); }
+
+.tip { position: fixed; z-index: 50; pointer-events: none; background: #0b0d10; color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 9px; font-size: 12px; max-width: 280px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); white-space: pre-line; }
+svg text { font-family: "IBM Plex Sans", system-ui, sans-serif; }
+footer { max-width: 1320px; margin: 0 auto; padding: 0 24px 32px; color: var(--faint); font-size: 12px; }
+@media (max-width: 760px) {
+  header.top, main { padding-left: 16px; padding-right: 16px; }
+  .run-info { margin-left: 0; }
+  .tile { border-right: 0; border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M12 12a2 2 0 1 0 2 2 4 4 0 0 0-4-4 6 6 0 0 0-6 6M12 12a2 2 0 1 1-2-2 4 4 0 0 1 4 4 6 6 0 0 1-6 6M14 14a6 6 0 0 0 6-6 8 8 0 0 0-8-8"/>
+    </svg>
+    VayuDrishti
+  </div>
+  <nav class="tabs"><a href="/">Live test bench</a><a href="/evaluation" aria-current="page">Model evaluation</a></nav>
+  <div class="run-info" id="run-info">Loading…</div>
+</header>
+
+<main id="main">
+  <div class="intro">
+    <h1>Model evaluation on the held-out test sets</h1>
+    <p>Every number below was computed from the running API's own answers: each held-out test image went through
+      <span class="mono">POST /api/ml/identify</span> or <span class="mono">/classify</span>, and each held-out storm and forecast time
+      through <span class="mono">POST /api/ml/predict</span>, scored against what the storm actually did. None of these samples were used
+      for training or model selection. Each model's training-time report is shown alongside for comparison.</p>
+  </div>
+  <div id="content"><div class="empty">Loading evaluation.json…</div></div>
+</main>
+<footer>Re-run the evaluation with <span class="mono">backend\.venv\Scripts\python.exe tests\model-bench\evaluate.py</span> (the backend must be running), then reload.
+  Confidence values of the image models are softmax scores, not calibrated probabilities. The track forecast is AI decision support, not an official IMD/RSMC forecast.</footer>
+
+<script type="module">
+const NS = "http://www.w3.org/2000/svg";
+const C = { s1: "#3987e5", s2: "#d95926", s3: "#199e70", grid: "#262a30", axis: "#3a3f46", muted: "#98a1ab", faint: "#6b737d", surface: "#15181c", text: "#e6e8eb" };
+const IMD_CODES = { "Low Pressure Area": "LPA", Depression: "D", "Deep Depression": "DD", "Cyclonic Storm": "CS", "Severe Cyclonic Storm": "SCS",
+  "Very Severe Cyclonic Storm": "VSCS", "Extremely Severe Cyclonic Storm": "ESCS", "Super Cyclonic Storm": "SuCS" };
+const AREAS = { bay_of_bengal: "Bay of Bengal", arabian_sea: "Arabian Sea", south_indian_ocean: "South Indian Ocean",
+  western_pacific: "Western Pacific", eastern_pacific: "Eastern Pacific", southern_pacific: "Southern Pacific" };
+
+// ── small DOM / SVG helpers ────────────────────────────────────────────────
+function el(tag, props = {}, ...kids) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (v == null) continue;
+    if (k === "class") node.className = v; else if (k === "style") node.style.cssText = v; else node.setAttribute(k, v);
+  }
+  node.append(...kids.flat().filter((k) => k != null && k !== false));
+  return node;
+}
+function s(tag, attrs = {}, ...kids) {
+  const node = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) if (v != null) node.setAttribute(k, v);
+  node.append(...kids.flat().filter((k) => k != null && k !== false));
+  return node;
+}
+const pct = (x, d = 1) => (x == null ? "—" : `${(x * 100).toFixed(d)} %`);
+const num = (x, d = 1) => (x == null ? "—" : x.toFixed(d));
+const intf = (x) => (x == null ? "—" : x.toLocaleString("en"));
+const deltaPp = (live, ref) => (live == null || ref == null ? null : (live - ref) * 100);
+const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
+function niceMax(v) {
+  if (!(v > 0)) return 1;
+  const p = 10 ** Math.floor(Math.log10(v)), n = v / p;
+  return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p;
+}
+
+// one tooltip for every chart: any element with data-tip
+const tip = el("div", { class: "tip", role: "tooltip" });
+tip.hidden = true;
+document.body.append(tip);
+function placeTip(target, x, y) {
+  tip.textContent = target.getAttribute("data-tip");
+  tip.hidden = false;
+  tip.style.left = `${Math.min(x + 14, innerWidth - tip.offsetWidth - 8)}px`;
+  tip.style.top = `${Math.min(y + 14, innerHeight - tip.offsetHeight - 8)}px`;
+}
+document.addEventListener("pointermove", (e) => {
+  const t = e.target.closest?.("[data-tip]");
+  if (t) placeTip(t, e.clientX, e.clientY); else tip.hidden = true;
+});
+document.addEventListener("focusin", (e) => {
+  const t = e.target.closest?.("[data-tip]");
+  if (!t) return;
+  const r = t.getBoundingClientRect();
+  placeTip(t, r.right, r.top);
+});
+document.addEventListener("focusout", () => { tip.hidden = true; });
+
+function legend(items) {
+  return el("div", { class: "legend" }, items.map(([label, color, square]) => el("span", {}, el("i", { class: `key${square ? " sq" : ""}`, style: `background:${color}` }), label)));
+}
+function chart(title, sub, ...body) {
+  return el("div", { class: "chart" }, el("h3", {}, title), sub ? el("div", { class: "sub" }, sub) : null, ...body);
+}
+function tile(label, value, sub) {
+  return el("div", { class: "tile" }, el("div", { class: "k" }, label), el("div", { class: "v" }, value), sub ? el("div", { class: "s" }, sub) : null);
+}
+function metricTile(label, live, reported, digits = 1, asFraction = false) {
+  const value = asFraction ? num(live, 3) : pct(live, digits);
+  let sub = "no training report";
+  if (reported != null) {
+    const d = deltaPp(live, reported);
+    const refText = asFraction ? num(reported, 3) : pct(reported, digits);
+    sub = `Training report ${refText} · ${Math.abs(d) < 0.05 ? "identical" : `${d > 0 ? "+" : "−"}${Math.abs(asFraction ? d / 100 : d).toFixed(asFraction ? 3 : 1)}${asFraction ? "" : " pp"}`}`;
+  }
+  return tile(label, value, sub);
+}
+
+// ── chart primitives (thin marks, hairline grid, hover on every mark) ──────
+function axesY(g, { x0, x1, y, ticks, fmt }) {
+  for (const t of ticks) {
+    g.append(s("line", { x1: x0, x2: x1, y1: y(t), y2: y(t), stroke: t === 0 ? C.axis : C.grid, "stroke-width": 1 }));
+    g.append(s("text", { x: x0 - 8, y: y(t) + 4, "text-anchor": "end", "font-size": 11, fill: C.muted }, fmt(t)));
+  }
+}
+
+function lineChart({ xs, series, xFmt, yFmt, unit, height = 250 }) {
+  const W = 560, m = { l: 48, r: 104, t: 10, b: 30 };
+  const iw = W - m.l - m.r, ih = height - m.t - m.b;
+  const all = series.flatMap((sr) => sr.values.filter((v) => v != null));
+  const top = niceMax(Math.max(...all) * 1.08);
+  const x = (v) => m.l + ((v - xs[0]) / (xs[xs.length - 1] - xs[0])) * iw;
+  const y = (v) => m.t + ih - (v / top) * ih;
+  const root = s("svg", { viewBox: `0 0 ${W} ${height}`, role: "img" });
+  const g = s("g");
+  axesY(g, { x0: m.l, x1: m.l + iw, y, ticks: [0, top / 4, top / 2, (3 * top) / 4, top], fmt: yFmt });
+  for (const v of xs) g.append(s("text", { x: x(v), y: height - 8, "text-anchor": "middle", "font-size": 11, fill: C.muted }, xFmt(v)));
+  const ends = [];
+  for (const sr of series) {
+    const pts = xs.map((v, i) => [v, sr.values[i]]).filter(([, val]) => val != null);
+    g.append(s("path", { d: pts.map(([v, val], i) => `${i ? "L" : "M"}${x(v)},${y(val)}`).join(""), fill: "none", stroke: sr.color, "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
+    for (const [v, val] of pts) {
+      g.append(s("circle", { cx: x(v), cy: y(val), r: 4, fill: sr.color, stroke: C.surface, "stroke-width": 2 }));
+      g.append(s("circle", { cx: x(v), cy: y(val), r: 12, fill: "transparent", tabindex: 0, "data-tip": `${sr.name} · ${xFmt(v)}\n${yFmt(val)}${unit ? ` ${unit}` : ""}${sr.notes?.[xs.indexOf(v)] ? `\n${sr.notes[xs.indexOf(v)]}` : ""}` }));
+    }
+    const [lv, lval] = pts[pts.length - 1];
+    ends.push({ y: y(lval), label: `${sr.name} ${yFmt(lval)}`, color: sr.color, x: x(lv) });
+  }
+  // end labels: nudge only if they would overlap, with a short leader line
+  ends.sort((a, b) => a.y - b.y);
+  for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 14) ends[i].ly = (ends[i - 1].ly ?? ends[i - 1].y) + 14;
+  for (const e of ends) {
+    const ly = e.ly ?? e.y;
+    if (e.ly) g.append(s("line", { x1: e.x + 6, x2: e.x + 12, y1: e.y, y2: ly, stroke: C.faint, "stroke-width": 1 }));
+    g.append(s("text", { x: e.x + 14, y: ly + 4, "font-size": 11, fill: C.text }, e.label));
+  }
+  root.append(g);
+  return root;
+}
+
+function roundedBar(x, y, w, h, r = 4) {
+  const rr = Math.min(r, w / 2, h);
+  return `M${x},${y + h}V${y + rr}Q${x},${y} ${x + rr},${y}H${x + w - rr}Q${x + w},${y} ${x + w},${y + rr}V${y + h}Z`;
+}
+
+function groupedBars({ groups, series, yMax, yFmt, height = 250, tipFmt }) {
+  const W = 560, m = { l: 48, r: 10, t: 10, b: 30 };
+  const iw = W - m.l - m.r, ih = height - m.t - m.b;
+  const all = series.flatMap((sr) => sr.values);
+  const top = yMax ?? niceMax(Math.max(...all) * 1.08);
+  const y = (v) => m.t + ih - (v / top) * ih;
+  const band = iw / groups.length;
+  const bw = Math.min(24, (band * 0.72) / series.length - 2);
+  const root = s("svg", { viewBox: `0 0 ${W} ${height}`, role: "img" });
+  const g = s("g");
+  axesY(g, { x0: m.l, x1: m.l + iw, y, ticks: [0, top / 4, top / 2, (3 * top) / 4, top], fmt: yFmt });
+  groups.forEach((label, gi) => {
+    const cx = m.l + band * gi + band / 2, start = cx - (series.length * (bw + 2) - 2) / 2;
+    series.forEach((sr, si) => {
+      const v = sr.values[gi], bx = start + si * (bw + 2), by = y(v), bh = Math.max(0, m.t + ih - by);
+      if (bh > 0) g.append(s("path", { d: roundedBar(bx, by, bw, bh), fill: sr.color }));
+      g.append(s("rect", { x: bx - 1, y: m.t, width: bw + 2, height: ih, fill: "transparent", tabindex: 0, "data-tip": tipFmt(label, sr, v, gi) }));
+    });
+    g.append(s("text", { x: cx, y: height - 8, "text-anchor": "middle", "font-size": 11, fill: C.muted }, label));
+  });
+  root.append(g);
+  return root;
+}
+
+// sequential single hue (blue) for magnitude, near-surface for zero
+function seq(t) {
+  const a = [30, 38, 50], b = [109, 167, 236];
+  const c = a.map((v, i) => Math.round(v + (b[i] - v) * Math.max(0, Math.min(1, t))));
+  return { fill: `rgb(${c.join(",")})`, ink: t > 0.55 ? "#0b0b0b" : "#ffffff" };
+}
+
+function heatmap({ labels, short, matrix, rowTitle = "Actual", colTitle = "Predicted", cell = 58 }) {
+  const n = labels.length, m = { l: 96, t: 34, r: 6, b: 6 };
+  const axis = short ?? labels;  // short codes on the axes; the full names stay in the tooltips
+  const W = m.l + n * cell + m.r, H = m.t + n * cell + m.b;
+  const root = s("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", style: `max-width:${W}px` });
+  const g = s("g");
+  g.append(s("text", { x: m.l + (n * cell) / 2, y: 11, "text-anchor": "middle", "font-size": 11, fill: C.muted }, `${colTitle} →`));
+  axis.forEach((lab, j) => g.append(s("text", { x: m.l + j * cell + cell / 2, y: m.t - 8, "text-anchor": "middle", "font-size": 11, fill: C.muted }, lab)));
+  matrix.forEach((row, i) => {
+    const total = row.reduce((a, b) => a + b, 0);
+    g.append(s("text", { x: m.l - 8, y: m.t + i * cell + cell / 2 + 4, "text-anchor": "end", "font-size": 11, fill: C.muted }, axis[i]));
+    row.forEach((v, j) => {
+      const share = total ? v / total : 0, { fill, ink } = seq(share);
+      const x0 = m.l + j * cell + 1, y0 = m.t + i * cell + 1;
+      g.append(s("rect", { x: x0, y: y0, width: cell - 2, height: cell - 2, rx: 3, fill, tabindex: 0,
+        "data-tip": `${rowTitle} ${labels[i]} → ${colTitle.toLowerCase()} ${labels[j]}\n${v.toLocaleString("en")} of ${total.toLocaleString("en")} (${(share * 100).toFixed(1)} % of the row)${i === j ? "\ncorrect" : ""}` }));
+      if (cell >= 40) {
+        g.append(s("text", { x: x0 + (cell - 2) / 2, y: y0 + (cell - 2) / 2 + (cell >= 52 ? -1 : 4), "text-anchor": "middle", "font-size": cell >= 52 ? 13 : 11, "font-weight": i === j ? 600 : 400, fill: ink, "pointer-events": "none" }, v.toLocaleString("en")));
+        if (cell >= 52) g.append(s("text", { x: x0 + (cell - 2) / 2, y: y0 + (cell - 2) / 2 + 14, "text-anchor": "middle", "font-size": 10, fill: ink, opacity: 0.8, "pointer-events": "none" }, `${(share * 100).toFixed(0)}%`));
+      }
+    });
+  });
+  g.append(s("text", { x: 10, y: m.t + (n * cell) / 2, "font-size": 11, fill: C.muted, transform: `rotate(-90 10 ${m.t + (n * cell) / 2})`, "text-anchor": "middle" }, `${rowTitle} →`));
+  root.append(g);
+  return root;
+}
+
+function rocChart(curve, auc) {
+  const W = 360, H = 300, m = { l: 44, r: 12, t: 10, b: 34 };
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const x = (v) => m.l + v * iw, y = (v) => m.t + ih - v * ih;
+  const root = s("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", style: `max-width:${W + 60}px` });
+  const g = s("g");
+  axesY(g, { x0: m.l, x1: m.l + iw, y, ticks: [0, 0.25, 0.5, 0.75, 1], fmt: (t) => t.toFixed(2) });
+  [0, 0.25, 0.5, 0.75, 1].forEach((t) => g.append(s("text", { x: x(t), y: H - 16, "text-anchor": "middle", "font-size": 11, fill: C.muted }, t.toFixed(2))));
+  g.append(s("text", { x: m.l + iw / 2, y: H - 2, "text-anchor": "middle", "font-size": 11, fill: C.muted }, "False positive rate"));
+  g.append(s("line", { x1: x(0), y1: y(0), x2: x(1), y2: y(1), stroke: C.axis, "stroke-width": 1 }));
+  g.append(s("text", { x: x(0.62), y: y(0.55), "font-size": 11, fill: C.faint }, "chance"));
+  g.append(s("path", { d: curve.map((p, i) => `${i ? "L" : "M"}${x(p.fpr)},${y(p.tpr)}`).join(""), fill: "none", stroke: C.s1, "stroke-width": 2, "stroke-linejoin": "round" }));
+  curve.forEach((p, i) => {
+    if (i % 4 === 0 || i === curve.length - 1) g.append(s("circle", { cx: x(p.fpr), cy: y(p.tpr), r: 9, fill: "transparent", "data-tip": `False positive rate ${p.fpr.toFixed(3)}\nTrue positive rate (recall) ${p.tpr.toFixed(3)}` }));
+  });
+  g.append(s("text", { x: x(0.5), y: y(0.12), "font-size": 12, fill: C.text }, `AUC ${auc.toFixed(3)}`));
+  root.append(g);
+  return root;
+}
+
+function table(caption, head, rows) {
+  return el("div", { class: "table-wrap" }, el("table", {}, el("caption", {}, caption),
+    el("thead", {}, el("tr", {}, head.map((h) => el("th", {}, h)))),
+    el("tbody", {}, rows.map((r) => el("tr", {}, r.map((c) => el("td", {}, c)))))));
+}
+
+function section(eyebrow, title, meta, verdict) {
+  const sec = el("section", { class: "panel" },
+    el("div", { class: "panel-head" },
+      el("div", {}, el("div", { class: "eyebrow" }, eyebrow), el("h2", {}, title), el("div", { class: "meta" }, meta)),
+      verdict ? el("div", { class: "verdict" }, el("i"), verdict) : null));
+  return sec;
+}
+const modelMeta = (m) => (m ? `${m.displayName ?? m.modelName} · ${m.modelName} ${m.modelVersion} · ${m.architecture} · inference on ${m.device}` : "model status unknown");
+
+// ── sections ───────────────────────────────────────────────────────────────
+function identification(d, model) {
+  const L = d.live, R = d.reported?.overall, a = L.agreement_with_training_evaluation;
+  const sec = section("Model 1 · Stage 1 · POST /api/ml/identify", "Cyclone identification — CYCLONE vs NO_CYCLONE", modelMeta(model),
+    a.agree === a.of ? "Reproduces the training evaluation exactly" : `${a.agree}/${a.of} match the training evaluation`);
+  sec.append(el("div", { class: "tiles" },
+    metricTile("Accuracy", L.accuracy, R?.accuracy), metricTile("Precision", L.precision, R?.precision),
+    metricTile("Recall (sensitivity)", L.recall, R?.recall), metricTile("F1 score", L.f1, R?.f1),
+    metricTile("ROC-AUC", L.roc_auc, R?.roc_auc, 3, true)));
+  sec.append(el("div", { class: "strip" },
+    el("span", {}, el("b", {}, intf(L.n)), ` held-out images (${intf(L.positives)} cyclone, ${intf(L.negatives)} clear)`),
+    el("span", {}, el("b", {}, `${a.agree}/${a.of}`), " predictions identical to the training-time evaluation"),
+    el("span", {}, "Specificity ", el("b", {}, pct(L.specificity))), el("span", {}, "PR-AUC ", el("b", {}, num(L.pr_auc, 3))),
+    el("span", {}, "Median server time ", el("b", {}, `${num(L.median_server_ms, 0)} ms`), " per image"),
+    el("span", {}, "Failed requests ", el("b", {}, String(Object.values(L.failed_requests).reduce((x, y) => x + y, 0))))));
+  const c = L.confusion;
+  const hist = L.score_histogram;
+  const bins = hist.edges.slice(0, -1).map((e, i) => `${e.toFixed(2)}–${hist.edges[i + 1].toFixed(2)}`);
+  sec.append(el("div", { class: "charts" },
+    chart("Confusion matrix", `Threshold 0.5 · rows = actual label, columns = model output · TP ${c.tp} · FP ${c.fp} · TN ${c.tn} · FN ${c.fn}`,
+      heatmap({ labels: ["Cyclone", "No cyclone"], matrix: [[c.tp, c.fn], [c.fp, c.tn]], cell: 96 })),
+    chart("ROC curve", "Every threshold of P(cyclone): true positive rate against false positive rate", rocChart(L.roc_curve, L.roc_auc)),
+    chart("Score distribution", "How many images got each P(cyclone), by their true label",
+      legend([["Actually a cyclone", C.s1, true], ["Actually clear", C.s2, true]]),
+      groupedBars({ groups: bins.map((b, i) => (i % 5 === 0 ? b.split("–")[0] : "")), series: [{ name: "Cyclone", color: C.s1, values: hist.cyclone }, { name: "No cyclone", color: C.s2, values: hist.no_cyclone }],
+        yFmt: (v) => Math.round(v).toLocaleString("en"), tipFmt: (_, sr, v, gi) => `P(cyclone) ${bins[gi]}\n${sr.name}: ${v} images` }))));
+  sec.append(table("By region (live run)", ["Region", "Images", "Accuracy", "Precision", "Recall"],
+    L.by_region.map((r) => [r.region.replaceAll("_", " "), intf(r.n), pct(r.accuracy), pct(r.precision), pct(r.recall)])));
+  return sec;
+}
+
+function classification(d, model) {
+  const L = d.live, R = d.reported, a = L.agreement_with_training_evaluation;
+  const rp = R?.per_class ? { precision: mean(R.per_class.map((c) => c.precision)), recall: mean(R.per_class.map((c) => c.recall)) } : {};
+  const sec = section("Model 2 · Stage 2 · POST /api/ml/classify", "IMD intensity classification — 4 groups", modelMeta(model),
+    a.agree === a.of ? "Reproduces the training evaluation exactly" : `${a.agree}/${a.of} match the training evaluation`);
+  sec.append(el("div", { class: "tiles" },
+    metricTile("Accuracy", L.accuracy, R?.overall?.accuracy), metricTile("Precision (macro)", L.macro_precision, rp.precision),
+    metricTile("Recall (macro)", L.macro_recall, rp.recall), metricTile("F1 score (macro)", L.macro_f1, R?.overall?.macro_f1),
+    metricTile("Within one class", L.adjacent_accuracy, R?.overall?.adjacent_accuracy)));
+  sec.append(el("div", { class: "strip" },
+    el("span", {}, el("b", {}, intf(L.n)), " held-out images"),
+    el("span", {}, el("b", {}, `${a.agree}/${a.of}`), " predictions identical to the training-time evaluation"),
+    el("span", {}, "Weighted F1 ", el("b", {}, pct(L.weighted_f1))), el("span", {}, "Balanced accuracy ", el("b", {}, pct(L.balanced_accuracy))),
+    el("span", {}, "Top-2 accuracy ", el("b", {}, pct(L.top2_accuracy))),
+    el("span", {}, "Median server time ", el("b", {}, `${num(L.median_server_ms, 0)} ms`))));
+  sec.append(el("div", { class: "charts" },
+    chart("Precision, recall and F1 per class", "Labels come from IBTrACS 1-minute wind (USA_WIND) mapped to IMD groups",
+      legend([["Precision", C.s1, true], ["Recall", C.s2, true], ["F1", C.s3, true]]),
+      groupedBars({ groups: L.classes, series: [
+        { name: "Precision", color: C.s1, values: L.per_class.map((c) => c.precision) },
+        { name: "Recall", color: C.s2, values: L.per_class.map((c) => c.recall) },
+        { name: "F1", color: C.s3, values: L.per_class.map((c) => c.f1) }], yMax: 1, yFmt: (v) => `${Math.round(v * 100)}%`,
+        tipFmt: (g, sr, v, gi) => `${L.per_class[gi].name}\n${sr.name} ${pct(v)} · ${L.per_class[gi].support} images` })),
+    chart("Confusion matrix", "Rows = true class, columns = model output · shade = share of the row", heatmap({ labels: L.classes, matrix: L.confusion_matrix, cell: 64 }))));
+  const rep = Object.fromEntries((R?.per_class ?? []).map((c) => [c.class_code, c]));
+  sec.append(table("Per class (live run, training report F1 for comparison)", ["Class", "Images", "Predicted as", "Precision", "Recall", "F1", "Report F1"],
+    L.per_class.map((c) => [`${c.code} — ${c.name}`, intf(c.support), intf(c.predicted), pct(c.precision), pct(c.recall), pct(c.f1), pct(rep[c.code]?.f1)])));
+  return sec;
+}
+
+function prediction(d, model) {
+  const L = d.live, R = d.reported, leads = L.leads.map((l) => l.lead), last = L.leads[L.leads.length - 1];
+  const rl = (h) => R?.overall?.model?.[String(h)];
+  const sec = section("Model 3 · Stage 3 · POST /api/ml/predict", "Track, wind and pressure forecast — T+6 … T+24 h", modelMeta(model),
+    `${intf(L.forecasts_ok)} forecasts · ${L.storms} held-out storms`);
+  sec.append(el("p", { class: "note", style: "padding-bottom:0" },
+    "A track forecast is a regression, so it is scored by distance and absolute error, against two standard baselines (persistence: the storm stays put; ",
+    "extrapolation: it keeps its last-12-h motion). Accuracy, precision-style and F1 scores apply to the IMD intensity category implied by the forecast wind, scored against the observed category."));
+  sec.append(el("div", { class: "tiles" },
+    tile(`Track error · T+${last.lead} h`, `${num(last.track_km.model.mean)} km`, `Report ${num(rl(last.lead)?.track_km_mean)} km · extrapolation ${num(last.track_km.extrapolation.mean)} km`),
+    tile("Skill vs extrapolation", `${num(last.skill_vs_extrapolation_pct, 1)} %`, `vs persistence ${num(last.skill_vs_persistence_pct, 1)} % · higher is better`),
+    tile(`Wind error · T+${last.lead} h`, `${num(last.wind_mae_kt.model)} kt`, `Mean absolute error · persistence ${num(last.wind_mae_kt.persistence)} kt`),
+    tile(`Category accuracy · T+${last.lead} h`, pct(last.category.accuracy), `Macro F1 ${pct(last.category.macro_f1)} · within one category ${pct(last.category.within_one)}`),
+    tile(`Inside the ${Math.round((d.reported?.uncertainty_coverage ? 67 : 67))} % radius · T+${last.lead} h`, pct(last.within_radius), `Radius ${num(last.radius_km)} km · report ${pct(R?.uncertainty_coverage?.[String(last.lead)]?.track_within_radius)}`)));
+  sec.append(el("div", { class: "strip" },
+    el("span", {}, el("b", {}, intf(L.forecasts_ok)), ` of ${intf(L.forecasts_requested)} requested forecasts answered`),
+    el("span", {}, "Failed requests ", el("b", {}, String(Object.values(L.failed_requests).reduce((x, y) => x + y, 0)))),
+    el("span", {}, el("b", {}, intf(L.steps_without_verifying_fix)), " lead times had no observed fix to score against (skipped)"),
+    el("span", {}, "Training report: ", el("b", {}, intf(R?.test_split?.samples)), " samples, including times without observed wind/pressure, which the API does not forecast")));
+  const fmtH = (h) => `T+${h}h`;
+  sec.append(el("div", { class: "charts wide" },
+    chart("Mean track error by lead time", "Great-circle distance between forecast and observed position · lower is better",
+      legend([["Model", C.s1], ["Extrapolation", C.s2], ["Persistence", C.s3]]),
+      lineChart({ xs: leads, xFmt: fmtH, yFmt: (v) => `${Math.round(v)}`, unit: "km", series: [
+        { name: "Model", color: C.s1, values: L.leads.map((l) => l.track_km.model.mean), notes: L.leads.map((l) => `median ${num(l.track_km.model.median)} km · p90 ${num(l.track_km.model.p90)} km · n=${l.n}`) },
+        { name: "Extrapolation", color: C.s2, values: L.leads.map((l) => l.track_km.extrapolation.mean) },
+        { name: "Persistence", color: C.s3, values: L.leads.map((l) => l.track_km.persistence.mean) }] })),
+    chart("Wind error by lead time", "Mean absolute error of the 1-minute wind, kt · lower is better",
+      legend([["Model", C.s1], ["Persistence", C.s3]]),
+      lineChart({ xs: leads, xFmt: fmtH, yFmt: (v) => v.toFixed(1), unit: "kt", series: [
+        { name: "Model", color: C.s1, values: L.leads.map((l) => l.wind_mae_kt.model), notes: L.leads.map((l) => `n=${l.wind_mae_kt.n}`) },
+        { name: "Persistence", color: C.s3, values: L.leads.map((l) => l.wind_mae_kt.persistence) }] })),
+    chart(`IMD category at T+${L.category_confusion_last_lead.lead} h`,
+      `Rows = observed category, columns = category of the forecast wind · ${L.category_confusion_last_lead.labels.map((c) => IMD_CODES[c] ?? c).join(" < ")}`,
+      heatmap({ labels: L.category_confusion_last_lead.labels, short: L.category_confusion_last_lead.labels.map((c) => IMD_CODES[c] ?? c),
+        matrix: L.category_confusion_last_lead.matrix, rowTitle: "Observed", colTitle: "Forecast", cell: 48 }))));
+  sec.append(table("By lead time (live run; training-report track error for comparison)",
+    ["Lead", "Scored", "Track mean", "Median", "90th pct", "Extrapolation", "Persistence", "Skill vs extrap.", "Wind MAE", "Pressure MAE", "Inside radius", "Category acc.", "Category F1", "Report track"],
+    L.leads.map((l) => [fmtH(l.lead), intf(l.n), `${num(l.track_km.model.mean)} km`, `${num(l.track_km.model.median)} km`, `${num(l.track_km.model.p90)} km`,
+      `${num(l.track_km.extrapolation.mean)} km`, `${num(l.track_km.persistence.mean)} km`, `${num(l.skill_vs_extrapolation_pct)} %`,
+      `${num(l.wind_mae_kt.model, 2)} kt`, `${num(l.pressure_mae_hpa.model, 2)} hPa`, pct(l.within_radius), pct(l.category.accuracy), pct(l.category.macro_f1),
+      `${num(rl(l.lead)?.track_km_mean)} km`])));
+  sec.append(table(`By area at T+${last.lead} h (live run)`, ["Area", "Scored", "Model track", "Extrapolation"],
+    L.by_area_last_lead.map((a) => [AREAS[a.area] ?? a.area, intf(a.n), `${num(a.track_km)} km`, `${num(a.extrapolation_km)} km`])));
+  return sec;
+}
+
+// ── load ────────────────────────────────────────────────────────────────────
+const data = await fetch("/evaluation.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+const content = document.getElementById("content");
+if (!data) {
+  document.getElementById("run-info").textContent = "No evaluation yet";
+  content.replaceChildren(el("div", { class: "empty" }, "No evaluation.json yet. Start the backend, then run ",
+    el("span", { class: "mono" }, "backend\\.venv\\Scripts\\python.exe tests\\model-bench\\evaluate.py"), " and reload this page."));
+} else {
+  const when = new Date(data.generatedAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" });
+  document.getElementById("run-info").textContent = `Evaluated ${when} UTC · ${Math.round(data.seconds)} s · ${data.api}`;
+  content.replaceChildren(el("div", { style: "display:grid;gap:24px" },
+    identification(data.identification, data.models.identification),
+    classification(data.classification, data.models.classification),
+    prediction(data.prediction, data.models.prediction)));
+  document.body.dataset.state = "ready";
+}
+</script>
+</body>
+</html>

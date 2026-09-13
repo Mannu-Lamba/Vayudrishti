@@ -1,0 +1,38 @@
+Device:
+NVIDIA GeForce RTX 4060 Laptop GPU
+
+Held-out TEST: 667 images, 253 storms, classes {'D-DD': 184, 'CS-SCS': 190, 'VSCS': 190, 'ESCS-SuCS': 103}
+  accuracy               0.6282   95% CI [0.59, 0.6624]
+  balanced_accuracy      0.6255
+  macro_f1               0.6283   95% CI [0.5903, 0.6642]
+  weighted_f1            0.6209
+  adjacent_accuracy      0.9640   95% CI [0.9503, 0.9772]
+  top2_accuracy          0.9145
+  roc_auc_ovr_macro      0.8685
+  pr_auc_macro           0.6955
+class_code  precision   recall       f1  support  roc_auc_ovr   pr_auc
+      D-DD   0.696629 0.673913 0.685083      184     0.894804 0.764010
+    CS-SCS   0.545455 0.410526 0.468468      190     0.777215 0.503967
+      VSCS   0.580524 0.815789 0.678337      190     0.868708 0.728819
+ ESCS-SuCS   0.784810 0.601942 0.681319      103     0.933209 0.785194
+confusion (rows actual, cols predicted): ['D-DD', 'CS-SCS', 'VSCS', 'ESCS-SuCS']
+[[124  42  18   0]
+ [ 53  78  58   1]
+ [  0  19 155  16]
+ [  1   4  36  62]]
+              area   n  accuracy  adjacent_accuracy  macro_f1                                                         note
+North Indian Ocean 106  0.669811           0.952830  0.676932                                                  all metrics
+       Arabian Sea  42  0.690476           0.904762  0.667015                                                  all metrics
+     Bay of Bengal  64  0.656250           0.984375  0.460714 macro F1 over classes present in this area is not comparable
+South Indian Ocean 147  0.605442           0.938776  0.594406                                                  all metrics
+     Pacific Ocean 414  0.625604           0.975845  0.629720                                                  all metrics
+   Western Pacific 148  0.594595           0.979730  0.601319                                                  all metrics
+   Eastern Pacific 140  0.657143           0.985714  0.648609                                                  all metrics
+  Southern Pacific 126  0.626984           0.960317  0.622987                                                  all metrics
+          basin EP 140  0.657143           0.985714       NaN                                                             
+          basin NI 106  0.669811           0.952830       NaN                                                             
+          basin SI 147  0.605442           0.938776       NaN                                                             
+          basin SP 126  0.626984           0.960317       NaN                                                             
+          basin WP 148  0.594595           0.979730       NaN                                                             
+boundary analysis: {'error_rate_within_5kt_of_a_boundary': 0.3883, 'error_rate_further_than_5kt': 0.3575, 'share_of_samples_within_5kt': 0.4633, 'median_kt_from_boundary_errors': 5.5, 'median_kt_from_boundary_correct': 6.5, 'errors_adjacent_class': 224, 'errors_non_adjacent': 24}
+calibration: ECE 0.253, conf>=0.9 share 0.6042, errors>=0.9 117

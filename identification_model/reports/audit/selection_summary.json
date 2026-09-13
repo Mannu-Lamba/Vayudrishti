@@ -1,0 +1,73 @@
+{
+  "dataset_version": "v1.0",
+  "positives": 2000,
+  "negatives": 2000,
+  "hard_negative_central_cold_fraction_threshold": 0.1444,
+  "positive_quota": {
+    "arabian_sea/weak": 119,
+    "arabian_sea/medium": 122,
+    "arabian_sea/strong": 104,
+    "bay_of_bengal/weak": 121,
+    "bay_of_bengal/medium": 121,
+    "bay_of_bengal/strong": 104,
+    "south_indian_ocean/weak": 107,
+    "south_indian_ocean/medium": 121,
+    "south_indian_ocean/strong": 104,
+    "western_pacific/weak": 121,
+    "western_pacific/medium": 121,
+    "western_pacific/strong": 104,
+    "eastern_pacific/weak": 121,
+    "eastern_pacific/medium": 121,
+    "eastern_pacific/strong": 104,
+    "southern_pacific/weak": 60,
+    "southern_pacific/medium": 121,
+    "southern_pacific/strong": 104
+  },
+  "positive_available": {
+    "arabian_sea/medium": 143,
+    "arabian_sea/strong": 122,
+    "arabian_sea/weak": 119,
+    "bay_of_bengal/medium": 142,
+    "bay_of_bengal/strong": 122,
+    "bay_of_bengal/weak": 143,
+    "eastern_pacific/medium": 143,
+    "eastern_pacific/strong": 120,
+    "eastern_pacific/weak": 122,
+    "south_indian_ocean/medium": 142,
+    "south_indian_ocean/strong": 121,
+    "south_indian_ocean/weak": 107,
+    "southern_pacific/medium": 137,
+    "southern_pacific/strong": 118,
+    "southern_pacific/weak": 60,
+    "western_pacific/medium": 140,
+    "western_pacific/strong": 119,
+    "western_pacific/weak": 140
+  },
+  "negative_quota": {
+    "hard/arabian_sea": 129,
+    "hard/bay_of_bengal": 323,
+    "moderate/arabian_sea": 387,
+    "moderate/bay_of_bengal": 387,
+    "easy/arabian_sea": 387,
+    "easy/bay_of_bengal": 387
+  },
+  "negative_available": {
+    "easy/arabian_sea": 2520,
+    "easy/bay_of_bengal": 596,
+    "hard/arabian_sea": 129,
+    "hard/bay_of_bengal": 323,
+    "moderate/arabian_sea": 391,
+    "moderate/bay_of_bengal": 534
+  },
+  "negative_pool_difficulty": {
+    "easy": 3116,
+    "moderate": 925,
+    "hard": 452
+  },
+  "positive_sources": {
+    "ps70_positive_candidates": 1303,
+    "finalized_metadata_reserve": 697
+  },
+  "positive_storms": 1118,
+  "negative_from_ps70_selected_2000": 862
+}

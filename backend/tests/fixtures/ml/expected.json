@@ -1,0 +1,82 @@
+{
+  "source": "held-out test images; probabilities from the training code path (evaluation transform + deployed checkpoint) on CPU in fp32 \u2014 see make_backend_fixtures.py",
+  "tolerance": 0.0001,
+  "classification": [
+    {
+      "file": "cls_D-DD_CLS-IMG00711.png",
+      "image_id": "CLS-IMG00711",
+      "true_class": "D-DD",
+      "usa_wind_kt": 25.0,
+      "class_code": "D-DD",
+      "probabilities": {
+        "Depression / Deep Depression": 0.7379023432731628,
+        "Cyclonic Storm / Severe Cyclonic Storm": 0.26176968216896057,
+        "Very Severe Cyclonic Storm": 0.0003237183846067637,
+        "Extremely Severe / Super Cyclonic Storm": 4.204694960208144e-06
+      }
+    },
+    {
+      "file": "cls_CS-SCS_CLS-IMG01894.png",
+      "image_id": "CLS-IMG01894",
+      "true_class": "CS-SCS",
+      "usa_wind_kt": 35.0,
+      "class_code": "CS-SCS",
+      "probabilities": {
+        "Depression / Deep Depression": 0.18066197633743286,
+        "Cyclonic Storm / Severe Cyclonic Storm": 0.733962893486023,
+        "Very Severe Cyclonic Storm": 0.073703832924366,
+        "Extremely Severe / Super Cyclonic Storm": 0.011671268381178379
+      }
+    },
+    {
+      "file": "cls_VSCS_CLS-IMG03074.png",
+      "image_id": "CLS-IMG03074",
+      "true_class": "VSCS",
+      "usa_wind_kt": 70.0,
+      "class_code": "VSCS",
+      "probabilities": {
+        "Depression / Deep Depression": 8.673454431118444e-05,
+        "Cyclonic Storm / Severe Cyclonic Storm": 0.0010873379651457071,
+        "Very Severe Cyclonic Storm": 0.7462546229362488,
+        "Extremely Severe / Super Cyclonic Storm": 0.2525712847709656
+      }
+    },
+    {
+      "file": "cls_ESCS-SuCS_CLS-IMG04195.png",
+      "image_id": "CLS-IMG04195",
+      "true_class": "ESCS-SuCS",
+      "usa_wind_kt": 120.0,
+      "class_code": "ESCS-SuCS",
+      "probabilities": {
+        "Depression / Deep Depression": 3.3607335353735834e-05,
+        "Cyclonic Storm / Severe Cyclonic Storm": 0.0001115027189371176,
+        "Very Severe Cyclonic Storm": 0.2527843415737152,
+        "Extremely Severe / Super Cyclonic Storm": 0.7470705509185791
+      }
+    }
+  ],
+  "identification": [
+    {
+      "file": "ident_cyclone_IMG1856.png",
+      "image_id": "IMG1856",
+      "class_name": "CYCLONE",
+      "cyclone_probability": 0.9999998807907104
+    },
+    {
+      "file": "ident_no_cyclone_IMG2027.png",
+      "image_id": "IMG2027",
+      "class_name": "NO_CYCLONE",
+      "cyclone_probability": 6.175431721544555e-09
+    },
+    {
+      "file": "ident_uncertain_IMG1772.png",
+      "image_id": "IMG1772",
+      "class_name": "CYCLONE",
+      "cyclone_probability": 0.7616830468177795
+    }
+  ],
+  "analyze": {
+    "cyclone": "ident_cyclone_IMG1856.png",
+    "no_cyclone": "ident_no_cyclone_IMG2027.png"
+  }
+}

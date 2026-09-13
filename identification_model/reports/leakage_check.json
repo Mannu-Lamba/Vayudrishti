@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "checks": {
+    "identical_image_path_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "identical_pixels_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "near_duplicates_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "storm_ids_shared_train_val": {
+      "violations": 0,
+      "examples": []
+    },
+    "storm_ids_shared_train_test": {
+      "violations": 0,
+      "examples": []
+    },
+    "storm_ids_shared_val_test": {
+      "violations": 0,
+      "examples": []
+    },
+    "groups_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "overlapping_crops_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "manifest_rows_missing_from_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "rows_in_more_than_one_split": {
+      "violations": 0,
+      "examples": []
+    }
+  },
+  "split_rows": {
+    "train": 2796,
+    "val": 603,
+    "test": 601
+  },
+  "split_file_sha256": {
+    "train": "bd7c47ad4788b4977d5a8966a94db886b57db173aa8a802f693ec5665dceb494",
+    "val": "0db861ab5a613301d74857f897bad403bcb4f4c580ae578d2c3e4030a87a7a5c",
+    "test": "d4d907aaac837de731590c3506e4474b8f35a91f84e62625f2f2813f6aeba632"
+  }
+}

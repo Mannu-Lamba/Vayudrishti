@@ -1,0 +1,458 @@
+{
+  "sources": {
+    "finalized_metadata": {
+      "path": "E:\\PS70_Finalized_ML_Metadata_2000_Present.xlsx",
+      "bytes": 8658901,
+      "sha256": "2d6af23aee2dcedd211a7f76c058773d822bd090f9b30e7866ceef6ecfb13151",
+      "snapshot": "data/raw/sources/PS70_Finalized_ML_Metadata_2000_Present.xlsx"
+    },
+    "positive_candidates": {
+      "path": "H:\\WayuDrishti\\g\\PS70_Positive_Cyclone_Candidates_Satellite_Images.xlsx",
+      "bytes": 388772,
+      "sha256": "295c14be06a07340463c770b7e650ec8667e27d511c59843749ea08b1caab1c8",
+      "snapshot": "data/raw/sources/PS70_Positive_Cyclone_Candidates_Satellite_Images.xlsx"
+    },
+    "positive_downloader": {
+      "path": "C:\\Users\\steve\\Downloads\\PS70_NOAA_Satellite_Downloader_RETRY_FIXED.py",
+      "bytes": 33177,
+      "sha256": "c6739330f5c935378050d0251c9d2174fb9e208d502b4803fd42ae52f78e364e",
+      "snapshot": "data/raw/sources/PS70_NOAA_Satellite_Downloader_RETRY_FIXED.py"
+    },
+    "negative_pool": {
+      "path": "C:\\Users\\steve\\Downloads\\SIH_NIO_2000_2025_6HOURLY_NONCYCLONE_SAMPLES.csv",
+      "bytes": 1027774,
+      "sha256": "f479e59189f6476a67c9959a9e56d2b0e0477275ae39c79adc82e0d89db3a986",
+      "snapshot": "data/raw/sources/SIH_NIO_2000_2025_6HOURLY_NONCYCLONE_SAMPLES.csv"
+    },
+    "negative_selected": {
+      "path": "C:\\Users\\steve\\Downloads\\PS70_Negative_Cyclones_2000_Sorted.xlsx",
+      "bytes": 293397,
+      "sha256": "5ca5fa52bfaed291add9d5b5ee173d3cdd0fa5eb1c308deae959bf444090ae9d",
+      "snapshot": "data/raw/sources/PS70_Negative_Cyclones_2000_Sorted.xlsx"
+    },
+    "positive_images_workbook": {
+      "path": "H:\\WayuDrishti\\g\\PS70_Positive_Cyclone_Candidates_WITH_IMAGES.xlsx",
+      "bytes": 37428437,
+      "sha256": "0572a7708f5d84da359b9e633f64905ab5655f5a1cd9a3c730011652cfa5d7d9"
+    },
+    "ibtracs": {
+      "path": "H:\\ibtracs.since1980.list.v04r01.csv",
+      "bytes": 143855548,
+      "sha256": "fef69928eff7c5910c83dc32d90bd87481168178cf735ca725a42b71b8d15e76"
+    },
+    "positive_images_dir": {
+      "path": "H:\\WayuDrishti\\g\\PS70_NOAA_Satellite_Images\\images\\positive",
+      "files": 1101,
+      "listing_sha256": "7d8e8a7a805547a9ffccc49429d12a096d2fc206d65cc630c05c33b596a9895b",
+      "snapshot": "data/raw/original_positive_png"
+    }
+  },
+  "dataset_a_finalized_metadata": {
+    "records": 139829,
+    "unique_storms": 2299,
+    "missing_storm_id": 0,
+    "unique_timestamps": 65863,
+    "unique_dates": 8406,
+    "time_range": [
+      "1999-12-08 22:00:00",
+      "2026-09-08 00:00:00"
+    ],
+    "invalid_timestamps": 0,
+    "invalid_coordinates": 0,
+    "duplicate_rows": 0,
+    "duplicate_keys": 0,
+    "duplicate_key_columns": [
+      "cyclone_id",
+      "timestamp"
+    ],
+    "missing_values": {
+      "wind_speed": 16949,
+      "pressure": 15902
+    },
+    "basins": {
+      "EP": 28526,
+      "NI": 8815,
+      "SI": 36590,
+      "SP": 15019,
+      "WP": 50879
+    },
+    "subbasins": {
+      "AS": 3372,
+      "BB": 5443,
+      "CP": 5311,
+      "EA": 5513,
+      "MM": 106587,
+      "WA": 13603
+    },
+    "source_regions": {
+      "Arabian Sea / West India": 3372,
+      "Indian Ocean": 36590,
+      "North Indian Ocean / Bay of Bengal": 5443,
+      "Pacific Ocean": 94424
+    },
+    "natures": {
+      "DS": 15313,
+      "ET": 6817,
+      "MX": 9548,
+      "NR": 5217,
+      "SS": 858,
+      "TS": 102076
+    },
+    "ui_areas": {
+      "north_indian_ocean/arabian_sea": 3372,
+      "north_indian_ocean/bay_of_bengal": 5443,
+      "pacific_ocean/eastern_pacific": 28526,
+      "pacific_ocean/southern_pacific": 15019,
+      "pacific_ocean/western_pacific": 50879,
+      "south_indian_ocean/": 36590
+    },
+    "seasons": [
+      2000,
+      2026
+    ],
+    "tropical_ts_fixes": 102076,
+    "tropical_ts_storms": 2220,
+    "storms_by_basin": {
+      "EP": 635,
+      "NI": 264,
+      "SI": 492,
+      "SP": 281,
+      "WP": 814
+    },
+    "images": "none \u2014 metadata only (README: satellite images 'intentionally not included yet')"
+  },
+  "dataset_a_positive_candidates": {
+    "records": 2000,
+    "unique_storms": 721,
+    "missing_storm_id": 0,
+    "unique_timestamps": 1981,
+    "unique_dates": 1592,
+    "time_range": [
+      "1999-12-08 22:00:00",
+      "2026-08-25 18:00:00"
+    ],
+    "invalid_timestamps": 0,
+    "invalid_coordinates": 0,
+    "duplicate_rows": 0,
+    "duplicate_keys": 0,
+    "duplicate_key_columns": [
+      "cyclone_id",
+      "timestamp"
+    ],
+    "missing_values": {
+      "wind_speed": 251,
+      "pressure": 300,
+      "satellite_source": 960,
+      "satellite_image": 960,
+      "image_dimensions": 960,
+      "channels": 960,
+      "dataset_split": 2000,
+      "satellite_match_time": 960,
+      "satellite_time_difference_hours": 960,
+      "satellite_source_url": 960,
+      "satellite_collection_status": 960
+    },
+    "labels": {
+      "1": 2000
+    },
+    "natures": {
+      "DS": 260,
+      "ET": 36,
+      "MX": 79,
+      "NR": 80,
+      "SS": 8,
+      "TS": 1537
+    },
+    "intensity_category": {
+      "Medium Cyclone": 700,
+      "Strong Cyclone": 600,
+      "Weak Cyclone": 700
+    },
+    "source_regions": {
+      "Arabian Sea / West India": 332,
+      "Bay of Bengal / North Indian Ocean": 334,
+      "Eastern Pacific": 333,
+      "South Indian Ocean": 334,
+      "Southern Pacific": 333,
+      "Western Pacific": 334
+    },
+    "basins": {
+      "EP": 333,
+      "NI": 666,
+      "SI": 334,
+      "SP": 333,
+      "WP": 334
+    },
+    "lifecycle_stage": {
+      "Developing": 506,
+      "Intensifying": 498,
+      "Mature / Peak": 498,
+      "Weakening / Dissipating": 498
+    },
+    "images_per_storm": {
+      "count": 721.0,
+      "mean": 2.77,
+      "std": 2.51,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 28.0
+    },
+    "rows_found_in_dataset_a": 2000,
+    "max_coordinate_difference_vs_a": 0.0,
+    "intensity_rule_agreement": 0.9850187265917603,
+    "storm_max_wind_agreement": 0.980649188514357,
+    "satellite_source": {
+      "<none>": 960,
+      "NOAA GridSat-B1 v02r01": 22,
+      "NOAA HURSAT-B1 v07b": 1018
+    },
+    "human_verified": {
+      "REVIEW_REQUIRED": 2000
+    }
+  },
+  "dataset_a_positive_png": {
+    "files": 1101,
+    "extensions": {
+      ".png": 1101
+    },
+    "formats": {
+      "PNG": 1101
+    },
+    "dimensions": {
+      "256x256": 1101
+    },
+    "modes": {
+      "L": 1101
+    },
+    "corrupted_or_unreadable": 0,
+    "exact_duplicate_groups": [],
+    "near_duplicate_pairs": [],
+    "zero_pixel_fraction_gt_5pct": 57,
+    "zero_pixel_fraction_gt_20pct": 3,
+    "saturated_fraction_gt_5pct": 6,
+    "annotation_files": 0,
+    "candidates_with_png": 1101,
+    "candidates_without_png": 899,
+    "png_by_recorded_source": {
+      "<not recorded>": 61,
+      "NOAA GridSat-B1 v02r01": 22,
+      "NOAA HURSAT-B1 v07b": 1018
+    },
+    "png_storms": 399,
+    "embedded_workbook": {
+      "embedded_images": 1101,
+      "pixel_identical_to_folder_png": 1101
+    }
+  },
+  "dataset_b_negative_pool": {
+    "records": 4615,
+    "unique_storms": null,
+    "missing_storm_id": null,
+    "unique_timestamps": 4615,
+    "unique_dates": 1290,
+    "time_range": [
+      "2000-03-27 12:00:00",
+      "2025-12-02 18:00:00"
+    ],
+    "invalid_timestamps": 0,
+    "invalid_coordinates": 0,
+    "duplicate_rows": 0,
+    "duplicate_keys": 0,
+    "duplicate_key_columns": [
+      "GRID_SAT_TIME",
+      "LAT",
+      "LON"
+    ],
+    "missing_values": {},
+    "labels": {
+      "0": 4615
+    },
+    "rules": {
+      "At least 10 degrees from every IBTrACS DS/TS/MX center at matched time": 4615
+    },
+    "sources": {
+      "NOAA_GridSat_B1": 4615
+    },
+    "lat_range": [
+      2.0,
+      28.0
+    ],
+    "lon_range": [
+      42.0,
+      99.0
+    ],
+    "integer_degree_grid": true,
+    "hours": {
+      "0": 972,
+      "3": 217,
+      "6": 949,
+      "9": 209,
+      "12": 949,
+      "15": 193,
+      "18": 950,
+      "21": 176
+    },
+    "months": {
+      "1": 131,
+      "2": 10,
+      "3": 49,
+      "4": 101,
+      "5": 557,
+      "6": 408,
+      "7": 186,
+      "8": 301,
+      "9": 439,
+      "10": 794,
+      "11": 925,
+      "12": 714
+    },
+    "years": [
+      2000,
+      2025
+    ],
+    "subregion_by_ibtracs_78E_boundary": {
+      "arabian_sea": 3097,
+      "bay_of_bengal": 1518
+    },
+    "filename_matches_time": 1.0,
+    "images": "none \u2014 GridSat-B1 file references only"
+  },
+  "dataset_b_negative_selected": {
+    "records": 2000,
+    "unique_storms": null,
+    "missing_storm_id": null,
+    "unique_timestamps": 2000,
+    "unique_dates": 1080,
+    "time_range": [
+      "2000-03-27 18:00:00",
+      "2025-12-02 12:00:00"
+    ],
+    "invalid_timestamps": 0,
+    "invalid_coordinates": 0,
+    "duplicate_rows": 0,
+    "duplicate_keys": 0,
+    "duplicate_key_columns": [
+      "timestamp",
+      "latitude",
+      "longitude"
+    ],
+    "missing_values": {
+      "cyclone_id": 2000,
+      "subbasin": 2000,
+      "name": 2000,
+      "nature": 2000,
+      "wind_speed": 2000,
+      "pressure": 2000,
+      "intensity_category": 2000,
+      "satellite_image": 2000,
+      "image_dimensions": 2000,
+      "channels": 2000,
+      "dataset_split": 2000,
+      "lifecycle_stage": 2000,
+      "lifecycle_position": 2000
+    },
+    "source_regions": {
+      "Arabian Sea / West India": 1000,
+      "Bay of Bengal / North Indian Ocean": 1000
+    },
+    "basins": {
+      "NI": 2000
+    },
+    "labels": {
+      "0": 2000
+    },
+    "subset_of_pool": true,
+    "months": {
+      "1": 64,
+      "2": 3,
+      "3": 19,
+      "4": 46,
+      "5": 229,
+      "6": 174,
+      "7": 80,
+      "8": 139,
+      "9": 205,
+      "10": 330,
+      "11": 405,
+      "12": 306
+    },
+    "years": {
+      "2000": 51,
+      "2001": 55,
+      "2002": 41,
+      "2003": 71,
+      "2004": 107,
+      "2005": 140,
+      "2006": 107,
+      "2007": 51,
+      "2008": 74,
+      "2009": 39,
+      "2010": 59,
+      "2011": 71,
+      "2012": 36,
+      "2013": 100,
+      "2014": 75,
+      "2015": 81,
+      "2016": 77,
+      "2017": 66,
+      "2018": 88,
+      "2019": 113,
+      "2020": 72,
+      "2021": 71,
+      "2022": 91,
+      "2023": 82,
+      "2024": 85,
+      "2025": 97
+    },
+    "source_region_vs_78E_boundary_disagreements": 346,
+    "images_embedded": 0
+  },
+  "dataset_b_ibtracs_crosscheck": {
+    "ibtracs_fixes_loaded": 167168,
+    "no_system_within_window": 0,
+    "rule_violations_lt_10deg_ds_ts_mx": 25,
+    "negatives_with_system_centre_in_crop": 107,
+    "natures_in_crop": {
+      "DS": 5,
+      "MX": 3,
+      "TS": 99
+    },
+    "nearest_system_deg_percentiles": {
+      "0": 3.36,
+      "5": 11.04,
+      "25": 15.36,
+      "50": 21.38,
+      "75": 29.75
+    }
+  },
+  "overlap": {
+    "storm_ids_shared": 0,
+    "negative_times_equal_to_a_positive_time": 467,
+    "positive_negative_crop_overlaps_within_12h": 1252,
+    "negative_negative_crop_overlaps_within_12h": 3965,
+    "positive_positive_crop_overlaps_other_storm_within_12h": 0,
+    "positive_positive_crop_overlaps_any_within_12h": 289
+  },
+  "bounding_boxes": {
+    "bbox_like_columns": [],
+    "annotation_files": 0,
+    "conclusion": "No bounding-box annotations exist \u2192 binary image classification."
+  },
+  "readme_dataset_a": {
+    "Purpose": "Editable cyclone metadata master sheet for SIH PS-70.",
+    "Source": "NOAA/NCEI IBTrACS v04r01 since1980 CSV supplied by the user.",
+    "Temporal filter": "SEASON >= 2000.",
+    "Geographic filter": "BASIN in NI, SI, WP, EP, SP.",
+    "Region mapping": "NI + AS = Arabian Sea / West India; NI + other = North Indian Ocean / Bay of Bengal; SI = Indian Ocean; WP/EP/SP = Pacific Ocean.",
+    "Cyclone ID": "SID is retained as cyclone_id for storm-level grouping and leakage-safe splitting later.",
+    "Timestamp": "ISO_TIME converted to a normal Excel datetime; source timestamps are UTC.",
+    "Wind speed": "WMO_WIND first; USA_WIND used only when WMO_WIND is missing. Values remain in knots.",
+    "Pressure": "WMO_PRES first; USA_PRES used only when WMO_PRES is missing. Values remain in millibars.",
+    "Satellite images": "Intentionally not included yet; to be matched later.",
+    "Image dimensions": "Intentionally not included yet; to be added with satellite data.",
+    "Satellite channels": "Intentionally not included yet; to be added with satellite data.",
+    "Important": "Train/validation/test splitting should later be done by cyclone_id, not by random rows/images."
+  }
+}

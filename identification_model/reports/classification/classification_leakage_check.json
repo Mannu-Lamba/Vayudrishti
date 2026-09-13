@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "checks": {
+    "identical_image_path_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "identical_pixels_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "near_duplicates_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "storm_ids_shared_train_val": {
+      "violations": 0,
+      "examples": []
+    },
+    "storm_ids_shared_train_test": {
+      "violations": 0,
+      "examples": []
+    },
+    "storm_ids_shared_val_test": {
+      "violations": 0,
+      "examples": []
+    },
+    "groups_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "overlapping_crops_across_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "manifest_rows_missing_from_splits": {
+      "violations": 0,
+      "examples": []
+    },
+    "rows_in_more_than_one_split": {
+      "violations": 0,
+      "examples": []
+    }
+  },
+  "split_rows": {
+    "train": 3105,
+    "val": 666,
+    "test": 667
+  },
+  "split_file_sha256": {
+    "train": "1cc57dbd5f9c2e981a9d38e7a0bde920d34f173dd6fcd146814323b6601a6f65",
+    "val": "8f31bacc6f9254d34a3167d5e9f1aa15d2219c3d587150e3e59cfdc61adea5de",
+    "test": "27d1f3b77e7340b101da66ff9dc6ad8bec6abd1fc7e35722c1b022ae92ffd2c9"
+  }
+}

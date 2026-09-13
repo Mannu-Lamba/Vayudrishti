@@ -1,0 +1,576 @@
+sample_id,label,stage,reason,detail
+POS_0013,1,metadata,nature_not_tropical,nature=NR
+POS_0014,1,metadata,nature_not_tropical,nature=NR
+POS_0015,1,metadata,nature_not_tropical,nature=NR
+POS_0016,1,metadata,nature_not_tropical,nature=NR
+POS_0028,1,metadata,nature_not_tropical,nature=NR
+POS_0036,1,metadata,nature_not_tropical,nature=NR
+POS_0045,1,metadata,nature_not_tropical,nature=NR
+POS_0052,1,metadata,nature_not_tropical,nature=ET
+POS_0055,1,metadata,nature_not_tropical,nature=ET
+POS_0056,1,metadata,nature_not_tropical,nature=ET
+POS_0061,1,metadata,nature_not_tropical,nature=NR
+POS_0065,1,metadata,nature_not_tropical,nature=NR
+POS_0069,1,metadata,nature_not_tropical,nature=NR
+POS_0070,1,metadata,nature_not_tropical,nature=NR
+POS_0071,1,metadata,nature_not_tropical,nature=NR
+POS_0076,1,metadata,nature_not_tropical,nature=DS
+POS_0096,1,metadata,nature_not_tropical,nature=ET
+POS_0097,1,metadata,nature_not_tropical,nature=ET
+POS_0136,1,metadata,nature_not_tropical,nature=ET
+POS_0139,1,metadata,nature_not_tropical,nature=NR
+POS_0140,1,metadata,nature_not_tropical,nature=NR
+POS_0141,1,metadata,nature_not_tropical,nature=NR
+POS_0143,1,metadata,nature_not_tropical,nature=NR
+POS_0178,1,metadata,nature_not_tropical,nature=MX
+POS_0181,1,metadata,nature_not_tropical,nature=DS
+POS_0198,1,metadata,nature_not_tropical,nature=ET
+POS_0225,1,metadata,nature_not_tropical,nature=DS
+POS_0226,1,metadata,nature_not_tropical,nature=DS
+POS_0227,1,metadata,nature_not_tropical,nature=DS
+POS_0243,1,metadata,nature_not_tropical,nature=DS
+POS_0244,1,metadata,nature_not_tropical,nature=NR
+POS_0248,1,metadata,nature_not_tropical,nature=MX
+POS_0276,1,metadata,nature_not_tropical,nature=ET
+POS_0309,1,metadata,nature_not_tropical,nature=ET
+POS_0329,1,metadata,nature_not_tropical,nature=ET
+POS_0330,1,metadata,nature_not_tropical,nature=NR
+POS_0348,1,metadata,nature_not_tropical,nature=NR
+POS_0355,1,metadata,nature_not_tropical,nature=ET
+POS_0379,1,metadata,nature_not_tropical,nature=DS
+POS_0385,1,metadata,nature_not_tropical,nature=DS
+POS_0392,1,metadata,nature_not_tropical,nature=MX
+POS_0415,1,metadata,nature_not_tropical,nature=MX
+POS_0416,1,metadata,nature_not_tropical,nature=NR
+POS_0417,1,metadata,nature_not_tropical,nature=NR
+POS_0418,1,metadata,nature_not_tropical,nature=NR
+POS_0419,1,metadata,nature_not_tropical,nature=NR
+POS_0420,1,metadata,nature_not_tropical,nature=NR
+POS_0421,1,metadata,nature_not_tropical,nature=NR
+POS_0446,1,metadata,nature_not_tropical,nature=DS
+POS_0465,1,metadata,nature_not_tropical,nature=ET
+POS_0466,1,metadata,nature_not_tropical,nature=ET
+POS_0469,1,metadata,nature_not_tropical,nature=DS
+POS_0471,1,metadata,nature_not_tropical,nature=DS
+POS_0472,1,metadata,nature_not_tropical,nature=DS
+POS_0481,1,metadata,nature_not_tropical,nature=DS
+POS_0482,1,metadata,nature_not_tropical,nature=DS
+POS_0493,1,metadata,nature_not_tropical,nature=DS
+POS_0494,1,metadata,nature_not_tropical,nature=DS
+POS_0518,1,metadata,nature_not_tropical,nature=DS
+POS_0526,1,metadata,nature_not_tropical,nature=DS
+POS_0527,1,metadata,nature_not_tropical,nature=NR
+POS_0528,1,metadata,nature_not_tropical,nature=NR
+POS_0529,1,metadata,nature_not_tropical,nature=NR
+POS_0530,1,metadata,nature_not_tropical,nature=ET
+POS_0534,1,metadata,nature_not_tropical,nature=DS
+POS_0540,1,metadata,nature_not_tropical,nature=NR
+POS_0541,1,metadata,nature_not_tropical,nature=NR
+POS_0542,1,metadata,nature_not_tropical,nature=NR
+POS_0543,1,metadata,nature_not_tropical,nature=NR
+POS_0544,1,metadata,nature_not_tropical,nature=NR
+POS_0545,1,metadata,nature_not_tropical,nature=NR
+POS_0546,1,metadata,nature_not_tropical,nature=NR
+POS_0547,1,metadata,nature_not_tropical,nature=NR
+POS_0550,1,metadata,nature_not_tropical,nature=NR
+POS_0551,1,metadata,nature_not_tropical,nature=NR
+POS_0554,1,metadata,nature_not_tropical,nature=NR
+POS_0555,1,metadata,nature_not_tropical,nature=NR
+POS_0556,1,metadata,nature_not_tropical,nature=NR
+POS_0557,1,metadata,nature_not_tropical,nature=NR
+POS_0558,1,metadata,nature_not_tropical,nature=NR
+POS_0559,1,metadata,nature_not_tropical,nature=NR
+POS_0564,1,metadata,nature_not_tropical,nature=DS
+POS_0568,1,metadata,nature_not_tropical,nature=NR
+POS_0573,1,metadata,nature_not_tropical,nature=DS
+POS_0574,1,metadata,nature_not_tropical,nature=DS
+POS_0582,1,metadata,nature_not_tropical,nature=DS
+POS_0584,1,metadata,nature_not_tropical,nature=MX
+POS_0588,1,metadata,nature_not_tropical,nature=MX
+POS_0605,1,metadata,nature_not_tropical,nature=MX
+POS_0607,1,metadata,nature_not_tropical,nature=DS
+POS_0608,1,metadata,nature_not_tropical,nature=MX
+POS_0612,1,metadata,nature_not_tropical,nature=DS
+POS_0613,1,metadata,nature_not_tropical,nature=DS
+POS_0618,1,metadata,nature_not_tropical,nature=DS
+POS_0622,1,metadata,nature_not_tropical,nature=DS
+POS_0626,1,metadata,nature_not_tropical,nature=DS
+POS_0631,1,metadata,nature_not_tropical,nature=DS
+POS_0634,1,metadata,nature_not_tropical,nature=DS
+POS_0635,1,metadata,nature_not_tropical,nature=MX
+POS_0637,1,metadata,nature_not_tropical,nature=NR
+POS_0638,1,metadata,nature_not_tropical,nature=NR
+POS_0639,1,metadata,nature_not_tropical,nature=NR
+POS_0640,1,metadata,nature_not_tropical,nature=NR
+POS_0641,1,metadata,nature_not_tropical,nature=NR
+POS_0642,1,metadata,nature_not_tropical,nature=NR
+POS_0643,1,metadata,nature_not_tropical,nature=NR
+POS_0644,1,metadata,nature_not_tropical,nature=NR
+POS_0645,1,metadata,nature_not_tropical,nature=MX
+POS_0646,1,metadata,nature_not_tropical,nature=DS
+POS_0649,1,metadata,nature_not_tropical,nature=DS
+POS_0650,1,metadata,nature_not_tropical,nature=DS
+POS_0651,1,metadata,nature_not_tropical,nature=DS
+POS_0652,1,metadata,nature_not_tropical,nature=NR
+POS_0653,1,metadata,nature_not_tropical,nature=DS
+POS_0657,1,metadata,nature_not_tropical,nature=NR
+POS_0658,1,metadata,nature_not_tropical,nature=DS
+POS_0659,1,metadata,nature_not_tropical,nature=DS
+POS_0660,1,metadata,nature_not_tropical,nature=MX
+POS_0663,1,metadata,nature_not_tropical,nature=MX
+POS_0670,1,metadata,nature_not_tropical,nature=DS
+POS_0688,1,metadata,nature_not_tropical,nature=DS
+POS_0691,1,metadata,nature_not_tropical,nature=ET
+POS_0692,1,metadata,nature_not_tropical,nature=ET
+POS_0693,1,metadata,nature_not_tropical,nature=MX
+POS_0704,1,metadata,nature_not_tropical,nature=DS
+POS_0705,1,metadata,nature_not_tropical,nature=DS
+POS_0706,1,metadata,nature_not_tropical,nature=DS
+POS_0708,1,metadata,nature_not_tropical,nature=DS
+POS_0709,1,metadata,nature_not_tropical,nature=DS
+POS_0712,1,metadata,nature_not_tropical,nature=DS
+POS_0713,1,metadata,nature_not_tropical,nature=DS
+POS_0718,1,metadata,nature_not_tropical,nature=DS
+POS_0721,1,metadata,nature_not_tropical,nature=DS
+POS_0722,1,metadata,nature_not_tropical,nature=DS
+POS_0723,1,metadata,nature_not_tropical,nature=DS
+POS_0724,1,metadata,nature_not_tropical,nature=DS
+POS_0726,1,metadata,nature_not_tropical,nature=DS
+POS_0727,1,metadata,nature_not_tropical,nature=DS
+POS_0729,1,metadata,nature_not_tropical,nature=DS
+POS_0730,1,metadata,nature_not_tropical,nature=DS
+POS_0739,1,metadata,nature_not_tropical,nature=DS
+POS_0740,1,metadata,nature_not_tropical,nature=DS
+POS_0743,1,metadata,nature_not_tropical,nature=MX
+POS_0746,1,metadata,nature_not_tropical,nature=MX
+POS_0755,1,metadata,nature_not_tropical,nature=ET
+POS_0759,1,metadata,nature_not_tropical,nature=NR
+POS_0760,1,metadata,nature_not_tropical,nature=NR
+POS_0761,1,metadata,nature_not_tropical,nature=NR
+POS_0762,1,metadata,nature_not_tropical,nature=NR
+POS_0763,1,metadata,nature_not_tropical,nature=MX
+POS_0764,1,metadata,nature_not_tropical,nature=MX
+POS_0773,1,metadata,nature_not_tropical,nature=MX
+POS_0774,1,metadata,nature_not_tropical,nature=DS
+POS_0775,1,metadata,nature_not_tropical,nature=DS
+POS_0786,1,metadata,nature_not_tropical,nature=DS
+POS_0787,1,metadata,nature_not_tropical,nature=DS
+POS_0788,1,metadata,nature_not_tropical,nature=DS
+POS_0789,1,metadata,nature_not_tropical,nature=DS
+POS_0790,1,metadata,nature_not_tropical,nature=DS
+POS_0791,1,metadata,nature_not_tropical,nature=DS
+POS_0792,1,metadata,nature_not_tropical,nature=DS
+POS_0797,1,metadata,nature_not_tropical,nature=ET
+POS_0801,1,metadata,nature_not_tropical,nature=DS
+POS_0802,1,metadata,nature_not_tropical,nature=DS
+POS_0803,1,metadata,nature_not_tropical,nature=DS
+POS_0805,1,metadata,nature_not_tropical,nature=DS
+POS_0806,1,metadata,nature_not_tropical,nature=DS
+POS_0807,1,metadata,nature_not_tropical,nature=DS
+POS_0816,1,metadata,nature_not_tropical,nature=MX
+POS_0818,1,metadata,nature_not_tropical,nature=DS
+POS_0825,1,metadata,nature_not_tropical,nature=DS
+POS_0830,1,metadata,nature_not_tropical,nature=MX
+POS_0836,1,metadata,nature_not_tropical,nature=DS
+POS_0838,1,metadata,nature_not_tropical,nature=NR
+POS_0841,1,metadata,nature_not_tropical,nature=MX
+POS_0850,1,metadata,nature_not_tropical,nature=DS
+POS_0851,1,metadata,nature_not_tropical,nature=DS
+POS_0852,1,metadata,nature_not_tropical,nature=DS
+POS_0855,1,metadata,nature_not_tropical,nature=DS
+POS_0856,1,metadata,nature_not_tropical,nature=DS
+POS_0869,1,metadata,nature_not_tropical,nature=DS
+POS_0872,1,metadata,nature_not_tropical,nature=DS
+POS_0873,1,metadata,nature_not_tropical,nature=DS
+POS_0877,1,metadata,nature_not_tropical,nature=DS
+POS_0882,1,metadata,nature_not_tropical,nature=ET
+POS_0887,1,metadata,nature_not_tropical,nature=DS
+POS_0888,1,metadata,nature_not_tropical,nature=DS
+POS_0889,1,metadata,nature_not_tropical,nature=DS
+POS_0893,1,metadata,nature_not_tropical,nature=DS
+POS_0895,1,metadata,nature_not_tropical,nature=MX
+POS_0902,1,metadata,nature_not_tropical,nature=DS
+POS_0903,1,metadata,nature_not_tropical,nature=DS
+POS_0904,1,metadata,nature_not_tropical,nature=DS
+POS_0910,1,metadata,nature_not_tropical,nature=DS
+POS_0917,1,metadata,nature_not_tropical,nature=MX
+POS_0933,1,metadata,nature_not_tropical,nature=NR
+POS_0935,1,metadata,nature_not_tropical,nature=ET
+POS_0936,1,metadata,nature_not_tropical,nature=MX
+POS_0937,1,metadata,nature_not_tropical,nature=DS
+POS_0938,1,metadata,nature_not_tropical,nature=NR
+POS_0939,1,metadata,nature_not_tropical,nature=MX
+POS_0943,1,metadata,nature_not_tropical,nature=DS
+POS_0947,1,metadata,nature_not_tropical,nature=NR
+POS_0948,1,metadata,nature_not_tropical,nature=NR
+POS_0949,1,metadata,nature_not_tropical,nature=NR
+POS_0955,1,metadata,nature_not_tropical,nature=DS
+POS_0964,1,metadata,nature_not_tropical,nature=DS
+POS_0967,1,metadata,nature_not_tropical,nature=DS
+POS_0969,1,metadata,nature_not_tropical,nature=DS
+POS_0970,1,metadata,nature_not_tropical,nature=DS
+POS_0971,1,metadata,nature_not_tropical,nature=DS
+POS_0974,1,metadata,nature_not_tropical,nature=ET
+POS_0975,1,metadata,nature_not_tropical,nature=DS
+POS_0978,1,metadata,nature_not_tropical,nature=DS
+POS_0979,1,metadata,nature_not_tropical,nature=MX
+POS_0980,1,metadata,nature_not_tropical,nature=MX
+POS_0981,1,metadata,nature_not_tropical,nature=MX
+POS_0983,1,metadata,nature_not_tropical,nature=DS
+POS_0987,1,metadata,nature_not_tropical,nature=DS
+POS_0989,1,metadata,nature_not_tropical,nature=DS
+POS_0992,1,metadata,nature_not_tropical,nature=DS
+POS_0995,1,metadata,nature_not_tropical,nature=ET
+POS_0999,1,metadata,nature_not_tropical,nature=DS
+POS_1003,1,metadata,nature_not_tropical,nature=DS
+POS_1004,1,metadata,nature_not_tropical,nature=DS
+POS_1005,1,metadata,nature_not_tropical,nature=MX
+POS_1011,1,metadata,nature_not_tropical,nature=MX
+POS_1014,1,metadata,nature_not_tropical,nature=MX
+POS_1015,1,metadata,nature_not_tropical,nature=DS
+POS_1018,1,metadata,nature_not_tropical,nature=DS
+POS_1020,1,metadata,nature_not_tropical,nature=NR
+POS_1021,1,metadata,nature_not_tropical,nature=NR
+POS_1022,1,metadata,nature_not_tropical,nature=DS
+POS_1028,1,metadata,nature_not_tropical,nature=NR
+POS_1033,1,metadata,nature_not_tropical,nature=MX
+POS_1037,1,metadata,nature_not_tropical,nature=DS
+POS_1038,1,metadata,nature_not_tropical,nature=DS
+POS_1039,1,metadata,nature_not_tropical,nature=DS
+POS_1045,1,metadata,nature_not_tropical,nature=DS
+POS_1057,1,metadata,nature_not_tropical,nature=MX
+POS_1058,1,metadata,nature_not_tropical,nature=DS
+POS_1062,1,metadata,nature_not_tropical,nature=DS
+POS_1063,1,metadata,nature_not_tropical,nature=DS
+POS_1067,1,metadata,nature_not_tropical,nature=DS
+POS_1070,1,metadata,nature_not_tropical,nature=MX
+POS_1075,1,metadata,nature_not_tropical,nature=ET
+POS_1081,1,metadata,nature_not_tropical,nature=DS
+POS_1082,1,metadata,nature_not_tropical,nature=DS
+POS_1083,1,metadata,nature_not_tropical,nature=DS
+POS_1088,1,metadata,nature_not_tropical,nature=DS
+POS_1091,1,metadata,nature_not_tropical,nature=DS
+POS_1094,1,metadata,nature_not_tropical,nature=DS
+POS_1095,1,metadata,nature_not_tropical,nature=DS
+POS_1129,1,metadata,nature_not_tropical,nature=DS
+POS_1136,1,metadata,nature_not_tropical,nature=MX
+POS_1138,1,metadata,nature_not_tropical,nature=DS
+POS_1139,1,metadata,nature_not_tropical,nature=DS
+POS_1146,1,metadata,nature_not_tropical,nature=MX
+POS_1147,1,metadata,nature_not_tropical,nature=DS
+POS_1153,1,metadata,nature_not_tropical,nature=DS
+POS_1154,1,metadata,nature_not_tropical,nature=DS
+POS_1158,1,metadata,nature_not_tropical,nature=DS
+POS_1159,1,metadata,nature_not_tropical,nature=DS
+POS_1160,1,metadata,nature_not_tropical,nature=DS
+POS_1161,1,metadata,nature_not_tropical,nature=DS
+POS_1163,1,metadata,nature_not_tropical,nature=MX
+POS_1164,1,metadata,nature_not_tropical,nature=DS
+POS_1165,1,metadata,nature_not_tropical,nature=DS
+POS_1169,1,metadata,nature_not_tropical,nature=MX
+POS_1180,1,metadata,nature_not_tropical,nature=DS
+POS_1186,1,metadata,nature_not_tropical,nature=SS
+POS_1187,1,metadata,nature_not_tropical,nature=SS
+POS_1191,1,metadata,nature_not_tropical,nature=DS
+POS_1193,1,metadata,nature_not_tropical,nature=SS
+POS_1194,1,metadata,nature_not_tropical,nature=MX
+POS_1195,1,metadata,nature_not_tropical,nature=DS
+POS_1199,1,metadata,nature_not_tropical,nature=DS
+POS_1202,1,metadata,nature_not_tropical,nature=MX
+POS_1203,1,metadata,nature_not_tropical,nature=MX
+POS_1229,1,metadata,nature_not_tropical,nature=DS
+POS_1230,1,metadata,nature_not_tropical,nature=DS
+POS_1231,1,metadata,nature_not_tropical,nature=DS
+POS_1233,1,metadata,nature_not_tropical,nature=MX
+POS_1239,1,metadata,nature_not_tropical,nature=DS
+POS_1247,1,metadata,nature_not_tropical,nature=DS
+POS_1250,1,metadata,nature_not_tropical,nature=DS
+POS_1251,1,metadata,nature_not_tropical,nature=DS
+POS_1252,1,metadata,nature_not_tropical,nature=MX
+POS_1253,1,metadata,nature_not_tropical,nature=ET
+POS_1254,1,metadata,nature_not_tropical,nature=ET
+POS_1257,1,metadata,nature_not_tropical,nature=MX
+POS_1260,1,metadata,nature_not_tropical,nature=DS
+POS_1264,1,metadata,nature_not_tropical,nature=MX
+POS_1273,1,metadata,nature_not_tropical,nature=MX
+POS_1275,1,metadata,nature_not_tropical,nature=DS
+POS_1277,1,metadata,nature_not_tropical,nature=DS
+POS_1278,1,metadata,nature_not_tropical,nature=ET
+POS_1289,1,metadata,nature_not_tropical,nature=MX
+POS_1291,1,metadata,nature_not_tropical,nature=MX
+POS_1295,1,metadata,nature_not_tropical,nature=MX
+POS_1298,1,metadata,nature_not_tropical,nature=DS
+POS_1299,1,metadata,nature_not_tropical,nature=DS
+POS_1300,1,metadata,nature_not_tropical,nature=MX
+POS_1301,1,metadata,nature_not_tropical,nature=DS
+POS_1306,1,metadata,nature_not_tropical,nature=DS
+POS_1309,1,metadata,nature_not_tropical,nature=ET
+POS_1335,1,metadata,nature_not_tropical,nature=ET
+POS_1340,1,metadata,nature_not_tropical,nature=DS
+POS_1342,1,metadata,nature_not_tropical,nature=DS
+POS_1344,1,metadata,nature_not_tropical,nature=DS
+POS_1346,1,metadata,nature_not_tropical,nature=DS
+POS_1347,1,metadata,nature_not_tropical,nature=DS
+POS_1355,1,metadata,nature_not_tropical,nature=DS
+POS_1356,1,metadata,nature_not_tropical,nature=DS
+POS_1363,1,metadata,nature_not_tropical,nature=DS
+POS_1373,1,metadata,nature_not_tropical,nature=MX
+POS_1375,1,metadata,nature_not_tropical,nature=MX
+POS_1379,1,metadata,nature_not_tropical,nature=DS
+POS_1384,1,metadata,nature_not_tropical,nature=MX
+POS_1387,1,metadata,nature_not_tropical,nature=NR
+POS_1392,1,metadata,nature_not_tropical,nature=MX
+POS_1395,1,metadata,nature_not_tropical,nature=MX
+POS_1396,1,metadata,nature_not_tropical,nature=MX
+POS_1397,1,metadata,nature_not_tropical,nature=NR
+POS_1398,1,metadata,nature_not_tropical,nature=NR
+POS_1399,1,metadata,nature_not_tropical,nature=NR
+POS_1400,1,metadata,nature_not_tropical,nature=NR
+POS_1401,1,metadata,nature_not_tropical,nature=DS
+POS_1403,1,metadata,nature_not_tropical,nature=DS
+POS_1405,1,metadata,nature_not_tropical,nature=MX
+POS_1410,1,metadata,nature_not_tropical,nature=NR
+POS_1414,1,metadata,nature_not_tropical,nature=MX
+POS_1416,1,metadata,nature_not_tropical,nature=DS
+POS_1420,1,metadata,nature_not_tropical,nature=DS
+POS_1421,1,metadata,nature_not_tropical,nature=DS
+POS_1428,1,metadata,nature_not_tropical,nature=DS
+POS_1432,1,metadata,nature_not_tropical,nature=ET
+POS_1438,1,metadata,nature_not_tropical,nature=DS
+POS_1439,1,metadata,nature_not_tropical,nature=MX
+POS_1440,1,metadata,nature_not_tropical,nature=MX
+POS_1446,1,metadata,nature_not_tropical,nature=DS
+POS_1447,1,metadata,nature_not_tropical,nature=DS
+POS_1452,1,metadata,nature_not_tropical,nature=DS
+POS_1461,1,metadata,nature_not_tropical,nature=DS
+POS_1462,1,metadata,nature_not_tropical,nature=DS
+POS_1475,1,metadata,nature_not_tropical,nature=DS
+POS_1478,1,metadata,nature_not_tropical,nature=DS
+POS_1479,1,metadata,nature_not_tropical,nature=MX
+POS_1482,1,metadata,nature_not_tropical,nature=ET
+POS_1487,1,metadata,nature_not_tropical,nature=NR
+POS_1490,1,metadata,nature_not_tropical,nature=DS
+POS_1491,1,metadata,nature_not_tropical,nature=NR
+POS_1502,1,metadata,nature_not_tropical,nature=ET
+POS_1506,1,metadata,nature_not_tropical,nature=DS
+POS_1518,1,metadata,nature_not_tropical,nature=DS
+POS_1521,1,metadata,nature_not_tropical,nature=DS
+POS_1524,1,metadata,nature_not_tropical,nature=DS
+POS_1525,1,metadata,nature_not_tropical,nature=DS
+POS_1527,1,metadata,nature_not_tropical,nature=MX
+POS_1530,1,metadata,nature_not_tropical,nature=DS
+POS_1531,1,metadata,nature_not_tropical,nature=DS
+POS_1535,1,metadata,nature_not_tropical,nature=DS
+POS_1549,1,metadata,nature_not_tropical,nature=DS
+POS_1550,1,metadata,nature_not_tropical,nature=DS
+POS_1552,1,metadata,nature_not_tropical,nature=DS
+POS_1555,1,metadata,nature_not_tropical,nature=DS
+POS_1561,1,metadata,nature_not_tropical,nature=DS
+POS_1581,1,metadata,nature_not_tropical,nature=DS
+POS_1592,1,metadata,nature_not_tropical,nature=MX
+POS_1596,1,metadata,nature_not_tropical,nature=DS
+POS_1597,1,metadata,nature_not_tropical,nature=DS
+POS_1601,1,metadata,nature_not_tropical,nature=DS
+POS_1602,1,metadata,nature_not_tropical,nature=MX
+POS_1603,1,metadata,nature_not_tropical,nature=DS
+POS_1607,1,metadata,nature_not_tropical,nature=DS
+POS_1610,1,metadata,nature_not_tropical,nature=MX
+POS_1611,1,metadata,nature_not_tropical,nature=DS
+POS_1637,1,metadata,nature_not_tropical,nature=DS
+POS_1641,1,metadata,nature_not_tropical,nature=DS
+POS_1646,1,metadata,nature_not_tropical,nature=MX
+POS_1647,1,metadata,nature_not_tropical,nature=DS
+POS_1650,1,metadata,nature_not_tropical,nature=DS
+POS_1652,1,metadata,nature_not_tropical,nature=ET
+POS_1656,1,metadata,nature_not_tropical,nature=ET
+POS_1663,1,metadata,nature_not_tropical,nature=MX
+POS_1670,1,metadata,nature_not_tropical,nature=DS
+POS_1680,1,metadata,nature_not_tropical,nature=MX
+POS_1681,1,metadata,nature_not_tropical,nature=DS
+POS_1682,1,metadata,nature_not_tropical,nature=DS
+POS_1688,1,metadata,nature_not_tropical,nature=MX
+POS_1689,1,metadata,nature_not_tropical,nature=DS
+POS_1690,1,metadata,nature_not_tropical,nature=DS
+POS_1693,1,metadata,nature_not_tropical,nature=SS
+POS_1708,1,metadata,nature_not_tropical,nature=DS
+POS_1709,1,metadata,nature_not_tropical,nature=DS
+POS_1720,1,metadata,nature_not_tropical,nature=DS
+POS_1721,1,metadata,nature_not_tropical,nature=DS
+POS_1727,1,metadata,nature_not_tropical,nature=DS
+POS_1729,1,metadata,nature_not_tropical,nature=MX
+POS_1740,1,metadata,nature_not_tropical,nature=DS
+POS_1742,1,metadata,nature_not_tropical,nature=MX
+POS_1747,1,metadata,nature_not_tropical,nature=DS
+POS_1755,1,metadata,nature_not_tropical,nature=DS
+POS_1756,1,metadata,nature_not_tropical,nature=DS
+POS_1758,1,metadata,nature_not_tropical,nature=DS
+POS_1765,1,metadata,nature_not_tropical,nature=MX
+POS_1766,1,metadata,nature_not_tropical,nature=MX
+POS_1769,1,metadata,nature_not_tropical,nature=DS
+POS_1773,1,metadata,nature_not_tropical,nature=ET
+POS_1777,1,metadata,nature_not_tropical,nature=DS
+POS_1778,1,metadata,nature_not_tropical,nature=DS
+POS_1780,1,metadata,nature_not_tropical,nature=DS
+POS_1781,1,metadata,nature_not_tropical,nature=DS
+POS_1786,1,metadata,nature_not_tropical,nature=DS
+POS_1794,1,metadata,nature_not_tropical,nature=DS
+POS_1795,1,metadata,nature_not_tropical,nature=DS
+POS_1796,1,metadata,nature_not_tropical,nature=DS
+POS_1797,1,metadata,nature_not_tropical,nature=DS
+POS_1798,1,metadata,nature_not_tropical,nature=DS
+POS_1799,1,metadata,nature_not_tropical,nature=DS
+POS_1800,1,metadata,nature_not_tropical,nature=DS
+POS_1803,1,metadata,nature_not_tropical,nature=DS
+POS_1810,1,metadata,nature_not_tropical,nature=ET
+POS_1811,1,metadata,nature_not_tropical,nature=DS
+POS_1814,1,metadata,nature_not_tropical,nature=DS
+POS_1816,1,metadata,nature_not_tropical,nature=DS
+POS_1825,1,metadata,nature_not_tropical,nature=DS
+POS_1826,1,metadata,nature_not_tropical,nature=DS
+POS_1827,1,metadata,nature_not_tropical,nature=DS
+POS_1828,1,metadata,nature_not_tropical,nature=DS
+POS_1831,1,metadata,nature_not_tropical,nature=DS
+POS_1841,1,metadata,nature_not_tropical,nature=DS
+POS_1849,1,metadata,nature_not_tropical,nature=DS
+POS_1858,1,metadata,nature_not_tropical,nature=MX
+POS_1861,1,metadata,nature_not_tropical,nature=ET
+POS_1866,1,metadata,nature_not_tropical,nature=DS
+POS_1878,1,metadata,nature_not_tropical,nature=DS
+POS_1879,1,metadata,nature_not_tropical,nature=DS
+POS_1880,1,metadata,nature_not_tropical,nature=MX
+POS_1884,1,metadata,nature_not_tropical,nature=DS
+POS_1885,1,metadata,nature_not_tropical,nature=DS
+POS_1886,1,metadata,nature_not_tropical,nature=DS
+POS_1887,1,metadata,nature_not_tropical,nature=DS
+POS_1891,1,metadata,nature_not_tropical,nature=DS
+POS_1892,1,metadata,nature_not_tropical,nature=MX
+POS_1893,1,metadata,nature_not_tropical,nature=MX
+POS_1905,1,metadata,nature_not_tropical,nature=SS
+POS_1906,1,metadata,nature_not_tropical,nature=SS
+POS_1907,1,metadata,nature_not_tropical,nature=SS
+POS_1908,1,metadata,nature_not_tropical,nature=SS
+POS_1918,1,metadata,nature_not_tropical,nature=MX
+POS_1927,1,metadata,nature_not_tropical,nature=DS
+POS_1929,1,metadata,nature_not_tropical,nature=DS
+POS_1930,1,metadata,nature_not_tropical,nature=DS
+POS_1931,1,metadata,nature_not_tropical,nature=DS
+POS_1933,1,metadata,nature_not_tropical,nature=DS
+POS_1935,1,metadata,nature_not_tropical,nature=MX
+POS_1951,1,metadata,nature_not_tropical,nature=DS
+POS_1952,1,metadata,nature_not_tropical,nature=DS
+POS_1997,1,metadata,nature_not_tropical,nature=NR
+POS_1998,1,metadata,nature_not_tropical,nature=NR
+POS_1999,1,metadata,nature_not_tropical,nature=NR
+POS_2000,1,metadata,nature_not_tropical,nature=NR
+NONCYCLONE_00028,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=6.7deg
+NONCYCLONE_00051,0,metadata,tracked_system_centre_in_crop,natures_in_crop=DS; nearest=11.1deg
+NONCYCLONE_00260,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.0deg
+NONCYCLONE_00282,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=9.9deg
+NONCYCLONE_00295,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=7.0deg
+NONCYCLONE_00334,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_00390,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=6.9deg
+NONCYCLONE_00475,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_00503,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=4.3deg
+NONCYCLONE_00516,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.1deg
+NONCYCLONE_00562,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_00610,0,metadata,violates_dataset_negative_rule,natures_in_crop=MX; nearest=7.6deg
+NONCYCLONE_00622,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.7deg
+NONCYCLONE_00634,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.6deg
+NONCYCLONE_00658,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_00672,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.3deg
+NONCYCLONE_00685,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.7deg
+NONCYCLONE_00755,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.2deg
+NONCYCLONE_00807,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_00834,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_00859,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.0deg
+NONCYCLONE_00882,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_00919,0,metadata,violates_dataset_negative_rule,natures_in_crop=nan; nearest=9.8deg
+NONCYCLONE_01027,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.7deg
+NONCYCLONE_01114,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.4deg
+NONCYCLONE_01115,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_01116,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.2deg
+NONCYCLONE_01150,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_01166,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.3deg
+NONCYCLONE_01176,0,metadata,tracked_system_centre_in_crop,natures_in_crop=MX; nearest=11.0deg
+NONCYCLONE_01188,0,metadata,violates_dataset_negative_rule,natures_in_crop=nan; nearest=10.0deg
+NONCYCLONE_01195,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_01257,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=9.5deg
+NONCYCLONE_01287,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.5deg
+NONCYCLONE_01369,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.3deg
+NONCYCLONE_01395,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.6deg
+NONCYCLONE_01399,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=12.0deg
+NONCYCLONE_01453,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=3.4deg
+NONCYCLONE_01467,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.2deg
+NONCYCLONE_01530,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.6deg
+NONCYCLONE_01556,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.5deg
+NONCYCLONE_01570,0,metadata,violates_dataset_negative_rule,natures_in_crop=DS; nearest=7.9deg
+NONCYCLONE_01617,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_01679,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.0deg
+NONCYCLONE_01693,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.5deg
+NONCYCLONE_01722,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=12.3deg
+NONCYCLONE_01766,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_01797,0,metadata,violates_dataset_negative_rule,natures_in_crop=MX; nearest=6.9deg
+NONCYCLONE_01844,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.2deg
+NONCYCLONE_01940,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_01966,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_01970,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.5deg
+NONCYCLONE_02099,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.5deg
+NONCYCLONE_02128,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=5.0deg
+NONCYCLONE_02182,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_02194,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.3deg
+NONCYCLONE_02200,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_02257,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.0deg
+NONCYCLONE_02289,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_02389,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_02395,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=9.1deg
+NONCYCLONE_02503,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.4deg
+NONCYCLONE_02552,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_02577,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.7deg
+NONCYCLONE_02597,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.3deg
+NONCYCLONE_02598,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.7deg
+NONCYCLONE_02674,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=8.5deg
+NONCYCLONE_02718,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=12.4deg
+NONCYCLONE_02764,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_02774,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_02809,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.4deg
+NONCYCLONE_02963,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=10.0deg
+NONCYCLONE_03029,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_03030,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.5deg
+NONCYCLONE_03032,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=12.3deg
+NONCYCLONE_03036,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.7deg
+NONCYCLONE_03092,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.8deg
+NONCYCLONE_03129,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_03141,0,metadata,tracked_system_centre_in_crop,natures_in_crop=DS; nearest=11.7deg
+NONCYCLONE_03149,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.8deg
+NONCYCLONE_03157,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.9deg
+NONCYCLONE_03192,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=9.4deg
+NONCYCLONE_03218,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.6deg
+NONCYCLONE_03242,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.9deg
+NONCYCLONE_03304,0,metadata,violates_dataset_negative_rule,natures_in_crop=nan; nearest=9.9deg
+NONCYCLONE_03306,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=8.8deg
+NONCYCLONE_03334,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.2deg
+NONCYCLONE_03425,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_03493,0,metadata,tracked_system_centre_in_crop,natures_in_crop=DS; nearest=10.2deg
+NONCYCLONE_03496,0,metadata,violates_dataset_negative_rule,natures_in_crop=nan; nearest=9.9deg
+NONCYCLONE_03503,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.7deg
+NONCYCLONE_03608,0,metadata,tracked_system_centre_in_crop,natures_in_crop=DS; nearest=10.9deg
+NONCYCLONE_03637,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.5deg
+NONCYCLONE_03744,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.3deg
+NONCYCLONE_03802,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_03824,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.6deg
+NONCYCLONE_03933,0,metadata,violates_dataset_negative_rule,natures_in_crop=nan; nearest=10.0deg
+NONCYCLONE_03941,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.5deg
+NONCYCLONE_03952,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=9.1deg
+NONCYCLONE_04191,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_04217,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.1deg
+NONCYCLONE_04224,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.3deg
+NONCYCLONE_04233,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_04267,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=10.0deg
+NONCYCLONE_04299,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.8deg
+NONCYCLONE_04313,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=8.2deg
+NONCYCLONE_04378,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.9deg
+NONCYCLONE_04385,0,metadata,violates_dataset_negative_rule,natures_in_crop=TS; nearest=7.0deg
+NONCYCLONE_04456,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_04486,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=11.3deg
+NONCYCLONE_04505,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.4deg
+NONCYCLONE_04526,0,metadata,tracked_system_centre_in_crop,natures_in_crop=TS; nearest=10.2deg

@@ -1,0 +1,119 @@
+# VayuDrishti — cyclone INTENSITY CLASSIFICATION (pipeline stage 2; runs after identification = CYCLONE)
+#
+# Labels are IMD (RSMC New Delhi) intensity categories, grouped into 4 classes, applied to the IBTrACS
+# USA_WIND (JTWC/NHC 1-minute sustained wind, knots) of every tropical fix (NATURE == TS) in all basins.
+# USA_WIND is the only wind reported on one averaging basis in every basin; IMD itself uses a 3-minute
+# wind, so labels near a threshold can differ from IMD's official category (quantified in the audit).
+# Relative paths resolve against identification_model/.
+
+project:
+  name: VayuDrishti Cyclone Classification Model
+  model_version: v1
+  dataset_version: cls-v1.0
+  seed: 42
+
+task: multiclass
+
+sources:
+  finalized_metadata: E:/PS70_Finalized_ML_Metadata_2000_Present.xlsx
+  ibtracs: H:/ibtracs.since1980.list.v04r01.csv
+
+paths:
+  raw: data/raw/classification
+  processed: data/processed/classification
+  metadata: data/metadata/classification
+  splits: data/metadata/classification
+  models: ../backend/models/classification
+  reports: reports/classification
+  results: results/classification
+
+files:
+  candidates: candidates.csv
+  manifest: classification_dataset.csv
+  near_duplicates: near_duplicates.csv
+  leakage_report: classification_leakage_check.json
+
+# IMD classification of cyclonic disturbances (knots): D 17–27, DD 28–33, CS 34–47, SCS 48–63,
+# VSCS 64–89, ESCS 90–119, SuCS >= 120. Grouped because SuCS alone has too few storms to learn.
+classes:
+  - {id: 0, code: D-DD, name: Depression / Deep Depression, imd: [Depression, Deep Depression], min_kt: 17, max_kt: 33}
+  - {id: 1, code: CS-SCS, name: Cyclonic Storm / Severe Cyclonic Storm, imd: [Cyclonic Storm, Severe Cyclonic Storm], min_kt: 34, max_kt: 63}
+  - {id: 2, code: VSCS, name: Very Severe Cyclonic Storm, imd: [Very Severe Cyclonic Storm], min_kt: 64, max_kt: 89}
+  - {id: 3, code: ESCS-SuCS, name: Extremely Severe / Super Cyclonic Storm, imd: [Extremely Severe Cyclonic Storm, Super Cyclonic Storm], min_kt: 90, max_kt: null}
+
+# Same imagery pipeline as identification (one source, one code path).
+gridsat:
+  opendap_base: https://www.ncei.noaa.gov/thredds/dodsC/cdr/gridsat
+  variable: irwin_cdr
+  scale_factor: 0.01
+  add_offset: 200.0
+  fill_value: -31999
+  half_width_deg: 9.0
+  slot_hours: 3
+  max_time_offset_h: 1.5
+  workers: 8
+  timeout_s: 90
+  retries: 4
+
+imagery:
+  bt_min_k: 180.0
+  bt_max_k: 310.0
+  png_size: 256
+  max_missing_fraction: 0.02
+  cold_cloud_bt_k: 235.0
+  central_box_fraction: 0.5
+  near_duplicate_hamming: 4
+  near_duplicate_corr: 0.97
+
+candidates:
+  basins: [NI, SI, WP, EP, SP]
+  min_season: 2000
+  natures: [TS]
+  wind_column: USA_WIND
+  per_class: 1400             # over-provisioned; cleaning then keeps selection.per_class per class
+  max_fixes_per_storm: 6      # across all classes
+  min_hours_apart: 12         # between any two chosen fixes of the same storm
+
+selection:
+  per_class: 1250
+
+splits:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  group_overlap_hours: 12
+  file_pattern: "classification_{split}.csv"
+
+train:
+  model_name: efficientnet_b0
+  pretrained: true
+  num_classes: 4
+  head: {hidden: 256, dropout: 0.3}   # GAP → FC(256) → ReLU → Dropout → 4-way head → softmax
+  input_size: 224
+  batch_size: 32
+  epochs: 40
+  optimizer: adamw
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-4
+  scheduler: cosine
+  early_stopping_patience: 8
+  selection_metric: val_macro_f1
+  decision_threshold: 0.5         # unused for multiclass (argmax)
+  class_balance: auto             # classes are balanced by design → none unless a split drifts
+  class_balance_tolerance: 0.05
+  amp: true
+  num_workers: 0
+
+augmentation:                     # train split only
+  rotation_deg: 15
+  scale: [0.9, 1.0]               # mild: storm size is kept
+  hflip: 0.5
+  vflip: 0.5
+  brightness: 0.05                # small: cloud-top temperature is itself an intensity cue
+  contrast: 0.05
+  noise_std: 0.01
+
+evaluation:
+  min_samples_per_area: 30
+  calibration_bins: 10
+  max_error_examples: 60

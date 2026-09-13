@@ -1,0 +1,53 @@
+{
+  "0": {
+    "code": "D-DD",
+    "name": "Depression / Deep Depression",
+    "imd_categories": [
+      "Depression",
+      "Deep Depression"
+    ],
+    "wind_kt": [
+      17,
+      33
+    ],
+    "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+  },
+  "1": {
+    "code": "CS-SCS",
+    "name": "Cyclonic Storm / Severe Cyclonic Storm",
+    "imd_categories": [
+      "Cyclonic Storm",
+      "Severe Cyclonic Storm"
+    ],
+    "wind_kt": [
+      34,
+      63
+    ],
+    "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+  },
+  "2": {
+    "code": "VSCS",
+    "name": "Very Severe Cyclonic Storm",
+    "imd_categories": [
+      "Very Severe Cyclonic Storm"
+    ],
+    "wind_kt": [
+      64,
+      89
+    ],
+    "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+  },
+  "3": {
+    "code": "ESCS-SuCS",
+    "name": "Extremely Severe / Super Cyclonic Storm",
+    "imd_categories": [
+      "Extremely Severe Cyclonic Storm",
+      "Super Cyclonic Storm"
+    ],
+    "wind_kt": [
+      90,
+      null
+    ],
+    "wind_source": "IBTrACS USA_WIND (JTWC/NHC 1-min sustained)"
+  }
+}

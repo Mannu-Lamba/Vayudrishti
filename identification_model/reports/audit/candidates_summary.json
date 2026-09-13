@@ -1,0 +1,85 @@
+{
+  "positive_candidates_in": 2000,
+  "positive_candidates_kept": 1537,
+  "positive_reserve_added": 750,
+  "positive_reserve_quota": {
+    "arabian_sea/weak": 28,
+    "arabian_sea/medium": 51,
+    "arabian_sea/strong": 32,
+    "bay_of_bengal/weak": 32,
+    "bay_of_bengal/medium": 43,
+    "bay_of_bengal/strong": 31,
+    "south_indian_ocean/weak": 34,
+    "south_indian_ocean/medium": 58,
+    "south_indian_ocean/strong": 43,
+    "western_pacific/weak": 82,
+    "western_pacific/medium": 57,
+    "western_pacific/strong": 43,
+    "eastern_pacific/weak": 83,
+    "eastern_pacific/medium": 66,
+    "eastern_pacific/strong": 45,
+    "southern_pacific/weak": 83,
+    "southern_pacific/medium": 58,
+    "southern_pacific/strong": 42
+  },
+  "positive_reserve_taken": {
+    "arabian_sea/weak": 4,
+    "arabian_sea/medium": 51,
+    "arabian_sea/strong": 32,
+    "bay_of_bengal/weak": 32,
+    "bay_of_bengal/medium": 43,
+    "bay_of_bengal/strong": 31,
+    "south_indian_ocean/weak": 0,
+    "south_indian_ocean/medium": 58,
+    "south_indian_ocean/strong": 43,
+    "western_pacific/weak": 82,
+    "western_pacific/medium": 57,
+    "western_pacific/strong": 43,
+    "eastern_pacific/weak": 62,
+    "eastern_pacific/medium": 66,
+    "eastern_pacific/strong": 45,
+    "southern_pacific/weak": 1,
+    "southern_pacific/medium": 58,
+    "southern_pacific/strong": 42
+  },
+  "negative_pool_in": 4615,
+  "negative_kept": 4503,
+  "rejections": [
+    {
+      "label": 0,
+      "reason": "tracked_system_centre_in_crop",
+      "n": 87
+    },
+    {
+      "label": 0,
+      "reason": "violates_dataset_negative_rule",
+      "n": 25
+    },
+    {
+      "label": 1,
+      "reason": "nature_not_tropical",
+      "n": 463
+    }
+  ],
+  "candidates_total": 6790,
+  "positives_by_area_intensity": {
+    "/medium": 143,
+    "/strong": 122,
+    "/weak": 109,
+    "arabian_sea/medium": 143,
+    "arabian_sea/strong": 122,
+    "arabian_sea/weak": 119,
+    "bay_of_bengal/medium": 143,
+    "bay_of_bengal/strong": 122,
+    "bay_of_bengal/weak": 143,
+    "eastern_pacific/medium": 143,
+    "eastern_pacific/strong": 122,
+    "eastern_pacific/weak": 122,
+    "southern_pacific/medium": 143,
+    "southern_pacific/strong": 122,
+    "southern_pacific/weak": 61,
+    "western_pacific/medium": 143,
+    "western_pacific/strong": 122,
+    "western_pacific/weak": 143
+  }
+}

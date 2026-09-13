@@ -1,0 +1,189 @@
+{
+  "false_positives": 11,
+  "false_negatives": 12,
+  "fp_rate_by_difficulty": {
+    "easy": {
+      "n": 115,
+      "errors": 1,
+      "rate": 0.0087
+    },
+    "hard": {
+      "n": 67,
+      "errors": 9,
+      "rate": 0.1343
+    },
+    "moderate": {
+      "n": 114,
+      "errors": 1,
+      "rate": 0.0088
+    }
+  },
+  "fp_rate_by_subregion": {
+    "arabian_sea": {
+      "n": 134,
+      "errors": 6,
+      "rate": 0.0448
+    },
+    "bay_of_bengal": {
+      "n": 162,
+      "errors": 5,
+      "rate": 0.0309
+    }
+  },
+  "fn_rate_by_intensity": {
+    "medium": {
+      "n": 111,
+      "errors": 5,
+      "rate": 0.045
+    },
+    "strong": {
+      "n": 87,
+      "errors": 0,
+      "rate": 0.0
+    },
+    "weak": {
+      "n": 107,
+      "errors": 7,
+      "rate": 0.0654
+    }
+  },
+  "fn_rate_by_area": {
+    "arabian_sea": {
+      "n": 48,
+      "errors": 1,
+      "rate": 0.0208
+    },
+    "bay_of_bengal": {
+      "n": 52,
+      "errors": 7,
+      "rate": 0.1346
+    },
+    "eastern_pacific": {
+      "n": 51,
+      "errors": 0,
+      "rate": 0.0
+    },
+    "south_indian_ocean": {
+      "n": 56,
+      "errors": 0,
+      "rate": 0.0
+    },
+    "southern_pacific": {
+      "n": 47,
+      "errors": 1,
+      "rate": 0.0213
+    },
+    "western_pacific": {
+      "n": 51,
+      "errors": 3,
+      "rate": 0.0588
+    }
+  },
+  "fn_rate_by_lifecycle_stage": {
+    "Developing": {
+      "n": 46,
+      "errors": 1,
+      "rate": 0.0217
+    },
+    "Intensifying": {
+      "n": 58,
+      "errors": 0,
+      "rate": 0.0
+    },
+    "Mature / Peak": {
+      "n": 49,
+      "errors": 3,
+      "rate": 0.0612
+    },
+    "Weakening / Dissipating": {
+      "n": 43,
+      "errors": 2,
+      "rate": 0.0465
+    },
+    "reserve (not staged)": {
+      "n": 109,
+      "errors": 6,
+      "rate": 0.055
+    }
+  },
+  "fn_wind_kt_median": 25.0,
+  "tp_wind_kt_median": 30.0,
+  "fn_central_cold_cloud_median": 0.20754499999999998,
+  "tp_central_cold_cloud_median": 0.27675,
+  "fp_central_cold_cloud_median": 0.30166,
+  "tn_central_cold_cloud_median": 0.02604,
+  "fp_months": {
+    "4": 1,
+    "5": 3,
+    "6": 2,
+    "7": 1,
+    "11": 3,
+    "12": 1
+  },
+  "fn_months": {
+    "5": 2,
+    "7": 1,
+    "8": 2,
+    "9": 3,
+    "11": 1,
+    "12": 3
+  },
+  "fn_wind_le_25kt": 7,
+  "fn_wind_missing": 4,
+  "fn_weak_storms": 7,
+  "fn_bay_of_bengal": 7,
+  "fp_hard": 9,
+  "pregenesis": {
+    "window_hours": 72,
+    "false_positives_with_system_entering_crop": 6,
+    "false_positives": 11,
+    "false_positive_rate_of_hits": 0.5455,
+    "true_negatives_with_system_entering_crop": 25,
+    "true_negatives": 285,
+    "true_negative_rate_of_hits": 0.0877,
+    "false_positive_details": [
+      {
+        "image_id": "IMG3092",
+        "timestamp": "2015-07-26T18:00:00Z",
+        "cyclone_probability": 0.999995,
+        "system": "2015209N26072 UNNAMED (TS)",
+        "hours_ahead": 18.0
+      },
+      {
+        "image_id": "IMG2942",
+        "timestamp": "2013-11-04T00:00:00Z",
+        "cyclone_probability": 0.9456,
+        "system": "2013310N06066 UNNAMED (DS)",
+        "hours_ahead": 48.0
+      },
+      {
+        "image_id": "IMG2124",
+        "timestamp": "2002-05-09T18:00:00Z",
+        "cyclone_probability": 0.930877,
+        "system": "2002129N08096 UNNAMED (TS)",
+        "hours_ahead": 18.0
+      },
+      {
+        "image_id": "IMG3304",
+        "timestamp": "2018-05-20T06:00:00Z",
+        "cyclone_probability": 0.913429,
+        "system": "2018141N08059 MEKUNU (TS)",
+        "hours_ahead": 24.0
+      },
+      {
+        "image_id": "IMG3138",
+        "timestamp": "2015-11-06T12:00:00Z",
+        "cyclone_probability": 0.880596,
+        "system": "2015312N11084 UNNAMED (TS)",
+        "hours_ahead": 39.0
+      },
+      {
+        "image_id": "IMG2510",
+        "timestamp": "2007-06-01T00:00:00Z",
+        "cyclone_probability": 0.793815,
+        "system": "2007151N14072 GONU (TS)",
+        "hours_ahead": 6.0
+      }
+    ]
+  }
+}

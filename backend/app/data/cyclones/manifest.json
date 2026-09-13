@@ -1,0 +1,12 @@
+{
+  "source": "H:/ibtracs.since1980.list.v04r01.csv",
+  "built_by": "prediction_model/scripts/export_backend_data.py",
+  "created_at": "2026-09-12T15:01:00+00:00",
+  "splits": [
+    "test"
+  ],
+  "storms": 324,
+  "fixes": 9961,
+  "sha256": "20c315bbae051631a4febd865e430a0adbfc782057b68092d913103284c1ff73",
+  "note": "Held-out storms only: forecasts served from these are out-of-sample."
+}

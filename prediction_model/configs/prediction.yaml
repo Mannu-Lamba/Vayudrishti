@@ -1,0 +1,81 @@
+# VayuDrishti — cyclone TRACK / INTENSITY / PRESSURE PREDICTION (pipeline stage 3)
+#
+# Inputs are the storm's own observation history from IBTrACS v04r01 (best track). There is no SST,
+# wind-shear or humidity data in the project, so none is used (see reports/data_audit.md).
+# Relative paths resolve against prediction_model/.
+
+project:
+  name: VayuDrishti Track Prediction Model
+  model_version: v1
+  dataset_version: pred-v1.0
+  seed: 42
+
+sources:
+  ibtracs: H:/ibtracs.since1980.list.v04r01.csv
+
+paths:
+  processed: data/processed
+  splits: data/splits
+  models: ../backend/models/prediction
+  reports: reports
+  results: results
+  backend_data: ../backend/app/data/cyclones
+
+data:
+  min_season: 2000                 # same period as the identification/classification datasets
+  basins: [NI, SI, WP, EP, SP]     # the VayuDrishti theatre (no NA / SA)
+  track_type: main
+  synoptic_hours: [0, 6, 12, 18]   # 3-hourly IBTrACS points are interpolated; synoptic fixes only
+  wind_column: USA_WIND            # JTWC/NHC 1-min sustained wind (kt), one basis in every basin
+  pressure_column: USA_PRES        # hPa (mb)
+
+sequence:
+  history_window_hours: 24         # T-24h … T0 → 5 observations
+  observation_interval_hours: 6
+  horizons_hours: [6, 12, 18, 24]  # extendable to 36/48/72 once evaluated
+  time_tolerance_minutes: 0
+  origin_tolerance_hours: 3
+
+baseline:
+  motion_window_hours: 12          # extrapolation baseline: mean motion over the last 12 h
+
+splits:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  stratify: area                   # storm's area at its first fix; every storm is in exactly one split
+
+model:
+  architecture: gru                # gru | lstm | transformer
+  hidden: 128
+  layers: 2
+  dropout: 0.2
+  head_hidden: 128
+  n_heads: 4                       # transformer only
+
+train:
+  batch_size: 512
+  epochs: 80
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-4
+  scheduler: plateau
+  plateau_factor: 0.5
+  plateau_patience: 4
+  early_stopping_patience: 12
+  loss: huber
+  huber_delta: 1.0
+  # Targets are standardised per horizon, so the heads' losses are on comparable scales. Track is the
+  # primary output; intensity and pressure share the representation at half weight (and pressure
+  # targets are missing more often, so its masked loss is noisier).
+  loss_weights: {track: 1.0, intensity: 0.5, pressure: 0.5}
+  grad_clip: 1.0
+  num_workers: 0
+
+uncertainty:
+  method: empirical                # radius = quantile of VALIDATION track errors per horizon (NHC-cone style)
+  quantile: 0.67
+
+evaluation:
+  min_samples_per_area: 100
+  min_storms_per_area: 5
+  bootstrap: 1000

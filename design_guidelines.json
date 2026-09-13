@@ -1,0 +1,124 @@
+{
+  "project_title": "VayuDrishti — AI/ML Tropical Cyclone Intelligence & Prediction Platform",
+  "sih_context": "Smart India Hackathon 2026 Problem Statement: AI/ML based system for identification, classification, and prediction of tropical cyclone patterns using multi-source satellite data",
+  "geographic_scope": "North Indian Ocean (Bay of Bengal, Arabian Sea, Indian Coastline)",
+  "app_type": "Mission-Control Meteorological Dashboard",
+  "theme": {
+    "mode": "Dark Command Center",
+    "background": "#070B12",
+    "surface": "#0F172A",
+    "surface_secondary": "#1E293B",
+    "border": "rgba(51, 65, 85, 0.5)",
+    "border_highlight": "rgba(6, 182, 212, 0.4)"
+  },
+  "color_palette": {
+    "primary": "#06B6D4",
+    "primary_glow": "rgba(6, 182, 212, 0.25)",
+    "secondary": "#3B82F6",
+    "accent_teal": "#0D9488",
+    "warning_amber": "#F59E0B",
+    "warning_orange": "#F97316",
+    "danger_red": "#EF4444",
+    "success_emerald": "#10B981",
+    "text_primary": "#F8FAFC",
+    "text_secondary": "#94A3B8",
+    "text_muted": "#64748B",
+    "cyclone_categories": {
+      "depression": "#3B82F6",
+      "deep_depression": "#06B6D4",
+      "cyclonic_storm": "#10B981",
+      "severe_cs": "#F59E0B",
+      "very_severe_cs": "#F97316",
+      "extremely_severe_cs": "#EF4444",
+      "super_cyclonic_storm": "#DC2626"
+    }
+  },
+  "typography": {
+    "heading_font": "Geist Mono Variable, JetBrains Mono Variable, monospace",
+    "body_font": "Geist Variable, sans-serif",
+    "telemetry_font": "JetBrains Mono Variable, monospace",
+    "hierarchy": {
+      "h1_dashboard": "text-2xl sm:text-3xl font-mono tracking-tight font-bold text-slate-100",
+      "h2_section": "text-lg sm:text-xl font-mono tracking-tight font-semibold text-slate-200",
+      "h3_card": "text-sm sm:text-base font-mono font-medium text-cyan-400",
+      "metric_value": "text-3xl sm:text-4xl font-mono font-bold tracking-tight text-slate-50",
+      "metric_label": "text-xs font-mono uppercase tracking-widest text-slate-400"
+    }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "name": "Dashboard Overview",
+      "description": "High-level mission control dashboard with key active storm metrics, geospatial map view, wind/pressure sparklines, satellite quick preview, and alert ticker."
+    },
+    {
+      "path": "/cyclones",
+      "name": "Cyclone Monitor",
+      "description": "Comprehensive list and detail view of active & recent cyclonic storms in North Indian Ocean, Bay of Bengal & Arabian Sea with intensity breakdown and Dvorak T-numbers."
+    },
+    {
+      "path": "/satellite",
+      "name": "Satellite Intelligence",
+      "description": "Multi-spectral satellite imagery analyzer featuring enhanced Infrared (IR) cloud-top temperature renderings, water vapor channels, and AI contour segmentation overlays."
+    },
+    {
+      "path": "/prediction",
+      "name": "AI Prediction Center",
+      "description": "AI/ML forecast trajectory suite showing 24h/48h/72h track cones, wind intensity curves, central pressure evolution, and estimated landfall impact coordinates."
+    },
+    {
+      "path": "/history",
+      "name": "Historical Analysis",
+      "description": "Historical cyclone archive (2000-2025) for Bay of Bengal & Arabian Sea, seasonal landfall patterns, climate trends, and historical storm comparisons."
+    },
+    {
+      "path": "/about",
+      "name": "Methodology & Architecture",
+      "description": "Technical overview of the VayuDrishti SIH 2026 AI/ML framework, multi-source satellite integration pipeline (INSAT-3D, Sentinel-1 SAR), and model metrics."
+    },
+    {
+      "path": "/settings",
+      "name": "Preferences & Configuration",
+      "description": "Fully functional user preferences page allowing customization of telemetry units, map projections, satellite color tables, alert thresholds, and refresh rates."
+    }
+  ],
+  "visual_enhancers": {
+    "radar_grid": "Subtle 1px tactical coordinate grid with corner crosshairs",
+    "status_pulses": "Animated glowing status indicator dot for active severe cyclones",
+    "glass_panels": "bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-lg",
+    "infrared_gradient": "Custom SVG/Canvas color map ranging from black -> purple -> teal -> yellow -> intense crimson/white core",
+    "scanlines": "Subtle background scanline effect on mission critical telemetry panels"
+  },
+  "component_guidelines": {
+    "navigation": "Fixed top command header with live GMT/IST timestamp clock, current active storm ticker, navigation links with subtle cyan indicator line, and quick preferences toggle.",
+    "cards": "Dark slate containers with sharp or subtle 6px rounded corners, cyan top accent border on active elements, explicit internal padding (p-5 or p-6).",
+    "charts": "Recharts implementation with dark themes, custom Tooltips styled like radar readouts, cyan and amber line strokes, area fills with translucent gradient.",
+    "buttons": "Tactical pill or crisp rectangular buttons with subtle hover glow, explicit data-testid attributes, clear visual states."
+  },
+  "testing_requirements": {
+    "data_testid_convention": "All interactive buttons, links, route triggers, metric cards, dropdowns, tab triggers, and form inputs MUST include explicit data-testid attributes (e.g., data-testid='nav-link-cyclones', data-testid='metric-active-storms', data-testid='satellite-band-selector')."
+  },
+  "instructions_to_main_agent": [
+    "Strictly build a frontend-only React + TypeScript application with zero backend/API execution.",
+    "Ensure all typescript files (.ts, .tsx) have comprehensive interface definitions for CycloneData, Telemetry, PredictionPoint, SatelliteLayer, HistoricalCyclone, and UserPreferences.",
+    "Keep MapLibre GL as a clean visual placeholder/canvas component with interactive overlays, coordinates, and layer selectors.",
+    "Generate infrared satellite previews locally using SVG or HTML5 Canvas with custom color tables (Dvorak/BD enhancement curves) - do not make external image or satellite network calls.",
+    "Provide a fully interactive preferences page on /settings that persists user unit choices (Knots vs Km/h, hPa vs mbar) and updates global UI state.",
+    "Include realistic mock data representing North Indian Ocean cyclones (e.g. Cyclone Biparjoy, Cyclone Remal, Cyclone Michaung, Cyclone Tej).",
+    "Add 'data-testid' to all buttons, navigation items, cards, charts, tabs, inputs, and state selectors for robust automated testing."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g. transition: all). Always add transitions for specific interactive elements excluding transforms.",
+    "You MUST NOT center align the app container (.App { text-align: center; }).",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons. Use Lucide React icons exclusively.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "All interactive and key informational elements MUST include a data-testid attribute."
+  ]
+}
