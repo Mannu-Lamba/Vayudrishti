@@ -58,7 +58,7 @@ class RegistryStorm:
     area: str
     fixes: pd.DataFrame  # FIX_COLUMNS, time-sorted, unique times
     source: str
-    forecastable: bool  # the full best track is on the server, so the prediction model can run
+    forecastable: bool  # the full held-out best track is on the server (whether a forecast can start is registry_service's test)
 
     @property
     def first_time(self) -> pd.Timestamp:

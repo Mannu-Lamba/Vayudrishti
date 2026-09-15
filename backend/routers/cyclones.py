@@ -98,7 +98,7 @@ def cyclone_track(cyclone_id: str, start: str | None = Query(None, description="
 
 @router.get("/{cyclone_id}/prediction", response_model=PredictionResponse, responses=ERROR_RESPONSES,
             summary="Track / intensity / pressure forecast for T+6 … T+24 h")
-def cyclone_prediction(cyclone_id: str, at: str | None = Query(None, description="Forecast time (ISO 8601); default = the newest observation")):
+def cyclone_prediction(cyclone_id: str, at: str | None = Query(None, description="Forecast time (ISO 8601); default = the latest observation a forecast can start from")):
     """Forecast from the storm's own observation history ending at `at`. `confidence` is always null;
     `uncertaintyRadiusKm` is an empirical radius from validation errors, not a calibrated probability."""
     try:

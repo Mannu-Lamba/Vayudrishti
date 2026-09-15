@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, APIRouter, Request
 from fastapi.exception_handlers import request_validation_exception_handler
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 import os
@@ -192,6 +192,12 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 logger.info("CORS: %s", "any origin, without credentials" if CORS_WILDCARD else ", ".join(CORS_ALLOWED))
+
+@app.get("/", include_in_schema=False)
+async def index():
+    """Every route lives under /api, so the bare backend URL has no page of its own: open the interactive API docs."""
+    return RedirectResponse(url="/docs")
+
 
 # Include the router in the main app last so every route remains under /api.
 app.include_router(api_router)

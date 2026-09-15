@@ -22,7 +22,9 @@ from models.registry import (
 )
 from repositories.cyclone_repository import RepositoryUnavailableError
 from repositories.registry_repository import RegistryStorm, registry_repository
+from services import prediction_service
 from services.errors import MlServiceError
+from services.ml_registry import registry as ml_registry
 
 logger = logging.getLogger(__name__)
 
@@ -96,6 +98,22 @@ def _page(items: list, page: int, page_size: int) -> tuple[list, int, int]:
 
 # ---------------------------------------------------------------- cyclones
 
+_origin_cache: dict[tuple, str | None] = {}
+
+
+def latest_forecast_origin(storm: RegistryStorm) -> str | None:
+    """The latest fix the prediction model can start from (the same test GET /cyclones/{id}/prediction applies: a complete
+    24 h window and observed wind + pressure). None when there is no such fix or the prediction model is not loaded."""
+    slot = ml_registry.prediction
+    if not slot.ready:
+        return None
+    key = (storm.storm_id, len(storm.fixes), storm.last_time)
+    if key not in _origin_cache:
+        origins = prediction_service.forecast_origins(storm.fixes, slot.instance.cfg)
+        _origin_cache[key] = iso(origins[-1]) if origins else None
+    return _origin_cache[key]
+
+
 def cyclone_out(storm: RegistryStorm, now: pd.Timestamp) -> CycloneOut:
     fixes = storm.fixes
     last = fixes.iloc[-1]
@@ -108,6 +126,7 @@ def cyclone_out(storm: RegistryStorm, now: pd.Timestamp) -> CycloneOut:
             speed = round(float(haversine_km(prev["lat"], prev["lon"], last["lat"], last["lon"])) / hours, 1)
     label = AREA_LABELS.get(storm.area, "Indian Ocean" if storm.basin == "NI" else storm.basin)
     peak = storm.peak_wind_kt
+    origin = latest_forecast_origin(storm)
     return CycloneOut(
         id=storm.storm_id, code=storm.storm_id, name=display_name(storm.name),
         status="active" if now - storm.last_time <= ACTIVE_WITHIN else "historical",
@@ -115,7 +134,8 @@ def cyclone_out(storm: RegistryStorm, now: pd.Timestamp) -> CycloneOut:
         wind_kmh=_kmh(last["wind_kt"]), pressure_hpa=_num(last["pressure_hpa"]), movement_direction=direction, movement_speed_kmh=speed,
         location=LocationOut(latitude=float(last["lat"]), longitude=float(last["lon"]), label=label),
         observed_at=iso(storm.last_time), first_observed_at=iso(storm.first_time), season=int(storm.first_time.year), fixes=len(fixes),
-        peak_wind_kmh=_kmh(peak), peak_category=imd_category(peak), source=storm.source, forecast_available=storm.forecastable,
+        peak_wind_kmh=_kmh(peak), peak_category=imd_category(peak), source=storm.source,
+        forecast_available=origin is not None, forecast_origin=origin,
     )
 
 

@@ -147,6 +147,12 @@ def predict(cyclone_id: str, at: str | None) -> PredictionResponse:
     eng = engine()
     storm = _storm(cyclone_id)
     at_ts = _parse_time(at, "at")
+    if at_ts is None:
+        # No time asked for: the latest observation a forecast can start from (a complete 24 h window and observed
+        # wind + pressure). A best track's final fixes often lack wind or pressure, so "the newest fix" would fail.
+        origins = forecast_origins(storm, eng.cfg)
+        if origins:
+            at_ts = origins[-1]
     try:
         origin = storm["time"].iloc[resolve_origin(storm, at_ts, eng.cfg)]
     except SequenceInputError as exc:

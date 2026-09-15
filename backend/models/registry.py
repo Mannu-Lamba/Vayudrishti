@@ -43,7 +43,10 @@ class CycloneOut(_Camel):
     peak_wind_kmh: float | None
     peak_category: str | None
     source: str = Field(description="cyclone_database, the held-out IBTrACS best track the API serves, or both")
-    forecast_available: bool = Field(description="True when the full best track is on the server, so the prediction model can run")
+    forecast_available: bool = Field(description="True when at least one fix has a complete 24 h history and observed wind + "
+                                                 "pressure, so the prediction model can run")
+    forecast_origin: str | None = Field(None, description="Latest fix a forecast can start from (the default `at` of "
+                                                          "GET /cyclones/{id}/prediction); null when none")
 
 
 class TrackFixOut(_Camel):
@@ -130,7 +133,7 @@ class RegionalObservationOut(_Camel):
 
 class EventOut(_Camel):
     id: str
-    kind: Literal["record"] = Field(description="record = the latest observation of a storm in the database")
+    kind: Literal["record"] = Field("record", description="record = the latest observation of a storm in the database")
     priority: Literal["info"] = "info"
     title: str
     source: str

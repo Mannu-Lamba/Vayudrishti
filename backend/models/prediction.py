@@ -30,7 +30,8 @@ class PredictionRequest(_Camel):
     cyclone_id: str = Field(min_length=1, max_length=32, description="IBTrACS storm id (SID), e.g. 2020136N10088 (AMPHAN)")
     timestamp: datetime | None = Field(
         None, description="Forecast time T0, ISO 8601 (UTC if no offset). The latest observation at or up to 3 h before it is the "
-                          "forecast origin. Default: the storm's newest observation")
+                          "forecast origin. Default: the storm's latest observation a forecast can start from "
+                          "(complete 24 h history and observed wind + pressure)")
     latitude: float | None = Field(
         None, ge=-90, le=90, description="Optional consistency check, not a model input: where the client believes the storm was at T0. "
                                          "Rejected (400 POSITION_MISMATCH) when more than 50 km from the observed fix")
