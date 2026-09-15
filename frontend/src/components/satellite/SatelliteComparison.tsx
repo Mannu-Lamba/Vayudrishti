@@ -27,7 +27,7 @@ interface SatelliteComparisonProps {
 function Thumb({ card }: { card: ComparisonCard }) {
   const { observation, frame, isLoading } = card;
   if (observation?.available && frame?.imageUrl && frame.id === observation.id) {
-    return <img src={frame.imageUrl} alt={`Mock thumbnail from ${card.source.name}`} draggable={false} />;
+    return <img src={frame.imageUrl} alt={`Frame from ${card.source.name}`} draggable={false} />;
   }
   if (observation?.available && isLoading) {
     return <span className="sat-compare-thumb-state"><LoaderCircle size={14} className="state-spinner" />ACQUIRING</span>;

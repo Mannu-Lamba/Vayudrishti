@@ -1,5 +1,5 @@
 import path from "node:path";
-import { defineConfig, type UserConfig } from "vite";
+import { defineConfig, loadEnv, type UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { visualEdits } from "@emergentbase/visual-edits/vite";
@@ -34,8 +34,12 @@ if (!hotReloadDisabled) {
 }
 
 // https://vite.dev/config/
-export default defineConfig(async () => {
+export default defineConfig(async ({ mode }) => {
   const emergentOverlay = await loadEmergentOverlay();
+  // Where the dev/preview server forwards /api. Default: the platform's FastAPI (supervisor: backend, :8001).
+  // A machine that runs the backend elsewhere sets API_PROXY_TARGET in frontend/.env.local (e.g.
+  // http://127.0.0.1:3001). Not VITE_-prefixed, so it stays in the dev server and never reaches the bundle.
+  const apiProxyTarget = loadEnv(mode, __dirname, "").API_PROXY_TARGET || "http://localhost:8001";
   return {
     plugins: [
       react(),
@@ -102,10 +106,10 @@ export default defineConfig(async () => {
       hmr: hotReloadDisabled ? false : { overlay: !emergentOverlay },
       watch: hotReloadDisabled ? null : { usePolling: true, interval: 300 },
       // The /api proxy convention: frontend code calls relative /api/*, never an
-      // absolute backend URL. Target is the FastAPI dev server (supervisor: backend).
+      // absolute backend URL. Target is the FastAPI server (API_PROXY_TARGET, see above).
       proxy: {
         "/api": {
-          target: "http://localhost:8001",
+          target: apiProxyTarget,
           changeOrigin: true,
         },
       },

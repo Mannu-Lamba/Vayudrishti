@@ -132,6 +132,7 @@ footer { max-width: 1320px; margin: 0 auto; padding: 0 24px 32px; color: var(--f
     </svg>
     VayuDrishti <span>Model test bench</span>
   </div>
+  <a class="btn" href="/" style="text-decoration:none">Website</a>
   <a class="btn" href="/evaluation" style="text-decoration:none">Model evaluation →</a>
   <div class="status" id="status"><span class="pill"><i></i>Checking backend…</span></div>
   <button class="btn primary" id="run-all" disabled>Run all three models</button>
@@ -208,7 +209,7 @@ footer { max-width: 1320px; margin: 0 auto; padding: 0 24px 32px; color: var(--f
       Confidence is not produced by the model; the radius is the distance that held 67 % of validation track errors. AI decision support, not an official IMD/RSMC forecast.</p>
   </section>
 </main>
-<footer>Everything runs on this machine: the page is at localhost:3001, and the models are in the FastAPI process on 127.0.0.1:8001. The page never loads a model file.</footer>
+<footer>Everything runs on this machine: this page is localhost:3001/bench, and the models are in the FastAPI process on 127.0.0.1:8001. The page never loads a model file.</footer>
 
 <script type="module">
 import * as maplibregl from "/vendor/maplibre/maplibre-gl.mjs";

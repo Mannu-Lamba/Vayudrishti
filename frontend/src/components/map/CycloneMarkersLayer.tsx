@@ -27,9 +27,9 @@ function hoverHtml(marker: MapCycloneMarker) {
     <span class="map-popup-eyebrow">${escapeHtml(marker.status.toUpperCase())} SYSTEM · CLICK TO SELECT</span>
     <strong>${escapeHtml(marker.code)} · ${escapeHtml(marker.name)}</strong>
     <dl>
-      <div><dt>Category</dt><dd>${escapeHtml(marker.category)}</dd></div>
-      <div><dt>Wind</dt><dd>${escapeHtml(marker.windKmh)} km/h</dd></div>
-      <div><dt>Pressure</dt><dd>${escapeHtml(marker.pressureHpa)} hPa</dd></div>
+      <div><dt>Category</dt><dd>${escapeHtml(marker.category ?? "—")}</dd></div>
+      <div><dt>Wind</dt><dd>${marker.windKmh == null ? "—" : `${escapeHtml(marker.windKmh)} km/h`}</dd></div>
+      <div><dt>Pressure</dt><dd>${marker.pressureHpa == null ? "—" : `${escapeHtml(marker.pressureHpa)} hPa`}</dd></div>
       <div><dt>Position</dt><dd>${escapeHtml(formatCoords(marker.latitude, marker.longitude))}</dd></div>
     </dl>
   </div>`;

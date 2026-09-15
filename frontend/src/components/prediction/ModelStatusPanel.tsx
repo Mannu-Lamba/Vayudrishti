@@ -17,7 +17,6 @@ const KIND_ICON: Record<SystemComponentKind, typeof Boxes> = { model: Boxes, ser
 /** The backend row always reflects the live connection check, not stored status. */
 function backendRow(apiStatus: ApiConnectionStatus): Pick<SystemComponentStatus, "status" | "detail"> {
   switch (apiStatus) {
-    case "demo": return { status: "not_connected", detail: "Demo mode · FastAPI data endpoints not queried" };
     case "checking": return { status: "processing", detail: "Checking connection" };
     case "disconnected": return { status: "error", detail: "Unable to reach the VayuDrishti API" };
     default: return { status: "ready", detail: "Reachable" };

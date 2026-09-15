@@ -5,25 +5,17 @@ import { useDataMode } from "./useDataMode";
 import { DATA_QUERY_ROOT } from "./useServiceQuery";
 import type { ApiConnectionStatus } from "@/types/api";
 
-/** Header/system status: DEMO MODE, CHECKING, API CONNECTED, SYNCING or API DISCONNECTED. */
+/** Header/system status: CHECKING, API CONNECTED, SYNCING or API DISCONNECTED (GET /api/health every 30 s). */
 export function useApiStatus() {
   const dataMode = useDataMode();
-  const live = dataMode.mode === "live";
   const syncing = useIsFetching({ queryKey: [DATA_QUERY_ROOT, "live"] }) > 0;
   const health = useQuery({
     queryKey: ["api-health"],
     queryFn: checkApiHealth,
-    enabled: live,
-    refetchInterval: live ? environment.healthPollMs : false,
+    refetchInterval: environment.healthPollMs,
     retry: false,
     refetchOnWindowFocus: false,
   });
-  const status: ApiConnectionStatus = !live
-    ? "demo"
-    : health.isPending
-      ? "checking"
-      : !health.data?.reachable
-        ? "disconnected"
-        : syncing ? "syncing" : "connected";
+  const status: ApiConnectionStatus = health.isPending ? "checking" : !health.data?.reachable ? "disconnected" : syncing ? "syncing" : "connected";
   return { ...dataMode, status, lastCheckedAt: health.data?.checkedAt, recheck: () => { void health.refetch(); } };
 }

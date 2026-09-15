@@ -15,14 +15,14 @@ export type StateNoticeVariant =
 
 const stateConfig: Record<StateNoticeVariant, { icon: LucideIcon; label: string; text: string }> = {
   loading: { icon: LoaderCircle, label: "LOADING TELEMETRY", text: "Waiting for the observation service to respond." },
-  empty: { icon: SearchX, label: "NO SYSTEMS FOUND", text: "No active systems match the current filter." },
+  empty: { icon: SearchX, label: "NOTHING FOUND", text: "No records match the current filter." },
   error: { icon: AlertCircle, label: "DATA LINK INTERRUPTED", text: "The latest observation could not be retrieved." },
   unavailable: { icon: Database, label: "DATA UNAVAILABLE", text: "This channel is reserved for a future operational feed." },
-  offline: { icon: CloudOff, label: "API NOT CONNECTED", text: "Serving local mock observations. Live satellite and cyclone services connect in Phase 4." },
+  offline: { icon: CloudOff, label: "API NOT CONNECTED", text: "The VayuDrishti API cannot be reached, so no data is shown." },
   "no-source": { icon: SatelliteDish, label: "NO SATELLITE SOURCE AVAILABLE", text: "No configured geostationary source covers this sector." },
   "no-imagery": { icon: ImageOff, label: "NO IMAGERY FOR SELECTED TIMESTAMP", text: "This source did not deliver a frame for the selected time." },
   "no-cyclone": { icon: ScanSearch, label: "NO CYCLONE DETECTED", text: "No tropical cyclone signature in this frame." },
-  "no-systems": { icon: Waves, label: "REGION HAS NO ACTIVE CYCLONES", text: "No active tropical cyclones are being tracked in this sector." },
+  "no-systems": { icon: Waves, label: "NO STORMS IN THIS SECTOR", text: "The database holds no storm for this sector." },
 };
 
 interface StateNoticeProps {

@@ -208,8 +208,9 @@ export function interpolateTrack(points: GeoTrackPoint[], offsetHours: number) {
     offsetHours,
     latitude: lerp(a.latitude, b.latitude),
     longitude: lerp(a.longitude, b.longitude),
-    windKmh: Math.round(lerp(a.windKmh, b.windKmh)),
-    pressureHpa: Math.round(lerp(a.pressureHpa, b.pressureHpa)),
+    // Interpolate only between observed values; a missing value stays missing.
+    windKmh: a.windKmh != null && b.windKmh != null ? Math.round(lerp(a.windKmh, b.windKmh)) : null,
+    pressureHpa: a.pressureHpa != null && b.pressureHpa != null ? Math.round(lerp(a.pressureHpa, b.pressureHpa)) : null,
     confidence: a.confidence != null && b.confidence != null ? Math.round(lerp(a.confidence, b.confidence) * 10) / 10 : undefined,
   };
 }

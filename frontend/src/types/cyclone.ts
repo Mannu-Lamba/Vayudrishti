@@ -1,8 +1,10 @@
 import type { IbtracsBasin } from "./region";
 
-export type CycloneStatus = "active" | "monitoring" | "dissipating";
+/** historical = last observed more than 24 h ago (every storm in the database today). */
+export type CycloneStatus = "active" | "monitoring" | "dissipating" | "historical";
 export type CycloneCategory =
-  // IMD scale (RSMC New Delhi) — North Indian Ocean
+  // IMD scale (RSMC New Delhi) — the scale the backend applies in every basin
+  | "Low Pressure Area"
   | "Depression"
   | "Deep Depression"
   | "Cyclonic Storm"
@@ -26,30 +28,44 @@ export interface CycloneLocation {
 }
 
 /**
- * One system in the operational registry (GET /api/cyclones, GET /api/cyclones/{id}).
+ * One storm of the registry (GET /api/cyclones, GET /api/cyclones/{id}) — a real storm from cyclone_database.
  * Tracks are not embedded: they are requested from GET /api/cyclones/{id}/track when a system is selected.
+ * A value the data does not hold is null and shown as "—", never filled in.
  */
 export interface CycloneData {
   id: string;
   code: string;
   name: string;
   status: CycloneStatus;
-  /** As assigned by the backend / warning centre. The frontend never derives it from wind speed. */
-  category: CycloneCategory;
-  /** Display label only. The UI region/subregion is derived from `basin` + position (lib/regions.ts). */
-  region: "Arabian Sea" | "Bay of Bengal" | "Indian Ocean" | "South Indian Ocean" | "Western Pacific" | "Eastern Pacific" | "Southern Pacific";
-  /** IBTrACS basin — data-layer taxonomy, as the backend will return it. */
+  /** IMD category of the wind at `observedAt`, assigned by the backend; null when no wind was observed. */
+  category: CycloneCategory | null;
+  /** Area label, e.g. "Bay of Bengal". The UI region/subregion is derived from `basin` + position (lib/regions.ts). */
+  region: string;
+  /** IBTrACS basin — data-layer taxonomy. */
   basin: IbtracsBasin;
-  windKmh: number;
-  pressureHpa: number;
-  movementDirection: string;
-  movementSpeedKmh: number;
-  detectionConfidence: number;
-  dvorakTNumber: string;
-  riskLevel: RiskLevel;
+  windKmh: number | null;
+  pressureHpa: number | null;
+  movementDirection: string | null;
+  movementSpeedKmh: number | null;
+  /** Not in the database: always null today. */
+  detectionConfidence: number | null;
+  dvorakTNumber: string | null;
+  /** No risk model is deployed: always null today. */
+  riskLevel: RiskLevel | null;
   location: CycloneLocation;
-  /** Time of the latest observation. */
+  /** Time of the latest observation, ISO 8601 UTC. */
   observedAt: string;
+  firstObservedAt?: string;
+  season?: number;
+  fixes?: number;
+  peakWindKmh?: number | null;
+  peakCategory?: string | null;
+  /** cyclone_database and/or the held-out IBTrACS best track. */
+  source?: string;
+  /** At least one fix has a full 24 h history with observed wind + pressure, so the prediction model can forecast this storm. */
+  forecastAvailable?: boolean;
+  /** Latest fix a forecast can start from (the default forecast time of GET /cyclones/{id}/prediction); null when none. */
+  forecastOrigin?: string | null;
 }
 
 /**
@@ -85,10 +101,15 @@ export interface HistoricalCyclone {
   basin: IbtracsBasin;
   /** Geographic area within the basin (UI label), e.g. "Arabian Sea". */
   area: string;
-  category: CycloneCategory;
-  peakWindKmh: number;
-  landfall: string;
-  casualties: number;
+  /** IMD category of the peak observed wind. */
+  category: CycloneCategory | string | null;
+  peakWindKmh: number | null;
+  /** Not in the database: null. */
+  landfall: string | null;
+  casualties: number | null;
+  firstObservedAt?: string;
+  lastObservedAt?: string;
+  source?: string;
 }
 
 /** GET /api/cyclones/archive/summary — aggregated server-side, never computed from the raw dataset here. */
@@ -100,10 +121,10 @@ export interface ArchiveSummary {
   seasons: { season: string; storms: number }[];
 }
 
-/** GET /api/events — operational feed (alerts, processed frames, forecast runs). */
+/** GET /api/events — today: "record" = the latest observation of a storm in the database. */
 export interface OperationalEvent {
   id: string;
-  kind: "alert" | "satellite" | "forecast";
+  kind: "alert" | "satellite" | "forecast" | "record";
   priority: "high" | "info";
   title: string;
   source: string;

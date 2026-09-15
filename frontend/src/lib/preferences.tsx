@@ -30,10 +30,13 @@ export function usePreferences() {
   return context;
 }
 
-export function formatWind(kmh: number, unit: UserPreferences["windUnit"]): string {
+/** A wind the data does not hold is "—", never "null km/h". */
+export function formatWind(kmh: number | null | undefined, unit: UserPreferences["windUnit"]): string {
+  if (kmh == null || Number.isNaN(kmh)) return "—";
   return unit === "knots" ? `${Math.round(kmh / 1.852)} kt` : `${kmh} km/h`;
 }
 
-export function formatPressure(hpa: number, unit: UserPreferences["pressureUnit"]): string {
+export function formatPressure(hpa: number | null | undefined, unit: UserPreferences["pressureUnit"]): string {
+  if (hpa == null || Number.isNaN(hpa)) return "—";
   return unit === "mbar" ? `${hpa} mbar` : `${hpa} hPa`;
 }

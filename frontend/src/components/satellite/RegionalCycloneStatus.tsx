@@ -3,10 +3,7 @@ import StateNotice from "@/components/common/StateNotice";
 import { formatCoordsCompact } from "@/lib/geo";
 import { formatPressure, formatWind, usePreferences } from "@/lib/preferences";
 import { padCount } from "@/lib/regions";
-import type { RiskLevel } from "@/types/cyclone";
 import type { RegionalCycloneObservation } from "@/types/region";
-
-const RISK_TONE: Record<RiskLevel, string> = { severe: "red", high: "amber", moderate: "cyan", low: "green" };
 
 interface RegionalCycloneStatusProps {
   observation?: RegionalCycloneObservation;
@@ -27,21 +24,21 @@ export default function RegionalCycloneStatus({ observation, isLoading, regionLa
       className="obs-panel"
       eyebrow={`CYCLONE OBSERVATION · ${slotLabel ?? "—"} UTC`}
       title={regionLabel.toUpperCase()}
-      action={<span className={`status-badge ${systems.length ? "status-badge-amber" : "status-badge-green"}`}>{padCount(systems.length)} ACTIVE</span>}
+      action={<span className={`status-badge ${systems.length ? "status-badge-amber" : "status-badge-green"}`}>{padCount(systems.length)} OBSERVED</span>}
       data-testid="regional-cyclone-status"
     >
       {isLoading && !observation ? (
         <div className="panel-body"><StateNotice variant="loading" /></div>
       ) : !strongest ? (
         <div className="panel-body">
-          <StateNotice variant="no-systems" message={`No active tropical cyclones in the ${regionLabel} at this time.${season ? ` Season: ${season}.` : ""}`} />
+          <StateNotice variant="no-systems" message={`No storm in the database was observed in the ${regionLabel} within 3 h of this time.${season ? ` Season: ${season}.` : ""}`} />
         </div>
       ) : (
         <>
           <div className="obs-stat-grid">
-            <div className="obs-stat"><span className="metric-label">Active systems</span><strong data-testid="obs-active-count">{padCount(systems.length)}</strong></div>
-            <div className="obs-stat"><span className="metric-label">Strongest system</span><strong data-testid="obs-strongest-code">{strongest.code}</strong><small>{strongest.name}</small></div>
-            <div className="obs-stat obs-stat-wide"><span className="metric-label">Category</span><strong>{strongest.category}</strong></div>
+            <div className="obs-stat"><span className="metric-label">Storms observed</span><strong data-testid="obs-active-count">{padCount(systems.length)}</strong></div>
+            <div className="obs-stat"><span className="metric-label">Strongest</span><strong data-testid="obs-strongest-code">{strongest.name}</strong><small>{strongest.code}</small></div>
+            <div className="obs-stat obs-stat-wide"><span className="metric-label">Category</span><strong>{strongest.category ?? "— (no wind recorded)"}</strong></div>
             <div className="obs-stat"><span className="metric-label">Max wind</span><strong>{formatWind(strongest.windKmh, preferences.windUnit)}</strong></div>
             <div className="obs-stat"><span className="metric-label">Pressure</span><strong>{formatPressure(strongest.pressureHpa, preferences.pressureUnit)}</strong></div>
           </div>
@@ -55,12 +52,12 @@ export default function RegionalCycloneStatus({ observation, isLoading, regionLa
                 onClick={() => onFocus(system.cycloneId)}
                 data-testid={`obs-system-${system.cycloneId}`}
               >
-                <span className={`status-dot status-dot-${RISK_TONE[system.riskLevel]}`} />
+                <span className={`status-dot status-dot-${system.status === "active" ? "amber" : "muted"}`} />
                 <span className="obs-system-id">
-                  <strong>{system.code} · {system.name}</strong>
-                  <small>{system.category} · {formatCoordsCompact(system.latitude, system.longitude)}</small>
+                  <strong>{system.name} · {system.code}</strong>
+                  <small>{system.category ?? "Category unknown"} · {formatCoordsCompact(system.latitude, system.longitude)}</small>
                 </span>
-                <span className="obs-system-wind">{formatWind(system.windKmh, preferences.windUnit)}<small>{system.confidence.toFixed(1)}% conf.</small></span>
+                <span className="obs-system-wind">{formatWind(system.windKmh, preferences.windUnit)}{system.confidence != null && <small>{system.confidence.toFixed(1)}% conf.</small>}</span>
               </button>
             ))}
           </div>

@@ -1,5 +1,4 @@
-import { AlertTriangle, FlaskConical, RotateCcw } from "lucide-react";
-import { useDataMode } from "@/hooks/useDataMode";
+import { AlertTriangle, RotateCcw } from "lucide-react";
 import { describeApiError } from "@/services/apiClient";
 
 interface ApiErrorStateProps {
@@ -13,9 +12,8 @@ interface ApiErrorStateProps {
   message?: string;
 }
 
-/** Friendly API failure with Retry and a fallback to demo data. Never shows raw errors. */
+/** Friendly API failure with Retry. Never shows raw errors, and never substitutes demo data. */
 export default function ApiErrorState({ error, onRetry, subject, title, message }: ApiErrorStateProps) {
-  const { isDemo, switchToDemo } = useDataMode();
   const copy = describeApiError(error);
   return (
     <div className="api-error-state" role="alert" data-testid="api-error-state">
@@ -25,7 +23,6 @@ export default function ApiErrorState({ error, onRetry, subject, title, message 
         <span>{message ?? `${copy.message}${subject ? ` Unable to load ${subject}.` : ""}`}</span>
         <div className="api-error-actions">
           {onRetry && <button type="button" className="secondary-action" onClick={onRetry} data-testid="api-error-retry"><RotateCcw size={13} />Retry</button>}
-          {!isDemo && <button type="button" className="primary-action" onClick={switchToDemo} data-testid="api-error-use-demo"><FlaskConical size={13} />Use demo data</button>}
         </div>
       </div>
     </div>

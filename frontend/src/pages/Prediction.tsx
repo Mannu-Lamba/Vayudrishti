@@ -1,4 +1,4 @@
-import { BrainCircuit, FlaskConical, MapPinned, Radio, Satellite as SatelliteIcon } from "lucide-react";
+import { BrainCircuit, MapPinned, Radio, Satellite as SatelliteIcon } from "lucide-react";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiErrorState from "@/components/common/ApiErrorState";
@@ -51,7 +51,9 @@ export default function Prediction() {
 
   const regionalQuery = useCyclones(selection);
   const cyclones = useMemo(() => regionalQuery.data ?? [], [regionalQuery.data]);
-  const cyclone = cyclones.find((candidate) => candidate.id === requestedCyclone?.id) ?? cyclones[0] ?? null;
+  // Without ?cyclone=, open on the newest storm the model can actually forecast (full history on the server).
+  const cyclone = cyclones.find((candidate) => candidate.id === requestedCyclone?.id)
+    ?? cyclones.find((candidate) => candidate.forecastAvailable) ?? cyclones[0] ?? null;
   const cycloneId = cyclone?.id;
 
   const prediction = usePrediction(cycloneId);
@@ -103,10 +105,10 @@ export default function Prediction() {
         </div>
       </div>
 
-      <div className={`pred-mode-banner ${api.isDemo ? "pred-mode-demo" : "pred-mode-live"}`} data-testid="prediction-mode-banner">
-        {api.isDemo ? <FlaskConical size={15} /> : <Radio size={15} />}
-        <strong>{api.isDemo ? "USING DEMO PREDICTION" : "LIVE MODEL OUTPUT"}</strong>
-        <span>{api.isDemo ? "Illustrative values for interface design — no ML model is running yet." : "Forecasts come from the connected VayuDrishti inference service."}</span>
+      <div className="pred-mode-banner pred-mode-live" data-testid="prediction-mode-banner">
+        <Radio size={15} />
+        <strong>LIVE DATA</strong>
+        <span>Storms from MongoDB cyclone_database. Forecasts come from the trained model, and only for storms whose full observation history is on the server.</span>
       </div>
 
       {regionsQuery.error ? <ApiErrorState error={regionsQuery.error} onRetry={regionsQuery.refetch} subject="regions" /> : null}
@@ -128,7 +130,7 @@ export default function Prediction() {
       ) : regionalQuery.error ? (
         <ApiErrorState error={regionalQuery.error} onRetry={regionalQuery.refetch} subject="cyclone data" />
       ) : !cyclone ? (
-        <StateNotice variant="no-systems" message={`No active tropical cyclones in the ${details.label}.${details.season ? ` Season: ${details.season}.` : ""}`} />
+        <StateNotice variant="no-systems" message={`No storms in the database for the ${details.label}.`} />
       ) : (
         <>
           <div className="pred-top-grid">

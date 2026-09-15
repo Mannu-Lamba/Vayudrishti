@@ -57,7 +57,7 @@ function unavailableState(observation: SatelliteObservation, source: SatelliteSo
       return {
         testId: "state-no-imagery",
         title: "NO IMAGERY FOR SELECTED TIMESTAMP",
-        message: `${name} did not deliver the ${time} scan (mock scan gap).`,
+        message: `${name} did not deliver the ${time} scan.`,
         actionLabel: "Jump to nearest available frame",
         onAction: onJump,
       };
@@ -67,6 +67,14 @@ function unavailableState(observation: SatelliteObservation, source: SatelliteSo
         title: "FRAME PROCESSING",
         message: `${name} ${time} scan received — calibration and navigation (L1C) are still running.`,
         actionLabel: "Show nearest available frame",
+        onAction: onJump,
+      };
+    case "not_stored":
+      return {
+        testId: "state-not-stored",
+        title: "NO IMAGE STORED FOR THIS FRAME",
+        message: `The ${name} frame of ${time} UTC is recorded in cyclone_database${observation.datasetLabel ? ` (labelled ${observation.datasetLabel})` : ""}, but no image file is stored for it, so nothing is drawn.`,
+        actionLabel: "Show nearest frame with an image",
         onAction: onJump,
       };
     default:
@@ -179,9 +187,9 @@ export default function SatelliteViewer({
             {available && shownFrame?.imageUrl && (
               <img
                 src={shownFrame.imageUrl}
-                alt={`Mock ${channel?.label.toLowerCase() ?? ""} render of the ${regionLabel} sector from ${source?.name ?? "an unknown source"}`}
+                alt={`${channel?.label ?? "Satellite"} frame of the ${regionLabel} sector from ${source?.name ?? "an unknown source"}`}
                 draggable={false}
-                onLoad={() => setLoadedUrl(shownFrame.imageUrl)}
+                onLoad={() => setLoadedUrl(shownFrame.imageUrl ?? undefined)}
                 data-testid="satellite-viewer-image"
               />
             )}
@@ -223,9 +231,9 @@ export default function SatelliteViewer({
 
         {available && imageReady && (
           <div className="sat-viewer-foot">
-            <span className="sat-viewer-badge">MOCK IMAGERY · NOT SATELLITE DATA</span>
-            <span className={`sat-viewer-detect ${detections.length ? "" : "sat-viewer-detect-none"}`} data-testid={detections.length ? "satellite-detection-count" : "state-no-cyclone"}>
-              {detections.length ? `${detections.length} SYSTEM${detections.length > 1 ? "S" : ""} DETECTED` : "NO CYCLONE DETECTED"}
+            <span className="sat-viewer-badge">{source?.name ?? "SATELLITE"}{channel ? ` · ${channel.shortLabel}` : ""}</span>
+            <span className={`sat-viewer-detect ${detections.length ? "" : "sat-viewer-detect-none"}`} data-testid={detections.length ? "satellite-detection-count" : "state-detection-not-run"}>
+              {detections.length ? `${detections.length} SYSTEM${detections.length > 1 ? "S" : ""} DETECTED` : "DETECTION NOT RUN ON THIS FRAME"}
             </span>
             {channel && <span className={`sat-scale sat-scale-${channel.id}`}><span>{SCALE_ENDS[channel.id][0]}</span><i /><span>{SCALE_ENDS[channel.id][1]}</span></span>}
           </div>

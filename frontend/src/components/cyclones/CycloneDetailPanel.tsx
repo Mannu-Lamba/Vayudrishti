@@ -2,6 +2,7 @@ import { BrainCircuit, RotateCcw, Satellite as SatelliteIcon } from "lucide-reac
 import DataSourceBadge from "@/components/common/DataSourceBadge";
 import Panel from "@/components/common/Panel";
 import { categoryColor } from "@/config/cycloneCategories";
+import { formatMovement, formatObservedAt } from "@/lib/format";
 import { formatCoords } from "@/lib/geo";
 import { formatPressure, formatWind, usePreferences } from "@/lib/preferences";
 import type { DataSource } from "@/types/api";
@@ -42,16 +43,18 @@ export default function CycloneDetailPanel({ cyclone, source, regionName, subreg
       <dl className="pred-facts cyclone-detail-facts">
         <div><dt>Cyclone ID</dt><dd data-testid="detail-id">{cyclone.code}</dd></div>
         <div><dt>Name</dt><dd data-testid="detail-name">{cyclone.name}</dd></div>
-        <div><dt>Category</dt><dd data-testid="detail-category"><span className="category-dot" style={{ background: categoryColor(cyclone.category) }} />{cyclone.category}</dd></div>
+        <div><dt>Category</dt><dd data-testid="detail-category">{cyclone.category ? <><span className="category-dot" style={{ background: categoryColor(cyclone.category) }} />{cyclone.category}</> : "— (no wind recorded)"}</dd></div>
         <div><dt>Status</dt><dd data-testid="detail-status">{status}</dd></div>
         <div><dt>Wind</dt><dd data-testid="detail-wind">{formatWind(cyclone.windKmh, preferences.windUnit)}</dd></div>
         <div><dt>Pressure</dt><dd data-testid="detail-pressure">{formatPressure(cyclone.pressureHpa, preferences.pressureUnit)}</dd></div>
         <div><dt>Coordinates</dt><dd data-testid="detail-coordinates">{formatCoords(cyclone.location.latitude, cyclone.location.longitude)}</dd></div>
-        <div><dt>Observed</dt><dd data-testid="detail-timestamp">{cyclone.observedAt}</dd></div>
+        <div><dt>Last observed</dt><dd data-testid="detail-timestamp">{formatObservedAt(cyclone.observedAt)}</dd></div>
         <div><dt>Region</dt><dd data-testid="detail-region">{regionName ?? "—"}</dd></div>
         <div><dt>Subregion</dt><dd data-testid="detail-subregion">{subregionName ?? "—"}</dd></div>
         <div><dt>IBTrACS basin</dt><dd data-testid="detail-basin">{cyclone.basin}</dd></div>
-        <div><dt>Movement</dt><dd>{cyclone.movementDirection} at {cyclone.movementSpeedKmh} km/h</dd></div>
+        <div><dt>Movement</dt><dd>{formatMovement(cyclone.movementDirection, cyclone.movementSpeedKmh)}</dd></div>
+        <div><dt>Peak intensity</dt><dd data-testid="detail-peak">{cyclone.peakWindKmh != null ? `${formatWind(cyclone.peakWindKmh, preferences.windUnit)} · ${cyclone.peakCategory ?? "—"}` : "—"}</dd></div>
+        <div><dt>Data source</dt><dd data-testid="detail-source">{cyclone.source ?? "—"}</dd></div>
       </dl>
       <div className="cyclone-detail-foot">
         <div className="cyclone-detail-status">

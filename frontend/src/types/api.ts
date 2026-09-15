@@ -9,7 +9,7 @@ export interface ServiceResult<T> {
   source: DataSource;
 }
 
-export type ApiConnectionStatus = "demo" | "checking" | "connected" | "disconnected" | "syncing";
+export type ApiConnectionStatus = "checking" | "connected" | "disconnected" | "syncing";
 
 /** Future list endpoints page their results instead of shipping whole datasets to the browser. */
 export interface PageQuery {

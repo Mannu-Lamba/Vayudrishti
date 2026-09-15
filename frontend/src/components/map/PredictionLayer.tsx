@@ -60,7 +60,7 @@ function circleData(points: GeoTrackPoint[], selectedId?: string) {
 
 const withSelection = (points: GeoTrackPoint[], selectedId?: string) => pointCollection(points.map((point) => ({ ...point, selected: point.id === selectedId })));
 
-export default function PredictionLayer({ origin, points, uncertaintyKm, uncertaintyPolygon, visible, showLabels, selectedId, onSelect, dataLabel = "MOCK FORECAST DATA" }: PredictionLayerProps) {
+export default function PredictionLayer({ origin, points, uncertaintyKm, uncertaintyPolygon, visible, showLabels, selectedId, onSelect, dataLabel = "MODEL FORECAST" }: PredictionLayerProps) {
   const map = useMapInstance();
   const popupRef = useRef<Popup | null>(null);
   const onSelectRef = useRef(onSelect);

@@ -28,8 +28,8 @@ export default function SatelliteSourceSelector({ sources, coverage, value, onCh
         <div className="sat-source-meta">
           {selectedCoverage && <span className={`tier-badge tier-${selectedCoverage.tier}`}>{TIER_LABEL[selectedCoverage.tier]}</span>}
           <span>{selected.agency}</span>
-          <span>SSP {formatLongitude(selected.subSatelliteLongitude)}</span>
-          <span>{selected.cadenceMinutes} min scans</span>
+          {selected.subSatelliteLongitude != null && <span>SSP {formatLongitude(selected.subSatelliteLongitude)}</span>}
+          {selected.cadenceMinutes != null && <span>{selected.cadenceMinutes} min scans</span>}
           {selectedCoverage?.note && <span className="sat-source-note">{selectedCoverage.note}</span>}
         </div>
       )}

@@ -1,8 +1,12 @@
-// VayuDrishti model test bench — a localhost page that runs all three trained models through the REAL
-// FastAPI backend on held-out samples. This server only serves the page, the sample images, the models'
-// test reports and fonts, and forwards /api/* to FastAPI (same origin, so no CORS). No model runs here.
+// VayuDrishti on one port (default 3001):
+//   /              the full website (frontend/dist — build it first), live data only
+//   /api/*         forwarded to the FastAPI backend (same origin, so the Google sign-in session cookie works)
+//   /bench         model test bench: all three trained models run live on held-out samples, plus uploads
+//   /evaluation    full held-out test-set evaluation (evaluation.json, written by evaluate.py)
+// No model runs here and nothing is mocked; this server only serves files and forwards /api.
 //
-//   node tests/model-bench/server.mjs            → http://localhost:3001
+//   cd frontend && npx vite build          (once, and after frontend changes)
+//   node tests/model-bench/server.mjs      → http://localhost:3001
 //   PORT=3002 BACKEND_URL=http://127.0.0.1:8001 node tests/model-bench/server.mjs
 import fs from "node:fs";
 import http from "node:http";
@@ -11,24 +15,26 @@ import { fileURLToPath } from "node:url";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, "../..");
+const DIST = path.join(REPO, "frontend/dist");
 const PORT = Number(process.env.PORT ?? 3001);
 const BACKEND = new URL(process.env.BACKEND_URL ?? "http://127.0.0.1:8001");
 
 const TYPES = {
-  ".html": "text/html; charset=utf-8", ".json": "application/json", ".png": "image/png", ".jpg": "image/jpeg",
-  ".woff2": "font/woff2", ".mjs": "text/javascript", ".js": "text/javascript", ".css": "text/css",
+  ".html": "text/html; charset=utf-8", ".json": "application/json", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml",
+  ".woff2": "font/woff2", ".woff": "font/woff", ".mjs": "text/javascript", ".js": "text/javascript", ".css": "text/css", ".ico": "image/x-icon",
 };
 const FILES = {
-  "/": path.join(HERE, "index.html"),
+  "/bench": path.join(HERE, "index.html"),
   "/samples.json": path.join(HERE, "samples.json"),
   "/evaluation": path.join(HERE, "evaluation.html"),
-  "/evaluation.json": path.join(HERE, "evaluation.json"),  // written by evaluate.py
+  "/evaluation.json": path.join(HERE, "evaluation.json"),
   "/reports/identification.json": path.join(REPO, "identification_model/reports/test_metrics.json"),
   "/reports/classification.json": path.join(REPO, "identification_model/reports/classification/classification_metrics.json"),
   "/reports/prediction.json": path.join(REPO, "prediction_model/reports/test_metrics.json"),
 };
 // Only these directories are reachable; anything outside them is a 404.
 const MOUNTS = {
+  "/assets/": path.join(DIST, "assets"),
   "/img/": path.join(REPO, "identification_model/data/processed"),
   "/fonts/sans/": path.join(REPO, "frontend/node_modules/@fontsource/ibm-plex-sans/files"),
   "/fonts/mono/": path.join(REPO, "frontend/node_modules/@fontsource/ibm-plex-mono/files"),
@@ -63,7 +69,7 @@ function proxy(req, res) {
 
 http.createServer((req, res) => {
   let pathname;
-  try { pathname = decodeURIComponent(new URL(req.url ?? "/", "http://bench").pathname); } catch { return notFound(res); }
+  try { pathname = decodeURIComponent(new URL(req.url ?? "/", "http://vayudrishti").pathname); } catch { return notFound(res); }
   if (pathname.startsWith("/api/")) return proxy(req, res);
   if (FILES[pathname]) return sendFile(res, FILES[pathname]);
   for (const [prefix, dir] of Object.entries(MOUNTS)) {
@@ -71,5 +77,11 @@ http.createServer((req, res) => {
     const file = path.resolve(dir, pathname.slice(prefix.length));
     return file.startsWith(dir + path.sep) ? sendFile(res, file) : notFound(res);
   }
+  // The website: a file at the dist root (favicon.svg …), else the app shell for its client-side routes.
+  if (path.extname(pathname)) {
+    const file = path.resolve(DIST, `.${pathname}`);
+    return file.startsWith(DIST + path.sep) ? sendFile(res, file) : notFound(res);
+  }
+  if (req.method === "GET") return sendFile(res, path.join(DIST, "index.html"));
   notFound(res);
-}).listen(PORT, "127.0.0.1", () => console.log(`Model test bench: http://localhost:${PORT}  (API -> ${BACKEND.origin})`));
+}).listen(PORT, "127.0.0.1", () => console.log(`VayuDrishti on http://localhost:${PORT}  (website /, bench /bench, evaluation /evaluation, API -> ${BACKEND.origin})`));

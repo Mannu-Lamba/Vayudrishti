@@ -10,10 +10,11 @@ export interface TrackPoint {
   timestamp: string;
   latitude: number;
   longitude: number;
-  windKmh: number;
-  pressureHpa: number;
+  /** null when not observed at this fix. */
+  windKmh: number | null;
+  pressureHpa: number | null;
   /** Category the backend assigned at this fix. Never inferred from wind speed in the frontend. */
-  category?: CycloneCategory | string;
+  category?: CycloneCategory | string | null;
   /** true for forecast fixes; observed (best-track) fixes omit it. */
   forecast?: boolean;
   /** 0–1 or 0–100. */
@@ -44,8 +45,8 @@ export interface GeoTrackPoint {
   timestamp: string;
   latitude: number;
   longitude: number;
-  windKmh: number;
-  pressureHpa: number;
+  windKmh: number | null;
+  pressureHpa: number | null;
   /** Percent, when the source provides one. */
   confidence?: number;
   category?: CycloneCategory | string;
@@ -59,12 +60,12 @@ export interface MapCycloneMarker {
   id: string;
   code: string;
   name: string;
-  category: CycloneCategory | string;
+  category: CycloneCategory | string | null;
   status: CycloneStatus;
   latitude: number;
   longitude: number;
-  windKmh: number;
-  pressureHpa: number;
+  windKmh: number | null;
+  pressureHpa: number | null;
   /** Display time of the position. */
   observedAt?: string;
 }

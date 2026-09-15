@@ -34,7 +34,7 @@ function impactPopupHtml(zoneLabel: string, level: string, radiusKm: number, imp
     </dl>
     <span class="map-popup-note">COASTAL DISTRICTS IN RANGE (${impacts.length})</span>
     <dl class="map-popup-impact-list">${rows}</dl>
-    <span class="map-popup-note">MOCK IMPACT ESTIMATE — CENTROID DISTANCE ONLY</span>
+    <span class="map-popup-note">IMPACT ESTIMATE — DISTANCE TO APPROXIMATE DISTRICT CENTROIDS ONLY</span>
   </div>`;
 }
 

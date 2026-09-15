@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import BrandMark from "@/components/layout/BrandMark";
 import { adminNavigation, primaryNavigation, secondaryNavigation, type NavigationItem } from "@/components/layout/navigation";
 import { useAuth } from "@/lib/auth";
-import { useDataMode } from "@/hooks/useDataMode";
 
 interface SidebarProps {
   open: boolean;
@@ -23,7 +22,6 @@ function DrawerLink({ item, onClose }: { item: NavigationItem; onClose: () => vo
 /** Navigation drawer for narrow screens; wide screens use the links in the top bar. */
 export default function Sidebar({ open, onClose }: SidebarProps) {
   const { isAdmin } = useAuth();
-  const { isDemo } = useDataMode();
   return (
     <>
       {open && <button type="button" aria-label="Close navigation" className="nav-drawer-scrim" onClick={onClose} data-testid="sidebar-close-scrim" />}
@@ -51,7 +49,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           </nav>
         </>}
 
-        <p className="nav-drawer-foot" data-testid="sidebar-data-mode">{isDemo ? "Demo data — live telemetry not connected" : "Live API mode"}</p>
+        <p className="nav-drawer-foot" data-testid="sidebar-data-mode">Live API · MongoDB cyclone_database</p>
       </aside>
     </>
   );

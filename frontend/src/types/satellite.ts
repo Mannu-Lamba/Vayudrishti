@@ -7,13 +7,16 @@ export interface SatelliteFrame {
   id: string;
   source: string;
   satellite: string;
-  channel: SatelliteChannel;
+  channel: SatelliteChannel | null;
   capturedAt: string;
+  /** unavailable = the database stores no image for this frame. */
   status: "processed" | "queued" | "unavailable";
   region: string;
-  resolutionKm: number;
-  cloudTopTemperature: string;
-  enhancement: string;
+  resolutionKm: number | null;
+  cloudTopTemperature: string | null;
+  enhancement: string | null;
+  /** classification_results label of the frame, e.g. "cyclone (class 1)". */
+  datasetLabel?: string | null;
 }
 
 // ── Phase 3: multi-region, multi-source observations ──────────────────────
@@ -32,7 +35,8 @@ export interface SatelliteChannelSpec {
 
 export type SatelliteProcessingStatus = "processed" | "processing" | "missing";
 
-export type SatelliteUnavailableReason = "local_night" | "scan_gap" | "processing" | "no_coverage";
+/** not_stored = the frame is recorded in the database but no image file is stored for it. */
+export type SatelliteUnavailableReason = "local_night" | "scan_gap" | "processing" | "no_coverage" | "not_stored";
 
 /** A cyclone located in a frame. Phase 4: produced by POST /api/ml/detect. */
 export interface SatelliteDetection {
@@ -49,14 +53,20 @@ export interface SatelliteObservation {
   regionId: RegionId;
   subregionId?: SubregionId;
   source: SatelliteSourceId;
-  channel: SatelliteChannelId;
+  /** null when the database did not record the channel. */
+  channel: SatelliteChannelId | null;
   /** Actual scan time (ISO 8601, UTC). */
   timestamp: string;
   /** Nominal timeline slot this frame is filed under. */
   slotId: string;
-  imageUrl?: string;
+  imageUrl?: string | null;
   /** Geographic extent of `imageUrl`, used to place detections over the image. */
-  bounds?: MapBounds;
+  bounds?: MapBounds | null;
+  cycloneId?: string | null;
+  /** classification_results label of the frame, e.g. "no cyclone (class 0)". */
+  datasetLabel?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
   coverage?: string;
   coverageTier?: SatelliteCoverageTier;
   resolution?: string;

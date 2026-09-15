@@ -1,4 +1,4 @@
-import { Activity, AlertOctagon, AlertTriangle, BellRing, Clock3, Globe2, RadioTower, Wind } from "lucide-react";
+import { Activity, AlertOctagon, BellRing, BrainCircuit, Clock3, Database, Globe2, RadioTower, Wind } from "lucide-react";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import MetricGrid, { type MetricItem } from "@/components/dashboard/MetricGrid";
@@ -27,15 +27,24 @@ import { routeTo } from "@/lib/routes";
 import { formatUtcClock } from "@/lib/satellite";
 import { useSearchParamState } from "@/lib/searchParams";
 import { usePreferences, formatPressure, formatWind } from "@/lib/preferences";
-import type { OperationalEvent } from "@/types/cyclone";
+import { formatMovement, formatObservedAt } from "@/lib/format";
+import type { CycloneData, OperationalEvent } from "@/types/cyclone";
 
 const EVENT_ICON: Record<OperationalEvent["kind"], { icon: typeof AlertOctagon; tone: string }> = {
   alert: { icon: AlertOctagon, tone: "amber" },
   satellite: { icon: RadioTower, tone: "cyan" },
   forecast: { icon: Clock3, tone: "blue" },
+  record: { icon: Database, tone: "blue" },
 };
 
-const isHighRisk = (riskLevel: string) => riskLevel === "high" || riskLevel === "severe";
+const peak = (cyclone: CycloneData) => cyclone.peakWindKmh ?? cyclone.windKmh ?? -1;
+
+function briefing(cyclone: CycloneData): string {
+  const state = cyclone.category ? `as a ${cyclone.category.toLowerCase()}` : "with no wind recorded at that fix";
+  const motion = cyclone.movementDirection ? `, moving ${formatMovement(cyclone.movementDirection, cyclone.movementSpeedKmh)}` : "";
+  const when = cyclone.status === "active" ? "is being tracked" : `was last observed on ${formatObservedAt(cyclone.observedAt)}`;
+  return `${cyclone.name} (${cyclone.code}) ${when} ${state}${motion}, in the ${cyclone.location.label}.`;
+}
 
 // Everything below arrives through hooks → services; ?cyclone= focuses the dashboard on one system.
 // The metrics and the map read the same registry request, so their counts always agree.
@@ -54,7 +63,9 @@ export default function Dashboard() {
     () => (primaryRegion ? cyclones.filter((cyclone) => resolveCycloneArea(regionList, cyclone)?.regionId === primaryRegion.id) : []),
     [cyclones, regionList, primaryRegion],
   );
-  const strongestPrimary = [...inPrimary].sort((a, b) => b.windKmh - a.windKmh)[0];
+  const strongestPrimary = [...inPrimary].sort((a, b) => peak(b) - peak(a))[0];
+  const activePrimary = inPrimary.filter((candidate) => candidate.status === "active");
+  const activeAll = cyclones.filter((candidate) => candidate.status === "active");
   const cyclone = cyclones.find((candidate) => candidate.id === params.get("cyclone")) ?? strongestPrimary ?? cyclones[0] ?? null;
   const area = cyclone ? resolveCycloneArea(regionList, cyclone) : null;
   const areaDetails = area ? describeSelection(regionList, area) : null;
@@ -66,13 +77,12 @@ export default function Dashboard() {
   const models = useModelRegistry();
   const events = useRecentEvents(5);
 
-  const highRiskAll = cyclones.filter((candidate) => isHighRisk(candidate.riskLevel)).length;
-  const highRiskPrimary = inPrimary.filter((candidate) => isHighRisk(candidate.riskLevel)).length;
+  const forecastable = cyclones.filter((candidate) => candidate.forecastAvailable).length;
   const metrics: MetricItem[] = [
-    { id: "active-cyclones", label: "Active cyclones", value: padCount(inPrimary.length), context: primaryRegion?.name ?? "Primary region", icon: Activity, tone: "cyan" },
-    { id: "max-wind", label: "Max wind speed", value: strongestPrimary ? formatWind(strongestPrimary.windKmh, preferences.windUnit) : "—", context: strongestPrimary ? `${strongestPrimary.code} / ${strongestPrimary.category}` : "No active system", icon: Wind, tone: "amber" },
-    { id: "detected-systems", label: "Systems worldwide", value: padCount(cyclones.length), context: `Across ${regionList.length} monitored regions`, icon: Globe2, tone: "blue" },
-    { id: "high-risk", label: "High risk systems", value: padCount(highRiskAll), context: "High or severe risk, all regions", icon: AlertTriangle, tone: "red" },
+    { id: "active-cyclones", label: "Active cyclones", value: padCount(activePrimary.length), context: `${primaryRegion?.name ?? "Primary region"} · observed in the last 24 h`, icon: Activity, tone: "cyan" },
+    { id: "max-wind", label: "Strongest recent storm", value: strongestPrimary && peak(strongestPrimary) > 0 ? formatWind(peak(strongestPrimary), preferences.windUnit) : "—", context: strongestPrimary ? `${strongestPrimary.name} ${strongestPrimary.season ?? ""} / ${strongestPrimary.peakCategory ?? "category unknown"}` : "No storm in the registry", icon: Wind, tone: "amber" },
+    { id: "detected-systems", label: "Recent storms listed", value: padCount(cyclones.length), context: `Newest records of cyclone_database, ${regionList.length} regions`, icon: Globe2, tone: "blue" },
+    { id: "forecastable", label: "Forecastable storms", value: padCount(forecastable), context: "Full history on the server, so the model can run", icon: BrainCircuit, tone: "blue" },
   ];
   const context = { region: area?.regionId, subregion: area?.subregionId, cyclone: cyclone?.id };
   const lastForecast = prediction.data?.forecast[prediction.data.forecast.length - 1];
@@ -82,9 +92,9 @@ export default function Dashboard() {
       <div>
         <div className="section-kicker"><RadioTower size={13} /> SITUATION OVERVIEW</div>
         <h2 className="page-heading">{primaryRegion?.name ?? "Operational overview"}</h2>
-        <p className="page-subheading">{cyclonesQuery.loading ? "Loading the cyclone registry…" : `${inPrimary.length} systems are being tracked across the ${primaryRegion?.name ?? "primary region"}, ${cyclones.length} across all monitored regions. ${highRiskPrimary === 1 ? "One requires" : `${highRiskPrimary} require`} immediate attention.`}</p>
+        <p className="page-subheading">{cyclonesQuery.loading ? "Loading the cyclone registry…" : `${activePrimary.length ? `${activePrimary.length} active system${activePrimary.length === 1 ? "" : "s"} in the ${primaryRegion?.name ?? "primary region"}.` : `No storm has been observed in the last 24 h.`} Showing the ${cyclones.length} most recent storms in cyclone_database, ${inPrimary.length} of them in the ${primaryRegion?.name ?? "primary region"}.`}</p>
       </div>
-      <div className="page-intro-meta"><span><Clock3 size={13} /> Next refresh in {preferences.refreshRate === "manual" ? "manual mode" : preferences.refreshRate}</span><span><BellRing size={13} /> {padCount(highRiskAll)} priority alerts</span><DataSourceBadge source={cyclonesQuery.source} /></div>
+      <div className="page-intro-meta"><span><Clock3 size={13} /> Next refresh in {preferences.refreshRate === "manual" ? "manual mode" : preferences.refreshRate}</span><span><BellRing size={13} /> {padCount(activeAll.length)} active</span><DataSourceBadge source={cyclonesQuery.source} /></div>
     </div>
 
     {cyclonesQuery.error ? <ApiErrorState error={cyclonesQuery.error} onRetry={cyclonesQuery.refetch} title="CYCLONE DATA UNAVAILABLE" message="Unable to retrieve cyclone information." /> : <MetricGrid items={metrics} />}
@@ -139,8 +149,8 @@ export default function Dashboard() {
       </Panel>
       <Panel eyebrow="OPERATOR READOUT" title="Quick briefing" className="briefing-panel" action={<DataSourceBadge source={prediction.source} variant="model" />} data-testid="briefing-panel">
         <p>{cyclone
-          ? `${cyclone.code} ${cyclone.name} is a ${cyclone.category.toLowerCase()} moving ${cyclone.movementDirection} at ${cyclone.movementSpeedKmh} km/h through the ${cyclone.location.label}.${lastForecast ? ` The ${prediction.source === "live" ? "model" : "demo"} forecast reaches ${lastForecast.windKmh} km/h by ${lastForecast.label}.` : " No forecast is available yet."}`
-          : "No active system is selected."}</p>
+          ? `${briefing(cyclone)}${lastForecast ? ` The model forecast reaches ${lastForecast.windKmh} km/h by ${lastForecast.label}.` : " No forecast is available for it."}`
+          : "No storm is selected."}</p>
         {cyclone && <div className="briefing-footer"><span>Wind now <b>{formatWind(cyclone.windKmh, preferences.windUnit)}</b></span><span>Pressure <b>{formatPressure(cyclone.pressureHpa, preferences.pressureUnit)}</b></span></div>}
       </Panel>
     </div>

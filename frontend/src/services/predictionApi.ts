@@ -26,16 +26,18 @@ const live = <T,>(data: T): ServiceResult<T> => ({ data, source: "live" });
 /** Scores may arrive as 0–1 or as percentages; the UI always works in 0–1. */
 const unit = (value: number | undefined) => (value == null ? undefined : value > 1 ? value / 100 : value);
 
-function anchorFrom(cyclone: CycloneData): PredictionAnchor {
+/** The registry's latest fix as a forecast anchor — only when wind and pressure were observed there. */
+function anchorFrom(cyclone: CycloneData): PredictionAnchor | null {
+  if (cyclone.windKmh == null || cyclone.pressureHpa == null) return null;
   return {
     observedAt: toIsoTimestamp(cyclone.observedAt),
     latitude: cyclone.location.latitude,
     longitude: cyclone.location.longitude,
     windKmh: cyclone.windKmh,
     pressureHpa: cyclone.pressureHpa,
-    category: cyclone.category,
-    movementDirection: cyclone.movementDirection,
-    movementSpeedKmh: cyclone.movementSpeedKmh,
+    category: cyclone.category ?? "",
+    movementDirection: cyclone.movementDirection ?? undefined,
+    movementSpeedKmh: cyclone.movementSpeedKmh ?? undefined,
   };
 }
 

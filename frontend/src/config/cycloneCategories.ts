@@ -38,7 +38,7 @@ export const CATEGORY_COLORS: Record<string, string> = {
 /** Categories the table does not know (new labels from the API) are drawn neutral, not guessed. */
 export const UNKNOWN_CATEGORY_COLOR = "#9aa2ad";
 
-export function categoryColor(category: string | undefined): string {
+export function categoryColor(category: string | null | undefined): string {
   return (category && CATEGORY_COLORS[category]) || UNKNOWN_CATEGORY_COLOR;
 }
 

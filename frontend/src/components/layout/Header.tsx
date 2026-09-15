@@ -9,6 +9,18 @@ import { endSession } from "@/lib/session";
 
 interface HeaderProps { onMenuClick: () => void; }
 
+/** The real current time in UTC (refreshed every 30 s), never a fixed demo timestamp. */
+function UtcClock() {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(new Date()), 30_000);
+    return () => window.clearInterval(id);
+  }, []);
+  const day = now.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
+  const time = now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" });
+  return <span className="topbar-clock" title="Current time (UTC)" data-testid="header-system-status">{day} · {time} UTC</span>;
+}
+
 export default function Header({ onMenuClick }: HeaderProps) {
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,7 +60,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
         </nav>
         <div className="topbar-actions">
           <ApiStatusIndicator />
-          <span className="topbar-clock" title="Latest observation time" data-testid="header-system-status">08 Sep 2026 · 14:30 UTC</span>
+          <UtcClock />
           <button type="button" className="icon-button topbar-bell" aria-label="Notifications" data-testid="header-notifications-button"><Bell size={17} /></button>
           <button type="button" className="icon-button topbar-settings" aria-label="Open settings" onClick={() => navigate("/settings")} data-testid="header-settings-button"><Settings2 size={17} /></button>
           <div className="profile-control" ref={profileRef}>

@@ -23,7 +23,7 @@ interface SatelliteTimelineProps {
 const LEGEND: { status: TimelineEntryStatus; label: string }[] = [
   { status: "ready", label: "Frame ready" },
   { status: "processing", label: "Processing" },
-  { status: "missing", label: "Scan gap" },
+  { status: "missing", label: "No image stored / gap" },
   { status: "night", label: "Local night (VIS)" },
 ];
 

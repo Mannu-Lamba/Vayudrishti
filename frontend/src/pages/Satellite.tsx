@@ -13,7 +13,6 @@ import SatelliteViewer from "@/components/satellite/SatelliteViewer";
 import SatelliteComparison, { type ComparisonCard } from "@/components/satellite/SatelliteComparison";
 import SatelliteMetadata from "@/components/satellite/SatelliteMetadata";
 import RegionalCycloneStatus from "@/components/satellite/RegionalCycloneStatus";
-import { useDataMode } from "@/hooks/useDataMode";
 import { useCycloneMapData } from "@/hooks/useCycloneMap";
 import { useCyclones, useRegionalObservation } from "@/hooks/useCyclones";
 import { useRegions } from "@/hooks/useRegions";
@@ -39,7 +38,6 @@ function timelineStatus(observation?: SatelliteObservation): TimelineEntry["stat
 export default function Satellite() {
   const navigate = useNavigate();
   const [params, updateParams] = useSearchParamState();
-  const { isDemo } = useDataMode();
 
   const regionsQuery = useRegions();
   const regions = useMemo(() => regionsQuery.data ?? [], [regionsQuery.data]);
@@ -239,11 +237,8 @@ export default function Satellite() {
 
       <div className="sat-bottom-grid">
         <SatelliteMetadata observation={observation} source={source} channel={channel} details={details} />
-        {isDemo && (
-          <StateNotice
-            variant="offline"
-            message="Serving local demo observations. Set VITE_USE_MOCK_DATA=false to read GET /api/satellite, /api/satellite/sources and /api/satellite/{id} — these components stay unchanged."
-          />
+        {!catalogQuery.loading && !catalogQuery.error && !sources.length && (
+          <StateNotice variant="empty" title="NO SATELLITE RECORDS" message={`cyclone_database holds no satellite frame records for the ${details.label}.`} />
         )}
       </div>
     </div>

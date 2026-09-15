@@ -95,21 +95,24 @@ export function cycloneInSelection(regions: Region[], cyclone: Pick<CycloneData,
 
 export type RegionSummaryIndex = Map<string, RegionSummary>;
 
-/** Active-system counts and strongest system for every region and subregion. */
+/**
+ * Active-system counts and strongest system for every region and subregion. Only storms whose status is
+ * "active" (observed in the last 24 h) count — the registry also lists historical storms, which are not active.
+ */
 export function summarizeRegions(regions: Region[], cyclones: CycloneData[]): RegionSummaryIndex {
   const index: RegionSummaryIndex = new Map();
   const bump = (selection: RegionSelection, cyclone: CycloneData) => {
     const key = selectionKey(selection);
     const current = index.get(key) ?? { ...selection, activeSystems: 0 };
     current.activeSystems += 1;
-    if (cyclone.windKmh > (current.maxWindKmh ?? -1)) {
+    if (cyclone.windKmh != null && cyclone.windKmh > (current.maxWindKmh ?? -1)) {
       current.maxWindKmh = cyclone.windKmh;
       current.strongestCycloneId = cyclone.id;
       current.strongestCode = cyclone.code;
     }
     index.set(key, current);
   };
-  for (const cyclone of cyclones) {
+  for (const cyclone of cyclones.filter((candidate) => candidate.status === "active")) {
     const area = resolveCycloneArea(regions, cyclone);
     if (!area) continue;
     bump({ regionId: area.regionId }, cyclone);

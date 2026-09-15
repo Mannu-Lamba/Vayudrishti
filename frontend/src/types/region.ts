@@ -107,8 +107,9 @@ export interface SatelliteSource {
   instrument: string;
   /** Operational slot name, e.g. "GOES-West" or "IODC". */
   serviceSlot?: string;
-  subSatelliteLongitude: number;
-  cadenceMinutes: number;
+  /** null for merged multi-satellite products such as GridSat-B1. */
+  subSatelliteLongitude: number | null;
+  cadenceMinutes: number | null;
   channels: Partial<Record<SatelliteChannelId, SatelliteBand>>;
 }
 
@@ -132,17 +133,18 @@ export interface ObservedSystem {
   cycloneId: string;
   code: string;
   name: string;
-  category: CycloneCategory;
+  category: CycloneCategory | null;
   status: CycloneStatus;
-  riskLevel: RiskLevel;
+  riskLevel: RiskLevel | null;
   basin: IbtracsBasin;
   regionId: RegionId;
-  subregionId?: SubregionId;
+  subregionId?: SubregionId | null;
   latitude: number;
   longitude: number;
-  windKmh: number;
-  pressureHpa: number;
-  confidence: number;
+  windKmh: number | null;
+  pressureHpa: number | null;
+  confidence: number | null;
+  observedAt?: string;
 }
 
 /** Systems inside a region at one observation time. Phase 4: GET /api/cyclones?region=…&at=… */

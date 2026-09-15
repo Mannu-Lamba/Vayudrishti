@@ -40,9 +40,9 @@ export default function PredictionSelector({ regions, region, selection, summari
             aria-label="Cyclone"
             data-testid="prediction-cyclone-select"
           >
-            {!cyclones.length && <option value="">No active cyclones in this region</option>}
+            {!cyclones.length && <option value="">No storms in this region</option>}
             {/* One string per option: mixed text/expression children get wrapped in <span>s by the dev visual-edits plugin, which <option> cannot contain. */}
-            {cyclones.map((cyclone) => <option key={cyclone.id} value={cyclone.id}>{`${cyclone.code} · ${cyclone.name} — ${cyclone.category}`}</option>)}
+            {cyclones.map((cyclone) => <option key={cyclone.id} value={cyclone.id}>{`${cyclone.name}${cyclone.season ? ` ${cyclone.season}` : ""} · ${cyclone.code} — ${cyclone.forecastAvailable ? "forecast available" : "no forecast (too little history)"}`}</option>)}
           </select>
         </div>
       </div>

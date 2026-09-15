@@ -22,6 +22,7 @@ export const UNAVAILABLE_SHORT: Record<SatelliteUnavailableReason, string> = {
   scan_gap: "SCAN GAP",
   processing: "PROCESSING",
   no_coverage: "NO COVERAGE",
+  not_stored: "NO IMAGE STORED",
 };
 
 /** "08 SEP 2026 — 14:30 UTC" */
