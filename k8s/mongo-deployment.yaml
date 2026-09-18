@@ -1,0 +1,69 @@
+# MongoDB: accounts, sessions and audit events, plus the cyclone registry the site reads.
+# One replica, because the data lives on a single ReadWriteOnce volume.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/name: mongo
+    app.kubernetes.io/part-of: vayudrishti
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate # the old pod must release the volume before the new one starts
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mongo
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mongo
+        app.kubernetes.io/part-of: vayudrishti
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:8
+          ports:
+            - name: mongo
+              containerPort: 27017
+          env:
+            # Creates the administrator account, but only on the first start with an empty volume.
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: vayudrishti-secrets
+                  key: MONGO_ROOT_USERNAME
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: vayudrishti-secrets
+                  key: MONGO_ROOT_PASSWORD
+          volumeMounts:
+            - name: data
+              mountPath: /data/db
+          # A plain connection check: it needs no credentials, so it keeps working once authentication is on.
+          readinessProbe:
+            tcpSocket:
+              port: mongo
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: mongo
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: mongo-data

@@ -1,0 +1,29 @@
+# Keeps the build context small and local-machine files out of the image.
+
+# Local virtual environment and caches
+.venv/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+.mypy_cache/
+.tmp/
+
+# Local settings: every value is passed to the container at run time instead.
+.env
+.env.*
+
+# Tests and their fixtures are not needed to serve; the suites run against a URL.
+tests/
+pytest.ini
+
+# Docs and build files
+README.md
+Dockerfile
+.dockerignore
+
+# Training leftovers: serving loads best_model.pth only (ml/*/inference.py, ml/classification/model.py).
+models/*/last_model.pth
+
+# Logs
+*.log
+logs/

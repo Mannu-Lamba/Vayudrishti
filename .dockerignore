@@ -1,0 +1,46 @@
+# Build context for the site image (hosting/docker/site.Dockerfile), which is built from the project root.
+# The backend image is built from backend/ and uses backend/.dockerignore instead.
+
+.git/
+.github/
+.claude/
+.emergent/
+.vscode/
+.idea/
+
+# Dependencies and virtual environments: the build stage installs its own.
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# Rebuilt inside the image.
+frontend/dist/
+
+# Training data and checkpoints. identification_model/data/processed is 379 MB and is mounted read-only at
+# run time for /img/; the backend's own checkpoints travel in the backend image.
+identification_model/data/
+identification_model/models/
+identification_model/.cache/
+prediction_model/data/
+prediction_model/models/
+backend/models/
+backend/.venv/
+data/
+
+# Local settings and logs: every value is passed to the containers at run time.
+**/.env
+**/.env.*
+*.log
+logs/
+
+# Tests, notes and loose files that the site does not serve.
+backend/tests/
+tests/e2e/
+test_reports/
+*.xlsx
+/image*.png
+/Screenshot*.png
+hosting/logs/

@@ -1,0 +1,16 @@
+# Storage for the database. kind provides a default StorageClass (local-path), so no class is named here
+# and the volume is created on the node. Deleting this claim deletes the data, including the accounts.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-data
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/name: mongo
+    app.kubernetes.io/part-of: vayudrishti
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

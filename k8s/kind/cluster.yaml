@@ -1,0 +1,30 @@
+# One-node kind cluster for VayuDrishti.
+#
+#   kind create cluster --config k8s/kind/cluster.yaml
+#
+# This file is for the kind command, not for kubectl. It sits in its own folder so that
+# `kubectl apply -f k8s/` never tries to send it to the cluster.
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: vayudrishti
+nodes:
+  - role: control-plane
+    # The two node ports the Services publish, mapped to the same ports on this machine.
+    extraPortMappings:
+      - containerPort: 30301 # site Service  -> http://localhost:3001
+        hostPort: 3001
+        protocol: TCP
+      - containerPort: 30801 # backend Service -> http://localhost:8001/docs
+        hostPort: 8001
+        protocol: TCP
+    extraMounts:
+      # The 379 MB of held-out crops the bench shows at /img/, mounted read-only instead of being copied
+      # into the image. site-deployment.yaml mounts the node path below into the pod.
+      #
+      # The host path is written the way the Docker Desktop virtual machine sees this machine's drives:
+      # /run/desktop/mnt/host/<drive letter>/... On Docker Engine for Linux, use the plain path instead.
+      # If the path is wrong the cluster still comes up and every page works, but the bench shows no
+      # sample images.
+      - hostPath: /run/desktop/mnt/host/h/WayuDrishti/wayudrishti/identification_model/data/processed
+        containerPath: /mnt/vayudrishti/img
+        readOnly: true

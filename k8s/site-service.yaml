@@ -1,0 +1,20 @@
+# The way in: kind maps this node port to port 3001 on this machine, so the site opens at
+# http://localhost:3001 with /bench and /evaluation on the same port.
+apiVersion: v1
+kind: Service
+metadata:
+  name: site
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/name: site
+    app.kubernetes.io/part-of: vayudrishti
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: site
+  ports:
+    - name: http
+      port: 3001
+      targetPort: http
+      nodePort: 30301
+      protocol: TCP

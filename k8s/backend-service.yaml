@@ -1,0 +1,20 @@
+# Two jobs: the site reaches the backend inside the cluster as backend:8001, and the node port makes the API
+# docs reachable from this machine at http://localhost:8001/docs (see kind/cluster.yaml for the mapping).
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/name: backend
+    app.kubernetes.io/part-of: vayudrishti
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: backend
+  ports:
+    - name: http
+      port: 8001
+      targetPort: http
+      nodePort: 30801
+      protocol: TCP

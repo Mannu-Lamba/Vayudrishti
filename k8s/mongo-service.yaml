@@ -1,0 +1,19 @@
+# Reachable inside the cluster as mongo:27017, which is the host in MONGODB_URI in secret.yml.
+# Deliberately ClusterIP: the database is never exposed outside the cluster.
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/name: mongo
+    app.kubernetes.io/part-of: vayudrishti
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: mongo
+  ports:
+    - name: mongo
+      port: 27017
+      targetPort: mongo
+      protocol: TCP

@@ -1,0 +1,29 @@
+# Settings that are not secret, shared by the backend. Secrets live in secret.yml.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vayudrishti-config
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/part-of: vayudrishti
+data:
+  # Databases: the application database holds accounts, sessions and audit events; the cyclone database
+  # holds the storm registry the site reads.
+  MONGODB_APP_DATABASE: vayudrishti_local
+  MONGODB_CYCLONE_DATABASE: cyclone_database
+
+  # The browser origin of the site, used for CORS and for the sign-in redirect back to it. With the kind
+  # cluster in kind/cluster.yaml, that is port 3001 on this machine.
+  FRONTEND_URL: http://localhost:3001
+
+  # The models run on the processor; the checkpoints sit inside the backend image.
+  ML_DEVICE: cpu
+  ML_MODELS_DIR: /app/models
+
+  APP_VERSION: "1.0"
+  CLAUDE_MODEL: claude-sonnet-4-6
+
+  # Comma-separated. ADMIN_EMAILS get the admin role on first sign-in; ALLOWED_EMAIL_DOMAINS limits who may
+  # sign in at all. Both empty means the first user to sign in becomes admin.
+  ADMIN_EMAILS: ""
+  ALLOWED_EMAIL_DOMAINS: ""

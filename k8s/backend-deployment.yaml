@@ -1,0 +1,77 @@
+# The FastAPI backend with the three trained models. The checkpoints are inside the image, so the pod needs
+# no volume; it loads them once at startup, which takes a few seconds and about a gigabyte of memory.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: vayudrishti
+  labels:
+    app.kubernetes.io/name: backend
+    app.kubernetes.io/part-of: vayudrishti
+spec:
+  # One replica on purpose: every extra replica loads its own copy of all three models.
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: backend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: backend
+        app.kubernetes.io/part-of: vayudrishti
+    spec:
+      containers:
+        - name: backend
+          image: vayudrishti-backend:local
+          # The image is loaded into the kind node with `kind load docker-image`, never pulled.
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8001
+          envFrom:
+            - configMapRef:
+                name: vayudrishti-config
+          env:
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: vayudrishti-secrets
+                  key: MONGODB_URI
+            - name: EMERGENT_LLM_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: vayudrishti-secrets
+                  key: EMERGENT_LLM_KEY
+          # Startup gets its own probe, so slow model loading never counts as a failed liveness check.
+          startupProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            periodSeconds: 5
+            failureThreshold: 36 # up to three minutes
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 250m
+              memory: 1Gi
+            limits:
+              cpu: "2"
+              memory: 3Gi
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001 # the appuser account created in backend/Dockerfile
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]

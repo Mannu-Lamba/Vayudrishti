@@ -1,0 +1,113 @@
+# VayuDrishti, whole project: MongoDB, the FastAPI backend with the three trained models, and one site
+# container that serves the website, the model test bench and the metrics dashboard on a single port.
+#
+#   docker compose up -d --build
+#   http://localhost:3001            website        (/bench and /evaluation on the same port)
+#   http://localhost:8001/docs       backend API docs
+#
+# Build argument: the backend imports emergentintegrations, which is served from Emergent's own package
+# index rather than PyPI. Put the index URL in a .env file next to this file (git-ignored):
+#
+#   EMERGENT_INDEX_URL=<emergent package index>
+#   EMERGENT_LLM_KEY=<key>            # only needed for the analyst chat
+#
+# First run: the mongo service starts empty, so the cyclone registry has no storms until the data is loaded.
+# To copy the database from this machine into it:
+#
+#   mongodump --uri mongodb://127.0.0.1:27017 --db cyclone_database --archive=cyclone.archive
+#   docker compose cp cyclone.archive mongo:/tmp/cyclone.archive
+#   docker compose exec mongo mongorestore --archive=/tmp/cyclone.archive
+#
+# To use this machine's MongoDB instead of the container, put this in the same .env file:
+#
+#   MONGODB_URI=mongodb://host.docker.internal:27017
+#
+# The training workspaces (identification_model/, prediction_model/) are offline tools and are not part of
+# this file; the trained checkpoints they produce are already inside the backend image.
+
+name: vayudrishti
+
+services:
+  mongo:
+    image: mongo:8
+    restart: unless-stopped
+    networks: [vayudrishti]
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 10
+    # Only the backend talks to it. Publish the port to inspect the data with a local client.
+    # ports:
+    #   - "27017:27017"
+
+  backend:
+    build:
+      context: ./backend
+      args:
+        EMERGENT_INDEX_URL: ${EMERGENT_INDEX_URL:-}
+    restart: unless-stopped
+    networks: [vayudrishti]
+    environment:
+      MONGODB_URI: ${MONGODB_URI:-mongodb://mongo:27017}
+      MONGODB_APP_DATABASE: ${MONGODB_APP_DATABASE:-vayudrishti_local}
+      MONGODB_CYCLONE_DATABASE: ${MONGODB_CYCLONE_DATABASE:-cyclone_database}
+      # The browser origin, for CORS and for the sign-in redirect back to the site.
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3001}
+      ML_DEVICE: cpu
+      APP_VERSION: ${APP_VERSION:-1.0}
+      ADMIN_EMAILS: ${ADMIN_EMAILS:-}
+      ALLOWED_EMAIL_DOMAINS: ${ALLOWED_EMAIL_DOMAINS:-}
+      EMERGENT_LLM_KEY: ${EMERGENT_LLM_KEY:-}
+      CLAUDE_MODEL: ${CLAUDE_MODEL:-claude-sonnet-4-6}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    # Published for the API docs and direct calls; the site container reaches it over the compose network.
+    ports:
+      - "8001:8001"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8001/api/health', timeout=5).status == 200 else 1)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 120s
+      retries: 3
+
+  site:
+    build:
+      context: .
+      dockerfile: hosting/docker/site.Dockerfile
+    restart: unless-stopped
+    networks: [vayudrishti]
+    environment:
+      PORT: "3001"
+      BACKEND_URL: http://backend:8001
+    # Not service_healthy: the site comes up straight away and answers 502 on /api until the backend
+    # has loaded its models, which takes a few seconds.
+    depends_on:
+      - backend
+    ports:
+      - "3001:3001"
+    volumes:
+      # The held-out crops the bench shows at /img/ are 379 MB, so they are mounted read-only rather than
+      # copied into the image. Without this mount the bench pages load but their sample images are missing.
+      - ./identification_model/data/processed:/app/identification_model/data/processed:ro
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3001/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      start_period: 20s
+      retries: 3
+
+# One network for the three services: the site reaches the backend at http://backend:8001 and the backend
+# reaches the database at mongo:27017, by service name. Only the published ports are visible from outside.
+networks:
+  vayudrishti:
+    name: vayudrishti
+    driver: bridge
+
+volumes:
+  mongo-data:
